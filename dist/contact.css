@@ -1,0 +1,28 @@
+/* Contact carries the same atmosphere and typographic weight as the site. */
+.contact-dialog{isolation:isolate;background:#090b0e;color:#fff;border:1px solid #ffffff29;border-radius:20px;width:min(720px,calc(100% - 32px));padding:44px;box-shadow:0 40px 160px #0009;overflow:auto;font-family:overusedGrotesk,sans-serif}
+.contact-dialog::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#090b0e 10%,#090b0ee0 55%,#090b0e70),url('assets/footer-pixel-960.webp') 85% 15%/auto 100% no-repeat;opacity:.8;border-radius:inherit}
+.contact-dialog::backdrop{background:#03070cbd;backdrop-filter:blur(16px)}
+.contact-dialog .dialog-close{right:20px;top:20px;width:36px;height:36px;border:1px solid #ffffff30;background:#ffffff06;color:#bbb;font:300 25px/1 overusedGrotesk,sans-serif;transition:background .2s,color .2s}
+.contact-dialog .dialog-close:hover{background:#ffffff18;color:#fff}
+.contact-dialog__brand{display:flex;align-items:center;gap:14px;min-height:30px}
+.contact-dialog__brand img{width:30px;height:30px;object-fit:contain}
+.contact-dialog .dialog-eyebrow{display:flex;align-items:center;gap:8px;color:#a8abb2;font:400 10px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.04em}
+.contact-dialog .dialog-eyebrow::before{content:"";width:5px;height:5px;background:#ffd44b;border-radius:50%}
+.contact-dialog h2{font:600 clamp(40px,5vw,62px)/1.02 overusedGrotesk,sans-serif;letter-spacing:-.045em;margin:38px 0 18px;color:#fff}
+.contact-dialog h2 span{color:#aeb3bc}
+.contact-dialog .contact-dialog__description{font:400 17px/1.5 seasonSans,sans-serif;letter-spacing:-.015em;color:#929aa7;max-width:410px;margin:0 0 30px}
+.contact-dialog__actions{display:grid;gap:12px}
+.contact-dialog__action{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 22px;border:1px solid #ffffff24;border-radius:8px;background:#ffffff04;color:#fff;transition:background .25s,border-color .25s}
+.contact-dialog__action:hover{background:#ffffff0a;border-color:#ffffff70}
+.contact-dialog__action--primary{border-color:#ffffff70;background:#ffffff0b}
+.contact-dialog__action strong{display:block;font:500 20px/1.2 overusedGrotesk,sans-serif;letter-spacing:-.015em}
+.contact-dialog__action small{display:block;font:400 13px/1.5 seasonSans,sans-serif;color:#939aa6;margin-top:6px}
+.contact-dialog__arrow{display:block;font:350 27px/1 overusedGrotesk,sans-serif;color:#dce5f0;transition:transform .25s}
+.contact-dialog__action:hover .contact-dialog__arrow{transform:translate(2px,-2px)}
+.contact-dialog__action--primary .contact-dialog__arrow{color:#ffd44b}
+.contact-dialog__bottom{margin-top:28px;padding-top:18px;border-top:1px solid #ffffff16;display:flex;justify-content:space-between;align-items:center;gap:16px;font:400 9px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.03em;color:#787e88}
+.contact-dialog__bottom a{color:#a7acb5;transition:color .2s}.contact-dialog__bottom a:hover{color:#fff}
+.contact-dialog[open]{animation:contact-arrive .3s ease-out both}
+@keyframes contact-arrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:743px){.contact-dialog{padding:28px 24px;border-radius:16px;max-height:calc(100svh - 32px)}.contact-dialog .dialog-close{right:15px;top:15px;width:32px;height:32px}.contact-dialog__brand{gap:10px}.contact-dialog__brand img{width:26px;height:26px}.contact-dialog .dialog-eyebrow{font-size:8px}.contact-dialog h2{font-size:40px;margin-top:32px}.contact-dialog .contact-dialog__description{font-size:16px;margin-bottom:25px}.contact-dialog__action{padding:18px 16px;gap:12px}.contact-dialog__action strong{font-size:18px}.contact-dialog__action small{font-size:12px}.contact-dialog__bottom{font-size:8px;gap:12px;margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.contact-dialog[open]{animation:none}.contact-dialog__arrow{transition:none}}

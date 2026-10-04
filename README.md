@@ -9,10 +9,11 @@ Run `python3 -m http.server 4173 --directory dist` and open http://127.0.0.1:417
 ## Implementation
 
 - Local Season Sans, Overused Grotesk, Manrope, and Instrument Serif typography.
-- Animated About card flips and interactive SVG statistics, achievement card, service videos, skills folders, process stepper, testimonial carousel, and metallic footer.
+- Animated About card flips and interactive SVG statistics, achievement card, service videos, skills folders, process stepper, and testimonial carousel.
+- Option A pixel footer: generated blue ribbon texture, sampled pixel shimmer, slow light sweep, gentle pointer movement, and natural-proportion live typography with a vertical white fade and linear entrance reveal. Animation pauses offscreen, respects reduced motion, and has a pause control.
 - Generated About prisms, achievement hand, and Blitz footer emblem, served as responsive WebP assets. Original images and generation prompts are retained in the workspace's `output/website-v2` folder.
 - Blitz portfolio reel and six project previews. Five existing client testimonials and sixteen client logos sourced from the previous Blitz website.
-- Contact dialog links to the existing studio email and Calendly. No form backend required.
+- Contact dialog uses matching dark pixel texture, bold live typography, and distinct call/email actions linking to the existing studio email and Calendly. No form backend required.
 - Keyboard controls, native dialogs, reduced-motion handling, and responsive navigation.
 
 ## Content
