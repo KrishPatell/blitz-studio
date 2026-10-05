@@ -1,5 +1,5 @@
 /* Option A: live typography over an animated pixel atmosphere. */
-.pixel-footer{position:relative;isolation:isolate;background:#000;color:#fff;overflow:hidden;border-top:1px solid #151515;font-family:seasonSans,sans-serif}
+.pixel-footer{position:relative;isolation:isolate;background:#000;color:#fff;overflow:hidden;border-top:1px solid #151515;font-family:Manrope,sans-serif}
 .pixel-footer__atmosphere{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
 .pixel-footer__texture{position:absolute;width:calc(100% + 40px);height:calc(100% + 40px);max-width:none;left:-20px;top:-20px;object-fit:cover;object-position:center 43%;opacity:.88;transform:translate3d(var(--footer-x,0px),var(--footer-y,0px),0);transition:transform 1.8s cubic-bezier(.2,.65,.3,1);will-change:transform}
 .pixel-footer__atmosphere::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 22%,#0000 48%,#0005 75%,#000 99%)}

@@ -10,13 +10,13 @@
 .contact-dialog .dialog-eyebrow::before{content:"";width:5px;height:5px;background:#ffd44b;border-radius:50%}
 .contact-dialog h2{font:600 clamp(40px,5vw,62px)/1.02 overusedGrotesk,sans-serif;letter-spacing:-.045em;margin:38px 0 18px;color:#fff}
 .contact-dialog h2 span{color:#aeb3bc}
-.contact-dialog .contact-dialog__description{font:400 17px/1.5 seasonSans,sans-serif;letter-spacing:-.015em;color:#929aa7;max-width:410px;margin:0 0 30px}
+.contact-dialog .contact-dialog__description{font:400 17px/1.5 Manrope,sans-serif;letter-spacing:-.015em;color:#929aa7;max-width:410px;margin:0 0 30px}
 .contact-dialog__actions{display:grid;gap:12px}
 .contact-dialog__action{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 22px;border:1px solid #ffffff24;border-radius:8px;background:#ffffff04;color:#fff;transition:background .25s,border-color .25s}
 .contact-dialog__action:hover{background:#ffffff0a;border-color:#ffffff70}
 .contact-dialog__action--primary{border-color:#ffffff70;background:#ffffff0b}
 .contact-dialog__action strong{display:block;font:500 20px/1.2 overusedGrotesk,sans-serif;letter-spacing:-.015em}
-.contact-dialog__action small{display:block;font:400 13px/1.5 seasonSans,sans-serif;color:#939aa6;margin-top:6px}
+.contact-dialog__action small{display:block;font:400 13px/1.5 Manrope,sans-serif;color:#939aa6;margin-top:6px}
 .contact-dialog__arrow{display:block;font:350 27px/1 overusedGrotesk,sans-serif;color:#dce5f0;transition:transform .25s}
 .contact-dialog__action:hover .contact-dialog__arrow{transform:translate(2px,-2px)}
 .contact-dialog__action--primary .contact-dialog__arrow{color:#ffd44b}

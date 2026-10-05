@@ -1,0 +1,42 @@
+:root{--font-copy:Manrope,Arial,sans-serif;--font-display:overusedGrotesk,Arial,sans-serif}
+.about-aboutHeading,.achievement-heading,.services-servicesHeading,.skillscoverage-skillsHeading,.ourprocess-heading,.casestudy-heading,.testimonials-heading,.ourclients-heading{font-family:var(--font-display);font-weight:500;letter-spacing:-.025em}
+.services-servicesHeading{line-height:1.12}.services-servicesHeadingAccentGlow{display:none}
+.services-serviceCardTitle,.skillscoverage-skillsCardTitle{font-family:var(--font-display);font-weight:500}
+.skillscoverage-skillsGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.services-hoverVideoClip{opacity:1!important;transition:opacity .3s}
+.services-serviceCardMedia{position:relative}
+.service-playback{position:absolute;right:14px;bottom:14px;z-index:5;width:34px;height:34px;border:1px solid #ffffff50;border-radius:50%;background:#0a0d14c4;color:#fff;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px);opacity:.7;transition:opacity .2s,background .2s;font:400 12px/1 Manrope,sans-serif}
+.service-playback:hover,.service-playback:focus-visible{opacity:1;background:#111}.service-playback span{display:block;letter-spacing:-3px;padding-right:3px}
+.casestudy-grid{--cs-scatter-progress:1;--cs-scatter-x-6:35px;--cs-scatter-y-6:80px}
+.casestudy-cardCell:nth-child(6){--cs-scatter-x:var(--cs-scatter-x-6);--cs-scatter-y:var(--cs-scatter-y-6)}
+.casestudy-cardCell,.casestudy-cardCell[data-revealed]{opacity:1;animation:none!important;transform:translate3d(calc(var(--cs-scatter-x,0px) * (1 - var(--cs-scatter-progress,1))),calc(var(--cs-scatter-y,0px) * (1 - var(--cs-scatter-progress,1))),0)}
+.casestudy-grid[data-scatter-active="true"] .casestudy-cardCell{will-change:transform}
+.casestudy-card{transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1);transform:translateY(0)}
+.casestudy-cardMockupImage{transition:transform .65s cubic-bezier(.22,1,.36,1)}
+.casestudy-card:hover,.casestudy-card:focus-visible{transform:translateY(-5px);box-shadow:0 12px 34px -12px #11243c35}
+.casestudy-card:hover .casestudy-cardMockupImage,.casestudy-card:focus-visible .casestudy-cardMockupImage{transform:scale(1.025)}
+.achievement-captionGroup{width:min(900px,calc(100% - 56px))}
+.achievement-captionTitle{font-family:var(--font-display);font-weight:500}.achievement-captionBody{font-family:var(--font-copy);font-weight:400}
+.achievement-clientLogo{height:38px;width:190px}.achievement-clientLogo img{object-fit:contain;width:100%;height:100%}
+.achievement-rankCard{--achievement-card-width:220px;--achievement-card-height:176px;--achievement-card-text-width:190px}
+.achievement-rankCardFlipper{transition:transform .65s cubic-bezier(.22,1,.36,1)}
+.partner-cardBadge{display:block;width:100%;height:auto;margin:0 auto 15px}
+.partner-cardLabel{display:block;font:500 23px/1.15 overusedGrotesk,sans-serif;letter-spacing:-.02em}
+.partner-tapHint{position:absolute;top:calc(100% + 14px);left:0;width:100%;text-align:center;font:400 10px/1.4 Manrope,sans-serif;letter-spacing:.04em;color:#ffffff75;white-space:nowrap;pointer-events:none}
+.contact-dialog[open]{animation:dialog-appear .32s ease-out both}
+.contact-dialog::backdrop{animation:dialog-appear .35s ease-out both}
+.contact-dialog[open] .contact-dialog__brand{animation:dialog-content .48s cubic-bezier(.22,1,.36,1) .04s both}
+.contact-dialog[open] h2{animation:dialog-content .55s cubic-bezier(.22,1,.36,1) .09s both}
+.contact-dialog[open] .contact-dialog__description{animation:dialog-content .55s cubic-bezier(.22,1,.36,1) .14s both}
+.contact-dialog[open] .contact-dialog__action:first-child{animation:dialog-content .55s cubic-bezier(.22,1,.36,1) .2s both}
+.contact-dialog[open] .contact-dialog__action:nth-child(2){animation:dialog-content .55s cubic-bezier(.22,1,.36,1) .25s both}
+.contact-dialog[open] .contact-dialog__bottom{animation:dialog-content .55s cubic-bezier(.22,1,.36,1) .3s both}
+.blitz-dialog[data-closing]{animation:dialog-disappear .18s ease-in both!important;pointer-events:none}
+.blitz-dialog[data-closing]::backdrop{animation:dialog-disappear .18s ease-in both}
+@keyframes dialog-appear{from{opacity:0}to{opacity:1}}
+@keyframes dialog-content{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes dialog-disappear{from{opacity:1}to{opacity:0}}
+@media(min-width:1024px){.achievement-captionTitle,.achievement-captionBody{white-space:nowrap}}
+@media(min-width:744px) and (max-width:1023px){.skillscoverage-skillsGrid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px}}
+@media(max-width:743px){.skillscoverage-skillsGrid{grid-template-columns:minmax(0,1fr);max-width:380px}.achievement-rankCard{--achievement-card-width:190px;--achievement-card-height:166px;--achievement-card-text-width:158px}.achievement-clientLogo{width:164px;height:33px}.partner-cardLabel{font-size:20px}.casestudy-cardCell{transform:none!important}.services-servicesHeading br{display:none}.partner-tapHint{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.casestudy-cardCell,.casestudy-card,.casestudy-cardMockupImage{transform:none!important;transition:none!important}.contact-dialog[open],.contact-dialog[open] *,.contact-dialog::backdrop,.blitz-dialog[data-closing],.blitz-dialog[data-closing]::backdrop{animation:none!important}.achievement-rankCardFlipper{transition-duration:1ms}}
