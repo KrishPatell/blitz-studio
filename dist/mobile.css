@@ -2,7 +2,6 @@
 body.page-locked{position:fixed;top:var(--locked-scroll,0);left:0;right:0;width:100%;overflow:hidden}
 .blitz-dialog{max-height:calc(100svh - 32px);overscroll-behavior:contain}
 .project-dialog h2{font-family:var(--font-display)}
-.service-playback{width:44px;height:44px}
 .dialog-close,.contact-dialog .dialog-close{width:44px;height:44px}
 .topbar-mobileMenuButton{min-width:44px;min-height:44px}
 .services-hoverVideoClip{background:transparent}
@@ -30,3 +29,6 @@ body.page-locked{position:fixed;top:var(--locked-scroll,0);left:0;right:0;width:
 /* Keep dismissal available when a short screen needs internal dialog scrolling. */
 @media(max-height:700px){.blitz-dialog .dialog-close{position:sticky;float:right;top:0;right:auto;margin:-10px -10px -34px 0;z-index:4}}
 @media(max-height:700px){.contact-dialog .dialog-close{background:#090b0e;box-shadow:0 0 0 5px #090b0e}}
+
+/* First-screen content appears immediately on phones instead of waiting through staggered entrances. */
+@media(max-width:743px){.hero-testimonialCta,.hero-heroHeading,.hero-heroDescription,.hero-heroActions,.hero-videoPlayerFrame,.hero-socialRail{animation:none}.hero-heroDescription{opacity:.8}}

@@ -1,11 +1,21 @@
 [
   {
-    "file": "dist/assets/blitz-reel-mobile.mp4",
-    "bytes": 917595,
+    "file": "dist/assets/blitz-reel-desktop.mp4",
+    "bytes": 1041770,
     "codec": "h264",
     "pixel_format": "yuv420p",
-    "width": 720,
-    "height": 360,
+    "width": 960,
+    "height": 480,
+    "duration": "18.000000",
+    "faststart": true
+  },
+  {
+    "file": "dist/assets/blitz-reel-mobile.mp4",
+    "bytes": 457805,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "width": 640,
+    "height": 320,
     "duration": "18.000000",
     "faststart": true
   },
@@ -20,6 +30,16 @@
     "faststart": true
   },
   {
+    "file": "dist/assets/reference/service-launch-video.v2-mobile.mp4",
+    "bytes": 101533,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "width": 640,
+    "height": 388,
+    "duration": "11.583008",
+    "faststart": true
+  },
+  {
     "file": "dist/assets/reference/service-launch-video.v2.mp4",
     "bytes": 424176,
     "codec": "h264",
@@ -30,23 +50,13 @@
     "faststart": true
   },
   {
-    "file": "dist/assets/reference/service-mvp-design.mp4",
-    "bytes": 979449,
+    "file": "dist/assets/reference/service-marketing-materials-mobile.mp4",
+    "bytes": 63239,
     "codec": "h264",
     "pixel_format": "yuv420p",
-    "width": 1280,
-    "height": 542,
-    "duration": "19.700000",
-    "faststart": true
-  },
-  {
-    "file": "dist/assets/reference/service-website-design.v2.mp4",
-    "bytes": 552320,
-    "codec": "h264",
-    "pixel_format": "yuv420p",
-    "width": 1280,
-    "height": 776,
-    "duration": "9.033333",
+    "width": 640,
+    "height": 322,
+    "duration": "6.041667",
     "faststart": true
   },
   {
@@ -60,6 +70,36 @@
     "faststart": true
   },
   {
+    "file": "dist/assets/reference/service-mvp-design-mobile.mp4",
+    "bytes": 217103,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "width": 640,
+    "height": 272,
+    "duration": "19.708008",
+    "faststart": true
+  },
+  {
+    "file": "dist/assets/reference/service-mvp-design.mp4",
+    "bytes": 979449,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "width": 1280,
+    "height": 542,
+    "duration": "19.700000",
+    "faststart": true
+  },
+  {
+    "file": "dist/assets/reference/service-total-revamp-mobile.mp4",
+    "bytes": 70352,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "width": 640,
+    "height": 420,
+    "duration": "7.041667",
+    "faststart": true
+  },
+  {
     "file": "dist/assets/reference/service-total-revamp.mp4",
     "bytes": 269669,
     "codec": "h264",
@@ -67,6 +107,26 @@
     "width": 1280,
     "height": 838,
     "duration": "7.033008",
+    "faststart": true
+  },
+  {
+    "file": "dist/assets/reference/service-website-design.v2-mobile.mp4",
+    "bytes": 115438,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "width": 640,
+    "height": 388,
+    "duration": "9.041667",
+    "faststart": true
+  },
+  {
+    "file": "dist/assets/reference/service-website-design.v2.mp4",
+    "bytes": 552320,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "width": 1280,
+    "height": 776,
+    "duration": "9.033333",
     "faststart": true
   }
 ]

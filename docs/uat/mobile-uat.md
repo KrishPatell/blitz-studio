@@ -4,6 +4,8 @@
 
 Tested the actual static site in the Codex browser (Chromium 154) with isolated browser frames at 320×568, 375×667, 414×736, 667×375 landscape, and 768×900, plus the normal 1280×720 desktop viewport. These are rendered breakpoint and interaction tests, not physical iPhone/Android certification. Device-specific battery-saving, network, and Safari behavior remain dependent on the user's device. H.264 files and media fallback behavior are provided for compatibility; a physical Safari run was not available.
 
+The autoplay follow-up supersedes manual playback controls and video preference gating in this earlier test run; see [autoplay-loading.md](autoplay-loading.md) for current behavior.
+
 ## Issues fixed
 
 - The five service previews fetched and decoded their WebM files even while far below the viewport. They now prepare URLs near their section, autoplay only while visible, and pause offscreen. Explicit pause is preserved. Data-saving and reduced-motion preferences permit manual playback.

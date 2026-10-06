@@ -32,10 +32,15 @@ videos=[a for tag,a in p.tags if tag=='video'];assert len(videos)==6
 previews=[a for a in videos if 'services-hoverVideoClip' in a.get('class','')]
 assert len(previews)==5
 assert all(a.get('preload')=='none' and 'autoplay' not in a for a in previews),'offscreen previews eagerly load'
-mp4=[a['data-src'] for tag,a in p.tags if tag=='source' and a.get('type')=='video/mp4' and 'data-src' in a];assert len(mp4)==5
+mp4=[a['data-src'] for tag,a in p.tags if tag=='source' and a.get('type')=='video/mp4' and 'data-src' in a];assert len(mp4)==12
+assert all('controls' not in a for a in videos),'native video controls present'
+assert not any(any(c in a.get('class','') for c in ['service-playback','hero-videoPlayerPlayButton','hero-videoPlayerHitArea']) for tag,a in p.tags),'video control markup present'
+assert all('src' not in a for tag,a in p.tags if tag=='source'),'video requests before viewport preparation'
 assert (root/'assets/blitz-reel-mobile.mp4').stat().st_size<(root/'assets/blitz-reel.mp4').stat().st_size
 assert len([a for tag,a in p.tags if 'skillscoverage-skillsCardCell' in a.get('class','')])==6
-assert len([a for tag,a in p.tags if a.get('rel')=='stylesheet'])==1
+assert not [a for tag,a in p.tags if a.get('rel')=='stylesheet'],'blocking CSS round trip'
+assert len([a for tag,a in p.tags if tag=='style' and a.get('id')=='site-styles'])==1
+assert len(gzip.compress(html.encode()))<100000,'HTML plus inline CSS compressed budget'
 assert len([a for tag,a in p.tags if a.get('name')=='viewport'])==1
 assert not any('seasonSans' in p.read_text() for p in root.glob('*.css'))
 assert len(gzip.compress((root/'site.css').read_bytes()))<50000,'CSS compressed budget'

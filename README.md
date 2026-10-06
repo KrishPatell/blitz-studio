@@ -17,8 +17,8 @@ Open `http://127.0.0.1:4173`. Deploy the `dist/` directory to static hosting; th
 ## Editing
 
 - `dist/index.html`: content and markup.
-- `dist/app.js`: navigation, About cards and statistics, service playback, process steps, partner card, testimonial carousel, and native project/contact dialogs.
-- `dist/styles.css`, `blitz.css`, `footer.css`, `contact.css`, `refinements.css`, `mobile.css`: source styles. `npm run build` combines them into the versioned `dist/site.css` and versions scripts.
+- `dist/app.js`: navigation, About cards and statistics, service autoplay, process steps, partner card, testimonial carousel, and native project/contact dialogs.
+- `dist/styles.css`, `blitz.css`, `footer.css`, `contact.css`, `refinements.css`, `mobile.css`: source styles. `npm run build` combines them into `dist/site.css`, inlines the styles in HTML to remove a blocking request, and versions scripts/media.
 - `dist/footer.js`, `case-study-motion.js`: footer pixels and scroll animation. Motion pauses offscreen and respects reduced-motion preferences.
 - `content/testimonials.json`: the existing client quotes and their source. Add only approved attributed quotes.
 - `docs/uat/mobile-uat.md`: mobile testing scope, fixes, results, and limitations.
@@ -27,7 +27,7 @@ All production resources are local. The only external destinations are Webflow, 
 
 ## Loading and media
 
-Service previews prepare their sources near the viewport and autoplay while visible. Explicit pause is retained. Reduced-motion and data-saving preferences suppress automatic playback while allowing manual play. H.264 MP4 is the primary service format; original WebM files remain as fallback/authoring assets. Phones receive a 720px portfolio reel.
+Videos are decorative: muted, inline, looping autoplay with no play/pause buttons, click overlays, or native controls. Each starts when visible and pauses offscreen/background to avoid unnecessary decoding. The hero waits until after first paint before preparing its URLs. Phone visitors receive 640px H.264 variants; desktops receive the optimized 960px hero and existing 1280px service previews. A visible portfolio poster appears while the hero loads. Browser policies can still block autoplay (for example, iOS Low Power Mode); an ordinary page interaction retries playback without adding video controls.
 
 Images have responsive WebP derivatives, local posters, explicit dimensions, asynchronous decoding, and lazy loading. Original artwork is retained. The footer samples the selected responsive texture only when visible and draws at about 30 fps with capped pixel density.
 
@@ -36,7 +36,7 @@ Optional media regeneration:
 ```sh
 npm ci
 npm run optimize:images
-# Requires ffmpeg with libx264:
+# Requires ffmpeg with libx264 and the installed sharp development dependency:
 python3 scripts/optimize-video.py
 npm run build
 npm run verify

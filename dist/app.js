@@ -2,8 +2,6 @@
 const $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>[...root.querySelectorAll(s)];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const onPreferenceChange=(preference,handler)=>preference.addEventListener?preference.addEventListener('change',handler):preference.addListener(handler);
-const connection=navigator.connection;
-const savingData=()=>Boolean(connection?.saveData);
 const reveal=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.setAttribute('data-revealed','');reveal.unobserve(e.target)}}),{threshold:.08});
 $$('[data-reveal]').forEach(e=>reveal.observe(e));
 // Reference's four layered SVG stacks respond to hover, keyboard focus, and touch.
@@ -30,23 +28,25 @@ function setNav(hash){currentNav=hash;nav.forEach(a=>{const active=a.hash===hash
 const navSections=['home','about','services','our-process','case-study','testimonials'];
 function updateNav(){let id='home';for(const key of navSections.slice(1)){const el=$('#'+key);if(el.getBoundingClientRect().top<innerHeight*.4)id=key}if(currentNav!=='#'+id)setNav('#'+id);shell.dataset.scrolled=String(scrollY>30)}
 let navFrame=0;addEventListener('scroll',()=>{if(!navFrame)navFrame=requestAnimationFrame(()=>{navFrame=0;updateNav()})},{passive:true});addEventListener('resize',()=>setNav(currentNav));document.fonts.ready.then(()=>setNav(currentNav));setNav(currentNav);
-// Muted service previews start when visible; explicit pause survives viewport changes.
+// Decorative videos autoplay only while visible, with sources selected for the viewport.
 const serviceClips=[];
+function configureVideo(video){video.muted=true;video.defaultMuted=true;video.playsInline=true;video.controls=false;video.autoplay=true;video.loop=true}
+function requestPlayback(video){if(!video.paused)return;const pending=video.play();if(pending)pending.catch(()=>{});}
+function prepareVideo(video){
+ if(video.dataset.prepared)return;
+ video.dataset.prepared='true';
+ if(video.dataset.poster)video.poster=video.dataset.poster;
+ $$('source[data-src]',video).forEach(source=>{if(!source.media||matchMedia(source.media).matches)source.src=source.dataset.src});
+ video.preload='auto';video.load();
+}
 $$('.services-serviceCard').forEach(card=>{
- const video=$('video',card),button=$('.service-playback',card);if(!video||!button)return;
- const label=$('.services-serviceCardTitle',card)?.textContent.trim()||'service';
- const clip={video,visible:false,prepared:false,manualPause:false,manualPlay:false};serviceClips.push(clip);
- video.muted=true;video.defaultMuted=true;video.classList.add('services-hoverVideoClipVisible');
- function sync(){button.setAttribute('aria-label',(video.paused?'Play ':'Pause ')+label+' preview');button.setAttribute('aria-pressed',String(video.paused));$('span',button).textContent=video.paused?'▶':'Ⅱ'}
- clip.prepare=()=>{if(clip.prepared)return;clip.prepared=true;if(video.dataset.poster)video.poster=video.dataset.poster;$$('source[data-src]',video).forEach(source=>{source.src=source.dataset.src});video.preload='metadata';video.load()};
- clip.update=()=>{if(clip.visible&&!document.hidden&&!clip.manualPause&&((!reduced.matches&&!savingData())||clip.manualPlay)){clip.prepare();video.play().catch(sync)}else video.pause();sync()};
- button.addEventListener('click',e=>{e.stopPropagation();clip.manualPause=!video.paused;clip.manualPlay=!clip.manualPause;clip.update()});
- video.addEventListener('play',sync);video.addEventListener('pause',sync);
- new IntersectionObserver(entries=>{if(entries[0].isIntersecting&&!savingData())clip.prepare()},{rootMargin:'200px 0px'}).observe(card);
- new IntersectionObserver(entries=>{clip.visible=entries[0].isIntersecting;clip.update()},{threshold:.1}).observe(card);
- sync();
+ const video=$('video',card);if(!video)return;
+ const clip={video,visible:false};serviceClips.push(clip);configureVideo(video);
+ video.classList.add('services-hoverVideoClipVisible');
+ clip.update=()=>{if(clip.visible&&!document.hidden){prepareVideo(video);requestPlayback(video)}else video.pause()};
+ video.addEventListener('loadeddata',clip.update);
+ new IntersectionObserver(entries=>{clip.visible=entries[0].isIntersecting;clip.update()},{threshold:.1}).observe(video);
 });
-onPreferenceChange(reduced,()=>serviceClips.forEach(clip=>clip.update()));
 $$('.skillscoverage-skillsCardCell').forEach(cell=>{cell.tabIndex=0;cell.setAttribute('role','button');cell.setAttribute('aria-label','Discuss '+($('.skillscoverage-skillsCardTitle',cell)?.textContent||'this service'));cell.addEventListener('click',()=>openDialog($('#contact-dialog')));cell.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openDialog($('#contact-dialog'))}})});
 // Process: one six-second cycle per step, with explicit manual selection.
 let processIndex=0,processVisible=false,processPaused=false,processTimer;
@@ -62,15 +62,15 @@ const rank=$('.achievement-rankCard'),flipper=$('.achievement-rankCardFlipper');
 function advanceAchievement(){achievementIndex=(achievementIndex+1)%3;turns++;const faces=$$('.achievement-rankCardText');faces[turns%2].innerHTML=highlights[achievementIndex][0];flipper.style.transform=`rotateY(${turns*180}deg)`;$$('.achievement-captionTitle,.achievement-captionBody').forEach((el,i)=>{const active=i%3===achievementIndex;el.dataset.active=String(active);el.setAttribute('aria-hidden',String(!active))});scheduleAchievement()}
 function scheduleAchievement(){clearTimeout(achTimer);if(achVisible&&!achFocused&&!reduced.matches&&!document.hidden)achTimer=setTimeout(advanceAchievement,6500)}
 rank.addEventListener('focusin',()=>{achFocused=true;clearTimeout(achTimer)});rank.addEventListener('focusout',()=>{achFocused=false;scheduleAchievement()});rank.addEventListener('click',advanceAchievement);rank.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();advanceAchievement()}});rank.addEventListener('pointerenter',()=>{rank.dataset.poke='true';clearTimeout(achTimer)});rank.addEventListener('pointerleave',()=>{rank.dataset.poke='false';scheduleAchievement()});new IntersectionObserver(entries=>{achVisible=entries[0].isIntersecting;scheduleAchievement()},{threshold:.25}).observe($('#achievements'));
-// Hero portfolio reel controls.
-const reel=$('.video-player'),reelFrame=$('.hero-videoPlayerFrame'),playButton=$('.hero-videoPlayerPlayButton');
-function syncVideo(){playButton.classList.toggle('hero-videoPlayerPlayButtonHidden',!reel.paused);$$('.hero-videoPlayerPlayButton,.hero-videoPlayerHitArea').forEach(b=>b.setAttribute('aria-label',reel.paused?'Play Blitz Studio portfolio reel':'Pause Blitz Studio portfolio reel'))}
-let reelVisible=false,reelManualPause=false,reelManualPlay=false;
-function updateReel(){if(reelVisible&&!document.hidden&&!reelManualPause&&((!reduced.matches&&!savingData())||reelManualPlay))reel.play().catch(syncVideo);else reel.pause()}
-function toggleVideo(){reelManualPause=!reel.paused;reelManualPlay=!reelManualPause;updateReel()}
-$$('.hero-videoPlayerPlayButton,.hero-videoPlayerHitArea').forEach(b=>b.addEventListener('click',toggleVideo));reel.addEventListener('play',syncVideo);reel.addEventListener('pause',syncVideo);syncVideo();if(reduced.matches)reel.pause();
+// Start the hero after first paint; never fetch a hidden reel on initial load.
+const reel=$('.video-player'),reelFrame=$('.hero-videoPlayerFrame');
+let reelVisible=false,reelReady=false;configureVideo(reel);
+function updateReel(){if(reelReady&&reelVisible&&!document.hidden){prepareVideo(reel);requestPlayback(reel)}else reel.pause()}
+reel.addEventListener('loadeddata',updateReel);
 new IntersectionObserver(entries=>{reelVisible=entries[0].isIntersecting;updateReel()},{threshold:.15}).observe(reelFrame);
-onPreferenceChange(reduced,updateReel);
+requestAnimationFrame(()=>requestAnimationFrame(()=>{reelReady=true;updateReel()}));
+// Retry a browser-blocked autoplay on an ordinary page interaction, without a video control.
+for(const event of ['pointerdown','keydown'])document.addEventListener(event,()=>{updateReel();serviceClips.forEach(clip=>clip.update())},{passive:true});
 // Genuine Blitz client testimonials, native scrolling and keyboard controls.
 const viewport=$('.testimonials-viewport'),slides=$$('.testimonials-slide'),pills=$$('.testimonials-pill'),arrows=$$('.testimonials-arrow');
 function slideWidth(){return slides[0].getBoundingClientRect().width+parseFloat(getComputedStyle($('.testimonials-track')).gap||0)}
