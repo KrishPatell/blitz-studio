@@ -6,5 +6,5 @@
  function tick(){current+=(target-current)*.12;if(Math.abs(target-current)<.001)current=target;grid.style.setProperty('--cs-scatter-progress',current.toFixed(4));grid.dataset.scatterActive=String(current<.999);if(current!==target)frame=requestAnimationFrame(tick);else frame=0}
  function update(){target=position();if(!frame)frame=requestAnimationFrame(tick)}
  current=target=position();grid.style.setProperty('--cs-scatter-progress',current.toFixed(4));grid.dataset.scatterActive=String(current<.999);
- addEventListener('scroll',update,{passive:true});addEventListener('resize',update);document.fonts.ready.then(update);preference.addEventListener('change',update);
+ addEventListener('scroll',update,{passive:true});addEventListener('resize',update);document.fonts.ready.then(update);if(preference.addEventListener)preference.addEventListener('change',update);else preference.addListener(update);
 })();

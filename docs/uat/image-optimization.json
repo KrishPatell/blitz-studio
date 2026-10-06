@@ -1,0 +1,707 @@
+[
+  {
+    "source": "assets/remotedesk.jpeg",
+    "bytes": 299655,
+    "variants": [
+      {
+        "path": "assets/remotedesk-480.webp",
+        "width": 480,
+        "bytes": 31746
+      },
+      {
+        "path": "assets/remotedesk-960.webp",
+        "width": 960,
+        "bytes": 85258
+      },
+      {
+        "path": "assets/remotedesk-1440.webp",
+        "width": 1440,
+        "bytes": 147602
+      },
+      {
+        "path": "assets/remotedesk-1600.webp",
+        "width": 1600,
+        "bytes": 175684
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/service-total-revamp.png",
+    "bytes": 27687,
+    "variants": [
+      {
+        "path": "assets/reference/service-total-revamp-480.webp",
+        "width": 480,
+        "bytes": 768
+      },
+      {
+        "path": "assets/reference/service-total-revamp-960.webp",
+        "width": 960,
+        "bytes": 2054
+      },
+      {
+        "path": "assets/reference/service-total-revamp-1440.webp",
+        "width": 1440,
+        "bytes": 3616
+      },
+      {
+        "path": "assets/reference/service-total-revamp-1600.webp",
+        "width": 1600,
+        "bytes": 4338
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/service-total-revamp-poster.png",
+    "bytes": 16141,
+    "variants": [
+      {
+        "path": "assets/reference/service-total-revamp-poster-480.webp",
+        "width": 480,
+        "bytes": 796
+      },
+      {
+        "path": "assets/reference/service-total-revamp-poster-960.webp",
+        "width": 960,
+        "bytes": 2140
+      },
+      {
+        "path": "assets/reference/service-total-revamp-poster-1200.webp",
+        "width": 1200,
+        "bytes": 2814
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/service-mvp-design-poster.png",
+    "bytes": 35547,
+    "variants": [
+      {
+        "path": "assets/reference/service-mvp-design-poster-480.webp",
+        "width": 480,
+        "bytes": 2100
+      },
+      {
+        "path": "assets/reference/service-mvp-design-poster-960.webp",
+        "width": 960,
+        "bytes": 4550
+      },
+      {
+        "path": "assets/reference/service-mvp-design-poster-1200.webp",
+        "width": 1200,
+        "bytes": 6004
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/service-website-design.v2-poster.png",
+    "bytes": 115591,
+    "variants": [
+      {
+        "path": "assets/reference/service-website-design.v2-poster-480.webp",
+        "width": 480,
+        "bytes": 4338
+      },
+      {
+        "path": "assets/reference/service-website-design.v2-poster-960.webp",
+        "width": 960,
+        "bytes": 9960
+      },
+      {
+        "path": "assets/reference/service-website-design.v2-poster-1200.webp",
+        "width": 1200,
+        "bytes": 12882
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/service-launch-video.v2-poster.png",
+    "bytes": 44914,
+    "variants": [
+      {
+        "path": "assets/reference/service-launch-video.v2-poster-480.webp",
+        "width": 480,
+        "bytes": 2178
+      },
+      {
+        "path": "assets/reference/service-launch-video.v2-poster-960.webp",
+        "width": 960,
+        "bytes": 5092
+      },
+      {
+        "path": "assets/reference/service-launch-video.v2-poster-1200.webp",
+        "width": 1200,
+        "bytes": 6666
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/uiux-001.png",
+    "bytes": 178625,
+    "variants": [
+      {
+        "path": "assets/reference/uiux-001-480.webp",
+        "width": 480,
+        "bytes": 31962
+      },
+      {
+        "path": "assets/reference/uiux-001-756.webp",
+        "width": 756,
+        "bytes": 65470
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/nocode-002.png",
+    "bytes": 355652,
+    "variants": [
+      {
+        "path": "assets/reference/nocode-002-480.webp",
+        "width": 480,
+        "bytes": 30706
+      },
+      {
+        "path": "assets/reference/nocode-002-725.webp",
+        "width": 725,
+        "bytes": 54468
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/nocode-001.png",
+    "bytes": 233740,
+    "variants": [
+      {
+        "path": "assets/reference/nocode-001-480.webp",
+        "width": 480,
+        "bytes": 23478
+      },
+      {
+        "path": "assets/reference/nocode-001-725.webp",
+        "width": 725,
+        "bytes": 42804
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/graphic-001.png",
+    "bytes": 427844,
+    "variants": [
+      {
+        "path": "assets/reference/graphic-001-480.webp",
+        "width": 480,
+        "bytes": 42922
+      },
+      {
+        "path": "assets/reference/graphic-001-725.webp",
+        "width": 725,
+        "bytes": 79406
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/graphic-002.png",
+    "bytes": 534815,
+    "variants": [
+      {
+        "path": "assets/reference/graphic-002-480.webp",
+        "width": 480,
+        "bytes": 37120
+      },
+      {
+        "path": "assets/reference/graphic-002-725.webp",
+        "width": 725,
+        "bytes": 70134
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/illustration-002.png",
+    "bytes": 578672,
+    "variants": [
+      {
+        "path": "assets/reference/illustration-002-480.webp",
+        "width": 480,
+        "bytes": 45026
+      },
+      {
+        "path": "assets/reference/illustration-002-725.webp",
+        "width": 725,
+        "bytes": 79984
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/illustration-001.png",
+    "bytes": 671318,
+    "variants": [
+      {
+        "path": "assets/reference/illustration-001-480.webp",
+        "width": 480,
+        "bytes": 56758
+      },
+      {
+        "path": "assets/reference/illustration-001-725.webp",
+        "width": 725,
+        "bytes": 101162
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/brand-002.png",
+    "bytes": 99017,
+    "variants": [
+      {
+        "path": "assets/reference/brand-002-480.webp",
+        "width": 480,
+        "bytes": 18606
+      },
+      {
+        "path": "assets/reference/brand-002-725.webp",
+        "width": 725,
+        "bytes": 33262
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/process-onboarding.png",
+    "bytes": 1915318,
+    "variants": [
+      {
+        "path": "assets/reference/process-onboarding-480.webp",
+        "width": 480,
+        "bytes": 22652
+      },
+      {
+        "path": "assets/reference/process-onboarding-960.webp",
+        "width": 960,
+        "bytes": 58882
+      },
+      {
+        "path": "assets/reference/process-onboarding-1440.webp",
+        "width": 1440,
+        "bytes": 99186
+      },
+      {
+        "path": "assets/reference/process-onboarding-1600.webp",
+        "width": 1600,
+        "bytes": 112322
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/process-working.png",
+    "bytes": 498676,
+    "variants": [
+      {
+        "path": "assets/reference/process-working-480.webp",
+        "width": 480,
+        "bytes": 11290
+      },
+      {
+        "path": "assets/reference/process-working-960.webp",
+        "width": 960,
+        "bytes": 28818
+      },
+      {
+        "path": "assets/reference/process-working-1440.webp",
+        "width": 1440,
+        "bytes": 48774
+      },
+      {
+        "path": "assets/reference/process-working-1600.webp",
+        "width": 1600,
+        "bytes": 57084
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/process-communication.png",
+    "bytes": 481472,
+    "variants": [
+      {
+        "path": "assets/reference/process-communication-480.webp",
+        "width": 480,
+        "bytes": 16798
+      },
+      {
+        "path": "assets/reference/process-communication-960.webp",
+        "width": 960,
+        "bytes": 45230
+      },
+      {
+        "path": "assets/reference/process-communication-1440.webp",
+        "width": 1440,
+        "bytes": 75898
+      },
+      {
+        "path": "assets/reference/process-communication-1600.webp",
+        "width": 1600,
+        "bytes": 85322
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/process-delivery.png",
+    "bytes": 481168,
+    "variants": [
+      {
+        "path": "assets/reference/process-delivery-480.webp",
+        "width": 480,
+        "bytes": 11812
+      },
+      {
+        "path": "assets/reference/process-delivery-960.webp",
+        "width": 960,
+        "bytes": 31480
+      },
+      {
+        "path": "assets/reference/process-delivery-1440.webp",
+        "width": 1440,
+        "bytes": 54776
+      },
+      {
+        "path": "assets/reference/process-delivery-1600.webp",
+        "width": 1600,
+        "bytes": 63106
+      }
+    ]
+  },
+  {
+    "source": "assets/quickads.png",
+    "bytes": 271087,
+    "variants": [
+      {
+        "path": "assets/quickads-480.webp",
+        "width": 480,
+        "bytes": 23632
+      },
+      {
+        "path": "assets/quickads-960.webp",
+        "width": 960,
+        "bytes": 68150
+      },
+      {
+        "path": "assets/quickads-1440.webp",
+        "width": 1440,
+        "bytes": 123858
+      },
+      {
+        "path": "assets/quickads-1600.webp",
+        "width": 1600,
+        "bytes": 148310
+      }
+    ]
+  },
+  {
+    "source": "assets/tigerloans.jpg",
+    "bytes": 375199,
+    "variants": [
+      {
+        "path": "assets/tigerloans-480.webp",
+        "width": 480,
+        "bytes": 39916
+      },
+      {
+        "path": "assets/tigerloans-960.webp",
+        "width": 960,
+        "bytes": 111094
+      },
+      {
+        "path": "assets/tigerloans-1440.webp",
+        "width": 1440,
+        "bytes": 199624
+      },
+      {
+        "path": "assets/tigerloans-1600.webp",
+        "width": 1600,
+        "bytes": 236502
+      }
+    ]
+  },
+  {
+    "source": "assets/neonsundae.png",
+    "bytes": 316674,
+    "variants": [
+      {
+        "path": "assets/neonsundae-480.webp",
+        "width": 480,
+        "bytes": 10276
+      },
+      {
+        "path": "assets/neonsundae-960.webp",
+        "width": 960,
+        "bytes": 38504
+      },
+      {
+        "path": "assets/neonsundae-1368.webp",
+        "width": 1368,
+        "bytes": 78434
+      }
+    ]
+  },
+  {
+    "source": "assets/finergic.png",
+    "bytes": 177175,
+    "variants": [
+      {
+        "path": "assets/finergic-480.webp",
+        "width": 480,
+        "bytes": 17998
+      },
+      {
+        "path": "assets/finergic-960.webp",
+        "width": 960,
+        "bytes": 47666
+      },
+      {
+        "path": "assets/finergic-1440.webp",
+        "width": 1440,
+        "bytes": 80370
+      },
+      {
+        "path": "assets/finergic-1596.webp",
+        "width": 1596,
+        "bytes": 95652
+      }
+    ]
+  },
+  {
+    "source": "assets/carbonx.png",
+    "bytes": 52650,
+    "variants": [
+      {
+        "path": "assets/carbonx-480.webp",
+        "width": 480,
+        "bytes": 13580
+      },
+      {
+        "path": "assets/carbonx-960.webp",
+        "width": 960,
+        "bytes": 35714
+      },
+      {
+        "path": "assets/carbonx-1440.webp",
+        "width": 1440,
+        "bytes": 58596
+      },
+      {
+        "path": "assets/carbonx-1596.webp",
+        "width": 1596,
+        "bytes": 67840
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/C9iDNViWKpqElO0B1OIOV3608U.png",
+    "bytes": 140008,
+    "variants": [
+      {
+        "path": "assets/reference/C9iDNViWKpqElO0B1OIOV3608U-480.webp",
+        "width": 480,
+        "bytes": 17766
+      },
+      {
+        "path": "assets/reference/C9iDNViWKpqElO0B1OIOV3608U-646.webp",
+        "width": 646,
+        "bytes": 27982
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/dTjldewEGkXdLmm5wKsSHZzpXY.png",
+    "bytes": 314227,
+    "variants": [
+      {
+        "path": "assets/reference/dTjldewEGkXdLmm5wKsSHZzpXY-480.webp",
+        "width": 480,
+        "bytes": 19128
+      },
+      {
+        "path": "assets/reference/dTjldewEGkXdLmm5wKsSHZzpXY-960.webp",
+        "width": 960,
+        "bytes": 54804
+      },
+      {
+        "path": "assets/reference/dTjldewEGkXdLmm5wKsSHZzpXY-1074.webp",
+        "width": 1074,
+        "bytes": 72816
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/uiux-002.png",
+    "bytes": 57524,
+    "variants": [
+      {
+        "path": "assets/reference/uiux-002-396.webp",
+        "width": 396,
+        "bytes": 36218
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-uiux-figma.png",
+    "bytes": 70465,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-uiux-figma-368.webp",
+        "width": 368,
+        "bytes": 8858
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-nocode-framer.png",
+    "bytes": 74589,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-nocode-framer-368.webp",
+        "width": 368,
+        "bytes": 8962
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-nocode-webflow.png",
+    "bytes": 38121,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-nocode-webflow-368.webp",
+        "width": 368,
+        "bytes": 8008
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-graphic-photoshop.png",
+    "bytes": 19650,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-graphic-photoshop-368.webp",
+        "width": 368,
+        "bytes": 7792
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-graphic-sketchup.png",
+    "bytes": 64058,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-graphic-sketchup-368.webp",
+        "width": 368,
+        "bytes": 8796
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-graphic-figma.png",
+    "bytes": 70465,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-graphic-figma-368.webp",
+        "width": 368,
+        "bytes": 8858
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-illustration-photoshop.png",
+    "bytes": 19790,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-illustration-photoshop-368.webp",
+        "width": 368,
+        "bytes": 7786
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-illustration-illustrator.png",
+    "bytes": 25469,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-illustration-illustrator-368.webp",
+        "width": 368,
+        "bytes": 8066
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-illustration-figma.png",
+    "bytes": 70465,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-illustration-figma-368.webp",
+        "width": 368,
+        "bytes": 8858
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/brand-001.png",
+    "bytes": 157163,
+    "variants": [
+      {
+        "path": "assets/reference/brand-001-480.webp",
+        "width": 480,
+        "bytes": 25500
+      },
+      {
+        "path": "assets/reference/brand-001-589.webp",
+        "width": 589,
+        "bytes": 35196
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-brand-illustrator.png",
+    "bytes": 25450,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-brand-illustrator-368.webp",
+        "width": 368,
+        "bytes": 8082
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/skills-icon-brand-figma.png",
+    "bytes": 70465,
+    "variants": [
+      {
+        "path": "assets/reference/skills-icon-brand-figma-368.webp",
+        "width": 368,
+        "bytes": 8858
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/xVZCvEoPFPOb0TCVvBKO674ZIMs.jpeg",
+    "bytes": 26437,
+    "variants": [
+      {
+        "path": "assets/reference/xVZCvEoPFPOb0TCVvBKO674ZIMs-393.webp",
+        "width": 393,
+        "bytes": 12604
+      }
+    ]
+  },
+  {
+    "source": "assets/reference/UzRbXUqIMRNQ90LG6b2taO2mAVE.jpg",
+    "bytes": 49135,
+    "variants": [
+      {
+        "path": "assets/reference/UzRbXUqIMRNQ90LG6b2taO2mAVE-480.webp",
+        "width": 480,
+        "bytes": 41730
+      },
+      {
+        "path": "assets/reference/UzRbXUqIMRNQ90LG6b2taO2mAVE-500.webp",
+        "width": 500,
+        "bytes": 44740
+      }
+    ]
+  }
+]

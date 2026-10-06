@@ -1,0 +1,14 @@
+{
+  "name": "blitz-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Blitz Studio static website",
+  "engines": { "node": ">=20.9.0" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "verify": "python3 scripts/verify-site.py",
+    "preview": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist",
+    "optimize:images": "node scripts/optimize-media.mjs"
+  },
+  "devDependencies": { "sharp": "0.35.5" }
+}

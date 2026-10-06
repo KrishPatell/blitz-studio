@@ -1,27 +1,49 @@
-# Blitz Studio website
+# Blitz Studio
 
-Responsive static website adapted from the requested Keitoto reference with Blitz Studio branding, projects, client logos, and testimonials.
+Complete responsive static website for Blitz Studio: source HTML, CSS, JavaScript, local fonts, images, video originals and optimized variants, content provenance, build scripts, and UAT evidence.
 
 ## Preview
 
-Run `python3 -m http.server 4173 --directory dist` and open http://127.0.0.1:4173.
+Requires Node.js 20.9+ and Python 3. No installation is needed to build, check, or preview the website.
 
-## Implementation
+```sh
+npm run build
+npm run verify
+npm run preview
+```
 
-- Local Season Sans, Overused Grotesk, Manrope, and Instrument Serif typography.
-- Animated About card flips and interactive SVG statistics, achievement card, service videos, skills folders, process stepper, and testimonial carousel.
-- Option A pixel footer: generated blue ribbon texture, sampled pixel shimmer, slow light sweep, gentle pointer movement, and natural-proportion live typography with a vertical white fade and linear entrance reveal. Animation pauses offscreen, respects reduced motion, and has a pause control.
-- Generated About prisms, achievement hand, and Blitz footer emblem, served as responsive WebP assets. Original images and generation prompts are retained in the workspace's `output/website-v2` folder.
-- Blitz portfolio reel and six project previews. Five existing client testimonials and sixteen client logos sourced from the previous Blitz website.
-- Contact dialog uses matching dark pixel texture, bold live typography, and distinct call/email actions linking to the existing studio email and Calendly. No form backend required.
-- Keyboard controls, native dialogs, reduced-motion handling, and responsive navigation.
+Open `http://127.0.0.1:4173`. Deploy the `dist/` directory to static hosting; the existing Sites configuration is in `.openai/hosting.json`.
 
-## Content
+## Editing
 
-The statistics use the studio's existing public content: 17 portfolio projects, five testimonials, two build platforms, and one design-to-launch partner. They do not represent the reference agency's client counts. The team section is omitted as requested.
+- `dist/index.html`: content and markup.
+- `dist/app.js`: navigation, About cards and statistics, service playback, process steps, partner card, testimonial carousel, and native project/contact dialogs.
+- `dist/styles.css`, `blitz.css`, `footer.css`, `contact.css`, `refinements.css`, `mobile.css`: source styles. `npm run build` combines them into the versioned `dist/site.css` and versions scripts.
+- `dist/footer.js`, `case-study-motion.js`: footer pixels and scroll animation. Motion pauses offscreen and respects reduced-motion preferences.
+- `content/testimonials.json`: the existing client quotes and their source. Add only approved attributed quotes.
+- `docs/uat/mobile-uat.md`: mobile testing scope, fixes, results, and limitations.
 
-## Verification
+All production resources are local. The only external destinations are Webflow, LinkedIn, X, email, and the existing Calendly booking link. There is no form backend, tracking SDK, or runtime JavaScript dependency.
 
-Browser checked at mobile, tablet, and desktop widths; verified menu, About flips and statistics, achievement changes, process selection, project dialogs, testimonial navigation, contact links, and footer. JavaScript syntax validated with `node --check dist/app.js`.
+## Loading and media
 
-Deployment configuration is in `.openai/hosting.json`; Sites manages source synchronization and private preview hosting.
+Service previews prepare their sources near the viewport and autoplay while visible. Explicit pause is retained. Reduced-motion and data-saving preferences suppress automatic playback while allowing manual play. H.264 MP4 is the primary service format; original WebM files remain as fallback/authoring assets. Phones receive a 720px portfolio reel.
+
+Images have responsive WebP derivatives, local posters, explicit dimensions, asynchronous decoding, and lazy loading. Original artwork is retained. The footer samples the selected responsive texture only when visible and draws at about 30 fps with capped pixel density.
+
+Optional media regeneration:
+
+```sh
+npm ci
+npm run optimize:images
+# Requires ffmpeg with libx264:
+python3 scripts/optimize-video.py
+npm run build
+npm run verify
+```
+
+The asset size comparison is retained in `docs/uat/image-optimization.json`. No GitHub Pages or automatic public publication is enabled by this repository. The GitHub repository is private; the website's existing hosting audience is managed independently.
+
+## Content and design
+
+Adapted from the requested Keitoto reference with Blitz branding, projects, client logos, generated artwork, and the selected blue pixel footer. Statistics reflect the studio's public content: 17 portfolio projects, five client stories, two build platforms, and one design-to-launch partner. The team section is omitted. Typography uses Overused Grotesk and Manrope; small utility labels use system monospace.

@@ -1,0 +1,32 @@
+/* Portable mobile corrections; preserve the established layout and artwork. */
+body.page-locked{position:fixed;top:var(--locked-scroll,0);left:0;right:0;width:100%;overflow:hidden}
+.blitz-dialog{max-height:calc(100svh - 32px);overscroll-behavior:contain}
+.project-dialog h2{font-family:var(--font-display)}
+.service-playback{width:44px;height:44px}
+.dialog-close,.contact-dialog .dialog-close{width:44px;height:44px}
+.topbar-mobileMenuButton{min-width:44px;min-height:44px}
+.services-hoverVideoClip{background:transparent}
+@media(max-width:1023px){.topbar-mobilePanelContent{max-height:calc(100svh - 84px);padding-bottom:24px}.topbar-mobilePanelOpen .topbar-mobileNavItem:nth-child(n){transition-delay:0s}.topbar-mobileNavItem{min-height:48px;padding:14px 12px}.topbar-mobileShell{--mobile-menu-duration:.28s}}
+@media(max-width:743px){
+ .contact-dialog .dialog-close{right:10px;top:10px}
+ .contact-dialog__bottom{flex-wrap:wrap;row-gap:12px}
+ .testimonials-card{height:auto;min-height:420px}
+ .testimonials-cardQuoteText{font-size:20px;line-height:1.4}
+ .testimonials-cardQuote{flex-shrink:0;padding-top:24px}
+ .testimonials-cardMeta{flex-shrink:0}
+ .testimonials-cardName,.testimonials-cardRole{overflow-wrap:anywhere}
+ .testimonials-cardQuoteMark{height:36px;font-size:52px}
+ .testimonials-pill{position:relative;min-width:32px;min-height:32px;background:transparent!important;box-shadow:none!important}
+ .testimonials-pill::before{content:"";display:block;width:6px;height:6px;border-radius:50%;background:#999;margin:auto}
+ .testimonials-pill[aria-pressed=true]::before{width:22px;border-radius:4px;background:#111}
+ .pixel-footer__navigation a,.pixel-footer__social a{min-height:44px;display:inline-flex;align-items:center}
+ .contactmenu-fab{bottom:max(16px,env(safe-area-inset-bottom))}
+ .pixel-footer__utility{padding-bottom:env(safe-area-inset-bottom)}
+}
+@media(max-width:359px){.testimonials-card{min-height:460px}.project-dialog{padding:24px}.contact-dialog{padding:28px 20px}.contact-dialog h2{font-size:32px}}
+@media(prefers-reduced-motion:reduce){.topbar-mobilePanelOpen .topbar-mobileNavItem{transition:none}}
+
+.footer-in-view .contactmenu-root{opacity:0;visibility:hidden;pointer-events:none}
+/* Keep dismissal available when a short screen needs internal dialog scrolling. */
+@media(max-height:700px){.blitz-dialog .dialog-close{position:sticky;float:right;top:0;right:auto;margin:-10px -10px -34px 0;z-index:4}}
+@media(max-height:700px){.contact-dialog .dialog-close{background:#090b0e;box-shadow:0 0 0 5px #090b0e}}
