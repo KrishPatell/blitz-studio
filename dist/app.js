@@ -71,12 +71,13 @@ new IntersectionObserver(entries=>{reelVisible=entries[0].isIntersecting;updateR
 requestAnimationFrame(()=>requestAnimationFrame(()=>{reelReady=true;updateReel()}));
 // Retry a browser-blocked autoplay on an ordinary page interaction, without a video control.
 for(const event of ['pointerdown','keydown'])document.addEventListener(event,()=>{updateReel();serviceClips.forEach(clip=>clip.update())},{passive:true});
-// Genuine Blitz client testimonials, native scrolling and keyboard controls.
-const viewport=$('.testimonials-viewport'),slides=$$('.testimonials-slide'),pills=$$('.testimonials-pill'),arrows=$$('.testimonials-arrow');
-function slideWidth(){return slides[0].getBoundingClientRect().width+parseFloat(getComputedStyle($('.testimonials-track')).gap||0)}
-function moveTestimonials(direction){viewport.scrollBy({left:direction*slideWidth(),behavior:reduced.matches?'instant':'smooth'})}
-function syncTestimonials(){const max=viewport.scrollWidth-viewport.clientWidth;viewport.dataset.atStart=String(viewport.scrollLeft<3);viewport.dataset.atEnd=String(viewport.scrollLeft>=max-3);arrows.forEach((b,i)=>b.disabled=i===0?viewport.scrollLeft<3:viewport.scrollLeft>=max-3);pills.forEach((p,i)=>{let active=Math.round((viewport.scrollLeft/Math.max(max,1))*(pills.length-1))===i;p.classList.toggle('testimonials-pillActive',active);p.setAttribute('aria-pressed',String(active));p.setAttribute('aria-current',String(active))})}
-arrows.forEach((b,i)=>b.addEventListener('click',()=>moveTestimonials(i===0?-1:1)));pills.forEach((b,i)=>b.addEventListener('click',()=>viewport.scrollTo({left:(viewport.scrollWidth-viewport.clientWidth)*i/(pills.length-1),behavior:reduced.matches?'instant':'smooth'})));viewport.tabIndex=0;viewport.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();moveTestimonials(e.key==='ArrowRight'?1:-1)}});viewport.addEventListener('scroll',syncTestimonials,{passive:true});addEventListener('resize',syncTestimonials);syncTestimonials();
+// Client stories use native scrolling, swipe, keyboard navigation and real scroll stops.
+const viewport=$('.stories-viewport'),slides=$$('.stories-slide'),arrows=$$('.stories-arrow'),pagination=$('.stories-pagination');
+let storyStops=[],storyButtons=[];
+function activeStory(){return storyStops.reduce((best,value,i)=>Math.abs(value-viewport.scrollLeft)<Math.abs(storyStops[best]-viewport.scrollLeft)?i:best,0)}
+function goStory(i){viewport.scrollTo({left:storyStops[Math.max(0,Math.min(i,storyStops.length-1))],behavior:reduced.matches?'instant':'smooth'})}
+function syncTestimonials(){const max=Math.max(0,viewport.scrollWidth-viewport.clientWidth);const first=slides[0].offsetLeft;const next=[...new Set(slides.map(s=>Math.round(Math.min(max,s.offsetLeft-first))))];if(JSON.stringify(next)!==JSON.stringify(storyStops)){storyStops=next;pagination.replaceChildren();storyButtons=next.map((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Show testimonial group ${i+1}`);b.addEventListener('click',()=>goStory(i));pagination.append(b);return b})}const current=activeStory();arrows[0].disabled=viewport.scrollLeft<3;arrows[1].disabled=viewport.scrollLeft>=max-3;storyButtons.forEach((b,i)=>b.setAttribute('aria-current',String(i===current)))}
+arrows.forEach((b,i)=>b.addEventListener('click',()=>goStory(activeStory()+(i?1:-1))));viewport.addEventListener('scroll',syncTestimonials,{passive:true});viewport.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();goStory(e.key==='Home'?0:e.key==='End'?storyStops.length-1:activeStory()+(e.key==='ArrowRight'?1:-1))}});syncTestimonials();
 // Native dialogs restore focus automatically and close with Escape or the backdrop.
 const closeTimers=new WeakMap();
 function closeDialog(dialog){

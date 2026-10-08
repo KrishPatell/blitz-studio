@@ -1,0 +1,15 @@
+{
+  "businessName": "Blitz Studio",
+  "registeredBusinessName": null,
+  "email": "k@blitzstudio.xyz",
+  "offices": [
+    {
+      "country": "Singapore",
+      "address": null
+    },
+    {
+      "country": "India",
+      "address": null
+    }
+  ]
+}

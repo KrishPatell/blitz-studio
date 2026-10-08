@@ -46,3 +46,18 @@ assert not any('seasonSans' in p.read_text() for p in root.glob('*.css'))
 assert len(gzip.compress((root/'site.css').read_bytes()))<50000,'CSS compressed budget'
 assert not list(root.glob('qa-*.html')),'temporary QA file in deployment'
 print(json.dumps({'status':'PASS','html_bytes':len(html.encode()),'css_gzip_bytes':len(gzip.compress((root/'site.css').read_bytes())),'videos':len(videos),'lazy_service_previews':len(previews),'skills':6,'local_assets_and_anchors':'PASS','js_syntax':'PASS'},indent=2))
+
+# Every separate policy page must resolve links, assets and cross-page anchors.
+pages={}
+for file in root.glob('*.html'):
+ page=Page();page.feed(file.read_text());pages[file.name]=page
+for name,page in pages.items():
+ assert len(page.ids)==len(set(page.ids)),(name,'duplicate IDs')
+ for tag,a in page.tags:
+  for key in ['href','src','poster']:
+   value=a.get(key,'');url=urlsplit(value)
+   if not value or url.scheme or url.netloc:continue
+   target=url.path or name
+   assert (root/target).is_file(),(name,target,'missing local target')
+   if url.fragment and target in pages:assert unquote(url.fragment) in pages[target].ids,(name,value,'missing page anchor')
+print('PASS: all five pages, cross-page anchors and local assets')
