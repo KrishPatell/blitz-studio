@@ -1,0 +1,3240 @@
+{
+  "version": 1,
+  "authority": "Reviewed local homepage source after user-requested consistency fixes; not a new design proposal",
+  "cssOrder": [
+    "styles.css",
+    "blitz.css",
+    "footer.css",
+    "contact.css",
+    "refinements.css",
+    "mobile.css",
+    "stories.css",
+    "privacy.css",
+    "consistency.css"
+  ],
+  "sourceHashes": {
+    "dist/styles.css": "fed8dbcc7bcda9709acc405e75cc91a9a0800a4282a8110dbbec90a94cc2b1b5",
+    "dist/blitz.css": "1496ad280edc06841f9d9cc642d60823d63ab9dacb9ecff4181988835020ca14",
+    "dist/footer.css": "3462c6d3e8404ac29581bfbc134ba737deb2d18170ca4681b8d5b32b449a1e16",
+    "dist/contact.css": "bd1230a6cbca6ba27b6983199083e065da4a7c19d24856a28309278a269fa389",
+    "dist/refinements.css": "681023b21075bec87abef003a0c2f10a5a75232f906952f798f00cd97024b126",
+    "dist/mobile.css": "c229230456c3a76e4621e2df9d7ee9b2b355d5911352a30b618c5ca5329b4749",
+    "dist/stories.css": "a18e89579bad7ba57d877af6ffb977dfdc5554e84e98b6e5b7101f7e3aebde02",
+    "dist/privacy.css": "989f041a4d34fdfe3c19569a94eeee08fe8e4c15a440917be00d4ccab98e6f47",
+    "dist/consistency.css": "deb783431a9ccab1ba6a712c76b7c3db0ee9f220e735e561e72e8707f5b30131",
+    "dist/app.js": "4d824c6309f3080c8d992e0a6fb1bc95badd79b216431695d561b0b10aea7de3",
+    "dist/footer.js": "fc2641841e59a7a25946ec65b053813675c0687dce325c9964f5388618613ae6",
+    "dist/case-study-motion.js": "e27691845046f2b4763ad66c82828285b0ec4147cb646773f9dcfccf6da9ec4b",
+    "dist/site-ui.js": "30c68c719ec9cb2f4f73141133ea87fdf81fee1f2a89518b8575648d7c4c6b6f",
+    "dist/privacy.js": "be9bb6140b2cc1da1b17cf30bb07c99d39ba1779bf824d2f465cfdab212887ab",
+    "dist/index.html": "0668d5aa17e768b471b2de6507c811694973f244259a75ce31936fe696e98d3a",
+    "scripts/build-policy-pages.mjs": "34386e2581fbc8cf82c964937b48fd5a0b0ce67ef87c6ed0128a291e48cce5b4",
+    "scripts/build.mjs": "0e07efb574aaf721bd04756de94dc17be6588d354b90f9ec69ecc8c69334ec77"
+  },
+  "responsiveCustomProperties": [
+    {
+      "file": "dist/styles.css",
+      "selector": ".manrope_9b24f49e-variable",
+      "conditions": [],
+      "variables": {
+        "--font-manrope": "\"Manrope\", \"Manrope Fallback\""
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".instrument_serif_e957fcc1-module__jFYXAG__variable",
+      "conditions": [],
+      "variables": {
+        "--font-overused-grotesk": "\"overusedGrotesk\", \"overusedGrotesk\""
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".Manrope_1c47863e-variable",
+      "conditions": [],
+      "variables": {
+        "--font-manrope": "\"Manrope\""
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".overusedgrotesk_8de29aa2-module__jHSx0G__variable",
+      "conditions": [],
+      "variables": {
+        "--font-overused-grotesk": "\"overusedGrotesk\""
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ":root,:host",
+      "conditions": [
+        "@layer theme"
+      ],
+      "variables": {
+        "--font-sans": "var(--font-manrope)",
+        "--font-serif": "var(--font-overused-grotesk)",
+        "--font-mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "--spacing": ".25rem",
+        "--default-font-family": "var(--font-sans)",
+        "--default-mono-font-family": "var(--font-mono)",
+        "--font-display": "var(--font-overused-grotesk,var(--font-manrope))",
+        "--font-copy": "var(--font-manrope,var(--font-manrope))",
+        "--color-primary-blue-900": "#000b33",
+        "--color-primary-blue-500": "#012299",
+        "--color-primary-blue-400": "#3557ff",
+        "--color-primary-blue-300": "#3e62e4",
+        "--color-primary-light": "#80bdff",
+        "--color-secondary-500": "#f5c80a",
+        "--color-background-strong": "#0a0a0a",
+        "--color-background-white": "#fff",
+        "--color-background-button-dark": "#11100f",
+        "--color-background-surface-tertiary": "#e6e6e6",
+        "--color-background-surface-hover": "#f0f0f0",
+        "--color-background-glass-default": "#ffffff3d",
+        "--color-background-glass-hover": "#ffffff47",
+        "--color-background-glass-focus": "#ffffff5c",
+        "--color-border-dark-4": "#0000000a",
+        "--color-border-soft": "#f2f2f2",
+        "--color-border-glass": "#ffffff1f",
+        "--color-border-button-dark": "#292929",
+        "--color-icon-strong": "#0a0a0a",
+        "--color-icon-white": "#fff",
+        "--color-text-strong": "#0a0a0a",
+        "--color-text-normal": "#262626",
+        "--color-text-grey": "gray",
+        "--color-text-soft": "#0a0a0aa3",
+        "--color-text-disable": "#0a0a0a70",
+        "--color-text-white": "#fff",
+        "--color-opacity-white-90": "#ffffffe6",
+        "--color-opacity-white-72": "#ffffffb8",
+        "--color-opacity-white-52": "#ffffff85",
+        "--color-opacity-strong-90": "#0a0a0ae6",
+        "--color-opacity-strong-64": "#0a0a0aa3",
+        "--color-opacity-blue-300-92": "#3e62e4eb",
+        "--color-opacity-blue-300-72": "#3e62e4b8",
+        "--color-opacity-blue-300-20": "#3e62e433",
+        "--color-opacity-blue-400-0": "#3557ff00",
+        "--color-ink": "var(--color-text-strong)",
+        "--color-paper": "var(--color-background-white)",
+        "--color-paper-soft": "var(--color-background-white)",
+        "--color-lime": "var(--color-secondary-500)",
+        "--color-line": "var(--color-border-soft)",
+        "--shadow-button-soft": "0 2px 12px #00000014, 0 .5px 2px #2424241f",
+        "--shadow-button-dark-surface": "0 4px 6px -6px #0f0c0c80, 0 1px 1px #0003, 0 8px 4px -8px #305ac4cc, inset 0 0 0 1px var(--color-border-button-dark)",
+        "--shadow-button-inset": "inset 0 -1px 4px #ffffff1f",
+        "--gradient-button-dark-default": "linear-gradient(0deg, #fff0 0%, #ffffff14 100%), linear-gradient(90deg, #11100f 0%, #11100f 100%)",
+        "--gradient-button-dark-hover": "linear-gradient(0deg, #fff0 0%, #ffffff2e 100%), linear-gradient(90deg, #11100f 0%, #11100f 100%)",
+        "--gradient-button-dark-flat": "linear-gradient(0deg, #fff0 0%, #fff0 100%), linear-gradient(90deg, #11100f 0%, #11100f 100%)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ":root",
+      "conditions": [],
+      "variables": {
+        "--section-gutter": "12px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ":root",
+      "conditions": [
+        "@media (min-width:744px)"
+      ],
+      "variables": {
+        "--section-gutter": "56px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ":root",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--section-gutter": "78px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ":root",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--section-gutter": "96px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutSection",
+      "conditions": [],
+      "variables": {
+        "--about-frame-height": "2202px",
+        "--about-content-left": "15px",
+        "--about-intro-top": "40px",
+        "--about-intro-gap": "24px",
+        "--about-heading-width": "min(100%, 319px)",
+        "--about-heading-size": "24px",
+        "--about-heading-line-height": "1.3",
+        "--about-heading-color": "var(--color-opacity-strong-90)",
+        "--about-intro-to-cards-gap": "46px",
+        "--about-badge-gap": "7px",
+        "--about-badge-padding-y": "4px",
+        "--about-badge-padding-right": "8px",
+        "--about-badge-padding-left": "4px",
+        "--about-badge-border-width": ".5px",
+        "--about-badge-icon-size": "24px",
+        "--about-badge-font-size": "16px",
+        "--about-badge-line-height": "1.4",
+        "--about-badge-arrow-scale": "1",
+        "--about-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--about-card-inset-x": "12px",
+        "--about-card-inset-y": "12px",
+        "--about-card-aspect-ratio": "295 / 354",
+        "--about-card-radius": "20px",
+        "--about-card-shadow": "0 0 0 .5px #1116391f, 0 6px 16px -4px #03071214",
+        "--about-card-image-padding-x": "45.5px",
+        "--about-card-image-padding-top": "32px",
+        "--about-card-image-padding-bottom": "50px",
+        "--about-card-fade-height": "254px",
+        "--about-card-label-bottom": "24px",
+        "--about-card-label-gap": "6px",
+        "--about-card-label-padding-y": "7px",
+        "--about-card-label-padding-right": "8px",
+        "--about-card-label-padding-left": "6px",
+        "--about-card-label-border-width": "1px",
+        "--about-card-number-size": "18px",
+        "--about-card-number-font-size": "12px",
+        "--about-card-label-font-size": "14px",
+        "--about-card-flip-description-size": "clamp(15px, 4vw, 18px)",
+        "--about-cards-to-lower-gap": "84px",
+        "--about-description-width": "319px",
+        "--about-description-size": "clamp(14px, calc(11.688px + .6163vw), 18px)",
+        "--about-description-line-height": "1.3",
+        "--about-description-padding-bottom": "100px",
+        "--about-stat-row-gap": "40px",
+        "--about-stat-gap": "12px",
+        "--about-stat-value-size": "40px",
+        "--about-stat-value-line-height": "1",
+        "--about-stat-value-tracking": "-.4px",
+        "--about-stat-label-size": "16px",
+        "--about-stat-label-line-height": "1.4",
+        "--about-stack-width": "319px",
+        "--about-stack-frame-height": "192px",
+        "--about-stack-track-height": "192px",
+        "--about-stack-column-width": "72px",
+        "--about-stack-gap": "10px",
+        "--about-stack-border-width": ".455px",
+        "--about-stack-cube-width": "56px",
+        "--about-stack-object-left": "7.54px",
+        "--about-stack-object-top": "92px",
+        "--about-stack-object-default-height": "92px",
+        "--about-stack-base-top": "38px",
+        "--about-stack-base-offset-x": ".23px",
+        "--about-stack-union-width": "57.102px",
+        "--about-stack-union-height": "55.472px",
+        "--about-stack-top-height": "60px",
+        "--about-stack-hover-object-top": "44px",
+        "--about-stack-hover-object-height": "140px",
+        "--about-stack-hover-base-top": "86px",
+        "--about-stack-hover-top-height": "108px",
+        "--about-stack-label-top": "8px",
+        "--about-stack-label-padding-x": "8px",
+        "--about-stack-label-padding-y": "4px",
+        "--about-stack-label-font-size": "12px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutCard",
+      "conditions": [],
+      "variables": {
+        "--about-card-rotate-y": "0deg",
+        "--about-card-scale": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutCardCell:hover .about-aboutCard",
+      "conditions": [],
+      "variables": {
+        "--about-card-scale": "1.025"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutCardToggle:checked+.about-aboutCard",
+      "conditions": [],
+      "variables": {
+        "--about-card-rotate-y": "180deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutStackTrack",
+      "conditions": [],
+      "variables": {
+        "--about-stack-border-dash": "calc(var(--about-stack-column-width) * .02404)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutStackItem",
+      "conditions": [],
+      "variables": {
+        "--about-stack-current-object-top": "var(--about-stack-object-top)",
+        "--about-stack-current-object-height": "var(--about-stack-object-default-height)",
+        "--about-stack-current-base-top": "var(--about-stack-base-top)",
+        "--about-stack-current-top-height": "var(--about-stack-top-height)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutStackItem[data-active=true]",
+      "conditions": [],
+      "variables": {
+        "--about-stack-current-object-top": "var(--about-stack-hover-object-top)",
+        "--about-stack-current-object-height": "var(--about-stack-hover-object-height)",
+        "--about-stack-current-base-top": "var(--about-stack-hover-base-top)",
+        "--about-stack-current-top-height": "var(--about-stack-hover-top-height)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutCardCell:hover .about-aboutCard",
+      "conditions": [
+        "@media (prefers-reduced-motion:reduce)"
+      ],
+      "variables": {
+        "--about-card-scale": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutSection",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--about-frame-height": "960px",
+        "--about-content-left": "83px",
+        "--about-intro-top": "56px",
+        "--about-heading-width": "524px",
+        "--about-heading-size": "26px",
+        "--about-heading-color": "var(--color-text-strong)",
+        "--about-intro-to-cards-gap": "42px",
+        "--about-badge-gap": "6px",
+        "--about-badge-padding-y": "3px",
+        "--about-badge-padding-right": "6px",
+        "--about-badge-padding-left": "3px",
+        "--about-badge-border-width": ".356px",
+        "--about-badge-icon-size": "18px",
+        "--about-badge-font-size": "12px",
+        "--about-badge-line-height": "1.3",
+        "--about-badge-arrow-scale": ".75",
+        "--about-badge-shadow": "0 2.844px 1.422px #00000014, 0 .428px .642px #00000012, 0 7.111px 10.667px #00000008",
+        "--about-card-inset-x": "8px",
+        "--about-card-inset-y": "8px",
+        "--about-card-aspect-ratio": "232 / 252",
+        "--about-card-radius": "14px",
+        "--about-card-shadow": "0 0 0 .5px #1116391f, 0 4.267px 11.378px -2.844px #03071214",
+        "--about-card-image-padding-x": "43px",
+        "--about-card-image-padding-top": "23px",
+        "--about-card-image-padding-bottom": "36px",
+        "--about-card-fade-height": "180px",
+        "--about-card-label-bottom": "17.33px",
+        "--about-card-label-gap": "4.267px",
+        "--about-card-label-padding-y": "4.267px",
+        "--about-card-label-padding-right": "5.689px",
+        "--about-card-label-padding-left": "4.267px",
+        "--about-card-label-border-width": ".711px",
+        "--about-card-number-size": "16px",
+        "--about-card-number-font-size": "10px",
+        "--about-card-label-font-size": "12px",
+        "--about-card-flip-description-size": "clamp(13px, 1.25vw, 21.6px)",
+        "--about-cards-to-lower-gap": "47px",
+        "--about-description-width": "496px",
+        "--about-description-size": "18px",
+        "--about-description-line-height": "1.35",
+        "--about-description-padding-bottom": "72px",
+        "--about-stat-width": "170px",
+        "--about-stat-row-gap": "36px",
+        "--about-stat-gap": "8px",
+        "--about-stat-value-size": "36px",
+        "--about-stat-value-line-height": "1.12",
+        "--about-stat-value-tracking": "-.36px",
+        "--about-stat-label-size": "14px",
+        "--about-stat-label-line-height": "1.44",
+        "--about-stack-width": "397px",
+        "--about-stack-frame-height": "322px",
+        "--about-stack-track-height": "282px",
+        "--about-stack-column-width": "88px",
+        "--about-stack-gap": "14px",
+        "--about-stack-border-width": ".569px",
+        "--about-stack-cube-width": "71.111px",
+        "--about-stack-object-left": "8.39px",
+        "--about-stack-object-top": "126.66px",
+        "--about-stack-object-default-height": "122.713px",
+        "--about-stack-base-top": "54.21px",
+        "--about-stack-base-offset-x": ".29px",
+        "--about-stack-union-width": "71.33px",
+        "--about-stack-union-height": "69.293px",
+        "--about-stack-top-height": "82.656px",
+        "--about-stack-hover-object-top": "73.48px",
+        "--about-stack-hover-object-height": "176.59px",
+        "--about-stack-hover-base-top": "107.54px",
+        "--about-stack-hover-top-height": "135.99px",
+        "--about-stack-label-top": "42.67px",
+        "--about-stack-label-padding-x": "8.3px",
+        "--about-stack-label-padding-y": "5.93px",
+        "--about-stack-label-font-size": "9.48px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutSection",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--about-frame-height": "1349px",
+        "--about-content-left": "119px",
+        "--about-intro-top": "80px",
+        "--about-intro-gap": "32px",
+        "--about-heading-width": "632px",
+        "--about-heading-size": "36px",
+        "--about-intro-to-cards-gap": "65px",
+        "--about-badge-gap": "7px",
+        "--about-badge-padding-y": "4px",
+        "--about-badge-padding-right": "8px",
+        "--about-badge-padding-left": "4px",
+        "--about-badge-border-width": ".5px",
+        "--about-badge-icon-size": "24px",
+        "--about-badge-font-size": "16px",
+        "--about-badge-line-height": "1.2",
+        "--about-badge-arrow-scale": "1",
+        "--about-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--about-card-inset-x": "12px",
+        "--about-card-inset-y": "12px",
+        "--about-card-aspect-ratio": "324 / 354",
+        "--about-card-radius": "20px",
+        "--about-card-shadow": "0 0 0 .5px #1116391f, 0 6px 16px -4px #03071214",
+        "--about-card-image-padding-x": "60px",
+        "--about-card-image-padding-top": "32px",
+        "--about-card-image-padding-bottom": "50px",
+        "--about-card-fade-height": "254px",
+        "--about-card-label-bottom": "24px",
+        "--about-card-label-gap": "6px",
+        "--about-card-label-padding-y": "6px",
+        "--about-card-label-padding-right": "8px",
+        "--about-card-label-padding-left": "6px",
+        "--about-card-label-border-width": "1px",
+        "--about-card-number-size": "18px",
+        "--about-card-number-font-size": "12px",
+        "--about-card-label-font-size": "14px",
+        "--about-cards-to-lower-gap": "64px",
+        "--about-description-width": "670px",
+        "--about-description-size": "24px",
+        "--about-description-padding-bottom": "100px",
+        "--about-stat-width": "240px",
+        "--about-stat-row-gap": "52px",
+        "--about-stat-gap": "12px",
+        "--about-stat-value-size": "52px",
+        "--about-stat-value-line-height": "1.16",
+        "--about-stat-value-tracking": "-.156px",
+        "--about-stat-label-size": "18px",
+        "--about-stat-label-line-height": "1.3",
+        "--about-stack-width": "558px",
+        "--about-stack-frame-height": "454px",
+        "--about-stack-track-height": "397px",
+        "--about-stack-column-width": "124.4px",
+        "--about-stack-gap": "20px",
+        "--about-stack-border-width": ".8px",
+        "--about-stack-cube-width": "100px",
+        "--about-stack-object-left": "11.81px",
+        "--about-stack-object-top": "178.12px",
+        "--about-stack-object-default-height": "172.565px",
+        "--about-stack-base-top": "76.23px",
+        "--about-stack-base-offset-x": ".41px",
+        "--about-stack-union-width": "100.308px",
+        "--about-stack-union-height": "97.443px",
+        "--about-stack-top-height": "116.234px",
+        "--about-stack-hover-object-top": "103.33px",
+        "--about-stack-hover-object-height": "248.33px",
+        "--about-stack-hover-base-top": "151.23px",
+        "--about-stack-hover-top-height": "191.23px",
+        "--about-stack-label-top": "60px",
+        "--about-stack-label-padding-x": "11.67px",
+        "--about-stack-label-padding-y": "8.33px",
+        "--about-stack-label-font-size": "13.33px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutSection",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--about-frame-height": "1626px",
+        "--about-content-left": "143px",
+        "--about-intro-top": "96px",
+        "--about-intro-gap": "36px",
+        "--about-heading-width": "800px",
+        "--about-heading-size": "44px",
+        "--about-heading-line-height": "1.28",
+        "--about-heading-color": "var(--color-opacity-strong-90)",
+        "--about-intro-to-cards-gap": "76px",
+        "--about-badge-gap": "8px",
+        "--about-badge-padding-right": "10px",
+        "--about-badge-border-width": ".6px",
+        "--about-badge-icon-size": "28px",
+        "--about-badge-font-size": "20px",
+        "--about-badge-arrow-scale": "1.1667",
+        "--about-badge-shadow": "0 4.8px 2.4px #00000014, 0 .723px 1.084px #00000012, 0 12px 18px #00000008",
+        "--about-card-inset-x": "14px",
+        "--about-card-inset-y": "14px",
+        "--about-card-aspect-ratio": "388 / 426",
+        "--about-card-radius": "24px",
+        "--about-card-shadow": "0 0 0 .6px #1116391f, 0 7.2px 19.2px -4.8px #03071214",
+        "--about-card-image-padding-x": "72px",
+        "--about-card-image-padding-top": "38.4px",
+        "--about-card-image-padding-bottom": "60px",
+        "--about-card-fade-height": "306px",
+        "--about-card-label-bottom": "30px",
+        "--about-card-label-gap": "7.2px",
+        "--about-card-label-padding-y": "7px",
+        "--about-card-label-padding-right": "10px",
+        "--about-card-label-padding-left": "7px",
+        "--about-card-label-border-width": "1.2px",
+        "--about-card-number-size": "22px",
+        "--about-card-number-font-size": "16px",
+        "--about-card-label-font-size": "18px",
+        "--about-cards-to-lower-gap": "83px",
+        "--about-description-width": "804px",
+        "--about-description-size": "28px",
+        "--about-description-padding-bottom": "120px",
+        "--about-stat-width": "288px",
+        "--about-stat-row-gap": "62px",
+        "--about-stat-gap": "16px",
+        "--about-stat-value-size": "62px",
+        "--about-stat-value-tracking": "-.186px",
+        "--about-stat-label-size": "22px",
+        "--about-stat-label-line-height": "1.24",
+        "--about-stack-width": "670px",
+        "--about-stack-frame-height": "430px",
+        "--about-stack-track-height": "476px",
+        "--about-stack-column-width": "150px",
+        "--about-stack-gap": "24px",
+        "--about-stack-border-width": ".96px",
+        "--about-stack-cube-width": "120px",
+        "--about-stack-object-left": "14.04px",
+        "--about-stack-object-top": "214px",
+        "--about-stack-object-default-height": "208px",
+        "--about-stack-base-top": "91.48px",
+        "--about-stack-base-offset-x": ".49px",
+        "--about-stack-union-width": "120.369px",
+        "--about-stack-union-height": "116.932px",
+        "--about-stack-top-height": "139.481px",
+        "--about-stack-hover-object-top": "124px",
+        "--about-stack-hover-object-height": "298px",
+        "--about-stack-hover-base-top": "181.48px",
+        "--about-stack-hover-top-height": "229.481px",
+        "--about-stack-label-top": "72px",
+        "--about-stack-label-padding-x": "14px",
+        "--about-stack-label-padding-y": "10px",
+        "--about-stack-label-font-size": "16px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutSection",
+      "conditions": [],
+      "variables": {
+        "--about-section-outer-gap": "40px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutSection",
+      "conditions": [
+        "@media (min-width:1024px)"
+      ],
+      "variables": {
+        "--about-section-outer-gap": "64px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutSection",
+      "conditions": [
+        "@media (min-width:1440px)"
+      ],
+      "variables": {
+        "--about-section-outer-gap": "96px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".about-aboutSection",
+      "conditions": [
+        "@media (min-width:1726px)"
+      ],
+      "variables": {
+        "--about-section-outer-gap": "112px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".achievement-achievementSection",
+      "conditions": [],
+      "variables": {
+        "--achievement-bg": "#000",
+        "--achievement-height": "728px",
+        "--achievement-frame-inset": "var(--section-gutter)",
+        "--achievement-frame-border-y-width": "1px",
+        "--achievement-glow-v-width": "280px",
+        "--achievement-glow-v-height": "380px",
+        "--achievement-glow-v-blur": "200px",
+        "--achievement-glow-v-offset-x": "60px",
+        "--achievement-glow-v-offset-y": "0px",
+        "--achievement-glow-h-width": "375px",
+        "--achievement-glow-h-height": "160px",
+        "--achievement-glow-h-blur": "87.354px",
+        "--achievement-glow-h-radius": "1000px",
+        "--achievement-glow-h-offset-y": "164px",
+        "--achievement-badge-gap": "7px",
+        "--achievement-badge-padding-y": "4px",
+        "--achievement-badge-padding-right": "8px",
+        "--achievement-badge-padding-left": "4px",
+        "--achievement-badge-border-width": ".5px",
+        "--achievement-badge-radius": "100px",
+        "--achievement-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--achievement-badge-icon-size": "24px",
+        "--achievement-badge-pixel-width": "11.429px",
+        "--achievement-badge-pixel-height": "10px",
+        "--achievement-badge-font-size": "16px",
+        "--achievement-badge-line-height": "1.4",
+        "--achievement-heading-group-top": "52px",
+        "--achievement-heading-group-gap": "32px",
+        "--achievement-heading-group-width": "319px",
+        "--achievement-heading-width": "319px",
+        "--achievement-heading-size": "32px",
+        "--achievement-heading-line-height": "1.3",
+        "--achievement-logo-width": "170px",
+        "--achievement-logo-height": "24px",
+        "--achievement-logo-offset": "74px",
+        "--achievement-card-offset": "84px",
+        "--achievement-card-width": "180px",
+        "--achievement-card-height": "164px",
+        "--achievement-card-border-width": "1.06px",
+        "--achievement-card-radius": "28.276px",
+        "--achievement-card-shadow-blur": "35.345px",
+        "--achievement-card-inset-shadow-blur": "7.776px",
+        "--achievement-card-text-size": "28px",
+        "--achievement-card-text-line-height": "1.24",
+        "--achievement-card-text-width": "148px",
+        "--achievement-card-text-tracking": "0",
+        "--achievement-card-text-shadow": "0 1.414px 4.241px #ffffff52",
+        "--achievement-caption-bottom": "52px",
+        "--achievement-caption-gap": "12px",
+        "--achievement-caption-width": "283px",
+        "--achievement-caption-title-size": "20px",
+        "--achievement-caption-title-line-height": "1.35",
+        "--achievement-caption-body-size": "14px",
+        "--achievement-caption-body-line-height": "1.3",
+        "--achievement-caption-body-color": "var(--color-opacity-white-72)",
+        "--achievement-hand-left-top": "clamp(-67.43px, calc(246.507px - 30.6579vw), 131.54px)",
+        "--achievement-hand-left-left": "clamp(-100px, calc(-107.477px + 1.99384vw), -87.06px)",
+        "--achievement-hand-left-width": "clamp(326.917px, calc(248.377px + 20.9439vw), 462.843px)",
+        "--achievement-hand-left-height": "clamp(380.077px, calc(288.766px + 24.3496vw), 538.106px)",
+        "--achievement-hand-right-top": "clamp(136.17px, calc(473.554px - 32.9476vw), 350px)",
+        "--achievement-hand-right-right": "clamp(-210px, calc(-115.331px - 9.24499vw), -150px)",
+        "--achievement-hand-right-width": "clamp(392.802px, calc(298.434px + 25.1649vw), 556.122px)",
+        "--achievement-hand-right-height": "clamp(363.696px, calc(276.32px + 23.3002vw), 514.914px)",
+        "--achievement-hand-inner-width": "clamp(229.229px, calc(174.158px + 14.6855vw), 324.538px)",
+        "--achievement-hand-inner-height": "clamp(320px, calc(243.122px + 20.5008vw), 453.05px)",
+        "--achievement-hand-poke-x": "clamp(14px, 1.8vw, 32px)",
+        "--achievement-hand-poke-y": "clamp(10px, 1.25vw, 22px)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".achievement-achievementSection",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--achievement-height": "634px",
+        "--achievement-glow-v-width": "369.778px",
+        "--achievement-glow-v-height": "630.044px",
+        "--achievement-glow-v-blur": "185.332px",
+        "--achievement-glow-v-offset-x": "42.67px",
+        "--achievement-glow-v-offset-y": "-4.82px",
+        "--achievement-glow-h-width": "696.889px",
+        "--achievement-glow-h-height": "130.844px",
+        "--achievement-glow-h-blur": "62.118px",
+        "--achievement-glow-h-radius": "711.111px",
+        "--achievement-glow-h-offset-y": "114.64px",
+        "--achievement-badge-gap": "6px",
+        "--achievement-badge-padding-y": "3px",
+        "--achievement-badge-padding-right": "6px",
+        "--achievement-badge-padding-left": "3px",
+        "--achievement-badge-border-width": ".356px",
+        "--achievement-badge-radius": "71.111px",
+        "--achievement-badge-shadow": "0 2.844px 2.844px #00000014, 0 .428px 1.285px #00000012, 0 7.111px 21.333px #00000008",
+        "--achievement-badge-icon-size": "18px",
+        "--achievement-badge-pixel-width": "8.571px",
+        "--achievement-badge-pixel-height": "7.5px",
+        "--achievement-badge-font-size": "12px",
+        "--achievement-badge-line-height": "1.3",
+        "--achievement-heading-group-top": "55px",
+        "--achievement-heading-group-gap": "24px",
+        "--achievement-heading-group-width": "740px",
+        "--achievement-heading-width": "449.422px",
+        "--achievement-heading-size": "28px",
+        "--achievement-heading-line-height": "1.24",
+        "--achievement-logo-width": "160px",
+        "--achievement-logo-offset": "97.44px",
+        "--achievement-card-offset": "55px",
+        "--achievement-card-width": "182px",
+        "--achievement-card-border-width": "1px",
+        "--achievement-card-radius": "28px",
+        "--achievement-card-shadow-blur": "35.556px",
+        "--achievement-card-inset-shadow-blur": "7.822px",
+        "--achievement-card-text-width": "146px",
+        "--achievement-card-text-shadow": "0 1.422px 4.267px #ffffff52",
+        "--achievement-caption-bottom": "51px",
+        "--achievement-caption-gap": "8px",
+        "--achievement-caption-width": "274px",
+        "--achievement-caption-title-size": "18px",
+        "--achievement-caption-body-size": "12px",
+        "--achievement-hand-left-top": "clamp(-94.41px, calc(-1.0177px - 6.48558vw), -67.43px)",
+        "--achievement-hand-left-left": "clamp(-122.42px, calc(-.02px - 8.5vw), -87.06px)",
+        "--achievement-hand-left-width": "clamp(462.843px, calc(.0024px + 45.1993vw), 650.872px)",
+        "--achievement-hand-left-height": "clamp(538.106px, calc(-.0011px + 52.5495vw), 756.712px)",
+        "--achievement-hand-right-top": "clamp(136.17px, calc(-.9869px + 13.3942vw), 191.89px)",
+        "--achievement-hand-right-right": "clamp(-286px, calc(-22.9231px - 18.2692vw), -210px)",
+        "--achievement-hand-right-width": "clamp(556.122px, calc(-.0011px + 54.3089vw), 782.047px)",
+        "--achievement-hand-right-height": "clamp(514.914px, calc(-.0005px + 50.2846vw), 724.098px)",
+        "--achievement-hand-inner-width": "clamp(324.538px, calc(-.0011px + 31.6933vw), 456.382px)",
+        "--achievement-hand-inner-height": "clamp(453.05px, calc(-.0011px + 44.2433vw), 637.102px)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".achievement-achievementSection",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--achievement-bg": "var(--color-background-strong)",
+        "--achievement-height": "892px",
+        "--achievement-glow-v-width": "520px",
+        "--achievement-glow-v-height": "886px",
+        "--achievement-glow-v-blur": "260.624px",
+        "--achievement-glow-v-offset-x": "60px",
+        "--achievement-glow-v-offset-y": "-7px",
+        "--achievement-glow-h-width": "980px",
+        "--achievement-glow-h-height": "184px",
+        "--achievement-glow-h-blur": "87.354px",
+        "--achievement-glow-h-radius": "1000px",
+        "--achievement-glow-h-offset-y": "161px",
+        "--achievement-badge-gap": "7px",
+        "--achievement-badge-padding-y": "4px",
+        "--achievement-badge-padding-right": "8px",
+        "--achievement-badge-padding-left": "4px",
+        "--achievement-badge-border-width": ".5px",
+        "--achievement-badge-radius": "100px",
+        "--achievement-badge-shadow": "0 4px 4px #00000014, 0 .602px 1.807px #00000012, 0 10px 30px #00000008",
+        "--achievement-badge-icon-size": "24px",
+        "--achievement-badge-pixel-width": "11.429px",
+        "--achievement-badge-pixel-height": "10px",
+        "--achievement-badge-font-size": "16px",
+        "--achievement-badge-line-height": "1.2",
+        "--achievement-heading-group-top": "79px",
+        "--achievement-heading-group-gap": "32px",
+        "--achievement-heading-group-width": "1044px",
+        "--achievement-heading-width": "632px",
+        "--achievement-heading-size": "40px",
+        "--achievement-heading-line-height": "1.3",
+        "--achievement-logo-width": "226px",
+        "--achievement-logo-height": "32px",
+        "--achievement-logo-offset": "134.28px",
+        "--achievement-card-offset": "78px",
+        "--achievement-card-width": "256px",
+        "--achievement-card-height": "232px",
+        "--achievement-card-border-width": "1.5px",
+        "--achievement-card-radius": "40px",
+        "--achievement-card-shadow-blur": "50px",
+        "--achievement-card-inset-shadow-blur": "11px",
+        "--achievement-card-text-size": "40px",
+        "--achievement-card-text-line-height": "1.2",
+        "--achievement-card-text-width": "208px",
+        "--achievement-card-text-tracking": "-.4px",
+        "--achievement-card-text-shadow": "0 2px 6px #ffffff52",
+        "--achievement-caption-bottom": "79px",
+        "--achievement-caption-gap": "12px",
+        "--achievement-caption-width": "386px",
+        "--achievement-caption-title-size": "24px",
+        "--achievement-caption-body-size": "16px",
+        "--achievement-caption-body-line-height": "1.2",
+        "--achievement-caption-body-color": "var(--color-opacity-white-52)",
+        "--achievement-hand-left-top": "clamp(-113.1px, calc(-.96px - 6.48958vw), -94.41px)",
+        "--achievement-hand-left-left": "clamp(-146.91px, calc(.03px - 8.50347vw), -122.42px)",
+        "--achievement-hand-left-width": "clamp(650.872px, calc(-.003px + 45.1997vw), 781.047px)",
+        "--achievement-hand-left-height": "clamp(756.712px, calc(.002px + 52.5493vw), 908.054px)",
+        "--achievement-hand-right-top": "clamp(191.89px, calc(-1.01px + 13.3958vw), 230.47px)",
+        "--achievement-hand-right-right": "clamp(-336px, calc(-36px - 17.3611vw), -286px)",
+        "--achievement-hand-right-width": "clamp(782.047px, calc(.002px + 54.3087vw), 938.456px)",
+        "--achievement-hand-right-height": "clamp(724.098px, calc(-.002px + 50.2847vw), 868.918px)",
+        "--achievement-hand-inner-width": "clamp(456.382px, calc(-.003px + 31.6934vw), 547.659px)",
+        "--achievement-hand-inner-height": "clamp(637.102px, calc(.002px + 44.2431vw), 764.522px)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".achievement-achievementSection",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--achievement-bg": "#000",
+        "--achievement-height": "1078px",
+        "--achievement-frame-border-y-width": "1.2px",
+        "--achievement-glow-v-width": "624px",
+        "--achievement-glow-v-height": "1064px",
+        "--achievement-glow-v-blur": "312.748px",
+        "--achievement-glow-v-offset-x": "72px",
+        "--achievement-glow-v-offset-y": "-13px",
+        "--achievement-glow-h-width": "1176px",
+        "--achievement-glow-h-height": "220px",
+        "--achievement-glow-h-blur": "104.825px",
+        "--achievement-glow-h-radius": "1200px",
+        "--achievement-glow-h-offset-y": "190px",
+        "--achievement-badge-gap": "8px",
+        "--achievement-badge-padding-right": "10px",
+        "--achievement-badge-border-width": ".6px",
+        "--achievement-badge-radius": "120px",
+        "--achievement-badge-shadow": "0 4.8px 4.8px #00000014, 0 .723px 2.168px #00000012, 0 12px 36px #00000008",
+        "--achievement-badge-icon-size": "28px",
+        "--achievement-badge-pixel-width": "13.333px",
+        "--achievement-badge-pixel-height": "11.667px",
+        "--achievement-badge-font-size": "20px",
+        "--achievement-heading-group-top": "95px",
+        "--achievement-heading-group-gap": "38px",
+        "--achievement-heading-group-width": "1252px",
+        "--achievement-heading-width": "758.4px",
+        "--achievement-heading-size": "48px",
+        "--achievement-logo-width": "268px",
+        "--achievement-logo-height": "38px",
+        "--achievement-logo-offset": "165.35px",
+        "--achievement-card-offset": "92px",
+        "--achievement-card-width": "308px",
+        "--achievement-card-height": "278px",
+        "--achievement-card-border-width": "1.8px",
+        "--achievement-card-radius": "48px",
+        "--achievement-card-shadow-blur": "60px",
+        "--achievement-card-inset-shadow-blur": "13.2px",
+        "--achievement-card-text-size": "48px",
+        "--achievement-card-text-line-height": "1.3",
+        "--achievement-card-text-width": "248px",
+        "--achievement-card-text-tracking": "0",
+        "--achievement-card-text-shadow": "0 2.4px 7.2px #ffffff52",
+        "--achievement-caption-bottom": "95px",
+        "--achievement-caption-gap": "16px",
+        "--achievement-caption-width": "464px",
+        "--achievement-caption-title-size": "28px",
+        "--achievement-caption-body-size": "20px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-caseStudySection",
+      "conditions": [],
+      "variables": {
+        "--cs-border-w": "1px",
+        "--cs-pad-top": "40px",
+        "--cs-pad-bottom": "16px",
+        "--cs-header-gap": "24px",
+        "--cs-header-to-grid-gap": "47px",
+        "--cs-heading-width": "311px",
+        "--cs-heading-font": "22px",
+        "--cs-heading-line": "1.3",
+        "--cs-badge-font": "16px",
+        "--cs-badge-line": "1.4",
+        "--cs-badge-pad": "4px 8px 4px 4px",
+        "--cs-badge-gap": "7px",
+        "--cs-badge-icon": "24px",
+        "--cs-badge-border-w": ".5px",
+        "--cs-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--cs-grid-pad-x": "15px",
+        "--cs-grid-max": "none",
+        "--cs-card-gap": "16px",
+        "--cs-card-w": "100%",
+        "--cs-card-h": "auto",
+        "--cs-card-radius": "16px",
+        "--cs-card-shadow": "0 0 0 .356px #1116391f, 0 4.267px 11.378px -2.844px #03071214",
+        "--cs-card-pad": "16px",
+        "--cs-card-header-gap": "8px",
+        "--cs-card-header-row-gap": "6px",
+        "--cs-card-label-font": "14px",
+        "--cs-card-label-tracking": "-.14px",
+        "--cs-card-title-font": "20px",
+        "--cs-card-title-tracking": "-.2px",
+        "--cs-card-title-line": "1",
+        "--cs-mockup-margin-top": "20px",
+        "--cs-mockup-inset-x": "12px",
+        "--cs-mockup-inset": "12px",
+        "--cs-mockup-radius": "8px",
+        "--cs-mockup-w": "295",
+        "--cs-mockup-h": "200",
+        "--cs-mockup-inner-pad": "0px",
+        "--cs-mockup-inner-radius": "8px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-grid",
+      "conditions": [],
+      "variables": {
+        "--cs-scatter-progress": "1",
+        "--cs-scatter-x-1": "-118px",
+        "--cs-scatter-y-1": "-117px",
+        "--cs-scatter-x-2": "-68px",
+        "--cs-scatter-y-2": "38px",
+        "--cs-scatter-x-3": "138px",
+        "--cs-scatter-y-3": "-68px",
+        "--cs-scatter-x-4": "-136px",
+        "--cs-scatter-y-4": "47px",
+        "--cs-scatter-x-5": "126px",
+        "--cs-scatter-y-5": "0px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-cardCell:first-child",
+      "conditions": [],
+      "variables": {
+        "--cs-scatter-x": "var(--cs-scatter-x-1)",
+        "--cs-scatter-y": "var(--cs-scatter-y-1)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-cardCell:nth-child(2)",
+      "conditions": [],
+      "variables": {
+        "--cs-scatter-x": "var(--cs-scatter-x-2)",
+        "--cs-scatter-y": "var(--cs-scatter-y-2)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-cardCell:nth-child(3)",
+      "conditions": [],
+      "variables": {
+        "--cs-scatter-x": "var(--cs-scatter-x-3)",
+        "--cs-scatter-y": "var(--cs-scatter-y-3)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-cardCell:nth-child(4)",
+      "conditions": [],
+      "variables": {
+        "--cs-scatter-x": "var(--cs-scatter-x-4)",
+        "--cs-scatter-y": "var(--cs-scatter-y-4)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-cardCell:nth-child(5)",
+      "conditions": [],
+      "variables": {
+        "--cs-scatter-x": "var(--cs-scatter-x-5)",
+        "--cs-scatter-y": "var(--cs-scatter-y-5)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-caseStudySection",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--cs-pad-top": "56px",
+        "--cs-pad-bottom": "58px",
+        "--cs-header-to-grid-gap": "64px",
+        "--cs-heading-width": "531px",
+        "--cs-heading-font": "24px",
+        "--cs-heading-line": "1.26",
+        "--cs-badge-font": "12px",
+        "--cs-badge-line": "1.3",
+        "--cs-badge-pad": "3px 6px 3px 3px",
+        "--cs-badge-gap": "6px",
+        "--cs-badge-icon": "18px",
+        "--cs-badge-border-w": ".356px",
+        "--cs-badge-shadow": "0 2.844px 1.422px #00000014, 0 .428px .642px #00000012, 0 7.111px 10.667px #00000008",
+        "--cs-grid-pad-x": "0px",
+        "--cs-grid-max": "676px",
+        "--cs-card-gap": "14px",
+        "--cs-card-w": "216px",
+        "--cs-card-h": "256px",
+        "--cs-card-radius": "14px",
+        "--cs-card-pad": "13px",
+        "--cs-card-header-gap": "6px",
+        "--cs-card-label-font": "10px",
+        "--cs-card-label-tracking": "-.1px",
+        "--cs-card-title-font": "14px",
+        "--cs-card-title-tracking": "-.14px",
+        "--cs-card-title-line": "1.12",
+        "--cs-mockup-margin-top": "22px",
+        "--cs-mockup-inset-x": "12px",
+        "--cs-mockup-radius": "8px",
+        "--cs-mockup-w": "192",
+        "--cs-mockup-h": "177",
+        "--cs-mockup-inner-pad": "0px",
+        "--cs-mockup-inner-radius": "0px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-grid",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--cs-scatter-x-1": "-87px",
+        "--cs-scatter-y-1": "-86px",
+        "--cs-scatter-x-2": "-50px",
+        "--cs-scatter-y-2": "28px",
+        "--cs-scatter-x-3": "101px",
+        "--cs-scatter-y-3": "-50px",
+        "--cs-scatter-x-4": "-99px",
+        "--cs-scatter-y-4": "34px",
+        "--cs-scatter-x-5": "92px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-caseStudySection",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--cs-pad-top": "80px",
+        "--cs-pad-bottom": "80px",
+        "--cs-header-gap": "32px",
+        "--cs-header-to-grid-gap": "80px",
+        "--cs-heading-width": "797px",
+        "--cs-heading-font": "36px",
+        "--cs-heading-line": "1.3",
+        "--cs-badge-font": "16px",
+        "--cs-badge-line": "1.2",
+        "--cs-badge-pad": "4px 8px 4px 4px",
+        "--cs-badge-gap": "7px",
+        "--cs-badge-icon": "24px",
+        "--cs-badge-border-w": ".5px",
+        "--cs-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--cs-grid-max": "952px",
+        "--cs-card-gap": "20px",
+        "--cs-card-w": "304px",
+        "--cs-card-h": "362px",
+        "--cs-card-radius": "20px",
+        "--cs-card-shadow": "0 0 0 .5px #1116391f, 0 6px 16px -4px #03071214",
+        "--cs-card-pad": "19px",
+        "--cs-card-header-gap": "8px",
+        "--cs-card-header-row-gap": "8px",
+        "--cs-card-label-font": "14px",
+        "--cs-card-label-tracking": "-.042px",
+        "--cs-card-title-font": "20px",
+        "--cs-card-title-tracking": "-.06px",
+        "--cs-card-title-line": "1.1",
+        "--cs-mockup-margin-top": "33px",
+        "--cs-mockup-inset-x": "16px",
+        "--cs-mockup-inset": "16px",
+        "--cs-mockup-radius": "12px",
+        "--cs-mockup-w": "272",
+        "--cs-mockup-h": "250"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-grid",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--cs-scatter-x-1": "-122px",
+        "--cs-scatter-y-1": "-121px",
+        "--cs-scatter-x-2": "-70px",
+        "--cs-scatter-y-2": "39px",
+        "--cs-scatter-x-3": "142px",
+        "--cs-scatter-y-3": "-70px",
+        "--cs-scatter-x-4": "-140px",
+        "--cs-scatter-y-4": "48px",
+        "--cs-scatter-x-5": "130px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-caseStudySection",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--cs-border-w": "1.2px",
+        "--cs-pad-top": "96px",
+        "--cs-pad-bottom": "96px",
+        "--cs-header-gap": "37px",
+        "--cs-header-to-grid-gap": "97px",
+        "--cs-heading-width": "974px",
+        "--cs-heading-font": "44px",
+        "--cs-heading-line": "1.28",
+        "--cs-badge-font": "20px",
+        "--cs-badge-pad": "4px 10px 4px 4px",
+        "--cs-badge-gap": "8px",
+        "--cs-badge-icon": "28px",
+        "--cs-badge-border-w": ".6px",
+        "--cs-badge-shadow": "0 4.8px 2.4px #00000014, 0 .723px 1.084px #00000012, 0 12px 18px #00000008",
+        "--cs-grid-max": "1140px",
+        "--cs-card-gap": "24px",
+        "--cs-card-w": "364px",
+        "--cs-card-h": "434px",
+        "--cs-card-radius": "24px",
+        "--cs-card-shadow": "0 0 0 .6px #1116391f, 0 7.2px 19.2px -4.8px #03071214",
+        "--cs-card-pad": "24px",
+        "--cs-card-header-gap": "10px",
+        "--cs-card-header-row-gap": "10px",
+        "--cs-card-label-font": "16px",
+        "--cs-card-label-tracking": "-.048px",
+        "--cs-card-title-font": "24px",
+        "--cs-card-title-tracking": "-.072px",
+        "--cs-mockup-margin-top": "40px",
+        "--cs-mockup-inset-x": "18px",
+        "--cs-mockup-inset": "18px",
+        "--cs-mockup-radius": "14.4px",
+        "--cs-mockup-w": "328",
+        "--cs-mockup-h": "300"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".casestudy-grid",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--cs-scatter-x-1": "-146px",
+        "--cs-scatter-y-1": "-145px",
+        "--cs-scatter-x-2": "-84px",
+        "--cs-scatter-y-2": "47px",
+        "--cs-scatter-x-3": "170px",
+        "--cs-scatter-y-3": "-84px",
+        "--cs-scatter-x-4": "-168px",
+        "--cs-scatter-y-4": "57px",
+        "--cs-scatter-x-5": "156px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".footer-footer",
+      "conditions": [],
+      "variables": {
+        "--footer-border-w": "1px",
+        "--footer-shell-max": "100%",
+        "--fa-pad-x": "20px",
+        "--fa-pad-top": "40px",
+        "--fa-pad-bottom": "40px",
+        "--fa-gap": "64px",
+        "--fa-brand-width": "100%",
+        "--fa-brand-gap": "32px",
+        "--fa-logo-size": "44px",
+        "--fa-para-size": "20px",
+        "--fa-para-line": "1.35",
+        "--fa-para-width": "100%",
+        "--links-col-count": "2",
+        "--links-col-gap": "32px",
+        "--links-row-gap": "32px",
+        "--col-width": "160px",
+        "--col-gap": "20px",
+        "--col-head-size": "18px",
+        "--col-head-line": "1.1",
+        "--link-gap": "14px",
+        "--link-size": "16px",
+        "--blob-size": "328px",
+        "--blob-top": "-104px",
+        "--blob-right": "-90px",
+        "--fb-pad-x": "32px",
+        "--fb-pad-y": "40px",
+        "--fb-gap": "32px",
+        "--fb-title-size": "28px",
+        "--fb-title-line": "1.24",
+        "--fb-title-tracking": "-.56px",
+        "--fb-title-italic-tracking": "-.84px",
+        "--cta-width": "100%",
+        "--cta-h": "48px",
+        "--cta-pad-x": "16px",
+        "--cta-dot": "8px",
+        "--cta-label-size": "14px",
+        "--cta-label-line": "1",
+        "--fc-shell-px": "16px",
+        "--fc-word-top": "40px",
+        "--fc-legal-px": "0px",
+        "--fc-legal-py": "24px",
+        "--fc-legal-size": "10px",
+        "--fc-legal-tracking": ".3px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".footer-footer",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--footer-border-w": ".711px",
+        "--footer-shell-max": "912px",
+        "--fa-pad-x": "28px",
+        "--fa-pad-top": "56px",
+        "--fa-pad-bottom": "44px",
+        "--fa-gap": "44px",
+        "--fa-brand-width": "300px",
+        "--fa-brand-gap": "24px",
+        "--fa-logo-size": "32px",
+        "--fa-para-size": "14px",
+        "--fa-para-line": "1.44",
+        "--links-col-count": "4",
+        "--links-col-gap": "24px",
+        "--links-row-gap": "0px",
+        "--col-width": "114px",
+        "--col-gap": "16px",
+        "--col-head-size": "14px",
+        "--col-head-line": "1.12",
+        "--link-gap": "12px",
+        "--link-size": "12px",
+        "--blob-size": "512.711px",
+        "--blob-top": "-175.64px",
+        "--blob-right": "-177.84px",
+        "--fb-pad-x": "28px",
+        "--fb-pad-y": "32px",
+        "--fb-gap": "24px",
+        "--fb-title-size": "32px",
+        "--fb-title-line": "1.18",
+        "--fb-title-tracking": "-.64px",
+        "--fb-title-italic-tracking": "-.96px",
+        "--cta-width": "auto",
+        "--cta-h": "34px",
+        "--cta-pad-x": "14px",
+        "--cta-dot": "6px",
+        "--fc-shell-px": "0px",
+        "--fc-word-top": "36px",
+        "--fc-legal-px": "8px",
+        "--fc-legal-py": "16px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".footer-footer",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--footer-border-w": "1px",
+        "--footer-shell-max": "1284px",
+        "--fa-pad-x": "40px",
+        "--fa-pad-top": "80px",
+        "--fa-pad-bottom": "64px",
+        "--fa-gap": "64px",
+        "--fa-brand-width": "420px",
+        "--fa-brand-gap": "32px",
+        "--fa-logo-size": "44px",
+        "--fa-para-size": "20px",
+        "--fa-para-line": "1.48",
+        "--fa-para-width": "400px",
+        "--links-col-gap": "32px",
+        "--col-width": "160px",
+        "--col-gap": "20px",
+        "--col-head-size": "18px",
+        "--col-head-line": "1.1",
+        "--link-gap": "14px",
+        "--link-size": "16px",
+        "--blob-size": "721px",
+        "--blob-top": "-247px",
+        "--blob-right": "-250px",
+        "--fb-pad-x": "40px",
+        "--fb-pad-y": "52px",
+        "--fb-gap": "40px",
+        "--fb-title-size": "40px",
+        "--fb-title-line": "1.3",
+        "--fb-title-tracking": "-.8px",
+        "--fb-title-italic-tracking": "-1.2px",
+        "--cta-h": "48px",
+        "--cta-pad-x": "16px",
+        "--cta-dot": "8px",
+        "--fc-word-top": "52px",
+        "--fc-legal-px": "12px",
+        "--fc-legal-py": "24px",
+        "--fc-legal-size": "12px",
+        "--fc-legal-tracking": ".36px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".footer-footer",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--footer-border-w": "1.2px",
+        "--footer-shell-max": "1536px",
+        "--fa-pad-x": "48px",
+        "--fa-pad-top": "96px",
+        "--fa-pad-bottom": "80px",
+        "--fa-gap": "72px",
+        "--fa-brand-width": "504px",
+        "--fa-brand-gap": "40px",
+        "--fa-logo-size": "52px",
+        "--fa-para-size": "24px",
+        "--fa-para-line": "1.4",
+        "--fa-para-width": "480px",
+        "--links-col-gap": "40px",
+        "--col-width": "192px",
+        "--col-gap": "24px",
+        "--col-head-size": "20px",
+        "--link-gap": "16px",
+        "--link-size": "18px",
+        "--blob-size": "865.2px",
+        "--blob-top": "-296.4px",
+        "--blob-right": "-304.8px",
+        "--fb-pad-x": "48px",
+        "--fb-gap": "48px",
+        "--fb-title-size": "48px",
+        "--fb-title-tracking": "-.96px",
+        "--fb-title-italic-tracking": "-1.44px",
+        "--cta-h": "58px",
+        "--cta-pad-x": "24px",
+        "--cta-dot": "10px",
+        "--cta-label-size": "16px",
+        "--cta-label-line": "1.36",
+        "--fc-word-top": "64px",
+        "--fc-legal-px": "16px",
+        "--fc-legal-py": "28px",
+        "--fc-legal-size": "14px",
+        "--fc-legal-tracking": ".42px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundGradient",
+      "conditions": [],
+      "variables": {
+        "--hero-gradient-height": "100%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundEllipse",
+      "conditions": [],
+      "variables": {
+        "--hero-ellipse-top": "510px",
+        "--hero-ellipse-width": "366%",
+        "--hero-ellipse-bleed": "200px",
+        "--hero-ellipse-fade": "#fff 0%, #fffffffa 45.2%, #ffffffe6 54.3%, #ffffffbf 62.2%, #ffffff80 71.5%, #ffffff40 80.8%, #ffffff1a 88.8%, #ffffff05 98.2%, #fff0 100%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-grid",
+      "conditions": [],
+      "variables": {
+        "--hero-grid-bottom-height": "420px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-gridGrey",
+      "conditions": [],
+      "variables": {
+        "--hero-grid-bottom-height": "420px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-socialRail",
+      "conditions": [],
+      "variables": {
+        "--social-rail-height": "90px",
+        "--social-rail-icon-size": "20px",
+        "--social-rail-label-size": "14px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-socialRail",
+      "conditions": [
+        "@media (max-width:743px)"
+      ],
+      "variables": {
+        "--social-rail-height": "216px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundEllipse",
+      "conditions": [
+        "@media (min-width:744px)"
+      ],
+      "variables": {
+        "--hero-ellipse-width": "146%",
+        "--hero-ellipse-fade": "#fff 0%, #fffffffa 42.3%, #ffffffe6 51.8%, #ffffffbf 59.5%, #ffffff80 69%, #ffffff40 78.8%, #ffffff1a 87.4%, #ffffff05 97.6%, #fff0 100%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundEllipse",
+      "conditions": [
+        "@media (min-width:744px)"
+      ],
+      "variables": {
+        "--hero-ellipse-top": "410px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-socialRail",
+      "conditions": [
+        "@media (min-width:744px)"
+      ],
+      "variables": {
+        "--social-rail-height": "86px",
+        "--social-rail-icon-size": "24px",
+        "--social-rail-label-size": "16px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundGradient",
+      "conditions": [
+        "@media (min-width:1024px)"
+      ],
+      "variables": {
+        "--hero-gradient-height": "100%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundEllipse",
+      "conditions": [
+        "@media (min-width:1024px)"
+      ],
+      "variables": {
+        "--hero-ellipse-top": "460px",
+        "--hero-ellipse-fade": "#fff 0%, #fffffffa 49.2%, #ffffffe6 57.5%, #ffffffbf 64.4%, #ffffff80 72.8%, #ffffff40 81.4%, #ffffff1a 89.1%, #ffffff05 98.1%, #fff0 100%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-socialRail",
+      "conditions": [
+        "@media (min-width:1024px)"
+      ],
+      "variables": {
+        "--social-rail-height": "90px",
+        "--social-rail-icon-size": "20px",
+        "--social-rail-label-size": "14px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundGradient",
+      "conditions": [
+        "@media (min-width:1440px)"
+      ],
+      "variables": {
+        "--hero-gradient-height": "100%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundEllipse",
+      "conditions": [
+        "@media (min-width:1440px)"
+      ],
+      "variables": {
+        "--hero-ellipse-top": "710px",
+        "--hero-ellipse-fade": "#fff 0%, #fffffffa 57.8%, #ffffffe6 64.4%, #ffffffbf 70.4%, #ffffff80 77.5%, #ffffff40 84.7%, #ffffff1a 91.1%, #ffffff05 98.6%, #fff0 100%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-socialRail",
+      "conditions": [
+        "@media (min-width:1440px)"
+      ],
+      "variables": {
+        "--social-rail-height": "128px",
+        "--social-rail-icon-size": "28px",
+        "--social-rail-label-size": "18px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundGradient",
+      "conditions": [
+        "@media (min-width:1728px)"
+      ],
+      "variables": {
+        "--hero-gradient-height": "100%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-backgroundEllipse",
+      "conditions": [
+        "@media (min-width:1728px)"
+      ],
+      "variables": {
+        "--hero-ellipse-top": "910px",
+        "--hero-ellipse-fade": "#fff 0%, #fffffffa 64.1%, #ffffffe6 70.2%, #ffffffbf 75.4%, #ffffff80 81.4%, #ffffff40 87.4%, #ffffff1a 92.7%, #ffffff05 99%, #fff0 100%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".hero-socialRail",
+      "conditions": [
+        "@media (min-width:1728px)"
+      ],
+      "variables": {
+        "--social-rail-height": "154px",
+        "--social-rail-icon-size": "34px",
+        "--social-rail-label-size": "22px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".ourclients-ourClientsSection",
+      "conditions": [],
+      "variables": {
+        "--oc-border-w": "1px",
+        "--oc-header-pad-block": "40px",
+        "--oc-header-gap": "24px",
+        "--oc-header-inset": "20px",
+        "--oc-badge-font": "16px",
+        "--oc-badge-line": "1.4",
+        "--oc-badge-pad": "4px 8px 4px 4px",
+        "--oc-badge-gap": "7px",
+        "--oc-badge-icon": "24px",
+        "--oc-badge-border-w": ".5px",
+        "--oc-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--oc-heading-font": "24px",
+        "--oc-heading-line": "1.3",
+        "--oc-heading-max": "311px",
+        "--oc-grid-px": "16px",
+        "--oc-grid-pb": "40px",
+        "--oc-row-gap": "16px",
+        "--oc-col-gap": "15px",
+        "--oc-grid-cols": "2",
+        "--oc-cell-w": "152px",
+        "--oc-cell-h": "120px",
+        "--oc-logo-scale": ".830769",
+        "--oc-logo-max": "132px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".ourclients-ourClientsSection",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--oc-header-pad-block": "44px",
+        "--oc-header-inset": "24px",
+        "--oc-badge-font": "12px",
+        "--oc-badge-line": "1.3",
+        "--oc-badge-pad": "3px 6px 3px 3px",
+        "--oc-badge-gap": "6px",
+        "--oc-badge-icon": "18px",
+        "--oc-badge-border-w": ".356px",
+        "--oc-badge-shadow": "0 2.844px 1.422px #00000014, 0 .428px .642px #00000012, 0 7.111px 10.667px #00000008",
+        "--oc-heading-line": "1.25",
+        "--oc-heading-max": "460px",
+        "--oc-grid-px": "112px",
+        "--oc-grid-pb": "44px",
+        "--oc-row-gap": "32px",
+        "--oc-col-gap": "24px",
+        "--oc-grid-cols": "4",
+        "--oc-cell-w": "154px",
+        "--oc-cell-h": "85px",
+        "--oc-logo-scale": ".592308",
+        "--oc-logo-max": "9999px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".ourclients-ourClientsSection",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--oc-header-pad-block": "64px",
+        "--oc-header-gap": "32px",
+        "--oc-header-inset": "40px",
+        "--oc-badge-font": "16px",
+        "--oc-badge-line": "1.2",
+        "--oc-badge-pad": "4px 8px 4px 4px",
+        "--oc-badge-gap": "7px",
+        "--oc-badge-icon": "24px",
+        "--oc-badge-border-w": ".5px",
+        "--oc-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--oc-heading-font": "36px",
+        "--oc-heading-line": "1.3",
+        "--oc-heading-max": "560px",
+        "--oc-grid-px": "160px",
+        "--oc-grid-pb": "64px",
+        "--oc-col-gap": "33.333px",
+        "--oc-cell-w": "216px",
+        "--oc-cell-h": "120px",
+        "--oc-logo-scale": ".830769"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".ourclients-ourClientsSection",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--oc-border-w": "1.2px",
+        "--oc-header-pad-block": "80px",
+        "--oc-header-gap": "40px",
+        "--oc-header-inset": "48px",
+        "--oc-badge-font": "20px",
+        "--oc-badge-pad": "4px 10px 4px 4px",
+        "--oc-badge-gap": "8px",
+        "--oc-badge-icon": "28px",
+        "--oc-badge-border-w": ".6px",
+        "--oc-badge-shadow": "0 4.8px 2.4px #00000014, 0 .723px 1.084px #00000012, 0 12px 18px #00000008",
+        "--oc-heading-font": "44px",
+        "--oc-heading-line": "1.28",
+        "--oc-heading-max": "720px",
+        "--oc-grid-px": "192px",
+        "--oc-grid-pb": "80px",
+        "--oc-col-gap": "37.333px",
+        "--oc-cell-w": "260px",
+        "--oc-cell-h": "144px",
+        "--oc-logo-scale": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".ourprocess-processSection",
+      "conditions": [],
+      "variables": {
+        "--op-shell-border-w": "0px",
+        "--op-pad-top": "52px",
+        "--op-pad-bottom": "60px",
+        "--op-header-gap": "24px",
+        "--op-heading-gap": "16px",
+        "--op-gap-to-steps": "64px",
+        "--op-steps-bleed": "12px",
+        "--op-gap-steps-to-card": "52px",
+        "--op-gap-card-to-caption": "60px",
+        "--op-header-max": "311px",
+        "--op-badge-font": "16px",
+        "--op-badge-line": "1.4",
+        "--op-badge-pad-y": "4px",
+        "--op-badge-pad-l": "4px",
+        "--op-badge-pad-r": "8px",
+        "--op-badge-gap": "7px",
+        "--op-badge-icon": "24px",
+        "--op-badge-border-w": ".5px",
+        "--op-badge-shadow": "0 4px 4px #00000014, 0 .602px 1.807px #00000012, 0 10px 30px #00000008",
+        "--op-heading-font": "34px",
+        "--op-heading-line": "1.13",
+        "--op-heading-tracking": "-.34px",
+        "--op-subcopy-font": "16px",
+        "--op-subcopy-line": "1.4",
+        "--op-subcopy-max": "none",
+        "--op-tab-font": "16px",
+        "--op-tab-line": "1.1",
+        "--op-tab-tracking": "-.16px",
+        "--op-tab-pad-y": "11px",
+        "--op-tab-pad-x": "16px",
+        "--op-tab-glow-width": "124px",
+        "--op-tab-border-w": "1px",
+        "--op-tab-shadow": "0 6px 24px -2px #ffffff0a",
+        "--op-connector-box-w": "48px",
+        "--op-connector-box-h": "28px",
+        "--op-connector-circle": "28px",
+        "--op-connector-icon": "14px",
+        "--op-connector-border-w": ".875px",
+        "--op-connector-shadow": "0 3.818px 15.273px -1.273px #ffffff0a",
+        "--op-card-w": "311px",
+        "--op-card-h": "192px",
+        "--op-card-radius": "8.639px",
+        "--op-card-border-w": ".309px",
+        "--op-card-shadow": "0 1.851px 7.405px -.617px #ffffff0a",
+        "--op-caption-font": "16px",
+        "--op-caption-line": "1.4",
+        "--op-caption-max": "311px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".ourprocess-processSection",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--op-shell-border-w": ".711px",
+        "--op-pad-top": "56px",
+        "--op-pad-bottom": "65px",
+        "--op-heading-gap": "14px",
+        "--op-gap-to-steps": "83px",
+        "--op-gap-steps-to-card": "50px",
+        "--op-gap-card-to-caption": "59px",
+        "--op-header-max": "none",
+        "--op-badge-font": "12px",
+        "--op-badge-line": "1.3",
+        "--op-badge-pad-y": "3px",
+        "--op-badge-pad-l": "3px",
+        "--op-badge-pad-r": "6px",
+        "--op-badge-gap": "6px",
+        "--op-badge-icon": "18px",
+        "--op-badge-shadow": "0 2.844px 2.844px #00000014, 0 .428px 1.285px #00000012, 0 7.111px 21.333px #00000008",
+        "--op-heading-font": "36px",
+        "--op-heading-line": "1.12",
+        "--op-heading-tracking": "-.36px",
+        "--op-subcopy-font": "14px",
+        "--op-subcopy-line": "1.44",
+        "--op-subcopy-max": "378px",
+        "--op-tab-font": "14px",
+        "--op-tab-line": "1.12",
+        "--op-tab-tracking": "-.14px",
+        "--op-tab-pad-y": "10px",
+        "--op-tab-pad-x": "14px",
+        "--op-tab-glow-width": "88.178px",
+        "--op-tab-shadow": "0 4.267px 17.067px -1.422px #ffffff0a",
+        "--op-connector-box-w": "40px",
+        "--op-connector-box-h": "24px",
+        "--op-connector-circle": "24px",
+        "--op-connector-icon": "12px",
+        "--op-connector-border-w": ".75px",
+        "--op-connector-shadow": "0 3.273px 13.091px -1.091px #ffffff0a",
+        "--op-card-w": "716px",
+        "--op-card-h": "440px",
+        "--op-card-radius": "20px",
+        "--op-card-border-w": ".711px",
+        "--op-card-shadow": "0 4.267px 17.067px -1.422px #ffffff0a",
+        "--op-caption-font": "18px",
+        "--op-caption-line": "1.35",
+        "--op-caption-max": "378px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".ourprocess-processSection",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--op-shell-border-w": "1px",
+        "--op-pad-top": "80px",
+        "--op-pad-bottom": "95px",
+        "--op-header-gap": "32px",
+        "--op-heading-gap": "20px",
+        "--op-gap-to-steps": "125px",
+        "--op-gap-steps-to-card": "72px",
+        "--op-gap-card-to-caption": "86px",
+        "--op-badge-font": "16px",
+        "--op-badge-line": "1.2",
+        "--op-badge-pad-y": "4px",
+        "--op-badge-pad-l": "4px",
+        "--op-badge-pad-r": "8px",
+        "--op-badge-gap": "7px",
+        "--op-badge-icon": "24px",
+        "--op-badge-shadow": "0 4px 4px #00000014, 0 .602px 1.807px #00000012, 0 10px 30px #00000008",
+        "--op-heading-font": "52px",
+        "--op-heading-line": "1.16",
+        "--op-heading-tracking": "-.156px",
+        "--op-subcopy-font": "18px",
+        "--op-subcopy-line": "1.3",
+        "--op-subcopy-max": "534px",
+        "--op-tab-font": "18px",
+        "--op-tab-line": "1.1",
+        "--op-tab-tracking": "-.054px",
+        "--op-tab-pad-y": "14px",
+        "--op-tab-pad-x": "20px",
+        "--op-tab-glow-width": "124px",
+        "--op-tab-shadow": "0 6px 24px -2px #ffffff0a",
+        "--op-connector-box-w": "56px",
+        "--op-connector-box-h": "32px",
+        "--op-connector-circle": "32px",
+        "--op-connector-icon": "16px",
+        "--op-connector-border-w": "1px",
+        "--op-connector-shadow": "0 4.364px 17.455px -1.455px #ffffff0a",
+        "--op-card-w": "1008px",
+        "--op-card-h": "620px",
+        "--op-card-radius": "28px",
+        "--op-card-border-w": "1px",
+        "--op-card-shadow": "0 6px 24px -2px #ffffff0a",
+        "--op-caption-font": "24px",
+        "--op-caption-max": "532px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".ourprocess-processSection",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--op-shell-border-w": "1.2px",
+        "--op-pad-top": "96px",
+        "--op-pad-bottom": "93px",
+        "--op-header-gap": "40px",
+        "--op-heading-gap": "24px",
+        "--op-gap-steps-to-card": "80px",
+        "--op-gap-card-to-caption": "97px",
+        "--op-badge-font": "20px",
+        "--op-badge-pad-r": "10px",
+        "--op-badge-gap": "8px",
+        "--op-badge-icon": "28px",
+        "--op-badge-border-w": ".6px",
+        "--op-badge-shadow": "0 4.8px 4.8px #00000014, 0 .723px 2.168px #00000012, 0 12px 36px #00000008",
+        "--op-heading-font": "62px",
+        "--op-heading-tracking": "-.186px",
+        "--op-subcopy-font": "22px",
+        "--op-subcopy-line": "1.24",
+        "--op-subcopy-max": "638px",
+        "--op-tab-font": "22px",
+        "--op-tab-tracking": "-.066px",
+        "--op-tab-pad-y": "16px",
+        "--op-tab-pad-x": "24px",
+        "--op-tab-glow-width": "148px",
+        "--op-tab-border-w": "1.2px",
+        "--op-tab-shadow": "0 7.2px 28.8px -2.4px #ffffff0a",
+        "--op-connector-box-w": "68px",
+        "--op-connector-box-h": "40px",
+        "--op-connector-circle": "40px",
+        "--op-connector-icon": "20px",
+        "--op-connector-border-w": "1.25px",
+        "--op-connector-shadow": "0 5.455px 21.818px -1.818px #ffffff0a",
+        "--op-card-w": "1210px",
+        "--op-card-h": "744px",
+        "--op-card-radius": "36px",
+        "--op-card-border-w": "1.2px",
+        "--op-card-shadow": "0 7.2px 28.8px -2.4px #ffffff0a",
+        "--op-caption-font": "28px",
+        "--op-caption-max": "638px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".services-servicesSection",
+      "conditions": [],
+      "variables": {
+        "--services-section-gap": "clamp(40px, calc(30.755px + 2.4653vw), 56px)",
+        "--services-frame-padding-y": "clamp(40px, calc(30.755px + 2.4653vw), 56px)",
+        "--services-badge-height": "32px",
+        "--services-badge-icon-size": "clamp(24px, calc(21.6885px + .6164vw), 28px)",
+        "--services-badge-pixel-w": "11.429px",
+        "--services-badge-pixel-h": "10px",
+        "--services-badge-font-size": "clamp(12px, calc(18.3115px - .6164vw), 16px)",
+        "--services-badge-line-height": "1.4",
+        "--services-badge-padding": "4px 8px 4px 4px",
+        "--services-badge-gap": "7px",
+        "--services-header-gap": "clamp(24px, calc(21.288px + 3.3898vw), 56px)",
+        "--services-heading-width": "clamp(311px, calc(293.666px + 4.6225vw), 341px)",
+        "--services-heading-size": "clamp(34px, calc(32.844px + .3082vw), 36px)",
+        "--services-heading-line-height": "1.13",
+        "--services-heading-tracking": "-.34px",
+        "--services-heading-to-desc-gap": "clamp(14px, calc(17.156px - .3082vw), 16px)",
+        "--services-description-width": "clamp(311px, calc(293.666px + 4.6225vw), 341px)",
+        "--services-description-size": "clamp(14px, calc(17.156px - .3082vw), 16px)",
+        "--services-description-line-height": "1.4",
+        "--services-heading-accent-glow-top": "clamp(2px, calc(.844px + .3082vw), 4px)",
+        "--services-heading-accent-glow-left": "clamp(60px, calc(77.957px - 5.8552vw), 56px)",
+        "--services-heading-accent-glow-width": "clamp(154px, calc(148.222px + 1.5408vw), 164px)",
+        "--services-heading-accent-glow-height": "clamp(40px, calc(43.156px - .3082vw), 42px)",
+        "--services-heading-accent-glow-radius": "10px",
+        "--services-header-to-grid-gap": "clamp(34px, calc(21.288px + 3.3898vw), 56px)",
+        "--services-grid-columns": "1fr",
+        "--services-grid-gutter": "0px",
+        "--services-card-margin": "12px",
+        "--services-card-header-padding-y": "clamp(16px, calc(11.377px + 1.2327vw), 24px)",
+        "--services-card-header-padding-x": "clamp(24px, calc(5.51px + 4.9307vw), 56px)",
+        "--services-card-header-gap": "8px",
+        "--services-icon-badge-size": "clamp(24px, calc(21.6885px + .6164vw), 28px)",
+        "--services-card-title-size": "clamp(14px, calc(17.156px - .3082vw), 16px)",
+        "--services-card-title-line-height": "1.1",
+        "--services-card-description-size": "12px",
+        "--services-card-description-line-height": "1.3",
+        "--services-media-height": "clamp(185px, calc(152.07px + 8.782vw), 242px)",
+        "--services-media-wide-height": "clamp(162px, calc(57.97px + 27.735vw), 342px)",
+        "--services-media-padded-padding-y": "clamp(12px, calc(9.6885px + .6164vw), 16px)",
+        "--services-media-padded-padding-x": "clamp(20px, calc(14.222px + 1.5408vw), 30px)",
+        "--services-media-frame-radius": "clamp(7px, calc(4.688px + .6165vw), 11px)",
+        "--services-media-strip-inner-height": "clamp(142px, calc(116.48px + 6.726vw), 185px)",
+        "--services-media-strip-padding-x": "clamp(12px, calc(9.111px + .7704vw), 17px)",
+        "--services-media-wide-badge-top": "12px",
+        "--services-media-wide-image-top": "26px",
+        "--services-media-wide-image-width": "241px",
+        "--services-media-wide-image-height": "124px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".services-servicesSection",
+      "conditions": [
+        "@media (min-width:1024px)"
+      ],
+      "variables": {
+        "--services-section-gap": "56px",
+        "--services-frame-padding-y": "56px",
+        "--services-badge-height": "24px",
+        "--services-badge-icon-size": "18px",
+        "--services-badge-pixel-w": "8.571px",
+        "--services-badge-pixel-h": "7.5px",
+        "--services-badge-font-size": "12px",
+        "--services-badge-line-height": "1.3",
+        "--services-badge-padding": "3px 6px 3px 3px",
+        "--services-badge-gap": "6px",
+        "--services-header-gap": "24px",
+        "--services-heading-width": "341px",
+        "--services-heading-size": "36px",
+        "--services-heading-line-height": "1.12",
+        "--services-heading-tracking": "-1px",
+        "--services-heading-to-desc-gap": "14px",
+        "--services-description-width": "341px",
+        "--services-description-size": "14px",
+        "--services-description-line-height": "1.44",
+        "--services-heading-accent-glow-top": "2px",
+        "--services-heading-accent-glow-left": "30px",
+        "--services-heading-accent-glow-width": "154px",
+        "--services-heading-accent-glow-height": "40px",
+        "--services-header-to-grid-gap": "56px",
+        "--services-grid-columns": "repeat(2, minmax(0, 1fr))",
+        "--services-grid-gutter": "36px",
+        "--services-card-margin": "8px",
+        "--services-card-header-padding-y": "24px",
+        "--services-card-header-padding-x": "56px",
+        "--services-card-header-gap": "10px",
+        "--services-icon-badge-size": "28px",
+        "--services-card-title-size": "14px",
+        "--services-card-title-line-height": "1.12",
+        "--services-media-height": "242px",
+        "--services-media-wide-height": "342px",
+        "--services-media-padded-padding-y": "16px",
+        "--services-media-padded-padding-x": "30px",
+        "--services-media-frame-radius": "11px",
+        "--services-media-strip-inner-height": "185px",
+        "--services-media-strip-padding-x": "17px",
+        "--services-media-wide-image-top": "47px",
+        "--services-media-wide-image-width": "621px",
+        "--services-media-wide-image-height": "267px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".services-servicesSection",
+      "conditions": [
+        "@media (min-width:1440px)"
+      ],
+      "variables": {
+        "--services-section-gap": "96px",
+        "--services-frame-padding-y": "80px",
+        "--services-badge-height": "32px",
+        "--services-badge-icon-size": "24px",
+        "--services-badge-pixel-w": "11.429px",
+        "--services-badge-pixel-h": "10px",
+        "--services-badge-font-size": "16px",
+        "--services-badge-line-height": "1.25",
+        "--services-badge-padding": "4px 8px 4px 4px",
+        "--services-badge-gap": "7px",
+        "--services-header-gap": "34px",
+        "--services-heading-width": "500px",
+        "--services-heading-size": "52px",
+        "--services-heading-line-height": "1.16",
+        "--services-heading-tracking": "-.156px",
+        "--services-heading-to-desc-gap": "20px",
+        "--services-description-width": "400px",
+        "--services-description-size": "18px",
+        "--services-description-line-height": "1.3",
+        "--services-heading-accent-glow-top": "6px",
+        "--services-heading-accent-glow-left": "36px",
+        "--services-heading-accent-glow-width": "232px",
+        "--services-heading-accent-glow-height": "56px",
+        "--services-heading-accent-glow-radius": "13px",
+        "--services-header-to-grid-gap": "82px",
+        "--services-grid-gutter": "52px",
+        "--services-card-margin": "12px",
+        "--services-card-header-padding-y": "32px",
+        "--services-card-header-padding-x": "80px",
+        "--services-card-header-gap": "12px",
+        "--services-icon-badge-size": "40px",
+        "--services-card-title-size": "20px",
+        "--services-card-title-line-height": "1.1",
+        "--services-card-description-size": "14px",
+        "--services-media-height": "342px",
+        "--services-media-wide-height": "482px",
+        "--services-media-padded-padding-y": "24px",
+        "--services-media-padded-padding-x": "43px",
+        "--services-media-frame-radius": "16px",
+        "--services-media-strip-inner-height": "262px",
+        "--services-media-strip-padding-x": "24px",
+        "--services-media-wide-badge-top": "32px",
+        "--services-media-wide-image-top": "66px",
+        "--services-media-wide-image-width": "876px",
+        "--services-media-wide-image-height": "376px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".services-servicesSection",
+      "conditions": [
+        "@media (min-width:1728px)"
+      ],
+      "variables": {
+        "--services-section-gap": "112px",
+        "--services-frame-padding-y": "96px",
+        "--services-badge-height": "36px",
+        "--services-badge-icon-size": "28px",
+        "--services-badge-pixel-w": "13.333px",
+        "--services-badge-pixel-h": "11.667px",
+        "--services-badge-font-size": "20px",
+        "--services-badge-line-height": "1.2",
+        "--services-badge-padding": "4px 10px 4px 4px",
+        "--services-badge-gap": "8px",
+        "--services-header-gap": "43px",
+        "--services-heading-width": "596px",
+        "--services-heading-size": "62px",
+        "--services-heading-tracking": "-.186px",
+        "--services-heading-to-desc-gap": "24px",
+        "--services-description-width": "480px",
+        "--services-description-size": "22px",
+        "--services-description-line-height": "1.24",
+        "--services-heading-accent-glow-left": "42px",
+        "--services-heading-accent-glow-width": "278px",
+        "--services-heading-accent-glow-height": "68px",
+        "--services-heading-accent-glow-radius": "15.6px",
+        "--services-header-to-grid-gap": "99px",
+        "--services-grid-gutter": "60px",
+        "--services-card-margin": "14px",
+        "--services-card-header-padding-y": "40px",
+        "--services-card-header-padding-x": "96px",
+        "--services-card-header-gap": "16px",
+        "--services-icon-badge-size": "48px",
+        "--services-card-title-size": "24px",
+        "--services-card-description-size": "18px",
+        "--services-media-height": "410px",
+        "--services-media-wide-height": "590px",
+        "--services-media-padded-padding-x": "52px",
+        "--services-media-frame-radius": "20px",
+        "--services-media-strip-inner-height": "314px",
+        "--services-media-strip-padding-x": "29px",
+        "--services-media-wide-badge-top": "39px",
+        "--services-media-wide-image-top": "81px",
+        "--services-media-wide-image-width": "1072px",
+        "--services-media-wide-image-height": "460px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsCoverageSection",
+      "conditions": [],
+      "variables": {
+        "--skills-frame-border-width": "1px",
+        "--skills-section-gap": "clamp(40px, calc(30.755px + 2.4653vw), 56px)",
+        "--skills-frame-padding-y": "40px",
+        "--skills-header-gap": "24px",
+        "--skills-header-inset-x": "20px",
+        "--skills-badge-height": "32px",
+        "--skills-badge-icon-size": "24px",
+        "--skills-badge-pixel-w": "11.429px",
+        "--skills-badge-pixel-h": "10px",
+        "--skills-badge-font-size": "16px",
+        "--skills-badge-line-height": "1.4",
+        "--skills-badge-padding": "4px 8px 4px 4px",
+        "--skills-badge-gap": "7px",
+        "--skills-heading-width": "311px",
+        "--skills-heading-size": "24px",
+        "--skills-heading-line-height": "1.3",
+        "--skills-header-to-grid-gap": "80px",
+        "--skills-grid-inset-x": "16px",
+        "--skills-grid-columns": "repeat(auto-fit, minmax(0, min(319px, 100%)))",
+        "--skills-grid-max-width": "100%",
+        "--skills-grid-col-gap": "24px",
+        "--skills-grid-row-gap": "24px",
+        "--skills-card-height": "212px",
+        "--skills-card-radius": "20px",
+        "--skills-tab-height": "34px",
+        "--skills-tab-width-1": "97.295px",
+        "--skills-tab-width-2": "127.295px",
+        "--skills-tab-width-3": "167.295px",
+        "--skills-card-pad": "16px",
+        "--skills-card-icon-size": "32px",
+        "--skills-card-icon-gap": "8px",
+        "--skills-card-text-top": "72px",
+        "--skills-card-text-gap": "8px",
+        "--skills-card-title-size": "18px",
+        "--skills-card-title-line-height": "1.1",
+        "--skills-card-title-tracking": "-.054px",
+        "--skills-card-description-size": "14px",
+        "--skills-card-cta-bottom": "20px",
+        "--skills-card-cta-height": "32px",
+        "--skills-card-cta-padding-x": "12px",
+        "--skills-card-cta-font-size": "14px",
+        "--skills-card-cta-line-height": "1",
+        "--skills-card-cta-tracking": "-.042px",
+        "--skills-hover-dashboard-top": "-43.06px",
+        "--skills-hover-dashboard-left": "32.06px",
+        "--skills-hover-dashboard-width": "252.84px",
+        "--skills-hover-dashboard-height": "182.59px",
+        "--skills-hover-mobile-top": "-26.12px",
+        "--skills-hover-mobile-left": "190.33px",
+        "--skills-hover-mobile-width": "111.96px",
+        "--skills-hover-mobile-height": "204.79px",
+        "--skills-hover-scale": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverNocode1",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "6.69deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverNocode2",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "-4.32deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverGraphic1",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "-6.69deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverGraphic2",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "4.32deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverIllustration1",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "-6.69deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverIllustration2",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "4.32deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverMotion1",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "0"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverMotion2",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "5.43deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverMotion3",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "7.35deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHover3d1",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "-4.95deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHover3d2",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "7.4deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverBrand1",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "-7.73deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverBrand2",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "-5.34deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverPitch1",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "-6.69deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverPitch2",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "4.32deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverMarketing1",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "-4.72deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverMarketing2",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "4.08deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsHoverMarketing3",
+      "conditions": [],
+      "variables": {
+        "--skills-hover-rotate": "-1.63deg"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsCoverageSection",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--skills-section-gap": "56px",
+        "--skills-frame-padding-y": "56px",
+        "--skills-header-inset-x": "0px",
+        "--skills-badge-height": "24px",
+        "--skills-badge-icon-size": "18px",
+        "--skills-badge-pixel-w": "8.571px",
+        "--skills-badge-pixel-h": "7.5px",
+        "--skills-badge-font-size": "12px",
+        "--skills-badge-line-height": "1.3",
+        "--skills-badge-padding": "3px 6px 3px 3px",
+        "--skills-badge-gap": "6px",
+        "--skills-heading-width": "375px",
+        "--skills-heading-line-height": "1.26",
+        "--skills-header-to-grid-gap": "64px",
+        "--skills-grid-inset-x": "0px",
+        "--skills-grid-columns": "repeat(3, minmax(0, 1fr))",
+        "--skills-grid-max-width": "770px",
+        "--skills-grid-col-gap": "22px",
+        "--skills-grid-row-gap": "56px",
+        "--skills-card-height": "152px",
+        "--skills-card-radius": "14px",
+        "--skills-tab-height": "24.1495px",
+        "--skills-tab-width-1": "68.7759px",
+        "--skills-tab-width-2": "90.004px",
+        "--skills-tab-width-3": "118.308px",
+        "--skills-card-pad": "12px",
+        "--skills-card-icon-size": "22px",
+        "--skills-card-icon-gap": "6px",
+        "--skills-card-text-top": "52px",
+        "--skills-card-text-gap": "6px",
+        "--skills-card-title-size": "14px",
+        "--skills-card-title-line-height": "1.12",
+        "--skills-card-title-tracking": "-.042px",
+        "--skills-card-description-size": "10px",
+        "--skills-card-cta-bottom": "12px",
+        "--skills-card-cta-height": "24px",
+        "--skills-card-cta-padding-x": "8px",
+        "--skills-card-cta-font-size": "12px",
+        "--skills-card-cta-tracking": "-.036px",
+        "--skills-hover-dashboard-top": "-32.77px",
+        "--skills-hover-dashboard-left": "24.4px",
+        "--skills-hover-dashboard-width": "192.41px",
+        "--skills-hover-dashboard-height": "138.95px",
+        "--skills-hover-mobile-top": "-19.88px",
+        "--skills-hover-mobile-left": "144.84px",
+        "--skills-hover-mobile-width": "85.2px",
+        "--skills-hover-mobile-height": "155.85px",
+        "--skills-hover-scale": ".71"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsCoverageSection",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--skills-section-gap": "96px",
+        "--skills-frame-padding-y": "80px",
+        "--skills-header-gap": "32px",
+        "--skills-badge-height": "32px",
+        "--skills-badge-icon-size": "24px",
+        "--skills-badge-pixel-w": "11.429px",
+        "--skills-badge-pixel-h": "10px",
+        "--skills-badge-font-size": "16px",
+        "--skills-badge-line-height": "1.25",
+        "--skills-badge-padding": "4px 8px 4px 4px",
+        "--skills-badge-gap": "7px",
+        "--skills-heading-width": "563px",
+        "--skills-heading-size": "36px",
+        "--skills-heading-line-height": "1.3",
+        "--skills-header-to-grid-gap": "80px",
+        "--skills-grid-max-width": "1090px",
+        "--skills-grid-col-gap": "32px",
+        "--skills-grid-row-gap": "80px",
+        "--skills-card-height": "214px",
+        "--skills-card-radius": "20px",
+        "--skills-tab-height": "34px",
+        "--skills-tab-width-1": "97.295px",
+        "--skills-tab-width-2": "127.295px",
+        "--skills-tab-width-3": "167.295px",
+        "--skills-card-pad": "16px",
+        "--skills-card-icon-size": "32px",
+        "--skills-card-icon-gap": "8px",
+        "--skills-card-text-top": "72px",
+        "--skills-card-text-gap": "8px",
+        "--skills-card-title-size": "20px",
+        "--skills-card-title-line-height": "1.1",
+        "--skills-card-title-tracking": "-.06px",
+        "--skills-card-description-size": "14px",
+        "--skills-card-cta-bottom": "24px",
+        "--skills-card-cta-height": "32px",
+        "--skills-card-cta-padding-x": "12px",
+        "--skills-card-cta-font-size": "14px",
+        "--skills-card-cta-tracking": "-.042px",
+        "--skills-hover-dashboard-top": "-46.16px",
+        "--skills-hover-dashboard-left": "34.36px",
+        "--skills-hover-dashboard-width": "271px",
+        "--skills-hover-dashboard-height": "195.7px",
+        "--skills-hover-mobile-top": "-28px",
+        "--skills-hover-mobile-left": "204px",
+        "--skills-hover-mobile-width": "120px",
+        "--skills-hover-mobile-height": "219.5px",
+        "--skills-hover-scale": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".skillscoverage-skillsCoverageSection",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--skills-frame-border-width": "1.2px",
+        "--skills-section-gap": "112px",
+        "--skills-frame-padding-y": "96px",
+        "--skills-header-gap": "40px",
+        "--skills-badge-height": "36px",
+        "--skills-badge-icon-size": "28px",
+        "--skills-badge-pixel-w": "13.333px",
+        "--skills-badge-pixel-h": "11.667px",
+        "--skills-badge-font-size": "20px",
+        "--skills-badge-line-height": "1.2",
+        "--skills-badge-padding": "4px 10px 4px 4px",
+        "--skills-badge-gap": "8px",
+        "--skills-heading-width": "688px",
+        "--skills-heading-size": "44px",
+        "--skills-heading-line-height": "1.28",
+        "--skills-header-to-grid-gap": "108px",
+        "--skills-grid-max-width": "1306px",
+        "--skills-grid-col-gap": "36px",
+        "--skills-grid-row-gap": "96px",
+        "--skills-card-height": "258px",
+        "--skills-card-radius": "24px",
+        "--skills-tab-height": "40.9907px",
+        "--skills-tab-width-1": "116.693px",
+        "--skills-tab-width-2": "152.658px",
+        "--skills-tab-width-3": "200.611px",
+        "--skills-card-pad": "20px",
+        "--skills-card-icon-size": "38px",
+        "--skills-card-icon-gap": "10px",
+        "--skills-card-text-top": "86px",
+        "--skills-card-text-gap": "12px",
+        "--skills-card-title-size": "24px",
+        "--skills-card-title-tracking": "-.072px",
+        "--skills-card-description-size": "16px",
+        "--skills-card-cta-bottom": "28px",
+        "--skills-card-cta-height": "40px",
+        "--skills-card-cta-padding-x": "16px",
+        "--skills-card-cta-font-size": "16px",
+        "--skills-card-cta-line-height": "1.1",
+        "--skills-card-cta-tracking": "-.048px",
+        "--skills-hover-dashboard-top": "-55.4px",
+        "--skills-hover-dashboard-left": "41.24px",
+        "--skills-hover-dashboard-width": "288px",
+        "--skills-hover-dashboard-height": "204px",
+        "--skills-hover-mobile-top": "-33.6px",
+        "--skills-hover-mobile-left": "247.2px",
+        "--skills-hover-mobile-width": "144px",
+        "--skills-hover-mobile-height": "234px",
+        "--skills-hover-scale": "1.2"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".team-teamSection",
+      "conditions": [],
+      "variables": {
+        "--team-border-w": "1px",
+        "--team-pad-top": "40px",
+        "--team-pad-bottom": "40px",
+        "--team-header-inset": "20px",
+        "--team-header-to-grid-gap": "40px",
+        "--team-header-gap": "24px",
+        "--team-heading-gap": "16px",
+        "--team-badge-font": "16px",
+        "--team-badge-line": "1.4",
+        "--team-badge-pad": "4px 8px 4px 4px",
+        "--team-badge-gap": "7px",
+        "--team-badge-icon": "24px",
+        "--team-badge-border-w": ".5px",
+        "--team-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--team-heading-font": "34px",
+        "--team-heading-line": "1.13",
+        "--team-heading-tracking": "-.003em",
+        "--team-subcopy-font": "16px",
+        "--team-subcopy-line": "1.4",
+        "--team-cta-w": "100%",
+        "--team-cta-pad-x": "18px",
+        "--team-cta-pad-y": "17px",
+        "--team-cta-h": "auto",
+        "--team-cta-font": "14px",
+        "--team-grid-cols": "2",
+        "--team-cell-border-r": "1px",
+        "--team-cell-border-b": "1px",
+        "--team-card-margin": "8px",
+        "--team-card-radius": "14px",
+        "--team-card-border-w": "1px",
+        "--team-card-shadow": "0 4.267px 8.533px -2.133px #0000000a, 0 2.133px 4.267px -.711px #0000000a, 0 .711px 1.422px 0 #0000000a, 0 .356px .356px 0 #0000000f",
+        "--team-meta-gap": "12px",
+        "--team-meta-pad-x": "8px",
+        "--team-meta-direction": "column",
+        "--team-name-font": "14px",
+        "--team-name-line": "1",
+        "--team-name-tracking": "-.003em",
+        "--team-role-font": "14px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".team-teamSection",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--team-pad-top": "56px",
+        "--team-pad-bottom": "58px",
+        "--team-header-inset": "84px",
+        "--team-header-to-grid-gap": "52px",
+        "--team-heading-gap": "14px",
+        "--team-badge-font": "12px",
+        "--team-badge-line": "1.3",
+        "--team-badge-pad": "3px 6px 3px 3px",
+        "--team-badge-gap": "6px",
+        "--team-badge-icon": "18px",
+        "--team-badge-border-w": ".356px",
+        "--team-badge-shadow": "0 2.844px 1.422px #00000014, 0 .428px .642px #00000012, 0 7.111px 10.667px #00000008",
+        "--team-heading-font": "36px",
+        "--team-heading-line": "1.12",
+        "--team-subcopy-font": "14px",
+        "--team-subcopy-line": "1.44",
+        "--team-cta-w": "auto",
+        "--team-cta-pad-x": "14px",
+        "--team-cta-pad-y": "15px",
+        "--team-cta-h": "34px",
+        "--team-grid-cols": "4",
+        "--team-cell-border-r": ".711px",
+        "--team-cell-border-b": ".711px",
+        "--team-meta-direction": "row",
+        "--team-name-font": "12px",
+        "--team-role-font": "12px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".team-teamSection",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--team-pad-top": "80px",
+        "--team-pad-bottom": "80px",
+        "--team-header-inset": "120px",
+        "--team-header-to-grid-gap": "80px",
+        "--team-header-gap": "32px",
+        "--team-heading-gap": "20px",
+        "--team-badge-font": "16px",
+        "--team-badge-line": "1.2",
+        "--team-badge-pad": "4px 8px 4px 4px",
+        "--team-badge-gap": "7px",
+        "--team-badge-icon": "24px",
+        "--team-badge-border-w": ".5px",
+        "--team-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--team-heading-font": "52px",
+        "--team-heading-line": "1.16",
+        "--team-subcopy-font": "18px",
+        "--team-subcopy-line": "1.3",
+        "--team-cta-pad-x": "18px",
+        "--team-cta-pad-y": "16px",
+        "--team-cta-h": "auto",
+        "--team-card-margin": "12px",
+        "--team-card-radius": "20px",
+        "--team-card-shadow": "0 6px 12px -3px #0000000a, 0 3px 6px -1px #0000000a, 0 1px 2px 0 #0000000a, 0 .5px .5px 0 #0000000f",
+        "--team-meta-gap": "16px",
+        "--team-meta-pad-x": "12px",
+        "--team-name-font": "16px",
+        "--team-name-line": "1.1",
+        "--team-role-font": "16px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".team-teamSection",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--team-border-w": "1.2px",
+        "--team-pad-top": "96px",
+        "--team-pad-bottom": "96px",
+        "--team-header-inset": "144px",
+        "--team-header-to-grid-gap": "98px",
+        "--team-header-gap": "40px",
+        "--team-heading-gap": "24px",
+        "--team-badge-font": "20px",
+        "--team-badge-pad": "4px 10px 4px 4px",
+        "--team-badge-gap": "8px",
+        "--team-badge-icon": "28px",
+        "--team-badge-border-w": ".6px",
+        "--team-badge-shadow": "0 4.8px 2.4px #00000014, 0 .723px 1.084px #00000012, 0 12px 18px #00000008",
+        "--team-heading-font": "62px",
+        "--team-subcopy-font": "22px",
+        "--team-subcopy-line": "1.24",
+        "--team-cta-pad-x": "24px",
+        "--team-cta-pad-y": "15px",
+        "--team-cta-h": "58px",
+        "--team-cta-font": "16px",
+        "--team-card-margin": "14px",
+        "--team-card-radius": "24px",
+        "--team-card-border-w": "1.2px",
+        "--team-card-shadow": "0 7.2px 14.4px -3.6px #0000000a, 0 3.6px 7.2px -1.2px #0000000a, 0 1.2px 2.4px 0 #0000000a, 0 .6px .6px 0 #0000000f",
+        "--team-cell-border-r": "1.2px",
+        "--team-cell-border-b": "1.2px",
+        "--team-meta-gap": "20px",
+        "--team-meta-pad-x": "14px",
+        "--team-name-font": "20px",
+        "--team-role-font": "20px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".testimonials-testimonialsSection",
+      "conditions": [],
+      "variables": {
+        "--t-border-w": "1px",
+        "--t-pad-top": "40px",
+        "--t-pad-bottom": "40px",
+        "--t-header-inset": "20px",
+        "--t-header-to-marquee": "32px",
+        "--t-header-gap": "24px",
+        "--t-row-gap": "40px",
+        "--t-badge-font": "16px",
+        "--t-badge-line": "1.4",
+        "--t-badge-pad": "4px 8px 4px 4px",
+        "--t-badge-gap": "7px",
+        "--t-badge-icon": "24px",
+        "--t-badge-border-w": ".5px",
+        "--t-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--t-heading-font": "24px",
+        "--t-heading-line": "1.3",
+        "--t-heading-max": "311px",
+        "--t-cta-w": "100%",
+        "--t-cta-py": "17px",
+        "--t-cta-px": "18px",
+        "--t-cta-font": "14px",
+        "--t-viewport-pad-block": "40px",
+        "--t-card-w": "250px",
+        "--t-card-h": "320px",
+        "--t-card-radius": "16.338px",
+        "--t-card-gap": "24px",
+        "--t-card-pad": "20px",
+        "--t-card-shadow-drop": "92px",
+        "--t-play-size": "28.591px",
+        "--t-play-icon": "11.913px",
+        "--t-quote-mark-font": "76.583px",
+        "--t-quote-mark-h": "32.676px",
+        "--t-quote-gap": "6.127px",
+        "--t-quote-pb": "8px",
+        "--t-quote-font": "16px",
+        "--t-quote-line": "1.3",
+        "--t-meta-font": "12px",
+        "--t-logo-w": "62.5px",
+        "--t-logo-h": "20px",
+        "--t-controls-gap": "24px",
+        "--t-pill-w": "32px",
+        "--t-pill-h": "6px",
+        "--t-pill-gap": "8px",
+        "--t-arrow-size": "40px",
+        "--t-arrow-icon": "18px",
+        "--t-arrow-gap": "10px",
+        "--t-fade": "9%"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".testimonials-viewport",
+      "conditions": [],
+      "variables": {
+        "--t-fade-l": "var(--t-fade)",
+        "--t-fade-r": "var(--t-fade)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".testimonials-viewport[data-at-start=true]",
+      "conditions": [],
+      "variables": {
+        "--t-fade-l": "0px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".testimonials-viewport[data-at-end=true]",
+      "conditions": [],
+      "variables": {
+        "--t-fade-r": "0px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".testimonials-testimonialsSection",
+      "conditions": [
+        "@media (max-width:1023.98px)"
+      ],
+      "variables": {
+        "--t-header-inset": "19px",
+        "--t-pill-w": "40px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".testimonials-testimonialsSection",
+      "conditions": [
+        "@media (min-width:64rem)"
+      ],
+      "variables": {
+        "--t-pad-top": "56px",
+        "--t-pad-bottom": "56px",
+        "--t-header-inset": "84px",
+        "--t-header-to-marquee": "40px",
+        "--t-row-gap": "24px",
+        "--t-badge-font": "12px",
+        "--t-badge-line": "1.3",
+        "--t-badge-pad": "3px 6px 3px 3px",
+        "--t-badge-gap": "6px",
+        "--t-badge-icon": "18px",
+        "--t-badge-border-w": ".356px",
+        "--t-badge-shadow": "0 2.844px 1.422px #00000014, 0 .428px .642px #00000012, 0 7.111px 10.667px #00000008",
+        "--t-heading-line": "1.25",
+        "--t-heading-max": "460px",
+        "--t-cta-w": "auto",
+        "--t-cta-py": "10px",
+        "--t-viewport-pad-block": "28px",
+        "--t-card-w": "178px",
+        "--t-card-h": "228px",
+        "--t-card-radius": "11.6px",
+        "--t-card-gap": "16px",
+        "--t-card-pad": "14px",
+        "--t-play-size": "20.331px",
+        "--t-play-icon": "8.471px",
+        "--t-quote-mark-font": "54.5px",
+        "--t-quote-mark-h": "24px",
+        "--t-quote-gap": "4.36px",
+        "--t-quote-pb": "6px",
+        "--t-quote-font": "12px",
+        "--t-meta-font": "11px",
+        "--t-logo-w": "44.444px",
+        "--t-logo-h": "14.222px",
+        "--t-controls-gap": "32px",
+        "--t-pill-w": "40px",
+        "--t-pill-h": "7px",
+        "--t-pill-gap": "9px",
+        "--t-arrow-size": "44px",
+        "--t-arrow-gap": "12px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".testimonials-testimonialsSection",
+      "conditions": [
+        "@media (min-width:90rem)"
+      ],
+      "variables": {
+        "--t-pad-top": "80px",
+        "--t-pad-bottom": "80px",
+        "--t-header-inset": "120px",
+        "--t-header-to-marquee": "32px",
+        "--t-header-gap": "32px",
+        "--t-badge-font": "16px",
+        "--t-badge-line": "1.2",
+        "--t-badge-pad": "4px 8px 4px 4px",
+        "--t-badge-gap": "7px",
+        "--t-badge-icon": "24px",
+        "--t-badge-border-w": ".5px",
+        "--t-badge-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--t-heading-font": "36px",
+        "--t-heading-line": "1.3",
+        "--t-heading-max": "640px",
+        "--t-cta-py": "16px",
+        "--t-viewport-pad-block": "40px",
+        "--t-card-w": "250px",
+        "--t-card-h": "320px",
+        "--t-card-radius": "16.338px",
+        "--t-card-gap": "24px",
+        "--t-card-pad": "20px",
+        "--t-play-size": "28.591px",
+        "--t-play-icon": "11.913px",
+        "--t-quote-mark-font": "76.583px",
+        "--t-quote-mark-h": "32.676px",
+        "--t-quote-gap": "6.127px",
+        "--t-quote-pb": "8px",
+        "--t-quote-font": "16px",
+        "--t-meta-font": "12px",
+        "--t-logo-w": "62.5px",
+        "--t-logo-h": "20px",
+        "--t-controls-gap": "40px",
+        "--t-pill-w": "44px",
+        "--t-pill-h": "8px",
+        "--t-pill-gap": "10px",
+        "--t-arrow-size": "48px",
+        "--t-arrow-icon": "20px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".testimonials-testimonialsSection",
+      "conditions": [
+        "@media (min-width:108rem)"
+      ],
+      "variables": {
+        "--t-border-w": "1.2px",
+        "--t-pad-top": "96px",
+        "--t-pad-bottom": "96px",
+        "--t-header-inset": "144px",
+        "--t-header-to-marquee": "40px",
+        "--t-header-gap": "40px",
+        "--t-badge-font": "20px",
+        "--t-badge-pad": "4px 10px 4px 4px",
+        "--t-badge-gap": "8px",
+        "--t-badge-icon": "28px",
+        "--t-badge-border-w": ".6px",
+        "--t-badge-shadow": "0 4.8px 2.4px #00000014, 0 .723px 1.084px #00000012, 0 12px 18px #00000008",
+        "--t-heading-font": "44px",
+        "--t-heading-line": "1.28",
+        "--t-heading-max": "780px",
+        "--t-cta-py": "22px",
+        "--t-cta-px": "24px",
+        "--t-cta-font": "16px",
+        "--t-viewport-pad-block": "48px",
+        "--t-card-w": "300px",
+        "--t-card-h": "384px",
+        "--t-card-radius": "19.6px",
+        "--t-card-gap": "28px",
+        "--t-card-pad": "24px",
+        "--t-play-size": "34.309px",
+        "--t-play-icon": "14.296px",
+        "--t-quote-mark-font": "91.9px",
+        "--t-quote-mark-h": "39.21px",
+        "--t-quote-gap": "7.35px",
+        "--t-quote-pb": "10px",
+        "--t-quote-font": "18px",
+        "--t-meta-font": "14px",
+        "--t-logo-w": "75px",
+        "--t-logo-h": "24px",
+        "--t-pill-w": "48px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-root",
+      "conditions": [],
+      "variables": {
+        "--button-label-padding": "4px",
+        "--button-border-color": "transparent",
+        "--button-background": "transparent",
+        "--button-text-color": "inherit",
+        "--button-shadow": "none",
+        "--button-dot-color": "currentColor",
+        "--button-overlay-background": "transparent",
+        "--button-overlay-shadow": "none",
+        "--button-backdrop-filter": "none"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-sizeXl",
+      "conditions": [],
+      "variables": {
+        "--button-height": "58px",
+        "--button-padding-inline": "24px",
+        "--button-gap": "6px",
+        "--button-icon-size": "22px",
+        "--button-dot-size": "10px",
+        "--button-label-font-size": "1rem",
+        "--button-label-line-height": "1.36"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-sizeLg",
+      "conditions": [],
+      "variables": {
+        "--button-height": "48px",
+        "--button-padding-inline": "16px",
+        "--button-gap": "6px",
+        "--button-icon-size": "20px",
+        "--button-dot-size": "8px",
+        "--button-label-font-size": ".875rem",
+        "--button-label-line-height": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-sizeMd",
+      "conditions": [],
+      "variables": {
+        "--button-height": "40px",
+        "--button-padding-inline": "16px",
+        "--button-gap": "6px",
+        "--button-icon-size": "18px",
+        "--button-dot-size": "8px",
+        "--button-label-font-size": ".875rem",
+        "--button-label-line-height": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-sizeSm",
+      "conditions": [],
+      "variables": {
+        "--button-height": "34px",
+        "--button-padding-inline": "14px",
+        "--button-gap": "6px",
+        "--button-icon-size": "14px",
+        "--button-dot-size": "6px",
+        "--button-label-font-size": ".875rem",
+        "--button-label-line-height": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-sizeXs",
+      "conditions": [],
+      "variables": {
+        "--button-height": "32px",
+        "--button-padding-inline": "12px",
+        "--button-gap": "4px",
+        "--button-icon-size": "14px",
+        "--button-dot-size": "6px",
+        "--button-label-font-size": ".875rem",
+        "--button-label-line-height": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-size2Xs",
+      "conditions": [],
+      "variables": {
+        "--button-height": "24px",
+        "--button-padding-inline": "8px",
+        "--button-gap": "4px",
+        "--button-icon-size": "12px",
+        "--button-dot-size": "6px",
+        "--button-label-font-size": ".75rem",
+        "--button-label-line-height": "1"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-variantPrimary,.button-variantPrimaryYellow",
+      "conditions": [],
+      "variables": {
+        "--button-border-color": "var(--color-lime)",
+        "--button-background": "var(--color-lime)",
+        "--button-text-color": "var(--color-ink)",
+        "--button-shadow": "var(--shadow-button-soft)",
+        "--button-dot-color": "var(--color-ink)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-variantPrimaryWhite",
+      "conditions": [],
+      "variables": {
+        "--button-border-color": "var(--color-line)",
+        "--button-background": "var(--color-paper-soft)",
+        "--button-text-color": "var(--color-ink)",
+        "--button-shadow": "var(--shadow-button-soft)",
+        "--button-dot-color": "var(--color-lime)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-variantSecondaryBlack",
+      "conditions": [],
+      "variables": {
+        "--button-label-padding": "0",
+        "--button-background": "var(--gradient-button-dark-default)",
+        "--button-text-color": "var(--color-paper-soft)",
+        "--button-shadow": "var(--shadow-button-dark-surface)",
+        "--button-dot-color": "var(--color-paper)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-variantSecondaryBlack.button-sizeXl,.button-variantSecondaryBlack.button-sizeLg,.button-variantSecondaryBlack.button-sizeMd,.button-variantSecondaryBlack.button-sizeSm",
+      "conditions": [],
+      "variables": {
+        "--button-gap": "10px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-variantSecondaryBlack.button-sizeLg",
+      "conditions": [],
+      "variables": {
+        "--button-padding-inline": "18px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-variantSecondaryBlack.button-size2Xs",
+      "conditions": [],
+      "variables": {
+        "--button-gap": "2px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-variantSecondaryGray",
+      "conditions": [],
+      "variables": {
+        "--button-border-color": "var(--color-border-glass)",
+        "--button-text-color": "var(--color-paper-soft)",
+        "--button-overlay-background": "var(--color-background-glass-default)",
+        "--button-overlay-shadow": "var(--shadow-button-inset)",
+        "--button-dot-color": "var(--color-lime)",
+        "--button-backdrop-filter": "blur(2px)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-variantTertiaryGray",
+      "conditions": [],
+      "variables": {
+        "--button-text-color": "var(--color-ink)",
+        "--button-overlay-background": "var(--color-background-surface-tertiary)",
+        "--button-overlay-shadow": "var(--shadow-button-inset)",
+        "--button-dot-color": "var(--color-lime)",
+        "--button-backdrop-filter": "blur(2px)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-interactiveDefault.button-variantSecondaryBlack:hover,.button-stateHover.button-variantSecondaryBlack",
+      "conditions": [],
+      "variables": {
+        "--button-background": "var(--gradient-button-dark-hover)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-interactiveDefault.button-variantSecondaryBlack:active,.button-stateFocused.button-variantSecondaryBlack",
+      "conditions": [],
+      "variables": {
+        "--button-background": "var(--gradient-button-dark-flat)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-interactiveDefault.button-variantSecondaryGray:hover,.button-stateHover.button-variantSecondaryGray",
+      "conditions": [],
+      "variables": {
+        "--button-overlay-background": "var(--color-background-glass-hover)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-interactiveDefault.button-variantSecondaryGray:focus-visible,.button-stateFocused.button-variantSecondaryGray",
+      "conditions": [],
+      "variables": {
+        "--button-overlay-background": "var(--color-background-glass-focus)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-stateDisabled.button-variantPrimaryWhite",
+      "conditions": [],
+      "variables": {
+        "--button-dot-color": "var(--color-ink)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".button-stateDisabled.button-variantSecondaryGray",
+      "conditions": [],
+      "variables": {
+        "--button-overlay-background": "#ffffff29"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".topbar-mobileShell",
+      "conditions": [],
+      "variables": {
+        "--mobile-bar-padding": "14px",
+        "--mobile-menu-duration": ".64s",
+        "--mobile-menu-easing": "cubic-bezier(.65, 0, .35, 1)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".topbar-mobileShellOpen",
+      "conditions": [],
+      "variables": {
+        "--mobile-menu-easing": "cubic-bezier(.33, 1, .68, 1)"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".topbar-mobileShell",
+      "conditions": [
+        "@media (max-width:743px)"
+      ],
+      "variables": {
+        "--mobile-bar-padding": "20px"
+      }
+    },
+    {
+      "file": "dist/styles.css",
+      "selector": ".topbar-mobileShell",
+      "conditions": [
+        "@media (prefers-reduced-motion:reduce)"
+      ],
+      "variables": {
+        "--mobile-menu-duration": "1ms"
+      }
+    },
+    {
+      "file": "dist/blitz.css",
+      "selector": ":root",
+      "conditions": [],
+      "variables": {
+        "--font-manrope": "Manrope,Arial,sans-serif",
+        "--font-overused-grotesk": "overusedGrotesk,Arial,sans-serif"
+      }
+    },
+    {
+      "file": "dist/footer.css",
+      "selector": ".pixel-footer__identity",
+      "conditions": [],
+      "variables": {
+        "--word-size": "clamp(64px,11.9vw,220px)"
+      }
+    },
+    {
+      "file": "dist/footer.css",
+      "selector": ".pixel-footer__identity",
+      "conditions": [
+        "@media(min-width:1800px)"
+      ],
+      "variables": {
+        "--word-size": "220px"
+      }
+    },
+    {
+      "file": "dist/footer.css",
+      "selector": ".pixel-footer__identity",
+      "conditions": [
+        "@media(max-width:1100px)"
+      ],
+      "variables": {
+        "--word-size": "11.9vw"
+      }
+    },
+    {
+      "file": "dist/footer.css",
+      "selector": ".pixel-footer__identity",
+      "conditions": [
+        "@media(max-width:743px)"
+      ],
+      "variables": {
+        "--word-size": "11.65vw"
+      }
+    },
+    {
+      "file": "dist/refinements.css",
+      "selector": ":root",
+      "conditions": [],
+      "variables": {
+        "--font-copy": "Manrope,Arial,sans-serif",
+        "--font-display": "overusedGrotesk,Arial,sans-serif"
+      }
+    },
+    {
+      "file": "dist/refinements.css",
+      "selector": ".casestudy-grid",
+      "conditions": [],
+      "variables": {
+        "--cs-scatter-progress": "1",
+        "--cs-scatter-x-6": "35px",
+        "--cs-scatter-y-6": "80px"
+      }
+    },
+    {
+      "file": "dist/refinements.css",
+      "selector": ".casestudy-cardCell:nth-child(6)",
+      "conditions": [],
+      "variables": {
+        "--cs-scatter-x": "var(--cs-scatter-x-6)",
+        "--cs-scatter-y": "var(--cs-scatter-y-6)"
+      }
+    },
+    {
+      "file": "dist/refinements.css",
+      "selector": ".achievement-rankCard",
+      "conditions": [],
+      "variables": {
+        "--achievement-card-width": "220px",
+        "--achievement-card-height": "176px",
+        "--achievement-card-text-width": "190px"
+      }
+    },
+    {
+      "file": "dist/refinements.css",
+      "selector": ".achievement-rankCard",
+      "conditions": [
+        "@media(max-width:743px)"
+      ],
+      "variables": {
+        "--achievement-card-width": "190px",
+        "--achievement-card-height": "166px",
+        "--achievement-card-text-width": "158px"
+      }
+    },
+    {
+      "file": "dist/mobile.css",
+      "selector": ".topbar-mobileShell",
+      "conditions": [
+        "@media(max-width:1023px)"
+      ],
+      "variables": {
+        "--mobile-menu-duration": ".28s"
+      }
+    },
+    {
+      "file": "dist/stories.css",
+      "selector": ".stories",
+      "conditions": [],
+      "variables": {
+        "--story-gutter": "max(24px,calc((100vw - 1152px)/2))"
+      }
+    },
+    {
+      "file": "dist/stories.css",
+      "selector": ".stories",
+      "conditions": [
+        "@media(max-width:743px)"
+      ],
+      "variables": {
+        "--story-gutter": "20px"
+      }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [],
+      "variables": {
+        "--contact-close-size": "44px",
+        "--contact-close-layer": "3",
+        "--site-gutter": "56px",
+        "--site-content-width": "calc(1728px - 2 * var(--site-gutter))"
+      }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [
+        "@media(min-width:1440px)"
+      ],
+      "variables": {
+        "--site-gutter": "78px"
+      }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [
+        "@media(min-width:1728px)"
+      ],
+      "variables": {
+        "--site-gutter": "96px"
+      }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [
+        "@media(max-width:743px)"
+      ],
+      "variables": {
+        "--site-gutter": "20px"
+      }
+    }
+  ]
+}

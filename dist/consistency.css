@@ -1,0 +1,21 @@
+/* Shared page chrome and alignment. Approved 9 October: text controls, no arrow decorations. */
+:root{--contact-close-size:44px;--contact-close-layer:3;--site-gutter:56px;--site-content-width:calc(1728px - 2 * var(--site-gutter))}
+.stories-arrow{width:auto;min-width:80px;height:44px;padding:0 18px;border-radius:999px;font:500 12px/1 var(--font-copy)}
+.topbar-mobileNavArrow,.topbar-mobileNavArrowPlaceholder,.services-serviceIconBadge,.contact-dialog__arrow{display:none}
+.pixel-footer__inner{width:calc(100% - 2 * var(--site-gutter));max-width:var(--site-content-width);min-height:0;padding:112px 0 40px;gap:0}
+.pixel-footer__intro{display:grid;grid-template-columns:minmax(240px,350px) minmax(0,1fr);align-items:center;gap:40px;margin:0}
+.pixel-footer__navigation{flex-wrap:nowrap;gap:24px;align-items:center}.pixel-footer__navigation>a{padding:14px 0;text-decoration:none}.pixel-footer__navigation .pixel-footer__contact{padding:14px 20px;border-radius:999px;gap:12px}
+.footer-offices{margin:48px 0 0;padding:36px 0;border-top:1px solid #ffffff24;grid-template-columns:1fr 1fr 1.3fr;gap:40px}
+.pixel-footer__identity{margin:36px 0 40px}.footer-legal{padding:24px 0;border-top:1px solid #ffffff24;gap:16px 32px}.pixel-footer__utility{border-top:0;padding:0;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:start}.pixel-footer__social{justify-content:flex-end}.pixel-footer__craft{text-align:center;display:block}
+.policy-hero-copy{max-width:1728px;padding:160px var(--site-gutter) 72px}.policy-layout{max-width:1728px;padding:72px var(--site-gutter) 110px;grid-template-columns:240px minmax(0,760px);gap:80px}.policy-layout aside{top:110px}.policy-hero-index{right:var(--site-gutter)}
+.policy-hero-copy{animation:policy-entry .7s cubic-bezier(.22,1,.36,1) both}.policy-layout{animation:policy-entry .7s cubic-bezier(.22,1,.36,1) .12s both}
+@keyframes policy-entry{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+body{transition:opacity .18s ease,transform .18s ease}body.page-leaving{opacity:0;transform:translateY(-6px);pointer-events:none}
+.policy-page>header{transition:transform .35s ease,opacity .35s ease}.policy-page.footer-in-view>header{transform:translateY(-120%);opacity:0;pointer-events:none}
+.contact-dialog__action{justify-content:flex-start}.policy-button{gap:0}.policy-back{margin-top:32px}
+@media(min-width:1440px){:root{--site-gutter:78px}}@media(min-width:1728px){:root{--site-gutter:96px}}
+@media(max-width:1100px){.pixel-footer__intro{grid-template-columns:1fr;gap:28px}.pixel-footer__navigation{justify-content:flex-start;max-width:none}.pixel-footer__copy{max-width:420px}.policy-layout{gap:40px}}
+@media(max-width:743px){:root{--site-gutter:20px}.pixel-footer__inner{padding:80px 0 28px}.pixel-footer__intro{gap:28px}.pixel-footer__navigation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px;font:400 12px/1.4 var(--font-copy);width:100%}.pixel-footer__navigation>a{padding:12px 0}.pixel-footer__navigation .pixel-footer__contact{grid-column:1/-1;justify-content:center;margin-top:10px;padding:14px 20px;min-height:44px}.footer-offices{margin:32px 0 0;padding:28px 0;grid-template-columns:1fr 1fr;gap:28px 20px}.pixel-footer__identity{margin:28px 0 32px}.footer-legal{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;padding:22px 0}.footer-legal a{font-size:12px;line-height:1.6}.pixel-footer__utility{grid-template-columns:1fr;gap:18px;font-size:10px}.pixel-footer__social{justify-content:flex-start;gap:24px}.pixel-footer__craft{text-align:left}.pixel-footer__copyright{flex:none}.policy-hero-copy{padding:138px 20px 48px}.policy-hero-copy h1{font-size:48px;line-height:1.05;letter-spacing:-.025em}.policy-layout{display:block;padding:36px 20px 64px}.stories-arrow{min-width:66px;padding:0 12px;height:44px;font-size:11px}.contact-dialog .dialog-close{width:44px;height:44px;top:10px;right:10px}}
+@media(prefers-reduced-motion:reduce){.policy-hero-copy,.policy-layout{animation:none}body{transition:none;transform:none}.page-leaving{opacity:1!important}}
+
+.contact-dialog .dialog-close{width:var(--contact-close-size);height:var(--contact-close-size);z-index:var(--contact-close-layer)}

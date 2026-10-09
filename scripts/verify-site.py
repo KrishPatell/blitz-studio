@@ -61,3 +61,25 @@ for name,page in pages.items():
    assert (root/target).is_file(),(name,target,'missing local target')
    if url.fragment and target in pages:assert unquote(url.fragment) in pages[target].ids,(name,value,'missing page anchor')
 print('PASS: all five pages, cross-page anchors and local assets')
+
+# Shared navigation, contact behavior and the requested icon/control removal.
+headers=re.findall(r'<header\b[\s\S]*?</header>',html)
+assert len(headers)==2, 'Expected shared mobile and desktop headers'
+def policy_header(header):
+ header=header.replace('href="#','href="index.html#')
+ header=re.sub(r'aria-current="(?:page|location)"','',header)
+ for old,new in [('topbar-itemLinkActive','topbar-itemLinkInactive'),('topbar-itemLabelActive','topbar-itemLabelInactive'),('topbar-mobileNavItemActive',''),('topbar-activeIndicatorVisible','')]:header=header.replace(old,new)
+ return header
+for name,page in pages.items():
+ source=(root/name).read_text()
+ markup=re.sub(r'<style\b[\s\S]*?</style>','',source)
+ assert not re.search(r'[↗↖↙↘←→]',markup),(name,'arrow glyph')
+ removed=['pixel-footer__motion','contact-dialog__arrow','topbar-mobileNavArrow','services-serviceIconBadge']
+ assert not any(any(c in a.get('class','') for c in removed) for tag,a in page.tags),(name,'removed icon/control returned')
+ scripts=[urlsplit(a.get('src','')).path for tag,a in page.tags if tag=='script']
+ assert scripts.count('site-ui.js')==1,(name,'shared UI script missing or duplicated')
+ if name=='index.html':assert scripts.index('site-ui.js')<scripts.index('app.js'),'shared UI must load before homepage interactions'
+ else:assert re.findall(r'<header\b[\s\S]*?</header>',source)==[policy_header(h) for h in headers],(name,'navbar differs from homepage')
+ assert any(tag=='dialog' and a.get('id')=='contact-dialog' for tag,a in page.tags),(name,'contact dialog missing')
+ assert any('pixel-footer__contact' in a.get('class','') and 'data-contact' in a for tag,a in page.tags),(name,'footer bypasses contact popup')
+print('PASS: all five pages share navigation/contact UI; no arrow glyphs, removed decorations or footer pause control')

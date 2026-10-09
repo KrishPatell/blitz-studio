@@ -1,0 +1,404 @@
+{
+  "version": 2,
+  "baseline": {
+    "commit": "a1c5204145fc90c1f4525c8d4b8a6c0193513e52",
+    "authority": "Current local homepage after approved arrow removal and shared chrome fixes; final cascade is authoritative",
+    "cssOrder": [
+      "styles.css",
+      "blitz.css",
+      "footer.css",
+      "contact.css",
+      "refinements.css",
+      "mobile.css",
+      "stories.css",
+      "privacy.css",
+      "consistency.css"
+    ],
+    "reference": "design/homepage-baseline.json"
+  },
+  "cssVariables": {
+    "--font-sans": "var(--font-manrope)",
+    "--font-serif": "var(--font-overused-grotesk)",
+    "--font-mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "--spacing": ".25rem",
+    "--default-font-family": "var(--font-sans)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--font-display": "overusedGrotesk,Arial,sans-serif",
+    "--font-copy": "Manrope,Arial,sans-serif",
+    "--color-primary-blue-900": "#000b33",
+    "--color-primary-blue-500": "#012299",
+    "--color-primary-blue-400": "#3557ff",
+    "--color-primary-blue-300": "#3e62e4",
+    "--color-primary-light": "#80bdff",
+    "--color-secondary-500": "#f5c80a",
+    "--color-background-strong": "#0a0a0a",
+    "--color-background-white": "#fff",
+    "--color-background-button-dark": "#11100f",
+    "--color-background-surface-tertiary": "#e6e6e6",
+    "--color-background-surface-hover": "#f0f0f0",
+    "--color-background-glass-default": "#ffffff3d",
+    "--color-background-glass-hover": "#ffffff47",
+    "--color-background-glass-focus": "#ffffff5c",
+    "--color-border-dark-4": "#0000000a",
+    "--color-border-soft": "#f2f2f2",
+    "--color-border-glass": "#ffffff1f",
+    "--color-border-button-dark": "#292929",
+    "--color-icon-strong": "#0a0a0a",
+    "--color-icon-white": "#fff",
+    "--color-text-strong": "#0a0a0a",
+    "--color-text-normal": "#262626",
+    "--color-text-grey": "gray",
+    "--color-text-soft": "#0a0a0aa3",
+    "--color-text-disable": "#0a0a0a70",
+    "--color-text-white": "#fff",
+    "--color-opacity-white-90": "#ffffffe6",
+    "--color-opacity-white-72": "#ffffffb8",
+    "--color-opacity-white-52": "#ffffff85",
+    "--color-opacity-strong-90": "#0a0a0ae6",
+    "--color-opacity-strong-64": "#0a0a0aa3",
+    "--color-opacity-blue-300-92": "#3e62e4eb",
+    "--color-opacity-blue-300-72": "#3e62e4b8",
+    "--color-opacity-blue-300-20": "#3e62e433",
+    "--color-opacity-blue-400-0": "#3557ff00",
+    "--color-ink": "var(--color-text-strong)",
+    "--color-paper": "var(--color-background-white)",
+    "--color-paper-soft": "var(--color-background-white)",
+    "--color-lime": "var(--color-secondary-500)",
+    "--color-line": "var(--color-border-soft)",
+    "--shadow-button-soft": "0 2px 12px #00000014, 0 .5px 2px #2424241f",
+    "--shadow-button-dark-surface": "0 4px 6px -6px #0f0c0c80, 0 1px 1px #0003, 0 8px 4px -8px #305ac4cc, inset 0 0 0 1px var(--color-border-button-dark)",
+    "--shadow-button-inset": "inset 0 -1px 4px #ffffff1f",
+    "--gradient-button-dark-default": "linear-gradient(0deg, #fff0 0%, #ffffff14 100%), linear-gradient(90deg, #11100f 0%, #11100f 100%)",
+    "--gradient-button-dark-hover": "linear-gradient(0deg, #fff0 0%, #ffffff2e 100%), linear-gradient(90deg, #11100f 0%, #11100f 100%)",
+    "--gradient-button-dark-flat": "linear-gradient(0deg, #fff0 0%, #fff0 100%), linear-gradient(90deg, #11100f 0%, #11100f 100%)",
+    "--font-manrope": "Manrope,Arial,sans-serif",
+    "--font-overused-grotesk": "overusedGrotesk,Arial,sans-serif",
+    "--site-gutter": "56px",
+    "--site-content-width": "calc(1728px - 2 * var(--site-gutter))",
+    "--contact-close-size": "44px",
+    "--contact-close-layer": "3"
+  },
+  "typography": {
+    "display": {
+      "family": "var(--font-display)",
+      "weight": 500,
+      "tracking": "-.025em"
+    },
+    "copy": {
+      "family": "var(--font-copy)",
+      "weight": 400
+    },
+    "sectionEditorial": {
+      "scaleInventoryPx": [
+        24,
+        26,
+        36,
+        44
+      ],
+      "note": "Inventory only: use the exact section/viewport declarations in homepage-baseline.json. No universal tablet scale."
+    },
+    "sectionLarge": {
+      "mobile": {
+        "hero": "34px",
+        "process": "34px",
+        "services": "clamp(34px,calc(32.844px + .3082vw),36px)"
+      },
+      "desktop1440": "52px",
+      "desktop1728": "62px",
+      "note": "Per-section scales are distinct. Apply exact scoped custom properties/media conditions in homepage-baseline.json; services line-height is 1.12."
+    },
+    "hero": {
+      "mobile": "34px",
+      "lineHeightMobile": "1.13",
+      "trackingMobile": "-.01em",
+      "weight": 500,
+      "note": "Hero has its own responsive scale and approved italic yellow accent.",
+      "description": {
+        "base": "14px/1.44",
+        "wide1440": "20px/1.48",
+        "wide1728": "24px/1.4"
+      }
+    },
+    "stories": {
+      "mobile": "24px",
+      "tablet": "36px",
+      "desktop": "44px",
+      "lineHeightDesktop": "1.28",
+      "lineHeightMobile": "1.3",
+      "quoteMobile": "23px",
+      "quoteDesktop": "25px",
+      "quoteWeight": 400,
+      "name": "15px",
+      "nameWeight": 600,
+      "role": "12px"
+    },
+    "footerWordmark": {
+      "weight": 700,
+      "lineHeight": "1",
+      "tracking": "-.055em",
+      "note": "Keep natural glyph proportions."
+    },
+    "footerCopy": {
+      "size": "clamp(17px,1.35vw,22px)",
+      "lineHeight": "1.35",
+      "mobile": "18px"
+    }
+  },
+  "layout": {
+    "breakpointsPx": {
+      "tablet": 744,
+      "desktop": 1024,
+      "wide": 1440,
+      "max": 1728
+    },
+    "frameMax": "108rem",
+    "gutter": {
+      "mobile": "12px",
+      "tablet": "56px",
+      "wide": "78px",
+      "max": "96px"
+    },
+    "storiesGutter": {
+      "mobile": "20px",
+      "desktop": "max(24px,calc((100vw - 1152px)/2))"
+    },
+    "footerGutter": {
+      "mobile": "20px",
+      "desktop": "56px",
+      "wide": "78px",
+      "max": "96px"
+    },
+    "spacingPx": [
+      4,
+      8,
+      10,
+      12,
+      14,
+      16,
+      20,
+      24,
+      28,
+      30,
+      32,
+      36,
+      40,
+      44,
+      48,
+      56,
+      60,
+      64,
+      68,
+      72,
+      78,
+      80,
+      96,
+      112
+    ],
+    "note": "Approved inventory, not a mandatory fixed-step grid. Existing component geometry remains authoritative.",
+    "sharedChromeGutter": {
+      "mobile": "20px",
+      "desktop": "56px",
+      "wide": "78px",
+      "max": "96px"
+    }
+  },
+  "components": {
+    "badge": {
+      "shape": "pill",
+      "radius": "999px",
+      "font": "Manrope",
+      "weight": 550,
+      "icon": "None: removed decorative corner/pixel arrows stay removed",
+      "shadow": "existing component badge shadow"
+    },
+    "storiesCard": {
+      "width": "clamp(310px,30vw,400px)",
+      "widthMobile": "min(82vw,360px)",
+      "height": "590px",
+      "heightMobile": "540px",
+      "radius": "12px",
+      "padding": "30px",
+      "paddingMobile": "24px",
+      "gap": "20px",
+      "gapMobile": "14px",
+      "avatar": "48px",
+      "avatarRadius": "50%"
+    },
+    "touchTarget": {
+      "menuCloseMinimum": "44px",
+      "mobileNavRow": "48px"
+    },
+    "exceptions": {
+      "storiesPagination": "#284cf4",
+      "policyButton": "#ffdc36",
+      "policyHero": "Use the current privacy.css blue composition",
+      "contactDialog": "Scoped existing dialog design; never use it as a reference for ordinary pages"
+    },
+    "cardRadii": {
+      "compact": "14px",
+      "standard": "20px",
+      "wide": "24px"
+    },
+    "carouselTextControl": {
+      "labels": [
+        "Previous",
+        "Next"
+      ],
+      "width": "auto",
+      "minWidth": "80px",
+      "minWidthMobile": "66px",
+      "height": "44px",
+      "padding": "0 18px",
+      "paddingMobile": "0 12px",
+      "fontFamily": "var(--font-copy)",
+      "fontWeight": 500,
+      "fontSize": "12px",
+      "fontSizeMobile": "11px",
+      "lineHeight": "1",
+      "radius": "999px",
+      "background": "var(--gradient-button-dark-default)",
+      "shadow": "var(--shadow-button-dark-surface)",
+      "icons": "none",
+      "source": "dist/consistency.css .stories-arrow"
+    },
+    "footer": {
+      "source": "dist/consistency.css",
+      "width": "calc(100% - 2 * var(--site-gutter))",
+      "maxWidth": "var(--site-content-width)",
+      "padding": "112px 0 40px",
+      "paddingMobile": "80px 0 28px",
+      "introColumns": "minmax(240px,350px) minmax(0,1fr)",
+      "introGap": "40px",
+      "introStackAtPx": 1100,
+      "introGapStacked": "28px",
+      "officesMarginTop": "48px",
+      "officesPadding": "36px 0",
+      "officesGap": "40px",
+      "officesMarginTopMobile": "32px",
+      "officesPaddingMobile": "28px 0",
+      "officesGapMobile": "28px 20px",
+      "legalPadding": "24px 0",
+      "legalGap": "16px 32px",
+      "utilityGap": "24px",
+      "motionControl": "none"
+    },
+    "policyLayout": {
+      "source": "dist/consistency.css",
+      "heroPadding": "160px var(--site-gutter) 72px",
+      "heroPaddingMobile": "138px 20px 48px",
+      "columns": "240px minmax(0,760px)",
+      "gap": "80px",
+      "gapAt1100": "40px",
+      "padding": "72px var(--site-gutter) 110px",
+      "paddingMobile": "36px 20px 64px",
+      "sidebarTop": "110px",
+      "mobileTitle": "48px/1.05",
+      "mobileTracking": "-.025em",
+      "navigationSource": "dist/site-ui.js shared homepage navbar"
+    },
+    "contactClose": {
+      "size": "44px",
+      "layer": 3,
+      "source": "dist/consistency.css",
+      "reason": "Keep close target above animated brand row, including mobile"
+    }
+  },
+  "motion": {
+    "easing": {
+      "settle": "cubic-bezier(.22,1,.36,1)",
+      "pop": "cubic-bezier(.34,1.4,.64,1)",
+      "badge": "cubic-bezier(.34,1.56,.64,1)",
+      "footer": "cubic-bezier(.2,.65,.3,1)",
+      "linear": "linear",
+      "menuClose": "cubic-bezier(.65,0,.35,1)",
+      "menuOpen": "cubic-bezier(.33,1,.68,1)",
+      "pageExit": "ease"
+    },
+    "durationMs": {
+      "aboutHover": 360,
+      "cardHover": 450,
+      "imageHover": 650,
+      "achievementFlip": 650,
+      "headingReveal": 880,
+      "badgeReveal": 720,
+      "cardReveal": 940,
+      "artworkReveal": 980,
+      "mobileMenu": 280,
+      "pagination": 250,
+      "dialogClose": 180,
+      "footerParallax": 1800,
+      "footerWordReveal": 2000,
+      "footerLightCycle": 12000,
+      "policyEntry": 700,
+      "pageExit": 180,
+      "policyHeader": 350
+    },
+    "intervalMs": {
+      "process": 6000,
+      "achievement": 6500
+    },
+    "staggerMs": [
+      90,
+      180
+    ],
+    "cardLift": "-5px",
+    "hoverScale": 1.025,
+    "revealThreshold": 0.08,
+    "processThreshold": 0.2,
+    "achievementThreshold": 0.25,
+    "footerMaxDpr": 1.5,
+    "footerFrameIntervalMs": 32,
+    "footerWordRevealDelayMs": 120,
+    "note": "Inventory includes defined reveal effects. Effective overrides can disable them; do not reactivate dormant effects.",
+    "policyEntryDistance": "14px",
+    "policyLayoutDelayMs": 120,
+    "pageExitDistance": "-6px",
+    "footerChromeThreshold": 0.25,
+    "footerParticleThreshold": 0.12
+  },
+  "artwork": {
+    "stories": [
+      "cobalt",
+      "midnight",
+      "ice",
+      "royal",
+      "azure"
+    ],
+    "directory": "dist/assets/stories",
+    "widthsPx": [
+      480,
+      800
+    ],
+    "format": "webp",
+    "loading": "lazy",
+    "direction": "docs/testimonial-artwork-prompts.md",
+    "contentSource": "content/testimonials.json"
+  },
+  "responsiveCssVariables": [
+    {
+      "query": "(max-width:743px)",
+      "values": {
+        "--site-gutter": "20px"
+      }
+    },
+    {
+      "query": "(min-width:1440px)",
+      "values": {
+        "--site-gutter": "78px"
+      }
+    },
+    {
+      "query": "(min-width:1728px)",
+      "values": {
+        "--site-gutter": "96px"
+      }
+    }
+  ],
+  "provenance": {
+    "palette": "dist/styles.css theme layer; dist/blitz.css font aliases; dist/refinements.css effective font roles",
+    "responsiveGeometry": "Source-scoped custom properties in design/homepage-baseline.json; apply media conditions and CSS order before choosing a value",
+    "stories": "dist/stories.css and final dist/consistency.css overrides",
+    "footerAndPolicies": "dist/footer.css, dist/privacy.css and final dist/consistency.css",
+    "motion": "dist/app.js, dist/footer.js, dist/case-study-motion.js, dist/site-ui.js and source CSS"
+  }
+}

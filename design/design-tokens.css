@@ -1,0 +1,159 @@
+/* GENERATED from design/design-tokens.json. Run npm run design:tokens.
+   Consumer stylesheet; existing site cascade remains the visual authority. */
+:root {
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-overused-grotesk);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --spacing: .25rem;
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
+  --font-display: overusedGrotesk,Arial,sans-serif;
+  --font-copy: Manrope,Arial,sans-serif;
+  --color-primary-blue-900: #000b33;
+  --color-primary-blue-500: #012299;
+  --color-primary-blue-400: #3557ff;
+  --color-primary-blue-300: #3e62e4;
+  --color-primary-light: #80bdff;
+  --color-secondary-500: #f5c80a;
+  --color-background-strong: #0a0a0a;
+  --color-background-white: #fff;
+  --color-background-button-dark: #11100f;
+  --color-background-surface-tertiary: #e6e6e6;
+  --color-background-surface-hover: #f0f0f0;
+  --color-background-glass-default: #ffffff3d;
+  --color-background-glass-hover: #ffffff47;
+  --color-background-glass-focus: #ffffff5c;
+  --color-border-dark-4: #0000000a;
+  --color-border-soft: #f2f2f2;
+  --color-border-glass: #ffffff1f;
+  --color-border-button-dark: #292929;
+  --color-icon-strong: #0a0a0a;
+  --color-icon-white: #fff;
+  --color-text-strong: #0a0a0a;
+  --color-text-normal: #262626;
+  --color-text-grey: gray;
+  --color-text-soft: #0a0a0aa3;
+  --color-text-disable: #0a0a0a70;
+  --color-text-white: #fff;
+  --color-opacity-white-90: #ffffffe6;
+  --color-opacity-white-72: #ffffffb8;
+  --color-opacity-white-52: #ffffff85;
+  --color-opacity-strong-90: #0a0a0ae6;
+  --color-opacity-strong-64: #0a0a0aa3;
+  --color-opacity-blue-300-92: #3e62e4eb;
+  --color-opacity-blue-300-72: #3e62e4b8;
+  --color-opacity-blue-300-20: #3e62e433;
+  --color-opacity-blue-400-0: #3557ff00;
+  --color-ink: var(--color-text-strong);
+  --color-paper: var(--color-background-white);
+  --color-paper-soft: var(--color-background-white);
+  --color-lime: var(--color-secondary-500);
+  --color-line: var(--color-border-soft);
+  --shadow-button-soft: 0 2px 12px #00000014, 0 .5px 2px #2424241f;
+  --shadow-button-dark-surface: 0 4px 6px -6px #0f0c0c80, 0 1px 1px #0003, 0 8px 4px -8px #305ac4cc, inset 0 0 0 1px var(--color-border-button-dark);
+  --shadow-button-inset: inset 0 -1px 4px #ffffff1f;
+  --gradient-button-dark-default: linear-gradient(0deg, #fff0 0%, #ffffff14 100%), linear-gradient(90deg, #11100f 0%, #11100f 100%);
+  --gradient-button-dark-hover: linear-gradient(0deg, #fff0 0%, #ffffff2e 100%), linear-gradient(90deg, #11100f 0%, #11100f 100%);
+  --gradient-button-dark-flat: linear-gradient(0deg, #fff0 0%, #fff0 100%), linear-gradient(90deg, #11100f 0%, #11100f 100%);
+  --font-manrope: Manrope,Arial,sans-serif;
+  --font-overused-grotesk: overusedGrotesk,Arial,sans-serif;
+  --site-gutter: 56px;
+  --site-content-width: calc(1728px - 2 * var(--site-gutter));
+  --contact-close-size: 44px;
+  --contact-close-layer: 3;
+  --blitz-motion-about-hover: 360ms;
+  --blitz-motion-card-hover: 450ms;
+  --blitz-motion-image-hover: 650ms;
+  --blitz-motion-achievement-flip: 650ms;
+  --blitz-motion-heading-reveal: 880ms;
+  --blitz-motion-badge-reveal: 720ms;
+  --blitz-motion-card-reveal: 940ms;
+  --blitz-motion-artwork-reveal: 980ms;
+  --blitz-motion-mobile-menu: 280ms;
+  --blitz-motion-pagination: 250ms;
+  --blitz-motion-dialog-close: 180ms;
+  --blitz-motion-footer-parallax: 1800ms;
+  --blitz-motion-footer-word-reveal: 2000ms;
+  --blitz-motion-footer-light-cycle: 12000ms;
+  --blitz-motion-policy-entry: 700ms;
+  --blitz-motion-page-exit: 180ms;
+  --blitz-motion-policy-header: 350ms;
+  --blitz-ease-settle: cubic-bezier(.22,1,.36,1);
+  --blitz-ease-pop: cubic-bezier(.34,1.4,.64,1);
+  --blitz-ease-badge: cubic-bezier(.34,1.56,.64,1);
+  --blitz-ease-footer: cubic-bezier(.2,.65,.3,1);
+  --blitz-ease-linear: linear;
+  --blitz-ease-menu-close: cubic-bezier(.65,0,.35,1);
+  --blitz-ease-menu-open: cubic-bezier(.33,1,.68,1);
+  --blitz-ease-page-exit: ease;
+  --blitz-interval-process: 6000ms;
+  --blitz-interval-achievement: 6500ms;
+  --blitz-heading-weight: 500;
+  --blitz-heading-tracking: -.025em;
+  --blitz-heading-stories: 44px;
+  --blitz-heading-stories-tablet: 36px;
+  --blitz-heading-stories-mobile: 24px;
+  --blitz-hover-scale: 1.025;
+  --blitz-card-lift: -5px;
+  --blitz-radius-pill: 999px;
+  --blitz-radius-story: 12px;
+  --blitz-frame-max: 108rem;
+  --blitz-story-card-width: clamp(310px,30vw,400px);
+  --blitz-story-card-width-mobile: min(82vw,360px);
+  --blitz-story-card-height: 590px;
+  --blitz-story-card-height-mobile: 540px;
+  --blitz-story-card-padding: 30px;
+  --blitz-story-card-padding-mobile: 24px;
+  --blitz-story-gap: 20px;
+  --blitz-story-gap-mobile: 14px;
+  --blitz-carousel-height: 44px;
+  --blitz-carousel-min-width: 80px;
+  --blitz-carousel-min-width-mobile: 66px;
+  --blitz-carousel-font-size: 12px;
+  --blitz-carousel-font-size-mobile: 11px;
+  --blitz-footer-padding: 112px 0 40px;
+  --blitz-footer-padding-mobile: 80px 0 28px;
+  --blitz-policy-entry-distance: 14px;
+  --blitz-policy-layout-delay: 120ms;
+  --blitz-page-exit-distance: -6px;
+  --blitz-footer-word-delay: 120ms;
+  --blitz-space-4: 4px;
+  --blitz-space-8: 8px;
+  --blitz-space-10: 10px;
+  --blitz-space-12: 12px;
+  --blitz-space-14: 14px;
+  --blitz-space-16: 16px;
+  --blitz-space-20: 20px;
+  --blitz-space-24: 24px;
+  --blitz-space-28: 28px;
+  --blitz-space-30: 30px;
+  --blitz-space-32: 32px;
+  --blitz-space-36: 36px;
+  --blitz-space-40: 40px;
+  --blitz-space-44: 44px;
+  --blitz-space-48: 48px;
+  --blitz-space-56: 56px;
+  --blitz-space-60: 60px;
+  --blitz-space-64: 64px;
+  --blitz-space-68: 68px;
+  --blitz-space-72: 72px;
+  --blitz-space-78: 78px;
+  --blitz-space-80: 80px;
+  --blitz-space-96: 96px;
+  --blitz-space-112: 112px;
+}
+@media (max-width:743px) {
+  :root {
+  --site-gutter: 20px;
+  }
+}
+@media (min-width:1440px) {
+  :root {
+  --site-gutter: 78px;
+  }
+}
+@media (min-width:1728px) {
+  :root {
+  --site-gutter: 96px;
+  }
+}

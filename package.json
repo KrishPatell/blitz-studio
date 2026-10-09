@@ -3,12 +3,19 @@
   "private": true,
   "version": "1.0.0",
   "description": "Blitz Studio static website",
-  "engines": { "node": ">=20.9.0" },
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "verify": "python3 scripts/verify-site.py",
     "preview": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist",
-    "optimize:images": "node scripts/optimize-media.mjs"
+    "optimize:images": "node scripts/optimize-media.mjs",
+    "design:tokens": "node scripts/design-tokens.mjs",
+    "design:check": "node scripts/design-tokens.mjs --check",
+    "design:baseline": "node scripts/design-tokens.mjs --update-baseline"
   },
-  "devDependencies": { "sharp": "0.35.5" }
+  "devDependencies": {
+    "sharp": "0.35.5"
+  }
 }
