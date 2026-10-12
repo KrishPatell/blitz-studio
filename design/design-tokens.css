@@ -65,6 +65,7 @@
   --footer-small-font: 400 12px/1.6 var(--font-copy);
   --footer-navigation-gap: 12px 24px;
   --about-stat-capability-size: clamp(20px,1.8vw,28px);
+  --nav-initial-transition: none;
   --blitz-motion-about-hover: 360ms;
   --blitz-motion-card-hover: 450ms;
   --blitz-motion-image-hover: 650ms;

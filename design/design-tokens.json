@@ -81,7 +81,8 @@
     "--section-gutter": "12px",
     "--footer-small-font": "400 12px/1.6 var(--font-copy)",
     "--footer-navigation-gap": "12px 24px",
-    "--about-stat-capability-size": "clamp(20px,1.8vw,28px)"
+    "--about-stat-capability-size": "clamp(20px,1.8vw,28px)",
+    "--nav-initial-transition": "none"
   },
   "typography": {
     "display": {
@@ -465,7 +466,7 @@
     "footerMaxDpr": 1.5,
     "footerFrameIntervalMs": 32,
     "footerWordRevealDelayMs": 120,
-    "note": "Inventory includes defined reveal effects. Effective overrides can disable them; do not reactivate dormant effects.",
+    "note": "Inventory includes defined reveal effects. Effective overrides can disable them; do not reactivate dormant effects. Navbar geometry is synchronized without transitions during initial render, font settlement, pageshow and resize; normal tab motion is enabled only after the pill has been measured.",
     "policyEntryDistance": "14px",
     "policyLayoutDelayMs": 120,
     "pageExitDistance": "-6px",
@@ -2166,6 +2167,18 @@
           },
           "letter-spacing": {
             "token": "typography.roles.statCapability.tracking"
+          }
+        }
+      },
+      {
+        "id": "navbar-initial-layout",
+        "file": "dist/consistency.css",
+        "selector": ".topbar-tabsTrack:not([data-nav-ready]) .topbar-activeIndicator",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "cssVariables.--nav-initial-transition",
+            "template": "var(--nav-initial-transition)"
           }
         }
       }

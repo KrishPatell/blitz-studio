@@ -72,6 +72,7 @@ Preserve existing scoped breakpoint exceptions: hero mobile text through 767.984
 
 - All pages reuse the homepage header and `dist/site-ui.js` for navigation, mobile menu, dialogs and page transitions. Do not create an independent policy navbar or duplicate contact logic.
 - Select a homepage nav item only when its section exists on the homepage. Policy pages must not falsely select Home.
+- Never save runtime indicator widths or transforms into navbar markup. Keep the active tab usable before JavaScript; measure the indicator with transitions disabled on startup, font settlement, pageshow and resize, then enable normal tab movement.
 - Footer inner padding is 112px top / 40px bottom, mobile 80px / 28px. Intro gap is 40px; at 1100px it stacks with 28px gap. Site and policy links share one navigation group: four columns on desktop, two on mobile, 44px minimum link height. The contact action spans the group. Utility text follows the same small-text font; do not reintroduce a separate legal row.
 - Policy hero padding is 160px / shared gutter / 72px; mobile 138px / 20px / 48px. Reading layout is 240px + minmax(0,760px), gap 80px (40px at 1100px); mobile stacks with 36px / 20px / 64px padding.
 

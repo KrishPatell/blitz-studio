@@ -72,6 +72,8 @@ def policy_header(header):
  return header
 for name,page in pages.items():
  source=(root/name).read_text()
+ indicator=next(a for tag,a in page.tags if 'topbar-activeIndicator' in a.get('class','').split())
+ assert 'style' not in indicator and 'topbar-activeIndicatorVisible' not in indicator['class'], (name,'Runtime navbar geometry saved into initial markup')
  markup=re.sub(r'<style\b[\s\S]*?</style>','',source)
  assert not re.search(r'[↗↖↙↘←→]',markup),(name,'arrow glyph')
  removed=['pixel-footer__motion','contact-dialog__arrow','topbar-mobileNavArrow','services-serviceIconBadge']

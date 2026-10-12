@@ -5,6 +5,8 @@ const {clients}=JSON.parse(await readFile('content/clients.json','utf8'));
 const {verified:stories}=JSON.parse(await readFile('content/testimonials.json','utf8'));
 const escape=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 let home=await readFile('dist/index.html','utf8');
+// Runtime-measured pill geometry must never be saved into first-paint markup.
+home=home.replace(/<div\b[^>]*class="topbar-activeIndicator(?: topbar-activeIndicatorVisible)?"[^>]*>/g,'<div aria-hidden="true" class="topbar-activeIndicator">');
 const replace=(pattern,value,label)=>{if(!pattern.test(home))throw Error(`Missing homepage ${label}`);home=home.replace(pattern,value)};
 const stats=studio.stats.map((stat,index)=>`<div class="about-aboutStat" data-active="${index===0}" data-stat="${index}"><dt class="about-aboutStatValue${stat.kind==='capability'?' about-aboutStatValue--capability':''}">${escape(stat.value)}</dt><dd class="about-aboutStatLabel">${escape(stat.label)}<button aria-label="${escape(stat.accessibleLabel)}" aria-pressed="${index===0}" class="about-aboutStatHitArea" type="button"></button></dd></div>`).join('');
 replace(/<dl class="about-aboutStats"[^>]*>[\s\S]*?<\/dl>/,`<dl class="about-aboutStats" data-reveal="">${stats}</dl>`,'statistics');
