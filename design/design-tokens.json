@@ -1,7 +1,8 @@
 {
+  "$schema": "./design-tokens.schema.json",
   "version": 2,
   "baseline": {
-    "commit": "a1c5204145fc90c1f4525c8d4b8a6c0193513e52",
+    "commit": "d8d6757105bc169bbee2821e3f51ecff02e6033b",
     "authority": "Current local homepage after approved arrow removal and shared chrome fixes; final cascade is authoritative",
     "cssOrder": [
       "styles.css",
@@ -76,7 +77,11 @@
     "--site-gutter": "56px",
     "--site-content-width": "calc(1728px - 2 * var(--site-gutter))",
     "--contact-close-size": "44px",
-    "--contact-close-layer": "3"
+    "--contact-close-layer": "3",
+    "--section-gutter": "12px",
+    "--footer-small-font": "400 12px/1.6 var(--font-copy)",
+    "--footer-navigation-gap": "12px 24px",
+    "--about-stat-capability-size": "clamp(20px,1.8vw,28px)"
   },
   "typography": {
     "display": {
@@ -90,10 +95,15 @@
     },
     "sectionEditorial": {
       "scaleInventoryPx": [
+        22,
         24,
         26,
+        28,
+        32,
         36,
-        44
+        40,
+        44,
+        48
       ],
       "note": "Inventory only: use the exact section/viewport declarations in homepage-baseline.json. No universal tablet scale."
     },
@@ -142,6 +152,82 @@
       "size": "clamp(17px,1.35vw,22px)",
       "lineHeight": "1.35",
       "mobile": "18px"
+    },
+    "roles": {
+      "storiesCompany": {
+        "font": "500 13px/1.4 var(--font-copy)",
+        "tracking": ".02em"
+      },
+      "storiesQuote": {
+        "font": "400 25px/1.3 var(--font-copy)",
+        "tracking": "-.025em",
+        "mobileSize": "23px"
+      },
+      "storiesName": {
+        "font": "600 15px/1.4 var(--font-copy)"
+      },
+      "storiesRole": {
+        "font": "400 12px/1.5 var(--font-copy)"
+      },
+      "heroHeading": {
+        "baseSize": "36px",
+        "baseLineHeight": "1.12",
+        "baseTracking": "-.36px",
+        "wideSize": "52px",
+        "wideLineHeight": "1.16",
+        "wideTracking": "-.156px",
+        "maxSize": "62px",
+        "maxTracking": "-.186px"
+      },
+      "heroMobile": {
+        "family": "var(--font-display)",
+        "size": "34px",
+        "weight": 500,
+        "lineHeight": "1.13",
+        "tracking": "-.01em",
+        "sourceQuery": "(max-width:767.984px)"
+      },
+      "buttonLabel": {
+        "family": "var(--font-copy)",
+        "weight": 650,
+        "size": "var(--button-label-font-size)",
+        "lineHeight": "var(--button-label-line-height)",
+        "tracking": ".03em"
+      },
+      "aboutBadge": {
+        "weight": 500
+      },
+      "footerNavigation": {
+        "font": "var(--footer-small-font)",
+        "mobileFont": "var(--footer-small-font)"
+      },
+      "footerUtility": {
+        "font": "var(--footer-small-font)",
+        "tracking": "0",
+        "localTimeSize": "12px"
+      },
+      "contactTitle": {
+        "font": "600 clamp(40px,5vw,62px)/1.02 overusedGrotesk,sans-serif",
+        "tracking": "-.045em",
+        "source": "dist/contact.css; scoped dialog exception"
+      },
+      "serviceDescription": {
+        "weight": 550
+      },
+      "skillDescription": {
+        "weight": 500
+      },
+      "processSubcopy": {
+        "weight": 550
+      },
+      "statCapability": {
+        "size": "var(--about-stat-capability-size)",
+        "lineHeight": "1.15",
+        "tracking": "-.025em"
+      }
+    },
+    "compatibilityAliases": {
+      "fontSerif": "--font-serif resolves to Overused Grotesk; it is not permission to add a serif family."
     }
   },
   "layout": {
@@ -200,6 +286,13 @@
       "desktop": "56px",
       "wide": "78px",
       "max": "96px"
+    },
+    "scopedBreakpointExceptions": {
+      "heroTextMobileMax": "767.984px",
+      "aboutOuterGapMin": "1726px",
+      "footerWordmarkWideMin": "1800px",
+      "footerIntroStackMax": "1100px",
+      "note": "Preserve exact component conditions; do not normalize these to the general layout breakpoints."
     }
   },
   "components": {
@@ -209,7 +302,8 @@
       "font": "Manrope",
       "weight": 550,
       "icon": "None: removed decorative corner/pixel arrows stay removed",
-      "shadow": "existing component badge shadow"
+      "shadow": "var(--about-badge-shadow)",
+      "note": "About badge text uses weight 500; other section badges normally 550. Preserve source-scoped shadow variants."
     },
     "storiesCard": {
       "width": "clamp(310px,30vw,400px)",
@@ -277,10 +371,14 @@
       "officesMarginTopMobile": "32px",
       "officesPaddingMobile": "28px 0",
       "officesGapMobile": "28px 20px",
-      "legalPadding": "24px 0",
-      "legalGap": "16px 32px",
       "utilityGap": "24px",
-      "motionControl": "none"
+      "motionControl": "none",
+      "navigationColumns": "repeat(4,minmax(0,1fr))",
+      "navigationGap": "var(--footer-navigation-gap)",
+      "navigationMobileColumns": "repeat(2,minmax(0,1fr))",
+      "navigationMobileGap": "4px 24px",
+      "navigationLinkMinimum": "44px",
+      "typography": "Manrope across navigation, policies, copyright, craft, time, offices and social links; wordmark retains approved display font."
     },
     "policyLayout": {
       "source": "dist/consistency.css",
@@ -312,7 +410,11 @@
       "linear": "linear",
       "menuClose": "cubic-bezier(.65,0,.35,1)",
       "menuOpen": "cubic-bezier(.33,1,.68,1)",
-      "pageExit": "ease"
+      "pageExit": "ease",
+      "aboutContent": "cubic-bezier(.16,1,.3,1)",
+      "dialogOpen": "ease-out",
+      "dialogClose": "ease-in",
+      "default": "ease"
     },
     "durationMs": {
       "aboutHover": 360,
@@ -331,7 +433,21 @@
       "footerLightCycle": 12000,
       "policyEntry": 700,
       "pageExit": 180,
-      "policyHeader": 350
+      "policyHeader": 350,
+      "aboutStat": 320,
+      "aboutStackGeometry": 420,
+      "aboutStackCrossfade": 280,
+      "aboutStackLabel": 260,
+      "aboutContentOpacity": 220,
+      "aboutContentTransform": 280,
+      "aboutContentEntry": 420,
+      "processContent": 450,
+      "achievementCaption": 420,
+      "dialogOpen": 320,
+      "dialogBackdrop": 350,
+      "dialogBrand": 480,
+      "dialogContent": 550,
+      "achievementCaptionReduced": 200
     },
     "intervalMs": {
       "process": 6000,
@@ -354,7 +470,38 @@
     "policyLayoutDelayMs": 120,
     "pageExitDistance": "-6px",
     "footerChromeThreshold": 0.25,
-    "footerParticleThreshold": 0.12
+    "footerParticleThreshold": 0.12,
+    "dialogDelaysMs": {
+      "brand": 40,
+      "heading": 90,
+      "description": 140,
+      "firstAction": 200,
+      "secondAction": 250,
+      "bottom": 300
+    },
+    "aboutContentDelayMs": 120,
+    "videoThresholds": {
+      "service": 0.1,
+      "hero": 0.15
+    },
+    "scatter": {
+      "mobileCutoffPx": 744,
+      "startViewportFactor": 0.88,
+      "rangeViewportFactor": 0.7,
+      "interpolation": 0.12,
+      "epsilon": 0.001
+    },
+    "status": {
+      "definedButDormant": [
+        "headingReveal",
+        "badgeReveal",
+        "cardReveal",
+        "artworkReveal"
+      ],
+      "observerThresholdMeaning": "Observer notification thresholds; existing callbacks use isIntersecting, not a strict intersectionRatio guard.",
+      "achievementHoverLimitation": "Pointer entry clears the timer, but clicking or visibility callbacks may reschedule while hovered; this extraction does not change that behavior.",
+      "reducedMotionLimitation": "Client-logo hover scale remains present with globally shortened transitions. Do not claim every hover transform is removed."
+    }
   },
   "artwork": {
     "stories": [
@@ -392,6 +539,24 @@
       "values": {
         "--site-gutter": "96px"
       }
+    },
+    {
+      "query": "(min-width:744px)",
+      "values": {
+        "--section-gutter": "56px"
+      }
+    },
+    {
+      "query": "(min-width:90rem)",
+      "values": {
+        "--section-gutter": "78px"
+      }
+    },
+    {
+      "query": "(min-width:108rem)",
+      "values": {
+        "--section-gutter": "96px"
+      }
     }
   ],
   "provenance": {
@@ -400,5 +565,1717 @@
     "stories": "dist/stories.css and final dist/consistency.css overrides",
     "footerAndPolicies": "dist/footer.css, dist/privacy.css and final dist/consistency.css",
     "motion": "dist/app.js, dist/footer.js, dist/case-study-motion.js, dist/site-ui.js and source CSS"
+  },
+  "surfaces": {
+    "stories": {
+      "background": "#082aaa",
+      "iceBackground": "#cee4ff",
+      "iceText": "#0b2358",
+      "paginationInactive": "#b8c2d6",
+      "paginationActive": "#284cf4",
+      "focus": "#597ef8"
+    },
+    "footer": {
+      "background": "#000",
+      "copy": "#ddd",
+      "links": "#aaa",
+      "hover": "#fff",
+      "separator": "#ffffff24"
+    },
+    "caseStudy": {
+      "hoverShadow": "0 12px 34px -12px #11243c35"
+    }
+  },
+  "componentScopes": {
+    "about": [
+      ".about-aboutSection"
+    ],
+    "achievement": [
+      ".achievement-achievementSection",
+      ".achievement-rankCard"
+    ],
+    "services": [
+      ".services-servicesSection"
+    ],
+    "skills": [
+      ".skillscoverage-skillsCoverageSection"
+    ],
+    "process": [
+      ".ourprocess-processSection"
+    ],
+    "caseStudies": [
+      ".casestudy-caseStudySection",
+      ".casestudy-grid"
+    ],
+    "clients": [
+      ".ourclients-ourClientsSection"
+    ],
+    "stories": [
+      ".stories",
+      ".testimonials-testimonialsSection"
+    ],
+    "buttons": [
+      ".button-root",
+      ".button-sizeXl",
+      ".button-sizeLg",
+      ".button-sizeMd",
+      ".button-sizeSm",
+      ".button-sizeXs",
+      ".button-size2Xs"
+    ],
+    "footer": [
+      ".pixel-footer__identity"
+    ],
+    "mobileMenu": [
+      ".topbar-mobileShell"
+    ]
+  },
+  "scopeExport": {
+    "path": "design/component-tokens.css",
+    "note": "Generated custom-property profiles only. Preserve selectors, source order and media conditions; not a standalone component stylesheet. Legacy --t-* export is restricted to badge variables because the old carousel is dormant. Runtime scatter progress is not exported.",
+    "excludedVariables": [
+      "--cs-scatter-progress"
+    ],
+    "legacyStoriesPrefix": "--t-badge-"
+  },
+  "aliases": {
+    "--blitz-type-stories-company-font": "typography.roles.storiesCompany.font",
+    "--blitz-type-stories-company-tracking": "typography.roles.storiesCompany.tracking",
+    "--blitz-type-stories-quote-font": "typography.roles.storiesQuote.font",
+    "--blitz-type-stories-quote-tracking": "typography.roles.storiesQuote.tracking",
+    "--blitz-type-stories-quote-mobile-size": "typography.roles.storiesQuote.mobileSize",
+    "--blitz-type-stories-name-font": "typography.roles.storiesName.font",
+    "--blitz-type-stories-role-font": "typography.roles.storiesRole.font",
+    "--blitz-type-hero-heading-base-size": "typography.roles.heroHeading.baseSize",
+    "--blitz-type-hero-heading-base-line-height": "typography.roles.heroHeading.baseLineHeight",
+    "--blitz-type-hero-heading-base-tracking": "typography.roles.heroHeading.baseTracking",
+    "--blitz-type-hero-heading-wide-size": "typography.roles.heroHeading.wideSize",
+    "--blitz-type-hero-heading-wide-line-height": "typography.roles.heroHeading.wideLineHeight",
+    "--blitz-type-hero-heading-wide-tracking": "typography.roles.heroHeading.wideTracking",
+    "--blitz-type-hero-heading-max-size": "typography.roles.heroHeading.maxSize",
+    "--blitz-type-hero-heading-max-tracking": "typography.roles.heroHeading.maxTracking",
+    "--blitz-type-hero-mobile-family": "typography.roles.heroMobile.family",
+    "--blitz-type-hero-mobile-size": "typography.roles.heroMobile.size",
+    "--blitz-type-hero-mobile-weight": "typography.roles.heroMobile.weight",
+    "--blitz-type-hero-mobile-line-height": "typography.roles.heroMobile.lineHeight",
+    "--blitz-type-hero-mobile-tracking": "typography.roles.heroMobile.tracking",
+    "--blitz-type-button-label-family": "typography.roles.buttonLabel.family",
+    "--blitz-type-button-label-weight": "typography.roles.buttonLabel.weight",
+    "--blitz-type-button-label-size": "typography.roles.buttonLabel.size",
+    "--blitz-type-button-label-line-height": "typography.roles.buttonLabel.lineHeight",
+    "--blitz-type-button-label-tracking": "typography.roles.buttonLabel.tracking",
+    "--blitz-type-about-badge-weight": "typography.roles.aboutBadge.weight",
+    "--blitz-type-footer-navigation-font": "typography.roles.footerNavigation.font",
+    "--blitz-type-footer-navigation-mobile-font": "typography.roles.footerNavigation.mobileFont",
+    "--blitz-type-footer-utility-font": "typography.roles.footerUtility.font",
+    "--blitz-type-footer-utility-tracking": "typography.roles.footerUtility.tracking",
+    "--blitz-type-footer-utility-local-time-size": "typography.roles.footerUtility.localTimeSize",
+    "--blitz-type-contact-title-font": "typography.roles.contactTitle.font",
+    "--blitz-type-contact-title-tracking": "typography.roles.contactTitle.tracking",
+    "--blitz-type-service-description-weight": "typography.roles.serviceDescription.weight",
+    "--blitz-type-skill-description-weight": "typography.roles.skillDescription.weight",
+    "--blitz-type-process-subcopy-weight": "typography.roles.processSubcopy.weight",
+    "--blitz-surface-stories-background": "surfaces.stories.background",
+    "--blitz-surface-stories-ice-background": "surfaces.stories.iceBackground",
+    "--blitz-surface-stories-ice-text": "surfaces.stories.iceText",
+    "--blitz-surface-stories-pagination-inactive": "surfaces.stories.paginationInactive",
+    "--blitz-surface-stories-pagination-active": "surfaces.stories.paginationActive",
+    "--blitz-surface-stories-focus": "surfaces.stories.focus",
+    "--blitz-surface-footer-background": "surfaces.footer.background",
+    "--blitz-surface-footer-copy": "surfaces.footer.copy",
+    "--blitz-surface-footer-links": "surfaces.footer.links",
+    "--blitz-surface-footer-hover": "surfaces.footer.hover",
+    "--blitz-surface-footer-separator": "surfaces.footer.separator",
+    "--blitz-surface-case-study-hover-shadow": "surfaces.caseStudy.hoverShadow",
+    "--blitz-story-quote": "typography.stories.quoteDesktop",
+    "--blitz-story-quote-mobile": "typography.stories.quoteMobile",
+    "--blitz-story-name": "typography.stories.name",
+    "--blitz-story-role": "typography.stories.role",
+    "--blitz-story-avatar": "components.storiesCard.avatar"
+  },
+  "contracts": {
+    "css": [
+      {
+        "id": "font-about-aboutHeading",
+        "file": "dist/refinements.css",
+        "selector": ".about-aboutHeading",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.display.family"
+          },
+          "font-weight": {
+            "token": "typography.display.weight"
+          },
+          "letter-spacing": {
+            "token": "typography.display.tracking"
+          }
+        }
+      },
+      {
+        "id": "font-achievement-heading",
+        "file": "dist/refinements.css",
+        "selector": ".achievement-heading",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.display.family"
+          },
+          "font-weight": {
+            "token": "typography.display.weight"
+          },
+          "letter-spacing": {
+            "token": "typography.display.tracking"
+          }
+        }
+      },
+      {
+        "id": "font-services-servicesHeading",
+        "file": "dist/refinements.css",
+        "selector": ".services-servicesHeading",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.display.family"
+          },
+          "font-weight": {
+            "token": "typography.display.weight"
+          },
+          "letter-spacing": {
+            "token": "typography.display.tracking"
+          }
+        }
+      },
+      {
+        "id": "font-skillscoverage-skillsHeading",
+        "file": "dist/refinements.css",
+        "selector": ".skillscoverage-skillsHeading",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.display.family"
+          },
+          "font-weight": {
+            "token": "typography.display.weight"
+          },
+          "letter-spacing": {
+            "token": "typography.display.tracking"
+          }
+        }
+      },
+      {
+        "id": "font-ourprocess-heading",
+        "file": "dist/refinements.css",
+        "selector": ".ourprocess-heading",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.display.family"
+          },
+          "font-weight": {
+            "token": "typography.display.weight"
+          },
+          "letter-spacing": {
+            "token": "typography.display.tracking"
+          }
+        }
+      },
+      {
+        "id": "font-casestudy-heading",
+        "file": "dist/refinements.css",
+        "selector": ".casestudy-heading",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.display.family"
+          },
+          "font-weight": {
+            "token": "typography.display.weight"
+          },
+          "letter-spacing": {
+            "token": "typography.display.tracking"
+          }
+        }
+      },
+      {
+        "id": "font-testimonials-heading",
+        "file": "dist/refinements.css",
+        "selector": ".testimonials-heading",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.display.family"
+          },
+          "font-weight": {
+            "token": "typography.display.weight"
+          },
+          "letter-spacing": {
+            "token": "typography.display.tracking"
+          }
+        }
+      },
+      {
+        "id": "font-ourclients-heading",
+        "file": "dist/refinements.css",
+        "selector": ".ourclients-heading",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.display.family"
+          },
+          "font-weight": {
+            "token": "typography.display.weight"
+          },
+          "letter-spacing": {
+            "token": "typography.display.tracking"
+          }
+        }
+      },
+      {
+        "id": "stories-heading",
+        "file": "dist/stories.css",
+        "selector": ".stories .testimonials-heading",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.display.family"
+          },
+          "font-weight": {
+            "token": "typography.display.weight"
+          },
+          "letter-spacing": {
+            "token": "typography.display.tracking"
+          },
+          "font-size": {
+            "token": "typography.stories.desktop"
+          },
+          "line-height": {
+            "token": "typography.stories.lineHeightDesktop"
+          }
+        }
+      },
+      {
+        "id": "stories-heading-tablet",
+        "file": "dist/stories.css",
+        "selector": ".stories .testimonials-heading",
+        "conditions": [
+          "@media(min-width:744px) and (max-width:1023px)"
+        ],
+        "properties": {
+          "font-size": {
+            "token": "typography.stories.tablet"
+          }
+        }
+      },
+      {
+        "id": "stories-heading-mobile",
+        "file": "dist/stories.css",
+        "selector": ".stories .testimonials-heading",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "font-size": {
+            "token": "typography.stories.mobile"
+          },
+          "line-height": {
+            "token": "typography.stories.lineHeightMobile"
+          }
+        }
+      },
+      {
+        "id": "type-storiesCompany",
+        "file": "dist/stories.css",
+        "selector": ".stories-card-top",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.storiesCompany.font"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.storiesCompany.tracking"
+          }
+        }
+      },
+      {
+        "id": "type-storiesQuote",
+        "file": "dist/stories.css",
+        "selector": ".stories-card-copy blockquote",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.storiesQuote.font"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.storiesQuote.tracking"
+          }
+        }
+      },
+      {
+        "id": "type-storiesName",
+        "file": "dist/stories.css",
+        "selector": ".stories-card figcaption strong",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.storiesName.font"
+          }
+        }
+      },
+      {
+        "id": "type-storiesRole",
+        "file": "dist/stories.css",
+        "selector": ".stories-card figcaption span",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.storiesRole.font"
+          }
+        }
+      },
+      {
+        "id": "stories-quote-mobile",
+        "file": "dist/stories.css",
+        "selector": ".stories-card-copy blockquote",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "font-size": {
+            "token": "typography.stories.quoteMobile"
+          }
+        }
+      },
+      {
+        "id": "geometry-storiesCard",
+        "file": "dist/stories.css",
+        "selector": ".stories-card",
+        "conditions": [],
+        "properties": {
+          "height": {
+            "token": "components.storiesCard.height"
+          },
+          "padding": {
+            "token": "components.storiesCard.padding"
+          },
+          "border-radius": {
+            "token": "components.storiesCard.radius"
+          }
+        }
+      },
+      {
+        "id": "geometry-storiesCard-mobile",
+        "file": "dist/stories.css",
+        "selector": ".stories-card",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "height": {
+            "token": "components.storiesCard.heightMobile"
+          },
+          "padding": {
+            "token": "components.storiesCard.paddingMobile"
+          }
+        }
+      },
+      {
+        "id": "geometry-carouselTextControl",
+        "file": "dist/consistency.css",
+        "selector": ".stories-arrow",
+        "conditions": [],
+        "properties": {
+          "height": {
+            "token": "components.carouselTextControl.height"
+          },
+          "padding": {
+            "token": "components.carouselTextControl.padding"
+          },
+          "border-radius": {
+            "token": "components.carouselTextControl.radius"
+          },
+          "min-width": {
+            "token": "components.carouselTextControl.minWidth"
+          }
+        }
+      },
+      {
+        "id": "geometry-carouselTextControl-mobile",
+        "file": "dist/consistency.css",
+        "selector": ".stories-arrow",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "height": {
+            "token": "components.carouselTextControl.height"
+          },
+          "padding": {
+            "token": "components.carouselTextControl.paddingMobile"
+          }
+        }
+      },
+      {
+        "id": "stories-width",
+        "file": "dist/stories.css",
+        "selector": ".stories-slide",
+        "conditions": [],
+        "properties": {
+          "width": {
+            "token": "components.storiesCard.width"
+          }
+        }
+      },
+      {
+        "id": "stories-width-mobile",
+        "file": "dist/stories.css",
+        "selector": ".stories-slide",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "width": {
+            "token": "components.storiesCard.widthMobile"
+          }
+        }
+      },
+      {
+        "id": "stories-gap",
+        "file": "dist/stories.css",
+        "selector": ".stories-track",
+        "conditions": [],
+        "properties": {
+          "gap": {
+            "token": "components.storiesCard.gap"
+          }
+        }
+      },
+      {
+        "id": "stories-gap-mobile",
+        "file": "dist/stories.css",
+        "selector": ".stories-track",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "gap": {
+            "token": "components.storiesCard.gapMobile"
+          }
+        }
+      },
+      {
+        "id": "footer-padding",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__inner",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "components.footer.padding"
+          },
+          "width": {
+            "token": "components.footer.width"
+          },
+          "max-width": {
+            "token": "components.footer.maxWidth"
+          }
+        }
+      },
+      {
+        "id": "footer-padding-mobile",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__inner",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "padding": {
+            "token": "components.footer.paddingMobile"
+          }
+        }
+      },
+      {
+        "id": "footer-intro",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__intro",
+        "conditions": [],
+        "properties": {
+          "grid-template-columns": {
+            "token": "components.footer.introColumns"
+          },
+          "gap": {
+            "token": "components.footer.introGap"
+          }
+        }
+      },
+      {
+        "id": "footer-intro-stacked",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__intro",
+        "conditions": [
+          "@media(max-width:1100px)"
+        ],
+        "properties": {
+          "gap": {
+            "token": "components.footer.introGapStacked"
+          }
+        }
+      },
+      {
+        "id": "footer-navigation",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__navigation",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.footerNavigation.font"
+          }
+        }
+      },
+      {
+        "id": "footer-navigation-mobile",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__navigation",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.footerNavigation.mobileFont"
+          }
+        }
+      },
+      {
+        "id": "footer-utility",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__utility",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.footerUtility.font"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.footerUtility.tracking"
+          }
+        }
+      },
+      {
+        "id": "footer-wordmark",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__word",
+        "conditions": [],
+        "properties": {
+          "letter-spacing": {
+            "token": "typography.footerWordmark.tracking"
+          },
+          "font-weight": {
+            "token": "typography.footerWordmark.weight"
+          },
+          "line-height": {
+            "token": "typography.footerWordmark.lineHeight"
+          }
+        }
+      },
+      {
+        "id": "badge-shadow",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutBadge",
+        "conditions": [],
+        "properties": {
+          "box-shadow": {
+            "token": "components.badge.shadow"
+          }
+        }
+      },
+      {
+        "id": "badge-weight",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutBadgeText",
+        "conditions": [],
+        "properties": {
+          "font-weight": {
+            "token": "typography.roles.aboutBadge.weight"
+          }
+        }
+      },
+      {
+        "id": "story-surface",
+        "file": "dist/stories.css",
+        "selector": ".stories-card",
+        "conditions": [],
+        "properties": {
+          "background": {
+            "token": "surfaces.stories.background"
+          }
+        }
+      },
+      {
+        "id": "ice-surface",
+        "file": "dist/stories.css",
+        "selector": ".stories-card--ice",
+        "conditions": [],
+        "properties": {
+          "background": {
+            "token": "surfaces.stories.iceBackground"
+          },
+          "color": {
+            "token": "surfaces.stories.iceText"
+          }
+        }
+      },
+      {
+        "id": "story-pagination",
+        "file": "dist/stories.css",
+        "selector": ".stories-pagination button[aria-current=true]:after",
+        "conditions": [],
+        "properties": {
+          "background": {
+            "token": "surfaces.stories.paginationActive"
+          }
+        }
+      },
+      {
+        "id": "card-hover",
+        "file": "dist/refinements.css",
+        "selector": ".casestudy-card",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.cardHover",
+            "template": "transform {value} {{motion.easing.settle}},box-shadow {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "image-hover",
+        "file": "dist/refinements.css",
+        "selector": ".casestudy-cardMockupImage",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.imageHover",
+            "template": "transform {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "achievement-flip",
+        "file": "dist/refinements.css",
+        "selector": ".achievement-rankCardFlipper",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.achievementFlip",
+            "template": "transform {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "about-flip",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutCard",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.aboutHover",
+            "template": "transform {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "about-stat",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutStat",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.aboutStat",
+            "template": "transform {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "footer-parallax",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__texture",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.footerParallax",
+            "template": "transform {value} {{motion.easing.footer}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "process-caption",
+        "file": "dist/styles.css",
+        "selector": ".ourprocess-caption",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.processContent",
+            "template": "opacity {value},transform {value}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "process-image",
+        "file": "dist/styles.css",
+        "selector": ".ourprocess-mockupImage",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.processContent",
+            "template": "opacity {value},transform {value}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "page-exit",
+        "file": "dist/consistency.css",
+        "selector": "body",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.pageExit",
+            "template": "opacity {value} {{motion.easing.pageExit}},transform {value} {{motion.easing.pageExit}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "hover-lift",
+        "file": "dist/refinements.css",
+        "selector": ".casestudy-card:hover",
+        "conditions": [],
+        "properties": {
+          "transform": {
+            "token": "motion.cardLift",
+            "template": "translateY({value})"
+          },
+          "box-shadow": {
+            "token": "surfaces.caseStudy.hoverShadow"
+          }
+        }
+      },
+      {
+        "id": "hover-scale",
+        "file": "dist/refinements.css",
+        "selector": ".casestudy-card:hover .casestudy-cardMockupImage",
+        "conditions": [],
+        "properties": {
+          "transform": {
+            "token": "motion.hoverScale",
+            "template": "scale({value})"
+          }
+        }
+      },
+      {
+        "id": "footer-word-reveal",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer[data-entered] .pixel-footer__identity",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.footerWordReveal",
+            "template": "footer-word-reveal {value} {{motion.easing.linear}} {{motion.footerWordRevealDelayMs|seconds}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "footer-light",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__light",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.footerLightCycle",
+            "template": "footer-light-pass {value} {{motion.easing.linear}} infinite",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "mobile-menu",
+        "file": "dist/mobile.css",
+        "selector": ".topbar-mobileShell",
+        "conditions": [
+          "@media(max-width:1023px)"
+        ],
+        "properties": {
+          "--mobile-menu-duration": {
+            "token": "motion.durationMs.mobileMenu",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "policy-entry",
+        "file": "dist/consistency.css",
+        "selector": ".policy-hero-copy",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.policyEntry",
+            "template": "policy-entry {value} {{motion.easing.settle}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "policy-layout",
+        "file": "dist/consistency.css",
+        "selector": ".policy-layout",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.policyEntry",
+            "template": "policy-entry {value} {{motion.easing.settle}} {{motion.policyLayoutDelayMs|seconds}} both",
+            "format": "seconds"
+          },
+          "padding": {
+            "token": "components.policyLayout.padding"
+          },
+          "gap": {
+            "token": "components.policyLayout.gap"
+          },
+          "grid-template-columns": {
+            "token": "components.policyLayout.columns"
+          }
+        }
+      },
+      {
+        "id": "about-state",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutStackStateLayer",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.aboutStat",
+            "template": "opacity {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "about-object",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutStackObject",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.aboutStackGeometry",
+            "template": "top {value} {{motion.easing.settle}},height {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "about-base",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutStackBaseLayer",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.aboutStackGeometry",
+            "template": "top {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "about-top",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutStackTopLayer",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.aboutStackGeometry",
+            "template": "height {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "about-crossfade",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutStackTopDefaultSvg",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.aboutStackCrossfade",
+            "template": "opacity {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "about-label",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutStackLabel",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.aboutStackLabel",
+            "template": "opacity {value} {{motion.easing.settle}},transform {{motion.durationMs.aboutStat|seconds}} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "about-flip-content",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutCardFlipContent",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.aboutContentOpacity",
+            "template": "opacity {value} {{motion.easing.aboutContent}},transform {{motion.durationMs.aboutContentTransform|seconds}} {{motion.easing.aboutContent}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "achievement-caption",
+        "file": "dist/styles.css",
+        "selector": ".achievement-captionTitle",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.achievementCaption",
+            "template": "opacity {value} {{motion.easing.settle}},transform {value} {{motion.easing.settle}}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "about-content-entry",
+        "file": "dist/styles.css",
+        "selector": ".about-aboutCardToggle:checked+.about-aboutCard .about-aboutCardFlipContent",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.aboutContentEntry",
+            "template": "{value} {{motion.easing.aboutContent}} {{motion.aboutContentDelayMs|seconds}} both about-aboutCardFlipContentIn",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "achievement-caption-reduced",
+        "file": "dist/styles.css",
+        "selector": ".achievement-captionTitle",
+        "conditions": [
+          "@media (prefers-reduced-motion:reduce)"
+        ],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.achievementCaptionReduced",
+            "template": "opacity {value}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "dialog-entry",
+        "file": "dist/refinements.css",
+        "selector": ".contact-dialog[open]",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.dialogOpen",
+            "template": "dialog-appear {value} {{motion.easing.dialogOpen}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "dialog-backdrop",
+        "file": "dist/refinements.css",
+        "selector": ".contact-dialog::backdrop",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.dialogBackdrop",
+            "template": "dialog-appear {value} {{motion.easing.dialogOpen}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "dialog-brand",
+        "file": "dist/refinements.css",
+        "selector": ".contact-dialog[open] .contact-dialog__brand",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.dialogBrand",
+            "template": "dialog-content {value} {{motion.easing.settle}} {{motion.dialogDelaysMs.brand|seconds}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "dialog-closing",
+        "file": "dist/refinements.css",
+        "selector": ".blitz-dialog[data-closing]",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.dialogClose",
+            "template": "dialog-disappear {value} {{motion.easing.dialogClose}} both!important",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "dialog-heading",
+        "file": "dist/refinements.css",
+        "selector": ".contact-dialog[open] h2",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.dialogContent",
+            "template": "dialog-content {value} {{motion.easing.settle}} {{motion.dialogDelaysMs.heading|seconds}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "dialog-description",
+        "file": "dist/refinements.css",
+        "selector": ".contact-dialog[open] .contact-dialog__description",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.dialogContent",
+            "template": "dialog-content {value} {{motion.easing.settle}} {{motion.dialogDelaysMs.description|seconds}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "dialog-firstAction",
+        "file": "dist/refinements.css",
+        "selector": ".contact-dialog[open] .contact-dialog__action:first-child",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.dialogContent",
+            "template": "dialog-content {value} {{motion.easing.settle}} {{motion.dialogDelaysMs.firstAction|seconds}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "dialog-secondAction",
+        "file": "dist/refinements.css",
+        "selector": ".contact-dialog[open] .contact-dialog__action:nth-child(2)",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.dialogContent",
+            "template": "dialog-content {value} {{motion.easing.settle}} {{motion.dialogDelaysMs.secondAction|seconds}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "dialog-bottom",
+        "file": "dist/refinements.css",
+        "selector": ".contact-dialog[open] .contact-dialog__bottom",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.dialogContent",
+            "template": "dialog-content {value} {{motion.easing.settle}} {{motion.dialogDelaysMs.bottom|seconds}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "pagination-motion",
+        "file": "dist/stories.css",
+        "selector": ".stories-pagination button:after",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.pagination",
+            "template": "width {value},background {value},left {value}",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "policy-header-motion",
+        "file": "dist/consistency.css",
+        "selector": ".policy-page>header",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "motion.durationMs.policyHeader",
+            "template": "transform {value} ease,opacity {value} ease",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "page-exit-geometry",
+        "file": "dist/consistency.css",
+        "selector": "body.page-leaving",
+        "conditions": [],
+        "properties": {
+          "transform": {
+            "token": "motion.pageExitDistance",
+            "template": "translateY({value})"
+          }
+        }
+      },
+      {
+        "id": "button-label",
+        "file": "dist/styles.css",
+        "selector": ".button-labelText",
+        "conditions": [],
+        "properties": {
+          "font-family": {
+            "token": "typography.roles.buttonLabel.family"
+          },
+          "font-weight": {
+            "token": "typography.roles.buttonLabel.weight"
+          },
+          "font-size": {
+            "token": "typography.roles.buttonLabel.size"
+          },
+          "line-height": {
+            "token": "typography.roles.buttonLabel.lineHeight"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.buttonLabel.tracking"
+          }
+        }
+      },
+      {
+        "id": "hero-mobile-type",
+        "file": "dist/styles.css",
+        "selector": ".hero-heroHeadingMobileText",
+        "conditions": [
+          "@media (max-width:767.984px)"
+        ],
+        "properties": {
+          "font-family": {
+            "token": "typography.roles.heroMobile.family"
+          },
+          "font-weight": {
+            "token": "typography.roles.heroMobile.weight"
+          },
+          "font-size": {
+            "token": "typography.roles.heroMobile.size"
+          },
+          "line-height": {
+            "token": "typography.roles.heroMobile.lineHeight"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.heroMobile.tracking"
+          }
+        }
+      },
+      {
+        "id": "hero-base",
+        "file": "dist/styles.css",
+        "selector": ".hero-heroHeading",
+        "conditions": [],
+        "properties": {
+          "font-size": {
+            "token": "typography.roles.heroHeading.baseSize"
+          },
+          "line-height": {
+            "token": "typography.roles.heroHeading.baseLineHeight"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.heroHeading.baseTracking"
+          }
+        }
+      },
+      {
+        "id": "hero-wide",
+        "file": "dist/styles.css",
+        "selector": ".hero-heroHeading",
+        "conditions": [
+          "@media (min-width:1440px)"
+        ],
+        "properties": {
+          "font-size": {
+            "token": "typography.roles.heroHeading.wideSize"
+          },
+          "line-height": {
+            "token": "typography.roles.heroHeading.wideLineHeight"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.heroHeading.wideTracking"
+          }
+        }
+      },
+      {
+        "id": "hero-max",
+        "file": "dist/styles.css",
+        "selector": ".hero-heroHeading",
+        "conditions": [
+          "@media (min-width:1728px)"
+        ],
+        "properties": {
+          "font-size": {
+            "token": "typography.roles.heroHeading.maxSize"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.heroHeading.maxTracking"
+          }
+        }
+      },
+      {
+        "id": "story-quote-scale",
+        "file": "dist/stories.css",
+        "selector": ".stories-card-copy blockquote",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.stories.quoteDesktop",
+            "template": "{{typography.stories.quoteWeight}} {value}/1.3 {{typography.copy.family}}"
+          }
+        }
+      },
+      {
+        "id": "story-name-scale",
+        "file": "dist/stories.css",
+        "selector": ".stories-card figcaption strong",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.stories.name",
+            "template": "{{typography.stories.nameWeight}} {value}/1.4 {{typography.copy.family}}"
+          }
+        }
+      },
+      {
+        "id": "story-role-scale",
+        "file": "dist/stories.css",
+        "selector": ".stories-card figcaption span",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.stories.role",
+            "template": "400 {value}/1.5 {{typography.copy.family}}"
+          }
+        }
+      },
+      {
+        "id": "contact-title",
+        "file": "dist/contact.css",
+        "selector": ".contact-dialog h2",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.contactTitle.font"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.contactTitle.tracking"
+          }
+        }
+      },
+      {
+        "id": "service-copy-weight",
+        "file": "dist/styles.css",
+        "selector": ".services-servicesDescription",
+        "conditions": [],
+        "properties": {
+          "font-weight": {
+            "token": "typography.roles.serviceDescription.weight"
+          }
+        }
+      },
+      {
+        "id": "skills-copy-weight",
+        "file": "dist/styles.css",
+        "selector": ".skillscoverage-skillsCardDescription",
+        "conditions": [],
+        "properties": {
+          "font-weight": {
+            "token": "typography.roles.skillDescription.weight"
+          }
+        }
+      },
+      {
+        "id": "process-copy-weight",
+        "file": "dist/styles.css",
+        "selector": ".ourprocess-subcopy",
+        "conditions": [],
+        "properties": {
+          "font-weight": {
+            "token": "typography.roles.processSubcopy.weight"
+          }
+        }
+      },
+      {
+        "id": "story-inactive-pagination",
+        "file": "dist/stories.css",
+        "selector": ".stories-pagination button:after",
+        "conditions": [],
+        "properties": {
+          "background": {
+            "token": "surfaces.stories.paginationInactive"
+          }
+        }
+      },
+      {
+        "id": "story-focus",
+        "file": "dist/stories.css",
+        "selector": ".stories :focus-visible",
+        "conditions": [],
+        "properties": {
+          "outline": {
+            "token": "surfaces.stories.focus",
+            "template": "3px solid {value}"
+          }
+        }
+      },
+      {
+        "id": "footer-surface",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer",
+        "conditions": [],
+        "properties": {
+          "background": {
+            "token": "surfaces.footer.background"
+          },
+          "color": {
+            "token": "surfaces.footer.hover"
+          }
+        }
+      },
+      {
+        "id": "footer-copy",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__copy",
+        "conditions": [],
+        "properties": {
+          "color": {
+            "token": "surfaces.footer.copy"
+          },
+          "font-size": {
+            "token": "typography.footerCopy.size"
+          },
+          "line-height": {
+            "token": "typography.footerCopy.lineHeight"
+          }
+        }
+      },
+      {
+        "id": "footer-link-colour",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__navigation>a",
+        "conditions": [],
+        "properties": {
+          "color": {
+            "token": "surfaces.footer.links"
+          }
+        }
+      },
+      {
+        "id": "footer-separator",
+        "file": "dist/consistency.css",
+        "selector": ".footer-offices",
+        "conditions": [],
+        "properties": {
+          "border-top": {
+            "token": "surfaces.footer.separator",
+            "template": "1px solid {value}"
+          },
+          "margin": {
+            "token": "components.footer.officesMarginTop",
+            "template": "{value} 0 0"
+          },
+          "padding": {
+            "token": "components.footer.officesPadding"
+          },
+          "gap": {
+            "token": "components.footer.officesGap"
+          }
+        }
+      },
+      {
+        "id": "footer-offices-mobile",
+        "file": "dist/consistency.css",
+        "selector": ".footer-offices",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "margin": {
+            "token": "components.footer.officesMarginTopMobile",
+            "template": "{value} 0 0"
+          },
+          "padding": {
+            "token": "components.footer.officesPaddingMobile"
+          },
+          "gap": {
+            "token": "components.footer.officesGapMobile"
+          }
+        }
+      },
+      {
+        "id": "footer-utility-gap",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__utility",
+        "conditions": [],
+        "properties": {
+          "gap": {
+            "token": "components.footer.utilityGap"
+          }
+        }
+      },
+      {
+        "id": "policy-hero-padding",
+        "file": "dist/consistency.css",
+        "selector": ".policy-hero-copy",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "components.policyLayout.heroPadding"
+          }
+        }
+      },
+      {
+        "id": "policy-hero-padding-mobile",
+        "file": "dist/consistency.css",
+        "selector": ".policy-hero-copy",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "padding": {
+            "token": "components.policyLayout.heroPaddingMobile"
+          }
+        }
+      },
+      {
+        "id": "policy-reading-mobile",
+        "file": "dist/consistency.css",
+        "selector": ".policy-layout",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "padding": {
+            "token": "components.policyLayout.paddingMobile"
+          }
+        }
+      },
+      {
+        "id": "policy-reading-tablet",
+        "file": "dist/consistency.css",
+        "selector": ".policy-layout",
+        "conditions": [
+          "@media(max-width:1100px)"
+        ],
+        "properties": {
+          "gap": {
+            "token": "components.policyLayout.gapAt1100"
+          }
+        }
+      },
+      {
+        "id": "contact-close",
+        "file": "dist/consistency.css",
+        "selector": ".contact-dialog .dialog-close",
+        "conditions": [],
+        "properties": {
+          "width": {
+            "token": "components.contactClose.size",
+            "template": "var(--contact-close-size)"
+          },
+          "height": {
+            "token": "components.contactClose.size",
+            "template": "var(--contact-close-size)"
+          },
+          "z-index": {
+            "token": "components.contactClose.layer",
+            "template": "var(--contact-close-layer)"
+          }
+        }
+      },
+      {
+        "id": "contact-close-size-alias",
+        "file": "dist/consistency.css",
+        "selector": ":root",
+        "conditions": [],
+        "properties": {
+          "--contact-close-size": {
+            "token": "components.contactClose.size"
+          },
+          "--contact-close-layer": {
+            "token": "components.contactClose.layer"
+          }
+        }
+      },
+      {
+        "id": "footer-navigation-layout",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__navigation",
+        "conditions": [],
+        "properties": {
+          "grid-template-columns": {
+            "token": "components.footer.navigationColumns"
+          },
+          "gap": {
+            "token": "components.footer.navigationGap"
+          }
+        }
+      },
+      {
+        "id": "footer-navigation-layout-mobile",
+        "file": "dist/consistency.css",
+        "selector": ".pixel-footer__navigation",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "grid-template-columns": {
+            "token": "components.footer.navigationMobileColumns"
+          },
+          "gap": {
+            "token": "components.footer.navigationMobileGap"
+          }
+        }
+      },
+      {
+        "id": "capability-type",
+        "file": "dist/consistency.css",
+        "selector": ".about-aboutStatValue--capability",
+        "conditions": [],
+        "properties": {
+          "font-size": {
+            "token": "typography.roles.statCapability.size"
+          },
+          "line-height": {
+            "token": "typography.roles.statCapability.lineHeight"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.statCapability.tracking"
+          }
+        }
+      }
+    ],
+    "javascript": [
+      {
+        "token": "motion.intervalMs.process",
+        "template": "processTimer=setTimeout(()=>selectStep((processIndex+1)%4),{value})",
+        "id": "process-cycle",
+        "file": "dist/app.js"
+      },
+      {
+        "token": "motion.intervalMs.achievement",
+        "template": "achTimer=setTimeout(advanceAchievement,{value})",
+        "id": "achievement-cycle",
+        "file": "dist/app.js"
+      },
+      {
+        "token": "motion.revealThreshold",
+        "template": "{threshold:{value}}",
+        "format": "decimal",
+        "id": "reveal-observer",
+        "file": "dist/app.js"
+      },
+      {
+        "token": "motion.processThreshold",
+        "template": "{threshold:{value}}).observe($('#our-process'))",
+        "format": "decimal",
+        "id": "process-observer",
+        "file": "dist/app.js"
+      },
+      {
+        "token": "motion.achievementThreshold",
+        "template": "{threshold:{value}}).observe($('#achievements'))",
+        "format": "decimal",
+        "id": "achievement-observer",
+        "file": "dist/app.js"
+      },
+      {
+        "token": "motion.footerMaxDpr",
+        "template": "Math.min(devicePixelRatio||1,{value})",
+        "id": "footer-density",
+        "file": "dist/footer.js"
+      },
+      {
+        "token": "motion.footerFrameIntervalMs",
+        "template": "now-last<{value}",
+        "id": "footer-frame-rate",
+        "file": "dist/footer.js"
+      },
+      {
+        "token": "motion.footerParticleThreshold",
+        "template": "{threshold:{value}}).observe(footer)",
+        "format": "decimal",
+        "id": "footer-particles",
+        "file": "dist/footer.js"
+      },
+      {
+        "token": "motion.footerChromeThreshold",
+        "template": "{threshold:{value}}).observe(footer)",
+        "format": "decimal",
+        "id": "footer-chrome",
+        "file": "dist/site-ui.js"
+      },
+      {
+        "token": "motion.durationMs.dialogClose",
+        "template": "closeTimers.delete(dialog)},{value})",
+        "id": "dialog-close",
+        "file": "dist/site-ui.js"
+      },
+      {
+        "token": "motion.durationMs.pageExit",
+        "template": "setTimeout(()=>location.assign(destination.href),{value})",
+        "id": "page-navigation",
+        "file": "dist/site-ui.js"
+      },
+      {
+        "token": "motion.videoThresholds.service",
+        "template": "{threshold:{value}}).observe(video)",
+        "format": "decimal",
+        "id": "service-video",
+        "file": "dist/app.js"
+      },
+      {
+        "token": "motion.videoThresholds.hero",
+        "template": "{threshold:{value}}).observe(reelFrame)",
+        "format": "decimal",
+        "id": "hero-video",
+        "file": "dist/app.js"
+      },
+      {
+        "token": "motion.scatter.mobileCutoffPx",
+        "template": "innerWidth<{value}",
+        "id": "scatter-mobile",
+        "file": "dist/case-study-motion.js"
+      },
+      {
+        "token": "motion.scatter.interpolation",
+        "template": "current+=(target-current)*{value}",
+        "format": "decimal",
+        "id": "scatter-lerp",
+        "file": "dist/case-study-motion.js"
+      },
+      {
+        "token": "motion.scatter.epsilon",
+        "template": "Math.abs(target-current)<{value}",
+        "format": "decimal",
+        "id": "scatter-epsilon",
+        "file": "dist/case-study-motion.js"
+      }
+    ]
   }
 }

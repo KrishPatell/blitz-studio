@@ -1,12 +1,14 @@
 // Registry-derived CSS plus reviewed homepage source guard. Does not rewrite live UI.
-import {readFile,writeFile} from 'node:fs/promises';
+import {readFile,writeFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {resolve,dirname} from 'node:path';
+import {validateSchema,tokenValue,cssRules,checkContracts} from './design-contracts.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const read=path=>readFile(resolve(root,path),'utf8');
 const write=(path,data)=>writeFile(resolve(root,path),data);
 const tokens=JSON.parse(await read('design/design-tokens.json'));
+validateSchema(tokens,JSON.parse(await read('design/design-tokens.schema.json')));
 const assert=(condition,message)=>{if(!condition)throw Error(message)};
 const slug=s=>s.replace(/[A-Z]/g,c=>'-'+c.toLowerCase());
 assert(tokens.version===2,'Unsupported token registry version.');
@@ -41,6 +43,10 @@ const roleAliases={
  'footer-word-delay':tokens.motion.footerWordRevealDelayMs+'ms'
 };
 for(const [key,value] of Object.entries(roleAliases))declarations['--blitz-'+key]=String(value);
+for(const [name,path] of Object.entries(tokens.aliases)){
+ assert(!(name in declarations),`Duplicate generated alias ${name}`);
+ declarations[name]=String(tokenValue(tokens,path));
+}
 for(const n of tokens.layout.spacingPx)declarations['--blitz-space-'+n]=n+'px';
 const block=values=>Object.entries(values).map(([k,v])=>`  ${k}: ${v};`).join('\n');
 const css='/* GENERATED from design/design-tokens.json. Run npm run design:tokens.\n   Consumer stylesheet; existing site cascade remains the visual authority. */\n:root {\n'+block(declarations)+'\n}\n'+tokens.responsiveCssVariables.map(({query,values})=>`@media ${query} {\n  :root {\n${block(values)}\n  }\n}\n`).join('');
@@ -70,14 +76,30 @@ function inventory(css,file){
  }
  visit(0,css.length);return found;
 }
-const sources=[...liveOrder.map(f=>'dist/'+f),'dist/app.js','dist/footer.js','dist/case-study-motion.js','dist/site-ui.js','dist/privacy.js','dist/index.html','scripts/build-policy-pages.mjs','scripts/build.mjs'];
+const sources=[...liveOrder.map(f=>'dist/'+f),'dist/app.js','dist/footer.js','dist/case-study-motion.js','dist/site-ui.js','dist/privacy.js','dist/index.html','scripts/build-policy-pages.mjs','scripts/build.mjs','scripts/build-homepage-content.mjs'];
+const distFiles=await readdir(resolve(root,'dist'));
+for(const file of distFiles.filter(file=>/\.(css|js)$/.test(file)&&file!=='site.css'))assert(sources.includes('dist/'+file),`Unreviewed design source dist/${file}. Add it to the live cascade and reviewed source coverage.`);
 const contents=await Promise.all(sources.map(read));
 // Builds rewrite inline CSS and cache hashes; the actual source styles/assets are checked separately.
 const homepageIndex=sources.indexOf('dist/index.html');
 contents[homepageIndex]=contents[homepageIndex].replace(/<style id="site-styles">[\s\S]*?<\/style>/g,'').replace(/\?v=[a-f0-9]{12}/g,'');
 assert(!/[↗↖↙↘←→]/u.test(contents[homepageIndex]),'Visible arrow glyphs are prohibited in homepage markup.');
 assert(!/class="[^"]*(?:pixel-footer__motion|contact-dialog__arrow|topbar-mobileNavArrow|services-serviceIconBadge)[^"]*"/.test(contents[homepageIndex]),'Removed arrow decorations or footer pause controls were reintroduced.');
+for(const file of distFiles.filter(file=>file.endsWith('.html'))){
+ const html=(await read('dist/'+file)).replace(/<style id="site-styles">[\s\S]*?<\/style>/g,'');
+ assert(!/[↗↖↙↘←→]/u.test(html),`Visible arrow glyphs are prohibited in dist/${file}.`);
+ assert(!/class="[^"]*(?:pixel-footer__motion|contact-dialog__arrow|topbar-mobileNavArrow|services-serviceIconBadge)[^"]*"/.test(html),`Removed decorations or pause controls appeared in dist/${file}.`);
+}
 const snapshot={version:1,authority:'Reviewed local homepage source after user-requested consistency fixes; not a new design proposal',cssOrder:liveOrder,sourceHashes:Object.fromEntries(sources.map((file,i)=>[file,createHash('sha256').update(contents[i]).digest('hex')])),responsiveCustomProperties:contents.slice(0,liveOrder.length).flatMap((css,i)=>inventory(css,sources[i]))};
+const contractCount=checkContracts(tokens,contents.slice(0,liveOrder.length).flatMap((css,i)=>cssRules(css,sources[i])),Object.fromEntries(sources.map((file,i)=>[file,contents[i]])));
+const scopedSelectors=new Set(Object.values(tokens.componentScopes).flat());
+const scopeGroups=snapshot.responsiveCustomProperties.filter(group=>scopedSelectors.has(group.selector)).map(group=>({...group,variables:Object.fromEntries(Object.entries(group.variables).filter(([name])=>!tokens.scopeExport.excludedVariables.includes(name)&&(group.selector!=='.testimonials-testimonialsSection'||name.startsWith(tokens.scopeExport.legacyStoriesPrefix))))})).filter(group=>Object.keys(group.variables).length);
+for(const selector of scopedSelectors)assert(scopeGroups.some(group=>group.selector===selector),`Component token scope ${selector} has no source variables`);
+const componentCss='/* GENERATED from the reviewed homepage scopes named in design/design-tokens.json.\n   Custom properties only; preserve stylesheet order and pair with existing component CSS.\n   This reference export is not injected into the live website. */\n'+scopeGroups.map(group=>{
+ let rule=`/* ${group.file} */\n${group.selector} {\n${block(group.variables)}\n}`;
+ for(const condition of [...group.conditions].reverse())rule=`${condition} {\n${rule}\n}`;
+ return rule+'\n';
+}).join('\n');
 // Shared palette/font/gradient aliases must describe the effective homepage defaults.
 const defaults={};
 for(const group of snapshot.responsiveCustomProperties){
@@ -90,15 +112,24 @@ for(const {query,values} of tokens.responsiveCssVariables){
 }
 const baselinePath='design/homepage-baseline.json';
 if(process.argv.includes('--update-baseline')){
+ const reviewArg=process.argv.find(arg=>arg.startsWith('--review-record='));
+ assert(reviewArg,'Baseline refresh needs --review-record=<workspace Markdown path> documenting the approved change, desktop/mobile review and evidence.');
+ const reviewPath=reviewArg.slice('--review-record='.length);
+ assert(reviewPath&&!reviewPath.startsWith('/')&&!reviewPath.split(/[\\/]/).includes('..'),'Review record must be a workspace-relative path.');
+ const review=await read(reviewPath);
+ assert(/desktop/i.test(review)&&/mobile/i.test(review)&&/evidence/i.test(review)&&/approved|user.requested/i.test(review),'Review record must document approval, desktop/mobile review and evidence.');
+ snapshot.reviewRecord=reviewPath;
  await write(baselinePath,JSON.stringify(snapshot,null,2)+'\n');
  console.log(`Captured reviewed homepage baseline: ${sources.length} sources, ${snapshot.responsiveCustomProperties.length} scoped variable groups. Verify approved rendering before committing.`);
 }else if(process.argv.includes('--check')){
  assert(await read('design/design-tokens.css')===css,'Design token CSS is stale. Run npm run design:tokens.');
+ assert(await read(tokens.scopeExport.path)===componentCss,'Component token CSS is stale. Run npm run design:tokens.');
  const baseline=JSON.parse(await read(baselinePath));
  const changed=sources.filter(file=>baseline.sourceHashes[file]!==snapshot.sourceHashes[file]);
  assert(!changed.length,`Homepage design source changed: ${changed.join(', ')}. Review tokens/rules and rendered pages before running npm run design:baseline.`);
  assert(JSON.stringify(baseline.responsiveCustomProperties)===JSON.stringify(snapshot.responsiveCustomProperties),'Responsive variable baseline drifted. Review before refreshing.');
- console.log(`PASS: registry, generated CSS, live cascade and ${sources.length} reviewed design/motion sources match.`);
+ console.log(`PASS: schema, ${contractCount} token/source contracts, both CSS exports, live cascade and ${sources.length} reviewed design/motion sources match.`);
 }else{
- await write('design/design-tokens.css',css);console.log('Generated design/design-tokens.css from registry values.');
+ await write('design/design-tokens.css',css);await write(tokens.scopeExport.path,componentCss);
+ console.log(`Generated global aliases and ${scopeGroups.length} scoped component profiles; ${contractCount} token/source contracts match.`);
 }

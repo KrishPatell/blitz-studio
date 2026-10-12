@@ -21,15 +21,16 @@
     "dist/mobile.css": "c229230456c3a76e4621e2df9d7ee9b2b355d5911352a30b618c5ca5329b4749",
     "dist/stories.css": "a18e89579bad7ba57d877af6ffb977dfdc5554e84e98b6e5b7101f7e3aebde02",
     "dist/privacy.css": "989f041a4d34fdfe3c19569a94eeee08fe8e4c15a440917be00d4ccab98e6f47",
-    "dist/consistency.css": "deb783431a9ccab1ba6a712c76b7c3db0ee9f220e735e561e72e8707f5b30131",
-    "dist/app.js": "4d824c6309f3080c8d992e0a6fb1bc95badd79b216431695d561b0b10aea7de3",
+    "dist/consistency.css": "7a6da3fde81307e873732736908ab726126ba002d0eeafe4ef73cb13ec041c17",
+    "dist/app.js": "423cb3a4a66da1be0249a484fe094eaba6e2fae9d193935284d16df706821cae",
     "dist/footer.js": "fc2641841e59a7a25946ec65b053813675c0687dce325c9964f5388618613ae6",
     "dist/case-study-motion.js": "e27691845046f2b4763ad66c82828285b0ec4147cb646773f9dcfccf6da9ec4b",
     "dist/site-ui.js": "30c68c719ec9cb2f4f73141133ea87fdf81fee1f2a89518b8575648d7c4c6b6f",
-    "dist/privacy.js": "be9bb6140b2cc1da1b17cf30bb07c99d39ba1779bf824d2f465cfdab212887ab",
-    "dist/index.html": "0668d5aa17e768b471b2de6507c811694973f244259a75ce31936fe696e98d3a",
+    "dist/privacy.js": "ecb51febea57388e637796f79d6080fdf4d659c9bfd4017dd4d014aa2cac04aa",
+    "dist/index.html": "e09b071499213fc3c9a7a26dc8f84af145ce418119c2a637cbf18be8b0e5d1b1",
     "scripts/build-policy-pages.mjs": "34386e2581fbc8cf82c964937b48fd5a0b0ce67ef87c6ed0128a291e48cce5b4",
-    "scripts/build.mjs": "0e07efb574aaf721bd04756de94dc17be6588d354b90f9ec69ecc8c69334ec77"
+    "scripts/build.mjs": "51e44a6fe65b01eb939beacbe354cef4b9bf68348ba4d6882d11bc546b87f1f3",
+    "scripts/build-homepage-content.mjs": "8734aa8ad8962380d051681a1970e674b5a7fcd9b7dbc377cf00a2cc8c3956f3"
   },
   "responsiveCustomProperties": [
     {
@@ -3235,6 +3236,17 @@
       "variables": {
         "--site-gutter": "20px"
       }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [],
+      "variables": {
+        "--footer-small-font": "400 12px/1.6 var(--font-copy)",
+        "--footer-navigation-gap": "12px 24px",
+        "--about-stat-capability-size": "clamp(20px,1.8vw,28px)"
+      }
     }
-  ]
+  ],
+  "reviewRecord": "docs/uat/studio-content-update.md"
 }

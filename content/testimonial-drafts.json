@@ -1,0 +1,31 @@
+{
+  "status": "Draft copy requested by the user on 2026-10-12. Not client statements; not approved for public attribution.",
+  "publication": "Keep separate from verified testimonials until the actual client confirms wording, name, role and company. Do not add invented metrics or portraits.",
+  "drafts": [
+    {
+      "id": "brand-positioning",
+      "context": "Brand strategy and website",
+      "quote": "Blitz helped us turn a complex business into a clear, confident brand. The website brings our story and our offering together in a way that feels true to who we are."
+    },
+    {
+      "id": "product-design",
+      "context": "Product design and engineering",
+      "quote": "The team brought structure to a complicated product. They asked thoughtful questions, simplified the experience and carried those decisions through into the build."
+    },
+    {
+      "id": "website-launch",
+      "context": "Website design and development",
+      "quote": "From the first design review to launch, Blitz made the work easy to follow. The attention to detail showed up in the design, the interactions and the way the site works on mobile."
+    },
+    {
+      "id": "full-stack",
+      "context": "Full-stack application",
+      "quote": "We needed a team that could connect design with engineering. Blitz understood both sides and helped us shape a product that feels coherent from the interface to the underlying workflows."
+    },
+    {
+      "id": "collaboration",
+      "context": "Ongoing design partnership",
+      "quote": "Blitz took the time to understand our business and challenge the brief where it mattered. The collaboration felt thoughtful, direct and focused on making the work better."
+    }
+  ]
+}

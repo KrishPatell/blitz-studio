@@ -5,11 +5,46 @@
   "offices": [
     {
       "country": "Singapore",
-      "address": null
+      "address": "700 Lorong 1 Toa Payoh #06-04\nTrellis Towers, Singapore 319773",
+      "source": "https://blitzstudio.xyz/"
     },
     {
       "country": "India",
       "address": null
     }
-  ]
+  ],
+  "capabilities": [
+    "Webflow",
+    "Framer",
+    "WordPress",
+    "Next.js",
+    "Full-stack applications"
+  ],
+  "stats": [
+    {
+      "value": "45",
+      "label": "Clients we work with",
+      "kind": "number",
+      "accessibleLabel": "Explore our 45-client experience"
+    },
+    {
+      "value": "15+",
+      "label": "Client stories shared with us",
+      "kind": "number",
+      "accessibleLabel": "Explore our client stories"
+    },
+    {
+      "value": "Full-stack",
+      "label": "Webflow, Framer, WordPress, Next.js and custom applications",
+      "kind": "capability",
+      "accessibleLabel": "Explore our development capabilities"
+    },
+    {
+      "value": "Design + Build",
+      "label": "Strategy, product design and engineering",
+      "kind": "capability",
+      "accessibleLabel": "Explore our design and engineering expertise"
+    }
+  ],
+  "statsSource": "User-provided client and story counts, 2026-10-12; no exact platform count claimed"
 }

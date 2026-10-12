@@ -1,0 +1,558 @@
+{
+  "source": "https://blitzstudio.xyz/",
+  "extractedAt": "2026-10-12",
+  "projects": [
+    {
+      "id": "remotedesk",
+      "name": "RemoteDesk",
+      "category": "SaaS security",
+      "sourceLabel": [
+        "SaaS Security -",
+        "RemoteDesk.com"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/cjOlDlIbgKOZQjm3aaJP9BpkYxE.jpeg?width=2048&height=1386",
+      "master": "assets/portfolio/originals/remotedesk.jpeg",
+      "image": "assets/portfolio/remotedesk-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/remotedesk-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/remotedesk-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/remotedesk-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "2d67f9aa04aa65b72cf5810c4ccdf929e4d9b8e65bdd2951dde38ea2db31346c",
+      "comparison": {
+        "master": "assets/portfolio/originals/remotedesk-comparison.png",
+        "image": "assets/portfolio/remotedesk-comparison-1440.webp",
+        "source": "User attachment image-3.png, 2026-10-12",
+        "caption": "RemoteDesk website redesign · Before and after",
+        "width": 2053,
+        "height": 1390
+      },
+      "width": 2048,
+      "height": 1386,
+      "detailImage": "assets/portfolio/remotedesk-detail.webp"
+    },
+    {
+      "id": "creator-management",
+      "name": "Creator management",
+      "category": "Agency · Coming soon",
+      "sourceLabel": [
+        "Creator Managment Agency -",
+        "Coming Soon"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/Thk3Ze5vSuxyxXhywaVzG0bPXg.jpeg?width=2048&height=1386",
+      "master": "assets/portfolio/originals/creator-management.jpeg",
+      "image": "assets/portfolio/creator-management-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/creator-management-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/creator-management-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/creator-management-1440.webp"
+        }
+      ],
+      "disclosure": "anonymous",
+      "masterSha256": "0b62146dadca543c69b9c736622b228db4c5094a95d0ef8cff10a477cceda7be",
+      "width": 2048,
+      "height": 1386,
+      "detailImage": "assets/portfolio/creator-management-detail.webp"
+    },
+    {
+      "id": "quickads",
+      "name": "Quickads",
+      "category": "AI SaaS",
+      "sourceLabel": [
+        "Award Winning AI SaaS -",
+        "Quickads.ai"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/kBN054x2XgC8WDaINNsosw7GblE.png?width=2464&height=1696",
+      "master": "assets/portfolio/originals/quickads.png",
+      "image": "assets/portfolio/quickads-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/quickads-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/quickads-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/quickads-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "40434b672d929456cc7ddb0236fa3c4d431bea0a97009d672fecf6018989984b",
+      "width": 2464,
+      "height": 1696,
+      "detailImage": "assets/portfolio/quickads-detail.webp"
+    },
+    {
+      "id": "khetaliya",
+      "name": "Khetaliya Group",
+      "category": "Real estate",
+      "sourceLabel": [
+        "Real Estate -",
+        "Khetaliya Group"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/Gn0pxrYKvHKw4TaYnQYjjnlog4.png?width=1877&height=1271",
+      "master": "assets/portfolio/originals/khetaliya.png",
+      "image": "assets/portfolio/khetaliya-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/khetaliya-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/khetaliya-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/khetaliya-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "e545d5336c4ec5d5dbd66361222756581705f60cc5967c16fffc17625c68831f",
+      "width": 1877,
+      "height": 1271,
+      "detailImage": "assets/portfolio/khetaliya-detail.webp"
+    },
+    {
+      "id": "champion-ceramics",
+      "name": "Champion Ceramics",
+      "category": "Refractory manufacturing",
+      "sourceLabel": [
+        "India' Leading Refractory Partner -",
+        "Champion Ceramics"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/42HSOPALan921U8FAn5bWgL2AQQ.png?width=3754&height=2542",
+      "master": "assets/portfolio/originals/champion-ceramics.png",
+      "image": "assets/portfolio/champion-ceramics-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/champion-ceramics-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/champion-ceramics-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/champion-ceramics-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "31fe86e1af9f8ae49008a686d093463af48c476c537524becc321af466377d78",
+      "width": 3754,
+      "height": 2542,
+      "detailImage": "assets/portfolio/champion-ceramics-detail.webp"
+    },
+    {
+      "id": "tigerloans",
+      "name": "Tiger Loans",
+      "category": "Fintech SaaS",
+      "sourceLabel": [
+        "Fintech SaaS Website Design & Development -",
+        "Tiger Loans"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/H4h4WruRXQB7lNmi77dkiBZQU.jpg?width=3754&height=2542",
+      "master": "assets/portfolio/originals/tigerloans.jpg",
+      "image": "assets/portfolio/tigerloans-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/tigerloans-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/tigerloans-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/tigerloans-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "045ed7fd9dae2b70ae80d01bdf061b65ea619cf83c802a4785486fcc957cd84d",
+      "width": 3754,
+      "height": 2542,
+      "detailImage": "assets/portfolio/tigerloans-detail.webp"
+    },
+    {
+      "id": "pick-your-kicks-web3",
+      "name": "Pick Your Kicks",
+      "category": "Blockchain SaaS",
+      "sourceLabel": [
+        "Blockchain Solutions SaaS -",
+        "Pick.Your.Kicks"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/s1pSO1FGxIcY7OntrDSznK8Yy0.png?width=1596&height=1075",
+      "master": "assets/portfolio/originals/pick-your-kicks-web3.png",
+      "image": "assets/portfolio/pick-your-kicks-web3-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/pick-your-kicks-web3-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/pick-your-kicks-web3-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/pick-your-kicks-web3-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "6ee3ed1d4f6f24c4d656ac91f98b7d1fae22b817806b9402afef59fa650e24d2",
+      "width": 1596,
+      "height": 1075,
+      "detailImage": "assets/portfolio/pick-your-kicks-web3-detail.webp"
+    },
+    {
+      "id": "finance-nda",
+      "name": "Confidential finance project",
+      "category": "Finance SaaS · NDA",
+      "sourceLabel": [
+        "Saas Finance -",
+        "NDA"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/AQH2NT2F9oOwdRLdiVH1AC5OAIA.png?width=3754&height=2542",
+      "master": "assets/portfolio/originals/finance-nda.png",
+      "image": "assets/portfolio/finance-nda-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/finance-nda-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/finance-nda-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/finance-nda-1440.webp"
+        }
+      ],
+      "disclosure": "anonymous",
+      "masterSha256": "142bbb9f309bb2b90ad12c390e0cc4a85e06b774f252da4be0c7610b6d04a570",
+      "width": 3754,
+      "height": 2542,
+      "detailImage": "assets/portfolio/finance-nda-detail.webp"
+    },
+    {
+      "id": "risex",
+      "name": "RiseX",
+      "category": "SaaS marketing",
+      "sourceLabel": [
+        "SaaS Marketing Agency -",
+        "RiseX"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/aqDctnQbJs392qP1apAQj45A.png?width=3754&height=2542",
+      "master": "assets/portfolio/originals/risex.png",
+      "image": "assets/portfolio/risex-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/risex-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/risex-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/risex-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "b9b09da905657a1bebb12373b5de4181b2aafb788fa565fb40be7bcd1297dc37",
+      "width": 3754,
+      "height": 2542,
+      "detailImage": "assets/portfolio/risex-detail.webp"
+    },
+    {
+      "id": "jak-exim",
+      "name": "JAK Exim",
+      "category": "Manufacturing",
+      "sourceLabel": [
+        "Clothing Manufacture Landing Page -",
+        "Jak Exim"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/UkoUj5Gu3JdsDDjZ6ZMMLCxw.png?width=1368&height=921",
+      "master": "assets/portfolio/originals/jak-exim.png",
+      "image": "assets/portfolio/jak-exim-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/jak-exim-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/jak-exim-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/jak-exim-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "3624def7e5c61b373773ea9df2986f0349fee2ea482c808bfc89a126d4453f23",
+      "width": 1368,
+      "height": 921,
+      "detailImage": "assets/portfolio/jak-exim-detail.webp"
+    },
+    {
+      "id": "neonsundae",
+      "name": "Neon Sundae",
+      "category": "Web3 CRM",
+      "sourceLabel": [
+        "Web3 CRM Tool -",
+        "Neon Sundae"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/Z9uGhmMbLapIGXpuX15y0OzVje0.png?width=1368&height=921",
+      "master": "assets/portfolio/originals/neonsundae.png",
+      "image": "assets/portfolio/neonsundae-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/neonsundae-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/neonsundae-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/neonsundae-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "c04c04b7ca7eb51899398f475fbca7985a9e6b4d1c7f2407adeae2b74e5aa773",
+      "width": 1368,
+      "height": 921,
+      "detailImage": "assets/portfolio/neonsundae-detail.webp"
+    },
+    {
+      "id": "pick-your-kicks-shop",
+      "name": "Pick Your Kicks",
+      "category": "E-commerce",
+      "sourceLabel": [
+        "E-commerce Website -",
+        "Pick.Your.Kicks"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/nhD2MbDXWyBtSiaZPjDrGkHqdfM.png?width=1596&height=1075",
+      "master": "assets/portfolio/originals/pick-your-kicks-shop.png",
+      "image": "assets/portfolio/pick-your-kicks-shop-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/pick-your-kicks-shop-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/pick-your-kicks-shop-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/pick-your-kicks-shop-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "314d4018b6a23f979fd4495b14ce6fe2a4ead6ddf829dd78b583bb2009fb09a9",
+      "width": 1596,
+      "height": 1075,
+      "detailImage": "assets/portfolio/pick-your-kicks-shop-detail.webp"
+    },
+    {
+      "id": "mill-gears",
+      "name": "Mill Gears",
+      "category": "Manufacturing",
+      "sourceLabel": [
+        "Manufacture Website Design -",
+        "Mil Gears"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/1R5HYxQQ7B4yNsx8d6KTm5r1Jv0.png?width=1368&height=921",
+      "master": "assets/portfolio/originals/mill-gears.png",
+      "image": "assets/portfolio/mill-gears-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/mill-gears-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/mill-gears-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/mill-gears-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "7206959879e960262a8864c0d2dea3103c913180415f99b9cb8c75715b133863",
+      "width": 1368,
+      "height": 921,
+      "detailImage": "assets/portfolio/mill-gears-detail.webp"
+    },
+    {
+      "id": "finergic",
+      "name": "Finergic",
+      "category": "Finance dashboard",
+      "sourceLabel": [
+        "MVP Finance Dashboard Design -",
+        "Finergic"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/mUhwlFvwG1zZyZ4UuvGrmRBxaI.png?width=1596&height=1075",
+      "master": "assets/portfolio/originals/finergic.png",
+      "image": "assets/portfolio/finergic-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/finergic-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/finergic-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/finergic-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "890b70a4a0e2bb24b60e76ac3164984bfd6d1fb3c2d674b39d391a7c66eb8d91",
+      "width": 1596,
+      "height": 1075,
+      "detailImage": "assets/portfolio/finergic-detail.webp"
+    },
+    {
+      "id": "carbonx",
+      "name": "CarbonX",
+      "category": "Carbon trading",
+      "sourceLabel": [
+        "Carbon Credits Trading Website -",
+        "CarbonX"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/hRiDbcP79YsQwG5F8qrprB0yTtU.png?width=1596&height=1075",
+      "master": "assets/portfolio/originals/carbonx.png",
+      "image": "assets/portfolio/carbonx-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/carbonx-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/carbonx-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/carbonx-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "0343f473736c2639dcf752749fb0356eb4d6e9d9b94f28833359885721ba0ca7",
+      "width": 1596,
+      "height": 1075,
+      "detailImage": "assets/portfolio/carbonx-detail.webp"
+    },
+    {
+      "id": "brandbooster",
+      "name": "BrandBooster",
+      "category": "Digital marketing",
+      "sourceLabel": [
+        "Digital Marketing Agency -",
+        "BrandBooster"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/vRiFezDsb6qEAlRD0GpESCVsk4.png?width=3754&height=2542",
+      "master": "assets/portfolio/originals/brandbooster.png",
+      "image": "assets/portfolio/brandbooster-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/brandbooster-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/brandbooster-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/brandbooster-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "cf02116b170d71e9d974abf5039212d83e636e89ed10ca38cdbdbd606e49de47",
+      "width": 3754,
+      "height": 2542,
+      "detailImage": "assets/portfolio/brandbooster-detail.webp"
+    },
+    {
+      "id": "roraj",
+      "name": "Roraj Industries",
+      "category": "Steel manufacturing",
+      "sourceLabel": [
+        "Steel Manufacturing -",
+        "Roraj Indutries"
+      ],
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/5T7QnvdrMzygFcc1dHqqsvnk4.png?width=1877&height=1271",
+      "master": "assets/portfolio/originals/roraj.png",
+      "image": "assets/portfolio/roraj-1440.webp",
+      "variants": [
+        {
+          "width": 480,
+          "path": "assets/portfolio/roraj-480.webp"
+        },
+        {
+          "width": 960,
+          "path": "assets/portfolio/roraj-960.webp"
+        },
+        {
+          "width": 1440,
+          "path": "assets/portfolio/roraj-1440.webp"
+        }
+      ],
+      "disclosure": "named",
+      "masterSha256": "88f3c08e43e947c50aeeb8ae0b8ae1684a41d6ff1bc685447bc6e4db7962a80d",
+      "width": 1877,
+      "height": 1271,
+      "detailImage": "assets/portfolio/roraj-detail.webp"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 // No client dependencies or bundler: combine render-blocking CSS and version scripts.
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+await import('./build-homepage-content.mjs');
 const cssFiles=['styles.css','blitz.css','footer.css','contact.css','refinements.css','mobile.css','stories.css','privacy.css','consistency.css'];
 const css=(await Promise.all(cssFiles.map(file=>readFile('dist/'+file,'utf8')))).join('\n');
 await writeFile('dist/site.css',css);

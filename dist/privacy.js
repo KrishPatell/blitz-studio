@@ -10,5 +10,5 @@
  if(status&&acknowledged)status.textContent='Your essential-only preferences are saved in this browser.';
  document.querySelector('[data-save-privacy]')?.addEventListener('click',()=>{const ok=remember();status.textContent=ok?'Saved. Essential services only. Your choice is remembered for 180 days.':'Browser storage is unavailable. Essential services remain the only active category.'});
  document.querySelector('[data-reset-privacy]')?.addEventListener('click',()=>{try{localStorage.removeItem(key);acknowledged=false;status.textContent='Saved choice cleared. The privacy notice will appear on your next page visit.'}catch{status.textContent='Browser storage is unavailable. You can manage site data in your browser settings.'}});
- if(document.body.classList.contains('policy-page')){const clock=document.getElementById('local-time');if(clock)clock.textContent=new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'}).format(new Date())}
+ if(document.body.classList.contains('policy-page')){const clock=document.getElementById('local-time');if(clock)clock.textContent='Local time: '+new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'}).format(new Date())}
 })();

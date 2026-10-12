@@ -13,7 +13,9 @@
     "optimize:images": "node scripts/optimize-media.mjs",
     "design:tokens": "node scripts/design-tokens.mjs",
     "design:check": "node scripts/design-tokens.mjs --check",
-    "design:baseline": "node scripts/design-tokens.mjs --update-baseline"
+    "design:baseline": "node scripts/design-tokens.mjs --update-baseline",
+    "design:test": "node --test tests/design-contracts.test.mjs",
+    "verify:content": "python3 scripts/verify-content.py"
   },
   "devDependencies": {
     "sharp": "0.35.5"

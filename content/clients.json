@@ -1,0 +1,204 @@
+{
+  "source": "https://blitzstudio.xyz/",
+  "extractedAt": "2026-10-12",
+  "clients": [
+    {
+      "index": 1,
+      "name": "BrandBooster",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/YtGADfGxRWSmR6uCSFlbaoPiqN4.png?width=547&height=209",
+      "master": "assets/client-logos/original-1.png",
+      "image": "assets/clients/client-1.webp",
+      "masterSha256": "e8405bcf84fb874a0e027a014ec8560e74d6f3fe4eaa682e30cf9fb0fdc9dec5",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 2,
+      "name": "JAK Group",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/8WK9PDWQyB162iwX1nmExp63xFM.png?width=547&height=209",
+      "master": "assets/client-logos/original-2.png",
+      "image": "assets/clients/client-2.webp",
+      "masterSha256": "e803306f9cb8c2f044926c48104d71701ebdab26e705cf00c6fe3f66e591123d",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 3,
+      "name": "Khetaliya Group",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/y0YbAx6lf6OjR1dhQPb6SYozKk.png?width=547&height=209",
+      "master": "assets/client-logos/original-3.png",
+      "image": "assets/clients/client-3.webp",
+      "masterSha256": "ce83429531de118dd2e6898ef19642a843a15add5343ff31912312ab43f48320",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 4,
+      "name": "INOVATYV",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/WKUtNPrZwgP8uo0LOirE3aymUTY.png?width=547&height=209",
+      "master": "assets/client-logos/original-4.png",
+      "image": "assets/clients/client-4.webp",
+      "masterSha256": "25395f2b5a53fffade011253f5cbe80f246e27e4d9f0f5b0a888fa47b4b81fb8",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 5,
+      "name": "Pick Your Kicks",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/K9MxvEbxbLYY3LtkQf2RHYC4Zow.png?width=547&height=209",
+      "master": "assets/client-logos/original-5.png",
+      "image": "assets/clients/client-5.webp",
+      "masterSha256": "b60c96b8c5f95ca81907e95bf8955a80e58c587a67d2de703b8bb1be77717d87",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 6,
+      "name": "Tiger Loans",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/xSzD11hdsI413vqgrSKj0mj7XEo.png?width=547&height=209",
+      "master": "assets/client-logos/original-6.png",
+      "image": "assets/clients/client-6.webp",
+      "masterSha256": "7510f72f17ff5c8f824dccdb95e8e189f0d84d19da2adfc1315c5725f11392dc",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 7,
+      "name": "Mill Gears",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/3sSYRxelzcLfKiG8kR8V7dcJOM.png?width=547&height=209",
+      "master": "assets/client-logos/original-7.png",
+      "image": "assets/clients/client-7.webp",
+      "masterSha256": "ffa2e481ed37c4fbcdf07928bcc84edd9f9e9a4aa1b23ecc2f4caf86f5fd0ccf",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 8,
+      "name": "Cred Shields",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/fjJjpE1eqbruqHhBd9kh4bhWGqo.png?width=547&height=209",
+      "master": "assets/client-logos/original-8.png",
+      "image": "assets/clients/client-8.webp",
+      "masterSha256": "06d73f52977ce417e472642ef3d23627815241d6def75a6d254863c92893bf9f",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 9,
+      "name": "JAK Exim",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/xSelzJuuwm2V6ejFhP1fg1Jo.png?width=547&height=209",
+      "master": "assets/client-logos/original-9.png",
+      "image": "assets/clients/client-9.webp",
+      "masterSha256": "0d28babd237b1d9125655c27a554e9d9aacaf9039cada54062be5b45de50b338",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 10,
+      "name": "Finergic",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/jio5Kla6yyJimUg0dNfRUNMMbc.png?width=547&height=209",
+      "master": "assets/client-logos/original-10.png",
+      "image": "assets/clients/client-10.webp",
+      "masterSha256": "814b85ea4e6f4f119562d740cc97cf1bcc3769230dc476a97228ac7d5a8c4575",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 11,
+      "name": "National University of Singapore",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/zrfBOoaBpHhLBmZlszVdKHxfMc.png?width=239&height=209",
+      "master": "assets/client-logos/original-11.png",
+      "image": "assets/clients/client-11.webp",
+      "masterSha256": "6a44c424259d026aab7a8877fcd29e4e50a3c0c9a0313fd790064168bd2ecb19",
+      "width": 239,
+      "height": 209
+    },
+    {
+      "index": 12,
+      "name": "Draper Startup House",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/a2Bwvvcl3gwKt8wdQdG3Ltdw9A.png?width=547&height=209",
+      "master": "assets/client-logos/original-12.png",
+      "image": "assets/clients/client-12.webp",
+      "masterSha256": "48d88e7503092ed982e2bb529d2986b24cf57e8fd8eba4ffb554a9f6eb6453be",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 13,
+      "name": "Unstoppable Domains",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/PwnmY723xGzttzf7ivl1dBXu2S8.png?width=547&height=209",
+      "master": "assets/client-logos/original-13.png",
+      "image": "assets/clients/client-13.webp",
+      "masterSha256": "d7383e7df3374e55fea51aad5ec0b45f4a23398a0c514047eade62eeff490634",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 14,
+      "name": "Devasya Group",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/VARe6NoNyRvqsjmupE7GItyDW6E.png?width=547&height=209",
+      "master": "assets/client-logos/original-14.png",
+      "image": "assets/clients/client-14.webp",
+      "masterSha256": "47b3c61d9b770ea16267fc9dbdbbd5a33d5d8c5dbc8938358133479afff6931a",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 15,
+      "name": "Bankers Vascular Centre",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/60guq0Hs4k5AhWsvo9AVbcJS2g8.png?width=547&height=209",
+      "master": "assets/client-logos/original-15.png",
+      "image": "assets/clients/client-15.webp",
+      "masterSha256": "24916ea7fc69ae33bc52361278890741717f239ad8b7d36fdefd05ee5cdb855e",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 16,
+      "name": "Quickads",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/kl4g4UaltEndNzNanXAcHOFTiI0.png?width=547&height=209",
+      "master": "assets/client-logos/original-16.png",
+      "image": "assets/clients/client-16.webp",
+      "masterSha256": "0b22f0907d9ac08ad89db8427424e112a8646091d1b0e2cc4e18ae9268e71f93",
+      "width": 547,
+      "height": 209
+    },
+    {
+      "index": 17,
+      "name": "CareElite",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/9LggwtsfuXmdiw3Pyuo6ilrcStU.png?width=399&height=205",
+      "master": "assets/client-logos/original-17.png",
+      "image": "assets/clients/client-17.webp",
+      "masterSha256": "c54b7be41c6857a1e4a5af9792a3da96863bb79e29792691b4891938faf04ccd",
+      "width": 399,
+      "height": 205
+    },
+    {
+      "index": 18,
+      "name": "OK Social",
+      "source": "https://blitzstudio.xyz/",
+      "sourceImage": "https://framerusercontent.com/images/A0R4ujGh7vhaLCYLXl6nJwFBy8.png?width=795&height=109",
+      "master": "assets/client-logos/original-18.png",
+      "image": "assets/clients/client-18.webp",
+      "masterSha256": "b2a7cd6114eeb9637fd1c6daa62709045640137ac89518aceeabbcd7d05b0fdc",
+      "width": 795,
+      "height": 109
+    }
+  ]
+}

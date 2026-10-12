@@ -4,32 +4,53 @@
       "name": "Nitin Mahajan",
       "role": "Brandbooster",
       "quote": "Their versatility and expertise are unmatched. Working with Krish has been incredible. They quickly grasped our business model and vision, transforming our website page.",
-      "source": "https://blitzstudio.xyz/"
-    },
-    {
-      "name": "Skyler Saddow",
-      "role": "Marketing Director",
-      "quote": "Not only the project inspired us about our brand, but the actual results we were able to accomplish were amazing.",
-      "source": "https://blitzstudio.xyz/"
-    },
-    {
-      "name": "Appurva K.",
-      "role": "CEO, Mill Gears",
-      "quote": "Thanks to him, we were able to bring our brand on international standards with competitors and establish an online presence. We're extremely happy about the results.",
-      "source": "https://blitzstudio.xyz/"
+      "source": "https://blitzstudio.xyz/",
+      "artwork": "cobalt",
+      "company": "Brandbooster",
+      "portrait": "assets/reference/xVZCvEoPFPOb0TCVvBKO674ZIMs-393.webp"
     },
     {
       "name": "Ali Elzein",
       "role": "Co-founder",
       "quote": "Krish stands out for its exceptional ability to transform complex projects within tight timelines.",
-      "source": "https://blitzstudio.xyz/"
+      "source": "https://blitzstudio.xyz/",
+      "artwork": "midnight",
+      "company": "Client story",
+      "portrait": "assets/reference/C9iDNViWKpqElO0B1OIOV3608U-646.webp"
+    },
+    {
+      "name": "Appurva K.",
+      "role": "CEO, Mill Gears",
+      "quote": "Thanks to him, we were able to bring our brand on international standards with competitors and establish an online presence. We're extremely happy about the results.",
+      "source": "https://blitzstudio.xyz/",
+      "artwork": "ice",
+      "company": "Mill Gears",
+      "portrait": "assets/reference/UzRbXUqIMRNQ90LG6b2taO2mAVE-500.webp"
     },
     {
       "name": "Mohal Banker",
       "role": "Director, Bankers Vascular",
-      "quote": "It seemed like a trivial thing for us, but thanks to the project we have rebranded our company &amp; developed our website which massively helped our customers see our final product.",
-      "source": "https://blitzstudio.xyz/"
+      "quote": "It seemed like a trivial thing for us, but thanks to the project we have rebranded our company & developed our website which massively helped our customers see our final product.",
+      "source": "https://blitzstudio.xyz/",
+      "artwork": "royal",
+      "company": "Bankers Vascular",
+      "portrait": "assets/reference/dTjldewEGkXdLmm5wKsSHZzpXY-1074.webp"
+    },
+    {
+      "name": "Skyler Saddow",
+      "role": "Marketing Director",
+      "quote": "Not only the project inspired us about our brand, but the actual results we were able to accomplish were amazing.",
+      "source": "https://blitzstudio.xyz/",
+      "artwork": "azure",
+      "company": "Client story",
+      "portrait": "assets/reference/TiWdJn661OUHunSkEUvjml9HWKo.png"
     }
   ],
-  "additional_quotes_status": "Awaiting client-approved quotes; do not invent testimonials."
+  "additional_quotes_status": "Five additional drafts prepared at the user\u2019s request in content/testimonial-drafts.json; client approval is needed before attribution and publication.",
+  "sourceAudit": {
+    "source": "https://blitzstudio.xyz/",
+    "extractedAt": "2026-10-12",
+    "uniquePublishedQuotes": 5,
+    "additionalQuotes": "No new quoted testimonials in the case-study attachments. User requested original draft copy; five unattributed drafts are stored separately."
+  }
 }

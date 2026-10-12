@@ -61,6 +61,10 @@
   --site-content-width: calc(1728px - 2 * var(--site-gutter));
   --contact-close-size: 44px;
   --contact-close-layer: 3;
+  --section-gutter: 12px;
+  --footer-small-font: 400 12px/1.6 var(--font-copy);
+  --footer-navigation-gap: 12px 24px;
+  --about-stat-capability-size: clamp(20px,1.8vw,28px);
   --blitz-motion-about-hover: 360ms;
   --blitz-motion-card-hover: 450ms;
   --blitz-motion-image-hover: 650ms;
@@ -78,6 +82,20 @@
   --blitz-motion-policy-entry: 700ms;
   --blitz-motion-page-exit: 180ms;
   --blitz-motion-policy-header: 350ms;
+  --blitz-motion-about-stat: 320ms;
+  --blitz-motion-about-stack-geometry: 420ms;
+  --blitz-motion-about-stack-crossfade: 280ms;
+  --blitz-motion-about-stack-label: 260ms;
+  --blitz-motion-about-content-opacity: 220ms;
+  --blitz-motion-about-content-transform: 280ms;
+  --blitz-motion-about-content-entry: 420ms;
+  --blitz-motion-process-content: 450ms;
+  --blitz-motion-achievement-caption: 420ms;
+  --blitz-motion-dialog-open: 320ms;
+  --blitz-motion-dialog-backdrop: 350ms;
+  --blitz-motion-dialog-brand: 480ms;
+  --blitz-motion-dialog-content: 550ms;
+  --blitz-motion-achievement-caption-reduced: 200ms;
   --blitz-ease-settle: cubic-bezier(.22,1,.36,1);
   --blitz-ease-pop: cubic-bezier(.34,1.4,.64,1);
   --blitz-ease-badge: cubic-bezier(.34,1.56,.64,1);
@@ -86,6 +104,10 @@
   --blitz-ease-menu-close: cubic-bezier(.65,0,.35,1);
   --blitz-ease-menu-open: cubic-bezier(.33,1,.68,1);
   --blitz-ease-page-exit: ease;
+  --blitz-ease-about-content: cubic-bezier(.16,1,.3,1);
+  --blitz-ease-dialog-open: ease-out;
+  --blitz-ease-dialog-close: ease-in;
+  --blitz-ease-default: ease;
   --blitz-interval-process: 6000ms;
   --blitz-interval-achievement: 6500ms;
   --blitz-heading-weight: 500;
@@ -117,6 +139,59 @@
   --blitz-policy-layout-delay: 120ms;
   --blitz-page-exit-distance: -6px;
   --blitz-footer-word-delay: 120ms;
+  --blitz-type-stories-company-font: 500 13px/1.4 var(--font-copy);
+  --blitz-type-stories-company-tracking: .02em;
+  --blitz-type-stories-quote-font: 400 25px/1.3 var(--font-copy);
+  --blitz-type-stories-quote-tracking: -.025em;
+  --blitz-type-stories-quote-mobile-size: 23px;
+  --blitz-type-stories-name-font: 600 15px/1.4 var(--font-copy);
+  --blitz-type-stories-role-font: 400 12px/1.5 var(--font-copy);
+  --blitz-type-hero-heading-base-size: 36px;
+  --blitz-type-hero-heading-base-line-height: 1.12;
+  --blitz-type-hero-heading-base-tracking: -.36px;
+  --blitz-type-hero-heading-wide-size: 52px;
+  --blitz-type-hero-heading-wide-line-height: 1.16;
+  --blitz-type-hero-heading-wide-tracking: -.156px;
+  --blitz-type-hero-heading-max-size: 62px;
+  --blitz-type-hero-heading-max-tracking: -.186px;
+  --blitz-type-hero-mobile-family: var(--font-display);
+  --blitz-type-hero-mobile-size: 34px;
+  --blitz-type-hero-mobile-weight: 500;
+  --blitz-type-hero-mobile-line-height: 1.13;
+  --blitz-type-hero-mobile-tracking: -.01em;
+  --blitz-type-button-label-family: var(--font-copy);
+  --blitz-type-button-label-weight: 650;
+  --blitz-type-button-label-size: var(--button-label-font-size);
+  --blitz-type-button-label-line-height: var(--button-label-line-height);
+  --blitz-type-button-label-tracking: .03em;
+  --blitz-type-about-badge-weight: 500;
+  --blitz-type-footer-navigation-font: var(--footer-small-font);
+  --blitz-type-footer-navigation-mobile-font: var(--footer-small-font);
+  --blitz-type-footer-utility-font: var(--footer-small-font);
+  --blitz-type-footer-utility-tracking: 0;
+  --blitz-type-footer-utility-local-time-size: 12px;
+  --blitz-type-contact-title-font: 600 clamp(40px,5vw,62px)/1.02 overusedGrotesk,sans-serif;
+  --blitz-type-contact-title-tracking: -.045em;
+  --blitz-type-service-description-weight: 550;
+  --blitz-type-skill-description-weight: 500;
+  --blitz-type-process-subcopy-weight: 550;
+  --blitz-surface-stories-background: #082aaa;
+  --blitz-surface-stories-ice-background: #cee4ff;
+  --blitz-surface-stories-ice-text: #0b2358;
+  --blitz-surface-stories-pagination-inactive: #b8c2d6;
+  --blitz-surface-stories-pagination-active: #284cf4;
+  --blitz-surface-stories-focus: #597ef8;
+  --blitz-surface-footer-background: #000;
+  --blitz-surface-footer-copy: #ddd;
+  --blitz-surface-footer-links: #aaa;
+  --blitz-surface-footer-hover: #fff;
+  --blitz-surface-footer-separator: #ffffff24;
+  --blitz-surface-case-study-hover-shadow: 0 12px 34px -12px #11243c35;
+  --blitz-story-quote: 25px;
+  --blitz-story-quote-mobile: 23px;
+  --blitz-story-name: 15px;
+  --blitz-story-role: 12px;
+  --blitz-story-avatar: 48px;
   --blitz-space-4: 4px;
   --blitz-space-8: 8px;
   --blitz-space-10: 10px;
@@ -155,5 +230,20 @@
 @media (min-width:1728px) {
   :root {
   --site-gutter: 96px;
+  }
+}
+@media (min-width:744px) {
+  :root {
+  --section-gutter: 56px;
+  }
+}
+@media (min-width:90rem) {
+  :root {
+  --section-gutter: 78px;
+  }
+}
+@media (min-width:108rem) {
+  :root {
+  --section-gutter: 96px;
   }
 }
