@@ -14,23 +14,26 @@
   ],
   "sourceHashes": {
     "dist/styles.css": "fed8dbcc7bcda9709acc405e75cc91a9a0800a4282a8110dbbec90a94cc2b1b5",
-    "dist/blitz.css": "1496ad280edc06841f9d9cc642d60823d63ab9dacb9ecff4181988835020ca14",
+    "dist/blitz.css": "2258d7cde546457f25392fbcf2c5bde5aa3b00718a0415e9b43df83e40679f53",
     "dist/footer.css": "3462c6d3e8404ac29581bfbc134ba737deb2d18170ca4681b8d5b32b449a1e16",
     "dist/contact.css": "bd1230a6cbca6ba27b6983199083e065da4a7c19d24856a28309278a269fa389",
     "dist/refinements.css": "681023b21075bec87abef003a0c2f10a5a75232f906952f798f00cd97024b126",
     "dist/mobile.css": "c229230456c3a76e4621e2df9d7ee9b2b355d5911352a30b618c5ca5329b4749",
     "dist/stories.css": "a18e89579bad7ba57d877af6ffb977dfdc5554e84e98b6e5b7101f7e3aebde02",
-    "dist/privacy.css": "989f041a4d34fdfe3c19569a94eeee08fe8e4c15a440917be00d4ccab98e6f47",
-    "dist/consistency.css": "3ddcdbf274171f00607d616643ad1fa29d9bc3efcd6a8d36e266e3f461eb1360",
-    "dist/app.js": "423cb3a4a66da1be0249a484fe094eaba6e2fae9d193935284d16df706821cae",
+    "dist/privacy.css": "4fbb810468c699f0e24ff854ee39f37ffcfaea02e4a741e0f5bbfda6ae839280",
+    "dist/consistency.css": "50ffa13c7a9974ac84520510e7fd1d8e67a1faa611f2443671658f9f9fc24d63",
+    "dist/app.js": "f981666c259109f907ae78e402d1a579cc1c330c6b38ca6325a34bf17eaaab12",
     "dist/footer.js": "fc2641841e59a7a25946ec65b053813675c0687dce325c9964f5388618613ae6",
     "dist/case-study-motion.js": "e27691845046f2b4763ad66c82828285b0ec4147cb646773f9dcfccf6da9ec4b",
     "dist/site-ui.js": "eef0a3a25955e87a39b590700a442ec1d1e398b16f64407969cba7238aada0b8",
-    "dist/privacy.js": "ecb51febea57388e637796f79d6080fdf4d659c9bfd4017dd4d014aa2cac04aa",
-    "dist/index.html": "a1f7ff5f422b41e601d321bd1f6f4d9545e507a6e87fe147365939f94406bce9",
+    "dist/privacy.js": "65f2ebac76fc183baa11607362baab801cfe976703ebb8e5f1d6791bdaad326b",
+    "dist/index.html": "5d8ad4de8ed78813b3834e805acc4e9ed3535a23a3dae0c93832b19a3edc48ef",
     "scripts/build-policy-pages.mjs": "34386e2581fbc8cf82c964937b48fd5a0b0ce67ef87c6ed0128a291e48cce5b4",
-    "scripts/build.mjs": "51e44a6fe65b01eb939beacbe354cef4b9bf68348ba4d6882d11bc546b87f1f3",
-    "scripts/build-homepage-content.mjs": "396c23601447460be27c7146a0ca75ed78e17bb069df9623f068bc80e9efbf3a"
+    "scripts/build.mjs": "c296c862f9a4f364160a7b73d8ab11d8eb3d9cb8129d2ee253119c2de368aa2d",
+    "scripts/build-homepage-content.mjs": "3b97a0b69b5bafa0aaba8c56c394a33016f2e0f641b0d9b218dc22103d6284cc",
+    "scripts/build-brand-assets.mjs": "72ef50fdd8ac093af3f425f49cc5aed36ac0d8a4849b3f7d99cbca2b5e49823a",
+    "scripts/build-project-pages.mjs": "7094cddba7c4d8859148bc267b307fcaeecb62b97931cbf70cfa6e10d3799ac2",
+    "scripts/build-seo.mjs": "ef916db5fd9961d21e08cac91a84a58cba8559ace034cbafe983f81d74313eb6"
   },
   "responsiveCustomProperties": [
     {
@@ -3252,9 +3255,96 @@
       "selector": ":root",
       "conditions": [],
       "variables": {
-        "--nav-initial-transition": "none"
+        "--nav-initial-transition": "none",
+        "--project-title-overflow": "visible"
+      }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [],
+      "variables": {
+        "--control-size": "44px",
+        "--control-icon-size": "20px",
+        "--control-padding": "0",
+        "--section-label-padding": "6px 12px",
+        "--section-label-font-size": "16px",
+        "--section-label-line-height": "1.4",
+        "--section-label-weight": "550",
+        "--section-label-border": ".5px solid #00000014",
+        "--section-label-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+        "--privacy-notice-inset": "20px",
+        "--privacy-notice-padding": "24px",
+        "--privacy-notice-gap": "24px",
+        "--privacy-notice-radius": "20px",
+        "--privacy-notice-max-width": "1328px",
+        "--privacy-notice-title-font": "550 16px/24px var(--font-copy)",
+        "--privacy-notice-copy-font": "400 14px/21px var(--font-copy)",
+        "--privacy-notice-action-font": "650 14px/1 var(--font-copy)",
+        "--privacy-notice-top": "124px",
+        "--project-page-title-size": "44px",
+        "--project-page-title-line": "1.16",
+        "--project-page-title-tracking": "-.025em",
+        "--project-page-hero-padding": "160px 0 48px",
+        "--project-page-section-gap": "48px",
+        "--project-page-meta-width": "240px",
+        "--project-page-column-gap": "80px",
+        "--project-page-copy-font": "400 16px/26px var(--font-copy)",
+        "--project-page-label-font": "550 16px/24px var(--font-copy)",
+        "--project-page-art-radius": "20px"
+      }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [
+        "@media(min-width:1024px)"
+      ],
+      "variables": {
+        "--section-label-font-size": "12px",
+        "--section-label-line-height": "1.3",
+        "--section-label-padding": "5px 10px"
+      }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [
+        "@media(min-width:1440px)"
+      ],
+      "variables": {
+        "--section-label-font-size": "16px",
+        "--section-label-line-height": "1.2",
+        "--section-label-padding": "6px 12px",
+        "--project-page-title-size": "62px"
+      }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [
+        "@media(min-width:1728px)"
+      ],
+      "variables": {
+        "--section-label-font-size": "20px",
+        "--section-label-padding": "6px 14px"
+      }
+    },
+    {
+      "file": "dist/consistency.css",
+      "selector": ":root",
+      "conditions": [
+        "@media(max-width:743px)"
+      ],
+      "variables": {
+        "--privacy-notice-padding": "20px",
+        "--privacy-notice-gap": "16px",
+        "--project-page-title-size": "34px",
+        "--project-page-hero-padding": "138px 0 32px",
+        "--project-page-section-gap": "32px",
+        "--project-page-column-gap": "24px"
       }
     }
   ],
-  "reviewRecord": "docs/uat/navbar-load-fix.md"
+  "reviewRecord": "docs/uat/paper-components-and-project-pages.md"
 }

@@ -60,7 +60,7 @@ for name,page in pages.items():
    target=url.path or name
    assert (root/target).is_file(),(name,target,'missing local target')
    if url.fragment and target in pages:assert unquote(url.fragment) in pages[target].ids,(name,value,'missing page anchor')
-print('PASS: all five pages, cross-page anchors and local assets')
+print(f'PASS: all {len(pages)} pages, cross-page anchors and local assets')
 
 # Shared navigation, contact behavior and the requested icon/control removal.
 headers=re.findall(r'<header\b[\s\S]*?</header>',html)
@@ -84,4 +84,4 @@ for name,page in pages.items():
  else:assert re.findall(r'<header\b[\s\S]*?</header>',source)==[policy_header(h) for h in headers],(name,'navbar differs from homepage')
  assert any(tag=='dialog' and a.get('id')=='contact-dialog' for tag,a in page.tags),(name,'contact dialog missing')
  assert any('pixel-footer__contact' in a.get('class','') and 'data-contact' in a for tag,a in page.tags),(name,'footer bypasses contact popup')
-print('PASS: all five pages share navigation/contact UI; no arrow glyphs, removed decorations or footer pause control')
+print(f'PASS: all {len(pages)} pages share navigation/contact UI; no arrow glyphs, removed decorations or footer pause control')

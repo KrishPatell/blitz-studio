@@ -82,7 +82,36 @@
     "--footer-small-font": "400 12px/1.6 var(--font-copy)",
     "--footer-navigation-gap": "12px 24px",
     "--about-stat-capability-size": "clamp(20px,1.8vw,28px)",
-    "--nav-initial-transition": "none"
+    "--nav-initial-transition": "none",
+    "--project-title-overflow": "visible",
+    "--control-size": "44px",
+    "--control-icon-size": "20px",
+    "--control-padding": "0",
+    "--section-label-padding": "6px 12px",
+    "--section-label-font-size": "16px",
+    "--section-label-line-height": "1.4",
+    "--section-label-weight": "550",
+    "--section-label-border": ".5px solid #00000014",
+    "--section-label-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
+    "--privacy-notice-inset": "20px",
+    "--privacy-notice-padding": "24px",
+    "--privacy-notice-gap": "24px",
+    "--privacy-notice-radius": "20px",
+    "--privacy-notice-max-width": "1328px",
+    "--privacy-notice-title-font": "550 16px/24px var(--font-copy)",
+    "--privacy-notice-copy-font": "400 14px/21px var(--font-copy)",
+    "--privacy-notice-action-font": "650 14px/1 var(--font-copy)",
+    "--privacy-notice-top": "124px",
+    "--project-page-title-size": "44px",
+    "--project-page-title-line": "1.16",
+    "--project-page-title-tracking": "-.025em",
+    "--project-page-hero-padding": "160px 0 48px",
+    "--project-page-section-gap": "48px",
+    "--project-page-meta-width": "240px",
+    "--project-page-column-gap": "80px",
+    "--project-page-copy-font": "400 16px/26px var(--font-copy)",
+    "--project-page-label-font": "550 16px/24px var(--font-copy)",
+    "--project-page-art-radius": "20px"
   },
   "typography": {
     "display": {
@@ -304,7 +333,7 @@
       "weight": 550,
       "icon": "None: removed decorative corner/pixel arrows stay removed",
       "shadow": "var(--about-badge-shadow)",
-      "note": "About badge text uses weight 500; other section badges normally 550. Preserve source-scoped shadow variants."
+      "note": "Shared white surface, inset, border, shadow and responsive type across section labels. About retains approved weight 500. Reviewed in Paper desktop/mobile 13 October 2026."
     },
     "storiesCard": {
       "width": "clamp(310px,30vw,400px)",
@@ -557,6 +586,41 @@
       "query": "(min-width:108rem)",
       "values": {
         "--section-gutter": "96px"
+      }
+    },
+    {
+      "query": "(min-width:1024px)",
+      "values": {
+        "--section-label-font-size": "12px",
+        "--section-label-line-height": "1.3",
+        "--section-label-padding": "5px 10px"
+      }
+    },
+    {
+      "query": "(min-width:1440px)",
+      "values": {
+        "--section-label-font-size": "16px",
+        "--section-label-line-height": "1.2",
+        "--section-label-padding": "6px 12px",
+        "--project-page-title-size": "62px"
+      }
+    },
+    {
+      "query": "(min-width:1728px)",
+      "values": {
+        "--section-label-font-size": "20px",
+        "--section-label-padding": "6px 14px"
+      }
+    },
+    {
+      "query": "(max-width:743px)",
+      "values": {
+        "--privacy-notice-padding": "20px",
+        "--privacy-notice-gap": "16px",
+        "--project-page-title-size": "34px",
+        "--project-page-hero-padding": "138px 0 32px",
+        "--project-page-section-gap": "32px",
+        "--project-page-column-gap": "24px"
       }
     }
   ],
@@ -2179,6 +2243,495 @@
           "transition": {
             "token": "cssVariables.--nav-initial-transition",
             "template": "var(--nav-initial-transition)"
+          }
+        }
+      },
+      {
+        "id": "project-title-descenders",
+        "file": "dist/consistency.css",
+        "selector": ".casestudy-cardTitle",
+        "conditions": [],
+        "properties": {
+          "overflow": {
+            "token": "cssVariables.--project-title-overflow",
+            "template": "var(--project-title-overflow)"
+          }
+        }
+      },
+      {
+        "id": "shared-close-target-1",
+        "file": "dist/consistency.css",
+        "selector": ".dialog-close",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--control-padding",
+            "template": "var(--control-padding)"
+          },
+          "width": {
+            "token": "cssVariables.--control-size",
+            "template": "var(--control-size)"
+          },
+          "height": {
+            "token": "cssVariables.--control-size",
+            "template": "var(--control-size)"
+          }
+        }
+      },
+      {
+        "id": "shared-close-target-2",
+        "file": "dist/consistency.css",
+        "selector": ".topbar-mobileMenuButton",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--control-padding",
+            "template": "var(--control-padding)"
+          }
+        }
+      },
+      {
+        "id": "shared-close-icon-1",
+        "file": "dist/consistency.css",
+        "selector": ".dialog-close svg",
+        "conditions": [],
+        "properties": {
+          "width": {
+            "token": "cssVariables.--control-icon-size",
+            "template": "var(--control-icon-size)"
+          },
+          "height": {
+            "token": "cssVariables.--control-icon-size",
+            "template": "var(--control-icon-size)"
+          }
+        }
+      },
+      {
+        "id": "shared-close-icon-2",
+        "file": "dist/consistency.css",
+        "selector": ".topbar-mobileMenuIcon",
+        "conditions": [],
+        "properties": {
+          "width": {
+            "token": "cssVariables.--control-icon-size",
+            "template": "var(--control-icon-size)"
+          },
+          "height": {
+            "token": "cssVariables.--control-icon-size",
+            "template": "var(--control-icon-size)"
+          }
+        }
+      },
+      {
+        "id": "shared-close-icon-3",
+        "file": "dist/consistency.css",
+        "selector": ".topbar-mobileCloseIcon",
+        "conditions": [],
+        "properties": {
+          "width": {
+            "token": "cssVariables.--control-icon-size",
+            "template": "var(--control-icon-size)"
+          },
+          "height": {
+            "token": "cssVariables.--control-icon-size",
+            "template": "var(--control-icon-size)"
+          }
+        }
+      },
+      {
+        "id": "shared-section-label-1",
+        "file": "dist/consistency.css",
+        "selector": ".about-aboutBadge",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--section-label-padding",
+            "template": "var(--section-label-padding)"
+          },
+          "border": {
+            "token": "cssVariables.--section-label-border",
+            "template": "var(--section-label-border)"
+          },
+          "box-shadow": {
+            "token": "cssVariables.--section-label-shadow",
+            "template": "var(--section-label-shadow)"
+          }
+        }
+      },
+      {
+        "id": "shared-section-label-2",
+        "file": "dist/consistency.css",
+        "selector": ".achievement-achievementBadge",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--section-label-padding",
+            "template": "var(--section-label-padding)"
+          },
+          "border": {
+            "token": "cssVariables.--section-label-border",
+            "template": "var(--section-label-border)"
+          },
+          "box-shadow": {
+            "token": "cssVariables.--section-label-shadow",
+            "template": "var(--section-label-shadow)"
+          }
+        }
+      },
+      {
+        "id": "shared-section-label-3",
+        "file": "dist/consistency.css",
+        "selector": ".services-servicesBadge",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--section-label-padding",
+            "template": "var(--section-label-padding)"
+          },
+          "border": {
+            "token": "cssVariables.--section-label-border",
+            "template": "var(--section-label-border)"
+          },
+          "box-shadow": {
+            "token": "cssVariables.--section-label-shadow",
+            "template": "var(--section-label-shadow)"
+          }
+        }
+      },
+      {
+        "id": "shared-section-label-4",
+        "file": "dist/consistency.css",
+        "selector": ".skillscoverage-skillsBadge",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--section-label-padding",
+            "template": "var(--section-label-padding)"
+          },
+          "border": {
+            "token": "cssVariables.--section-label-border",
+            "template": "var(--section-label-border)"
+          },
+          "box-shadow": {
+            "token": "cssVariables.--section-label-shadow",
+            "template": "var(--section-label-shadow)"
+          }
+        }
+      },
+      {
+        "id": "shared-section-label-5",
+        "file": "dist/consistency.css",
+        "selector": ".ourprocess-badge",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--section-label-padding",
+            "template": "var(--section-label-padding)"
+          },
+          "border": {
+            "token": "cssVariables.--section-label-border",
+            "template": "var(--section-label-border)"
+          },
+          "box-shadow": {
+            "token": "cssVariables.--section-label-shadow",
+            "template": "var(--section-label-shadow)"
+          }
+        }
+      },
+      {
+        "id": "shared-section-label-6",
+        "file": "dist/consistency.css",
+        "selector": ".casestudy-badge",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--section-label-padding",
+            "template": "var(--section-label-padding)"
+          },
+          "border": {
+            "token": "cssVariables.--section-label-border",
+            "template": "var(--section-label-border)"
+          },
+          "box-shadow": {
+            "token": "cssVariables.--section-label-shadow",
+            "template": "var(--section-label-shadow)"
+          }
+        }
+      },
+      {
+        "id": "shared-section-label-7",
+        "file": "dist/consistency.css",
+        "selector": ".ourclients-badge",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--section-label-padding",
+            "template": "var(--section-label-padding)"
+          },
+          "border": {
+            "token": "cssVariables.--section-label-border",
+            "template": "var(--section-label-border)"
+          },
+          "box-shadow": {
+            "token": "cssVariables.--section-label-shadow",
+            "template": "var(--section-label-shadow)"
+          }
+        }
+      },
+      {
+        "id": "privacy-notice-layout",
+        "file": "dist/consistency.css",
+        "selector": ".privacy-notice",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--privacy-notice-padding",
+            "template": "var(--privacy-notice-padding)"
+          },
+          "gap": {
+            "token": "cssVariables.--privacy-notice-gap",
+            "template": "var(--privacy-notice-gap)"
+          },
+          "border-radius": {
+            "token": "cssVariables.--privacy-notice-radius",
+            "template": "var(--privacy-notice-radius)"
+          },
+          "max-width": {
+            "token": "cssVariables.--privacy-notice-max-width",
+            "template": "var(--privacy-notice-max-width)"
+          }
+        }
+      },
+      {
+        "id": "privacy-notice-title",
+        "file": "dist/consistency.css",
+        "selector": ".privacy-notice strong",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "cssVariables.--privacy-notice-title-font",
+            "template": "var(--privacy-notice-title-font)"
+          }
+        }
+      },
+      {
+        "id": "privacy-notice-copy",
+        "file": "dist/consistency.css",
+        "selector": ".privacy-notice p",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "cssVariables.--privacy-notice-copy-font",
+            "template": "var(--privacy-notice-copy-font)"
+          }
+        }
+      },
+      {
+        "id": "project-page-title",
+        "file": "dist/consistency.css",
+        "selector": ".project-page-title",
+        "conditions": [],
+        "properties": {
+          "font-size": {
+            "token": "cssVariables.--project-page-title-size",
+            "template": "var(--project-page-title-size)"
+          },
+          "line-height": {
+            "token": "cssVariables.--project-page-title-line",
+            "template": "var(--project-page-title-line)"
+          },
+          "letter-spacing": {
+            "token": "cssVariables.--project-page-title-tracking",
+            "template": "var(--project-page-title-tracking)"
+          }
+        }
+      },
+      {
+        "id": "project-page-header",
+        "file": "dist/consistency.css",
+        "selector": ".project-page-hero",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "cssVariables.--project-page-hero-padding",
+            "template": "var(--project-page-hero-padding)"
+          }
+        }
+      },
+      {
+        "id": "paper-component-aliases",
+        "file": "dist/consistency.css",
+        "selector": ":root",
+        "conditions": [],
+        "properties": {
+          "--control-size": {
+            "token": "cssVariables.--control-size"
+          },
+          "--control-icon-size": {
+            "token": "cssVariables.--control-icon-size"
+          },
+          "--control-padding": {
+            "token": "cssVariables.--control-padding"
+          },
+          "--section-label-padding": {
+            "token": "cssVariables.--section-label-padding"
+          },
+          "--section-label-font-size": {
+            "token": "cssVariables.--section-label-font-size"
+          },
+          "--section-label-line-height": {
+            "token": "cssVariables.--section-label-line-height"
+          },
+          "--section-label-weight": {
+            "token": "cssVariables.--section-label-weight"
+          },
+          "--section-label-border": {
+            "token": "cssVariables.--section-label-border"
+          },
+          "--section-label-shadow": {
+            "token": "cssVariables.--section-label-shadow"
+          },
+          "--privacy-notice-inset": {
+            "token": "cssVariables.--privacy-notice-inset"
+          },
+          "--privacy-notice-padding": {
+            "token": "cssVariables.--privacy-notice-padding"
+          },
+          "--privacy-notice-gap": {
+            "token": "cssVariables.--privacy-notice-gap"
+          },
+          "--privacy-notice-radius": {
+            "token": "cssVariables.--privacy-notice-radius"
+          },
+          "--privacy-notice-max-width": {
+            "token": "cssVariables.--privacy-notice-max-width"
+          },
+          "--privacy-notice-title-font": {
+            "token": "cssVariables.--privacy-notice-title-font"
+          },
+          "--privacy-notice-copy-font": {
+            "token": "cssVariables.--privacy-notice-copy-font"
+          },
+          "--privacy-notice-action-font": {
+            "token": "cssVariables.--privacy-notice-action-font"
+          },
+          "--privacy-notice-top": {
+            "token": "cssVariables.--privacy-notice-top"
+          },
+          "--project-page-title-size": {
+            "token": "cssVariables.--project-page-title-size"
+          },
+          "--project-page-title-line": {
+            "token": "cssVariables.--project-page-title-line"
+          },
+          "--project-page-title-tracking": {
+            "token": "cssVariables.--project-page-title-tracking"
+          },
+          "--project-page-hero-padding": {
+            "token": "cssVariables.--project-page-hero-padding"
+          },
+          "--project-page-section-gap": {
+            "token": "cssVariables.--project-page-section-gap"
+          },
+          "--project-page-meta-width": {
+            "token": "cssVariables.--project-page-meta-width"
+          },
+          "--project-page-column-gap": {
+            "token": "cssVariables.--project-page-column-gap"
+          },
+          "--project-page-copy-font": {
+            "token": "cssVariables.--project-page-copy-font"
+          },
+          "--project-page-label-font": {
+            "token": "cssVariables.--project-page-label-font"
+          },
+          "--project-page-art-radius": {
+            "token": "cssVariables.--project-page-art-radius"
+          }
+        }
+      },
+      {
+        "id": "paper-responsive-aliases-1",
+        "file": "dist/consistency.css",
+        "selector": ":root",
+        "conditions": [
+          "@media(min-width:1024px)"
+        ],
+        "properties": {
+          "--section-label-font-size": {
+            "token": "responsiveCssVariables.6.values.--section-label-font-size"
+          },
+          "--section-label-line-height": {
+            "token": "responsiveCssVariables.6.values.--section-label-line-height"
+          },
+          "--section-label-padding": {
+            "token": "responsiveCssVariables.6.values.--section-label-padding"
+          }
+        }
+      },
+      {
+        "id": "paper-responsive-aliases-2",
+        "file": "dist/consistency.css",
+        "selector": ":root",
+        "conditions": [
+          "@media(min-width:1440px)"
+        ],
+        "properties": {
+          "--section-label-font-size": {
+            "token": "responsiveCssVariables.7.values.--section-label-font-size"
+          },
+          "--section-label-line-height": {
+            "token": "responsiveCssVariables.7.values.--section-label-line-height"
+          },
+          "--section-label-padding": {
+            "token": "responsiveCssVariables.7.values.--section-label-padding"
+          },
+          "--project-page-title-size": {
+            "token": "responsiveCssVariables.7.values.--project-page-title-size"
+          }
+        }
+      },
+      {
+        "id": "paper-responsive-aliases-3",
+        "file": "dist/consistency.css",
+        "selector": ":root",
+        "conditions": [
+          "@media(min-width:1728px)"
+        ],
+        "properties": {
+          "--section-label-font-size": {
+            "token": "responsiveCssVariables.8.values.--section-label-font-size"
+          },
+          "--section-label-padding": {
+            "token": "responsiveCssVariables.8.values.--section-label-padding"
+          }
+        }
+      },
+      {
+        "id": "paper-responsive-aliases-4",
+        "file": "dist/consistency.css",
+        "selector": ":root",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "--privacy-notice-padding": {
+            "token": "responsiveCssVariables.9.values.--privacy-notice-padding"
+          },
+          "--privacy-notice-gap": {
+            "token": "responsiveCssVariables.9.values.--privacy-notice-gap"
+          },
+          "--project-page-title-size": {
+            "token": "responsiveCssVariables.9.values.--project-page-title-size"
+          },
+          "--project-page-hero-padding": {
+            "token": "responsiveCssVariables.9.values.--project-page-hero-padding"
+          },
+          "--project-page-section-gap": {
+            "token": "responsiveCssVariables.9.values.--project-page-section-gap"
+          },
+          "--project-page-column-gap": {
+            "token": "responsiveCssVariables.9.values.--project-page-column-gap"
           }
         }
       }

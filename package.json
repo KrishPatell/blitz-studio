@@ -15,7 +15,8 @@
     "design:check": "node scripts/design-tokens.mjs --check",
     "design:baseline": "node scripts/design-tokens.mjs --update-baseline",
     "design:test": "node --test tests/design-contracts.test.mjs",
-    "verify:content": "python3 scripts/verify-content.py"
+    "verify:content": "python3 scripts/verify-content.py",
+    "verify:seo": "node scripts/verify-seo.mjs"
   },
   "devDependencies": {
     "sharp": "0.35.5"

@@ -1,0 +1,22 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import sharp from 'sharp';
+const {projects}=JSON.parse(await readFile('content/portfolio.json','utf8'));
+const home=await readFile('dist/index.html','utf8');
+const esc=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+const headers=[...home.matchAll(/<header\b[\s\S]*?<\/header>/g)].map(m=>m[0].replaceAll('href="#','href="index.html#').replace(/aria-current="(?:page|location)"/g,'').replaceAll('topbar-itemLinkActive','topbar-itemLinkInactive').replaceAll('topbar-itemLabelActive','topbar-itemLabelInactive').replaceAll('topbar-mobileNavItemActive','').replace('topbar-activeIndicatorVisible','')).join('');
+const footer=home.match(/<footer\b[\s\S]*?<\/footer>/)[0].replaceAll('href="#','href="index.html#');
+const contact=home.match(/<dialog\b[^>]*id="contact-dialog"[\s\S]*?<\/dialog>/)[0];
+const css=await readFile('dist/site.css','utf8');
+const version=async file=>file+'?v='+createHash('sha256').update(await readFile('dist/'+file)).digest('hex').slice(0,12);
+for(const project of projects){
+ const file=`work-${project.id}.html`;
+ const image=project.detailImage;
+ const size=await sharp('dist/'+image).metadata();
+ const figure=(src,width,height,alt,caption,lazy=false,responsive=false)=>`<figure class="project-page-figure"><img src="${esc(src)}" width="${width}" height="${height}" alt="${esc(alt)}" ${responsive?`srcset="${project.variants.map(v=>`${esc(v.path)} ${v.width}w`).join(', ')}, ${esc(src)} ${width}w" sizes="(max-width:743px) calc(100vw - 40px), (min-width:1728px) 1536px, (min-width:1440px) calc(100vw - 156px), calc(100vw - 112px)"`:''} decoding="async" ${lazy?'loading="lazy"':'fetchpriority="high"'}><figcaption>${esc(caption)}</figcaption></figure>`;
+ const comparison=project.comparison?await sharp('dist/'+project.comparison.image).metadata():null;
+ const body=`${figure(image,size.width,size.height,`${project.name} ${project.category} design showcase by Blitz Studio`,`${project.name} / ${project.category}`,false,true)}<section class="project-page-overview"><h2>Project overview</h2><p>${esc(project.name)} is featured in the ${esc(project.category.toLowerCase())} category of our portfolio. Explore the visual design above.</p></section>${comparison?`<section class="project-page-overview"><h2>Before and after</h2><div>${figure(project.comparison.image,comparison.width,comparison.height,project.comparison.caption,project.comparison.caption,true)}</div></section>`:''}`;
+ const related=projects.filter(p=>p.id!==project.id&&p.disclosure!=='anonymous').slice(0,4).map(p=>`<a href="work-${esc(p.id)}.html">${esc(p.name)}</a>`).join('');
+ await writeFile('dist/'+file,`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(project.name)} | Blitz Studio</title><link rel="preload" href="assets/reference/overused_grotesk_medium.0e-e91bdqpncz.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/reference/a343f882a40d2cc9-s.p.1sj6eobyi31rd.woff2" as="font" type="font/woff2" crossorigin><style id="site-styles">${css}</style><script src="${await version('site-ui.js')}" defer></script><script src="${await version('footer.js')}" defer></script><script src="${await version('privacy.js')}" defer></script></head><body class="policy-page project-page"><a class="policy-skip" href="#project-content">Skip to content</a>${headers}<main id="project-content" class="project-page-main"><section class="project-page-hero"><div class="project-page-heading"><nav class="project-page-breadcrumb" aria-label="Breadcrumb"><a href="index.html#case-study">Our work</a><span aria-hidden="true">/</span><span aria-current="page">${esc(project.name)}</span></nav><h1 class="project-page-title">${esc(project.name)}</h1></div><dl class="project-page-meta"><dt>Category</dt><dd>${esc(project.category)}</dd></dl></section>${body}<section class="project-page-ending"><div class="project-page-related"><h2>More from the studio</h2><nav aria-label="Related projects">${related}</nav></div><a class="studio-action" href="index.html#contact" data-contact>Start a conversation</a></section></main>${footer}${contact}</body></html>`);
+}
+console.log(`Built ${projects.length} crawlable visual portfolio pages using the shared homepage design and verified project assets.`);

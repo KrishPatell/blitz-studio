@@ -24,3 +24,7 @@ await writeFile('dist/index.html',html);
 console.log('Built dependency-free static site with inline CSS and versioned scripts/media.');
 
 await import('./build-policy-pages.mjs');
+
+await import('./build-brand-assets.mjs');
+await import('./build-project-pages.mjs');
+await import('./build-seo.mjs');

@@ -21,7 +21,7 @@ Use `design/component-tokens.css` for the homepage's scoped custom-property prof
 - Preserve two scales: large display headings (hero/services/process) and editorial headings (about/skills/case studies/clients). Exact responsive values remain in each existing component's CSS variables. The inventory records common sizes; it is not a mandate to force all headings to one size.
 - Stories use **44px desktop**, **36px tablet**, **24px mobile**, line height **1.28 / 1.3 mobile**. Quotes use Manrope **25px desktop / 23px mobile**, weight 400. Names use 15px/600; roles 12px/400.
 - Hero keeps its existing responsive tracking and approved italic yellow accent. Services line height is 1.12. Footer wordmark keeps weight 700, line height 1 and tracking −.055em. Its natural letter proportions must remain intact.
-- Reuse the white pill section label and its existing shadow. Do not restore the removed decorative arrow icons. Do not add decorative yellow lines, new uppercase eyebrow systems, new fonts, bold display treatments or stretched wordmarks without a user-requested design change.
+- Reuse the white pill section label and its existing shadow. All seven section labels now share `--section-label-*` inset, responsive type, border and shadow; Achievement uses the same white surface and dark text as Skills. Do not restore the removed decorative arrow icons. Do not add decorative yellow lines, new uppercase eyebrow systems, new fonts, bold display treatments or stretched wordmarks without a user-requested design change.
 - Retain fluid wrapping, readable line lengths and intentional breaks. Do not shrink text to hide overflow or rasterize functional text into an image.
 
 The exact heading sizes below are separate component roles. Do not create a universal heading size that flattens them. Desktop section conditions are preserved in the generated scoped export; hero refinements use pixel queries at 1440/1728.
@@ -54,9 +54,9 @@ Navbar font/weight changes at existing responsive conditions are scoped behavior
 - Main frame gutters: 12px mobile, 56px from 744, 78px from 1440, 96px from 1728. Shared footer/policy chrome uses 20px mobile, 56px desktop, 78px from 1440 and 96px from 1728. Stories retains its documented independent gutter. Do not flatten these roles.
 - Choose spacing from the approved inventory and the nearest existing component. Preserve section rhythm, card gutters, alignment, content width and whitespace hierarchy. Do not convert the existing geometry to a new spacing grid.
 - Existing card roles include 14px compact, 20px standard and 24px wide radii; story cards use 12px. Pills remain fully round.
-- Portfolio cards keep the existing scatter layout and type scale. Full project names wrap without ellipsis; category appears below the title. The mockup fills the remaining card space so longer source labels do not crop the card.
+- Portfolio cards keep the existing scatter layout and type scale. Full project names wrap without ellipsis; title overflow remains visible so glyph descenders are not clipped at the established line height; category appears below the title. The mockup fills the remaining card space so longer source labels do not crop the card.
 - Stories: 590px card height / 540px mobile; 30px padding / 24px mobile; 20px gap / 14px mobile; circular 48px avatars. Follow the exact responsive width tokens.
-- Menu/close controls need 44px touch targets; mobile navigation rows are 48px. Keep labels and close actions reachable on short screens. Preserve visible keyboard focus.
+- Menu/dialog close controls share `--control-size` (44px), zero internal padding and a centred `--control-icon-size` (20px) vector X. No font glyph is used for closing. Menu/close controls need 44px touch targets; mobile navigation rows are 48px. Keep labels and close actions reachable on short screens. Preserve visible keyboard focus.
 
 Preserve existing scoped breakpoint exceptions: hero mobile text through 767.984px, About outer-gap adjustment from 1726px, footer intro stacking through 1100px and footer wordmark refinement from 1800px. These are not new global breakpoints. `--section-gutter` controls the main frame; `--site-gutter` controls shared chrome. They intentionally differ on mobile.
 
@@ -124,3 +124,12 @@ A change is ready when its font role, responsive scale, colors, spacing, approve
 - `scripts/design-tokens.mjs`: registry-derived generator and baseline consistency check.
 - `scripts/design-contracts.mjs`: schema and source-contract validation; tests in `tests/design-contracts.test.mjs`.
 - Existing CSS order in `scripts/build.mjs` remains the live rendering authority until a separately verified migration uses the registry throughout the application. This extraction does not claim that every existing literal has already been refactored.
+
+## Paper component board — reviewed 13 October 2026
+
+The shared desktop/mobile components and project-page templates are built in [Blitzstudio on Paper](https://app.paper.design/file/01M4SPS5N3ES3Z63XANVKQXNZ5/p-1-0). The website registry remains the source of truth; Paper tokens mirror its palette and control geometry.
+
+- Privacy notice: top anchored 16px below the visible homepage header, white surface, 20px radius, 24px desktop / 20px mobile padding. Copy is Manrope 550 16px/24px and 400 14px/21px. The desktop action lane centres both controls; mobile stacks copy over a shared 44px action row. Use the homepage dark button gradient/shadow. Hide the notice while a menu/dialog locks the page. It remains a non-blocking essential-only notice, with no new tracking.
+- Section labels: `--section-label-*` applies to About, Achievement, Services, Skills, Process, Case Studies and Clients. Mobile/base 16px, desktop 1024px 12px, 1440px 16px and 1728px 20px preserve the existing responsive scale. About retains its 500 weight; others 550.
+- Project pages: shared homepage header/footer, white editorial body, native breadcrumb, live Overused Grotesk 500 heading (34px mobile / 44px tablet / 62px from1440), category metadata, full natural-ratio artwork, overview and related work/contact. Image radius20px, gap48px desktop /32px mobile, 240px metadata lane. Long names wrap with visible descenders. Existing verified assets and category are the source; brief/challenge/approach/results sections stay omitted until approved content exists.
+- Paper cannot currently resolve the local display font. Its project titles use exact vector outlines from the existing Overused Grotesk Medium website font as a visual proof. Website headings remain selectable live text in the original local font. Paper copy/controls are editable Manrope. No substitute font is introduced on the website.
