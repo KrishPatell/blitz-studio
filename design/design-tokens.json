@@ -115,22 +115,26 @@
     "--footer-scene-height": "clamp(900px,62.5vw,1080px)",
     "--footer-utility-height": "72px",
     "--footer-heading-size": "44px",
-    "--footer-heading-line-height": "1.28",
+    "--footer-heading-line-height": "1.42",
     "--footer-heading-tracking": "-.025em",
     "--footer-brand-size": "18px",
     "--footer-wordmark-size": "clamp(120px,10.7vw,184px)",
     "--footer-content-gap": "80px",
-    "--footer-links-gap": "32px",
+    "--footer-links-gap": "24px",
     "--footer-invitation-gap": "24px",
     "--footer-copy-size": "18px",
     "--footer-copy-line-height": "1.5",
     "--footer-scene-motion": "transform 1.8s cubic-bezier(.2,.65,.3,1)",
     "--footer-link-color": "#ffffffb8",
     "--footer-heading-color": "#fff",
-    "--footer-surface": "#000b33",
+    "--footer-surface": "#0739df",
     "--footer-cta-padding": "0 24px",
     "--footer-utility-padding": "24px var(--site-gutter)",
-    "--footer-wordmark-bottom-gap": "32px"
+    "--footer-wordmark-bottom-gap": "32px",
+    "--footer-rule-color": "#ffffff38",
+    "--footer-column-inset": "24px",
+    "--footer-background-motion": "footer-scene-drift 12s linear infinite alternate",
+    "--footer-office-columns": "repeat(3,minmax(0,1fr))"
   },
   "typography": {
     "display": {
@@ -414,11 +418,11 @@
       "introGap": "var(--footer-content-gap)",
       "introStackAtPx": 1100,
       "introGapStacked": "32px",
-      "officesMarginTop": "32px",
-      "officesPadding": "0",
-      "officesGap": "32px",
-      "officesMarginTopMobile": "32px",
-      "officesPaddingMobile": "0",
+      "officesMarginTop": "24px",
+      "officesPadding": "24px 0 0",
+      "officesGap": "24px",
+      "officesMarginTopMobile": "24px",
+      "officesPaddingMobile": "24px 0 0",
       "officesGapMobile": "24px",
       "utilityGap": "24px",
       "motionControl": "none",
@@ -666,7 +670,7 @@
     "palette": "dist/styles.css theme layer; dist/blitz.css font aliases; dist/refinements.css effective font roles",
     "responsiveGeometry": "Source-scoped custom properties in design/homepage-baseline.json; apply media conditions and CSS order before choosing a value",
     "stories": "dist/stories.css and final dist/consistency.css overrides",
-    "footerAndPolicies": "dist/footer.css is the final subtree-scoped footer authority after consistency.css; illustrated scene explicitly replaces pixel art. Separate desktop/mobile imagegen masters and Paper compositions, 13 October2026. Policy chrome retains privacy.css + consistency.css.",
+    "footerAndPolicies": "Cobalt night-garden footer, refined13 October2026 after user spacing/navigation feedback; desktop/mobile original imagegen masters, live fonts, shared navigation rules and anchored office lanes. Footer CSS remains last.",
     "motion": "dist/app.js, dist/footer.js, dist/case-study-motion.js, dist/site-ui.js and source CSS"
   },
   "surfaces": {
@@ -2771,6 +2775,18 @@
           },
           "--footer-wordmark-bottom-gap": {
             "token": "cssVariables.--footer-wordmark-bottom-gap"
+          },
+          "--footer-rule-color": {
+            "token": "cssVariables.--footer-rule-color"
+          },
+          "--footer-column-inset": {
+            "token": "cssVariables.--footer-column-inset"
+          },
+          "--footer-background-motion": {
+            "token": "cssVariables.--footer-background-motion"
+          },
+          "--footer-office-columns": {
+            "token": "cssVariables.--footer-office-columns"
           }
         }
       },
@@ -2826,6 +2842,37 @@
         "properties": {
           "min-height": {
             "token": "components.footer.navigationLinkMinimum"
+          }
+        }
+      },
+      {
+        "id": "footer-background-drift",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__atmosphere picture",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "cssVariables.--footer-background-motion",
+            "template": "var(--footer-background-motion)"
+          }
+        }
+      },
+      {
+        "id": "footer-office-grid",
+        "file": "dist/footer.css",
+        "selector": ".footer-offices",
+        "conditions": [],
+        "properties": {
+          "grid-template-columns": {
+            "token": "cssVariables.--footer-office-columns",
+            "template": "var(--footer-office-columns)"
+          },
+          "gap": {
+            "token": "cssVariables.--footer-links-gap",
+            "template": "var(--footer-links-gap)"
+          },
+          "padding": {
+            "token": "components.footer.officesPadding"
           }
         }
       }

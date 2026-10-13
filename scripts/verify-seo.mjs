@@ -39,6 +39,14 @@ for(const file of pages){
  assert.equal(graph.find(entity=>entity['@type']==='WebPage').url,expected);
  if(file.startsWith('work-')){assert(graph.some(entity=>entity['@type']==='CreativeWork'));assert(graph.some(entity=>entity['@type']==='BreadcrumbList'));}
  for(const rel of ['icon','apple-touch-icon','manifest'])assert(links.some(link=>link.rel===rel),`${file}: ${rel} missing`);
+ for(const size of [152,167,180]){
+  const matches=links.filter(link=>link.rel==='apple-touch-icon'&&link.sizes===`${size}x${size}`);
+  assert.equal(matches.length,1,`${file}: Apple web clip ${size} must occur once`);
+  const icon=await sharp('dist/'+matches[0].href).metadata();
+  assert.equal(icon.width,size);assert.equal(icon.height,size);assert.equal(icon.hasAlpha,false,`${file}: web clip must have an opaque background`);
+ }
+ assert.equal(meta('apple-mobile-web-app-title'),studio.businessName);
+ assert.equal(meta('apple-mobile-web-app-capable'),'yes');
 }
 const sitemap=await readFile('dist/sitemap.xml','utf8');assert(sitemap.includes('http://www.sitemaps.org/schemas/sitemap/0.9'));
 const locations=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>decode(m[1]));assert.deepEqual(locations.sort(),indexable.sort());assert.equal(new Set(locations).size,locations.length);
@@ -49,6 +57,7 @@ const apple=await sharp('dist/apple-touch-icon.png').metadata();assert.equal(app
 const ico=await readFile('dist/favicon.ico');assert.equal(ico.readUInt16LE(2),1);assert.equal(ico.readUInt16LE(4),3);
 for(let i=0;i<3;i++){const start=6+i*16,length=ico.readUInt32LE(start+8),offset=ico.readUInt32LE(start+12);const dimensions=await sharp(ico.subarray(offset,offset+length)).metadata();assert.equal(dimensions.width,[16,32,48][i]);}
 const manifest=await json('dist/site.webmanifest');assert.equal(manifest.start_url,'/');assert.equal(manifest.scope,'/');assert.equal(manifest.name,studio.businessName);
+assert.equal(manifest.display,'standalone');assert.equal(manifest.short_name,studio.businessName);
 for(const icon of manifest.icons){const dimensions=await sharp('dist/'+icon.src).metadata();assert.equal(icon.sizes,`${dimensions.width}x${dimensions.height}`);}assert(manifest.icons.some(icon=>icon.purpose==='maskable'));
 const social=await sharp('dist/'+config.socialImage).metadata();assert.equal(social.width,1200);assert.equal(social.height,630);
 const home=await readFile('dist/index.html','utf8');for(const project of projects)assert(home.includes(`href="work-${project.id}.html"`),`${project.name}: crawlable project link missing`);

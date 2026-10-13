@@ -8,6 +8,9 @@ for(const size of [16,32,48,96,192,512]){
  await sharp(mark).resize(size,size).flatten({background:'#ffffff'}).png().toFile(`dist/assets/icons/icon-${size}.png`);
 }
 await sharp(mark).resize(180,180).flatten({background:'#ffffff'}).png().toFile('dist/apple-touch-icon.png');
+for(const size of [152,167]){
+ await sharp(mark).resize(size,size).flatten({background:'#ffffff'}).png().toFile(`dist/assets/icons/apple-touch-icon-${size}.png`);
+}
 const safeMark=await sharp(mark).resize(384,384).png().toBuffer();
 await sharp({create:{width:512,height:512,channels:4,background:'#ffffff'}}).composite([{input:safeMark,left:64,top:64}]).png().toFile('dist/assets/icons/icon-maskable-512.png');
 const frames=await Promise.all([16,32,48].map(size=>sharp(mark).resize(size,size).flatten({background:'#ffffff'}).png().toBuffer()));
