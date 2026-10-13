@@ -21,19 +21,19 @@
     "dist/stories.css": "a18e89579bad7ba57d877af6ffb977dfdc5554e84e98b6e5b7101f7e3aebde02",
     "dist/privacy.css": "4fbb810468c699f0e24ff854ee39f37ffcfaea02e4a741e0f5bbfda6ae839280",
     "dist/consistency.css": "4f7ec6a5c2f115e989e48d757b4252f04933a6c77aa540d01e5e5ba6c398051e",
-    "dist/footer.css": "d11b7f7ea937ba24888121c51d6e101bb18628ae4bd1f6c675172658b7befb92",
+    "dist/footer.css": "bff4766ee5bf3c75a35eeb8fc184a7c729ed24a4c8ac5bd048e270ef3da8e2e0",
     "dist/app.js": "f981666c259109f907ae78e402d1a579cc1c330c6b38ca6325a34bf17eaaab12",
     "dist/footer.js": "919126e135104375cf00b248249888ced69fe2b53bc4dbf8abd29afc47d282b4",
     "dist/case-study-motion.js": "e27691845046f2b4763ad66c82828285b0ec4147cb646773f9dcfccf6da9ec4b",
     "dist/site-ui.js": "eef0a3a25955e87a39b590700a442ec1d1e398b16f64407969cba7238aada0b8",
     "dist/privacy.js": "65f2ebac76fc183baa11607362baab801cfe976703ebb8e5f1d6791bdaad326b",
-    "dist/index.html": "c88599853aec3da103fda6061dd0fb58c70b1042f0d32eb94f98acc81e5677ba",
+    "dist/index.html": "d9ed3ac09fc2fba53fef3b4388bdd27f2e268f326617a33a464e9a2dfbd63dc1",
     "scripts/build-policy-pages.mjs": "6a042a9b93e78699d4bde3c87049043c632017da41b2b6168ee1110fc17916a8",
     "scripts/build.mjs": "9938bd638adb90260951f0e2fb378fba1ebba263bf13f7cacdb05a5d2673d743",
     "scripts/build-homepage-content.mjs": "3b97a0b69b5bafa0aaba8c56c394a33016f2e0f641b0d9b218dc22103d6284cc",
     "scripts/build-brand-assets.mjs": "72ef50fdd8ac093af3f425f49cc5aed36ac0d8a4849b3f7d99cbca2b5e49823a",
     "scripts/build-project-pages.mjs": "7094cddba7c4d8859148bc267b307fcaeecb62b97931cbf70cfa6e10d3799ac2",
-    "scripts/build-seo.mjs": "ef916db5fd9961d21e08cac91a84a58cba8559ace034cbafe983f81d74313eb6",
+    "scripts/build-seo.mjs": "98968652a4ea20ee5f509c842a90c4052ee0f7b9361d0f0f1b60b3d245baaec1",
     "scripts/build-footer.mjs": "598cf91f8d07be18c2ef07ad1b47943472a3ec30b5922e8e6218616a1cded682"
   },
   "responsiveCustomProperties": [
@@ -3361,7 +3361,7 @@
         "@media(max-width:743px)"
       ],
       "variables": {
-        "--footer-scene-height": "1420px",
+        "--footer-scene-height": "1500px",
         "--footer-heading-size": "32px",
         "--footer-wordmark-size": "clamp(48px,16.4vw,64px)",
         "--footer-copy-size": "16px",

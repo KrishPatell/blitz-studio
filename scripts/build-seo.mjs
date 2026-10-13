@@ -13,12 +13,16 @@ const organization={
  '@type':'Organization','@id':url('#organization'),name:studio.businessName,url:url('/'),description:config.homeDescription,email:studio.email,
  logo:{'@type':'ImageObject','@id':url('#logo'),url:url('assets/icons/icon-512.png'),contentUrl:url('assets/icons/icon-512.png'),width:512,height:512,caption:studio.businessName},
  sameAs:config.organizationProfiles,knowsAbout:studio.capabilities,
- address:{'@type':'PostalAddress',streetAddress:'700 Lorong 1 Toa Payoh #06-04, Trellis Towers',addressLocality:'Singapore',postalCode:'319773',addressCountry:'SG'},
+ address:[
+  {'@type':'PostalAddress',streetAddress:'700 Lorong 1 Toa Payoh #06-04, Trellis Towers',addressLocality:'Singapore',postalCode:'319773',addressCountry:'SG'},
+  {'@type':'PostalAddress',streetAddress:'109, Nalanda Complex, nr. Mansi Complex, Mahavir Nagar society, Vastrapur',addressLocality:'Ahmedabad',addressRegion:'Gujarat',postalCode:'380015',addressCountry:'IN'}
+ ],
  contactPoint:{'@type':'ContactPoint',contactType:'Project enquiries',email:studio.email,availableLanguage:'English'},
  hasOfferCatalog:{'@type':'OfferCatalog',name:'Design and development services',itemListElement:services.map(name=>({'@type':'Offer',itemOffered:{'@type':'Service',name,provider:{'@id':url('#organization')}}}))}
 };
 // This public address must continue to match the verified studio source.
 if(!studio.offices.some(office=>office.country==='Singapore'&&office.address?.includes('700 Lorong 1 Toa Payoh #06-04')&&office.address.includes('319773')))throw Error('Organization address requires a reviewed studio source.');
+if(!studio.offices.some(office=>office.country==='India'&&office.address?.replaceAll('\n',' ')==='109, Nalanda Complex, nr. Mansi Complex, Mahavir Nagar society, Vastrapur, Ahmedabad, Gujarat 380015'))throw Error('India address must match the user-provided studio address.');
 const website={'@type':'WebSite','@id':url('#website'),url:url('/'),name:config.siteName,inLanguage:config.language,publisher:{'@id':url('#organization')}};
 const pages=[{file:'index.html',path:'/',title:config.homeTitle,description:config.homeDescription,index:true,image:config.socialImage,imageAlt:config.socialImageAlt},...Object.entries(config.policyPages).map(([file,data])=>({file,path:file,...data,image:config.socialImage,imageAlt:config.socialImageAlt})),...projects.map(project=>({file:`work-${project.id}.html`,path:`work-${project.id}.html`,title:projects.filter(item=>item.name===project.name).length>1?`${project.name} | ${project.category} | Blitz Studio`:`${project.name} | Design Portfolio | Blitz Studio`,description:`Explore ${project.name}, ${project.category.toLowerCase()} design work by Blitz Studio. View the visual portfolio showcase and discuss your next project.`,index:project.disclosure!=='anonymous',image:project.variants.at(-1).path,imageAlt:`${project.name} ${project.category} design showcase by Blitz Studio`,project}))];
 for(const page of pages){

@@ -335,7 +335,7 @@
 }
 @media (max-width:743px) {
   :root {
-  --footer-scene-height: 1420px;
+  --footer-scene-height: 1500px;
   --footer-heading-size: 32px;
   --footer-wordmark-size: clamp(48px,16.4vw,64px);
   --footer-copy-size: 16px;

@@ -31,7 +31,11 @@ for(const file of pages){
  const data=JSON.parse(blocks[0][1]);assert.equal(data['@context'],'https://schema.org');assert(!/AggregateRating|"@type":"Review"|FAQPage/.test(blocks[0][1]),'No invented ratings or self-serving rich-result claims.');
  const graph=data['@graph'];assert.equal(new Set(graph.map(entity=>entity['@id'])).size,graph.length);
  const organization=graph.find(entity=>entity['@type']==='Organization');assert.equal(organization.name,studio.businessName);assert.equal(organization.email,studio.email);assert.equal(organization.url,origin+'/');
- assert.deepEqual(organization.sameAs,config.organizationProfiles);assert.equal(organization.logo.width,512);assert.equal(organization.address.addressCountry,'SG');assert.equal(organization.address.postalCode,'319773');
+ assert.deepEqual(organization.sameAs,config.organizationProfiles);assert.equal(organization.logo.width,512);
+ assert.equal(organization.address.length,2);
+ const singaporeAddress=organization.address.find(address=>address.addressCountry==='SG'),indiaAddress=organization.address.find(address=>address.addressCountry==='IN');
+ assert.equal(singaporeAddress.postalCode,'319773');
+ assert.deepEqual(indiaAddress,{'@type':'PostalAddress',streetAddress:'109, Nalanda Complex, nr. Mansi Complex, Mahavir Nagar society, Vastrapur',addressLocality:'Ahmedabad',addressRegion:'Gujarat',postalCode:'380015',addressCountry:'IN'});
  assert.equal(graph.find(entity=>entity['@type']==='WebPage').url,expected);
  if(file.startsWith('work-')){assert(graph.some(entity=>entity['@type']==='CreativeWork'));assert(graph.some(entity=>entity['@type']==='BreadcrumbList'));}
  for(const rel of ['icon','apple-touch-icon','manifest'])assert(links.some(link=>link.rel===rel),`${file}: ${rel} missing`);
