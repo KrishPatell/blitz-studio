@@ -20,21 +20,21 @@
     "dist/mobile.css": "c229230456c3a76e4621e2df9d7ee9b2b355d5911352a30b618c5ca5329b4749",
     "dist/stories.css": "a18e89579bad7ba57d877af6ffb977dfdc5554e84e98b6e5b7101f7e3aebde02",
     "dist/privacy.css": "4fbb810468c699f0e24ff854ee39f37ffcfaea02e4a741e0f5bbfda6ae839280",
-    "dist/consistency.css": "4f7ec6a5c2f115e989e48d757b4252f04933a6c77aa540d01e5e5ba6c398051e",
-    "dist/footer.css": "90b2fb35d6e9df946649aeffa2d88f71a6305913e36d6dc444d0a4461686fca1",
+    "dist/consistency.css": "0b390e751c167bf98c820a0d93fb39f417fefa6ec2455de9e77a84805f324856",
+    "dist/footer.css": "be6adde1b7b2f1b1151c9b80d5f6f029c9492f64addb75d303cc124c274d10d9",
     "dist/app.js": "f981666c259109f907ae78e402d1a579cc1c330c6b38ca6325a34bf17eaaab12",
     "dist/footer.js": "919126e135104375cf00b248249888ced69fe2b53bc4dbf8abd29afc47d282b4",
     "dist/case-study-motion.js": "e27691845046f2b4763ad66c82828285b0ec4147cb646773f9dcfccf6da9ec4b",
     "dist/site-ui.js": "eef0a3a25955e87a39b590700a442ec1d1e398b16f64407969cba7238aada0b8",
-    "dist/privacy.js": "65f2ebac76fc183baa11607362baab801cfe976703ebb8e5f1d6791bdaad326b",
-    "dist/index.html": "a319cb35b8837315249fa4b35a69cd5ff54622561e858b8fdbb5b978cdfa2b8f",
+    "dist/privacy.js": "116697e2bac8dbccbe80df62573c5f1fb969e09863e38b30c71401afdfb60f05",
+    "dist/index.html": "ce1f652800f1b48032ee4c9cf7e9a4e202dfe0b1addbfba76f03ae0ad4ba9a62",
     "scripts/build-policy-pages.mjs": "6a042a9b93e78699d4bde3c87049043c632017da41b2b6168ee1110fc17916a8",
     "scripts/build.mjs": "9938bd638adb90260951f0e2fb378fba1ebba263bf13f7cacdb05a5d2673d743",
     "scripts/build-homepage-content.mjs": "3b97a0b69b5bafa0aaba8c56c394a33016f2e0f641b0d9b218dc22103d6284cc",
     "scripts/build-brand-assets.mjs": "67c1da8aac48eb10a9c6b587ebcb4ee0eb5e0e3744d970659a4dc4320db5c7be",
     "scripts/build-project-pages.mjs": "7094cddba7c4d8859148bc267b307fcaeecb62b97931cbf70cfa6e10d3799ac2",
     "scripts/build-seo.mjs": "71bc37dffaea93ab545e09699e4f951f80952e34789ce5b6a386038e1cedf079",
-    "scripts/build-footer.mjs": "c8a3c6eb7ae38d20a7fa04ca77655bf1766adbfce8a51fcc476d098219ce208c"
+    "scripts/build-footer.mjs": "7d142a38db1c62ecd56767abc8a02e6861bc417ee702fd7f6e88329ac6d102b6"
   },
   "responsiveCustomProperties": [
     {
@@ -3237,14 +3237,15 @@
         "--section-label-border": ".5px solid #00000014",
         "--section-label-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
         "--privacy-notice-inset": "20px",
-        "--privacy-notice-padding": "24px",
-        "--privacy-notice-gap": "24px",
+        "--privacy-notice-padding": "20px",
+        "--privacy-notice-gap": "16px",
         "--privacy-notice-radius": "20px",
-        "--privacy-notice-max-width": "1328px",
+        "--privacy-notice-max-width": "480px",
         "--privacy-notice-title-font": "550 16px/24px var(--font-copy)",
         "--privacy-notice-copy-font": "400 14px/21px var(--font-copy)",
         "--privacy-notice-action-font": "650 14px/1 var(--font-copy)",
-        "--privacy-notice-top": "124px",
+        "--privacy-notice-top": "auto",
+        "--privacy-notice-bottom": "20px",
         "--project-page-title-size": "44px",
         "--project-page-title-line": "1.16",
         "--project-page-title-tracking": "-.025em",
@@ -3317,7 +3318,7 @@
         "--footer-scene-height": "clamp(900px,62.5vw,1080px)",
         "--footer-utility-height": "72px",
         "--footer-heading-size": "44px",
-        "--footer-heading-line-height": "1.42",
+        "--footer-heading-line-height": "1.2",
         "--footer-heading-tracking": "-.025em",
         "--footer-brand-size": "18px",
         "--footer-wordmark-size": "clamp(120px,10.7vw,184px)",
@@ -3329,14 +3330,18 @@
         "--footer-scene-motion": "transform 1.8s cubic-bezier(.2,.65,.3,1)",
         "--footer-link-color": "#ffffffb8",
         "--footer-heading-color": "#fff",
-        "--footer-surface": "#0739df",
+        "--footer-surface": "#000b33",
         "--footer-cta-padding": "0 24px",
         "--footer-utility-padding": "24px var(--site-gutter)",
         "--footer-wordmark-bottom-gap": "32px",
         "--footer-rule-color": "#ffffff38",
         "--footer-column-inset": "24px",
         "--footer-background-motion": "footer-scene-drift 12s linear infinite alternate",
-        "--footer-office-columns": "repeat(3,minmax(0,1fr))"
+        "--footer-office-columns": "repeat(3,minmax(0,1fr))",
+        "--footer-mark-size": "44px",
+        "--footer-word-fill": "linear-gradient(180deg,#fff 30%,#ffffff18 100%)",
+        "--footer-mobile-art-mask": "linear-gradient(180deg,transparent 0%,#000 24%,#000 100%)",
+        "--footer-utility-mobile-font": "400 clamp(9px,2.5vw,11px)/1.6 var(--font-copy)"
       }
     },
     {
@@ -3369,10 +3374,10 @@
         "--footer-heading-size": "32px",
         "--footer-wordmark-size": "clamp(48px,16.4vw,64px)",
         "--footer-copy-size": "16px",
-        "--footer-utility-height": "132px",
-        "--footer-utility-padding": "20px var(--site-gutter) 28px"
+        "--footer-utility-height": "64px",
+        "--footer-utility-padding": "24px var(--site-gutter)"
       }
     }
   ],
-  "reviewRecord": "docs/uat/footer-refinement-review.md"
+  "reviewRecord": "docs/uat/navy-footer-cookie-review.md"
 }

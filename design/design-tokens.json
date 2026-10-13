@@ -94,14 +94,13 @@
     "--section-label-border": ".5px solid #00000014",
     "--section-label-shadow": "0 4px 2px #00000014, 0 .602px .903px #00000012, 0 10px 15px #00000008",
     "--privacy-notice-inset": "20px",
-    "--privacy-notice-padding": "24px",
-    "--privacy-notice-gap": "24px",
+    "--privacy-notice-padding": "20px",
+    "--privacy-notice-gap": "16px",
     "--privacy-notice-radius": "20px",
-    "--privacy-notice-max-width": "1328px",
+    "--privacy-notice-max-width": "480px",
     "--privacy-notice-title-font": "550 16px/24px var(--font-copy)",
     "--privacy-notice-copy-font": "400 14px/21px var(--font-copy)",
     "--privacy-notice-action-font": "650 14px/1 var(--font-copy)",
-    "--privacy-notice-top": "124px",
     "--project-page-title-size": "44px",
     "--project-page-title-line": "1.16",
     "--project-page-title-tracking": "-.025em",
@@ -115,7 +114,7 @@
     "--footer-scene-height": "clamp(900px,62.5vw,1080px)",
     "--footer-utility-height": "72px",
     "--footer-heading-size": "44px",
-    "--footer-heading-line-height": "1.42",
+    "--footer-heading-line-height": "1.2",
     "--footer-heading-tracking": "-.025em",
     "--footer-brand-size": "18px",
     "--footer-wordmark-size": "clamp(120px,10.7vw,184px)",
@@ -127,14 +126,20 @@
     "--footer-scene-motion": "transform 1.8s cubic-bezier(.2,.65,.3,1)",
     "--footer-link-color": "#ffffffb8",
     "--footer-heading-color": "#fff",
-    "--footer-surface": "#0739df",
+    "--footer-surface": "#000b33",
     "--footer-cta-padding": "0 24px",
     "--footer-utility-padding": "24px var(--site-gutter)",
     "--footer-wordmark-bottom-gap": "32px",
     "--footer-rule-color": "#ffffff38",
     "--footer-column-inset": "24px",
     "--footer-background-motion": "footer-scene-drift 12s linear infinite alternate",
-    "--footer-office-columns": "repeat(3,minmax(0,1fr))"
+    "--footer-office-columns": "repeat(3,minmax(0,1fr))",
+    "--privacy-notice-bottom": "20px",
+    "--privacy-notice-top": "auto",
+    "--footer-mark-size": "44px",
+    "--footer-word-fill": "linear-gradient(180deg,#fff 30%,#ffffff18 100%)",
+    "--footer-mobile-art-mask": "linear-gradient(180deg,transparent 0%,#000 24%,#000 100%)",
+    "--footer-utility-mobile-font": "400 clamp(9px,2.5vw,11px)/1.6 var(--font-copy)"
   },
   "typography": {
     "display": {
@@ -661,8 +666,8 @@
         "--footer-heading-size": "32px",
         "--footer-wordmark-size": "clamp(48px,16.4vw,64px)",
         "--footer-copy-size": "16px",
-        "--footer-utility-height": "132px",
-        "--footer-utility-padding": "20px var(--site-gutter) 28px"
+        "--footer-utility-height": "64px",
+        "--footer-utility-padding": "24px var(--site-gutter)"
       }
     }
   ],
@@ -670,7 +675,7 @@
     "palette": "dist/styles.css theme layer; dist/blitz.css font aliases; dist/refinements.css effective font roles",
     "responsiveGeometry": "Source-scoped custom properties in design/homepage-baseline.json; apply media conditions and CSS order before choosing a value",
     "stories": "dist/stories.css and final dist/consistency.css overrides",
-    "footerAndPolicies": "Cobalt night-garden footer, refined13 October2026 after user spacing/navigation feedback; desktop/mobile original imagegen masters, live fonts, shared navigation rules and anchored office lanes. Footer CSS remains last.",
+    "footerAndPolicies": "13 October2026 user correction: original dark art with gradual mobile sky blending; actual approved logo asset in both signatures; tighter1.2 invitation pitch; utility details centered in a single row including mobile. Retain refined navigation rails, office grid, motion and bottom cookie notice.",
     "motion": "dist/app.js, dist/footer.js, dist/case-study-motion.js, dist/site-ui.js and source CSS"
   },
   "surfaces": {
@@ -2267,6 +2272,14 @@
           "max-width": {
             "token": "cssVariables.--privacy-notice-max-width",
             "template": "var(--privacy-notice-max-width)"
+          },
+          "top": {
+            "token": "cssVariables.--privacy-notice-top",
+            "template": "var(--privacy-notice-top)"
+          },
+          "bottom": {
+            "token": "cssVariables.--privacy-notice-bottom",
+            "template": "calc(var(--privacy-notice-bottom) + env(safe-area-inset-bottom,0px))"
           }
         }
       },
@@ -2383,9 +2396,6 @@
           "--privacy-notice-action-font": {
             "token": "cssVariables.--privacy-notice-action-font"
           },
-          "--privacy-notice-top": {
-            "token": "cssVariables.--privacy-notice-top"
-          },
           "--project-page-title-size": {
             "token": "cssVariables.--project-page-title-size"
           },
@@ -2415,6 +2425,12 @@
           },
           "--project-page-art-radius": {
             "token": "cssVariables.--project-page-art-radius"
+          },
+          "--privacy-notice-bottom": {
+            "token": "cssVariables.--privacy-notice-bottom"
+          },
+          "--privacy-notice-top": {
+            "token": "cssVariables.--privacy-notice-top"
           }
         }
       },
@@ -2787,6 +2803,18 @@
           },
           "--footer-office-columns": {
             "token": "cssVariables.--footer-office-columns"
+          },
+          "--footer-mark-size": {
+            "token": "cssVariables.--footer-mark-size"
+          },
+          "--footer-word-fill": {
+            "token": "cssVariables.--footer-word-fill"
+          },
+          "--footer-mobile-art-mask": {
+            "token": "cssVariables.--footer-mobile-art-mask"
+          },
+          "--footer-utility-mobile-font": {
+            "token": "cssVariables.--footer-utility-mobile-font"
           }
         }
       },
@@ -2873,6 +2901,46 @@
           },
           "padding": {
             "token": "components.footer.officesPadding"
+          }
+        }
+      },
+      {
+        "id": "footer-word-fill",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__logo",
+        "conditions": [],
+        "properties": {
+          "mask-image": {
+            "token": "cssVariables.--footer-word-fill",
+            "template": "var(--footer-word-fill)"
+          }
+        }
+      },
+      {
+        "id": "footer-mobile-art-blend",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__texture",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "mask-image": {
+            "token": "cssVariables.--footer-mobile-art-mask",
+            "template": "var(--footer-mobile-art-mask)"
+          }
+        }
+      },
+      {
+        "id": "footer-mobile-utility-row",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__utility",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "font": {
+            "token": "cssVariables.--footer-utility-mobile-font",
+            "template": "var(--footer-utility-mobile-font)"
           }
         }
       }
