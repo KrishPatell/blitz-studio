@@ -1265,7 +1265,8 @@
         "aboutContentDelayMs",
         "videoThresholds",
         "scatter",
-        "status"
+        "status",
+        "footerWordThreshold"
       ],
       "additionalProperties": false,
       "properties": {
@@ -1703,6 +1704,11 @@
               "type": "string"
             }
           }
+        },
+        "footerWordThreshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
         }
       }
     },

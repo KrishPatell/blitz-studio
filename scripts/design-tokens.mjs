@@ -76,7 +76,7 @@ function inventory(css,file){
  }
  visit(0,css.length);return found;
 }
-const sources=[...liveOrder.map(f=>'dist/'+f),'dist/app.js','dist/footer.js','dist/case-study-motion.js','dist/site-ui.js','dist/privacy.js','dist/index.html','scripts/build-policy-pages.mjs','scripts/build.mjs','scripts/build-homepage-content.mjs','scripts/build-brand-assets.mjs','scripts/build-project-pages.mjs','scripts/build-seo.mjs'];
+const sources=[...liveOrder.map(f=>'dist/'+f),'dist/app.js','dist/footer.js','dist/case-study-motion.js','dist/site-ui.js','dist/privacy.js','dist/index.html','scripts/build-policy-pages.mjs','scripts/build.mjs','scripts/build-homepage-content.mjs','scripts/build-brand-assets.mjs','scripts/build-project-pages.mjs','scripts/build-seo.mjs','scripts/build-footer.mjs'];
 const distFiles=await readdir(resolve(root,'dist'));
 for(const file of distFiles.filter(file=>/\.(css|js)$/.test(file)&&file!=='site.css'))assert(sources.includes('dist/'+file),`Unreviewed design source dist/${file}. Add it to the live cascade and reviewed source coverage.`);
 const contents=await Promise.all(sources.map(read));

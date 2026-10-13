@@ -2,7 +2,8 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 await import('./build-homepage-content.mjs');
-const cssFiles=['styles.css','blitz.css','footer.css','contact.css','refinements.css','mobile.css','stories.css','privacy.css','consistency.css'];
+await import('./build-footer.mjs');
+const cssFiles=['styles.css','blitz.css','contact.css','refinements.css','mobile.css','stories.css','privacy.css','consistency.css','footer.css'];
 const css=(await Promise.all(cssFiles.map(file=>readFile('dist/'+file,'utf8')))).join('\n');
 await writeFile('dist/site.css',css);
 let html=await readFile('dist/index.html','utf8');

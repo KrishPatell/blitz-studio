@@ -7,13 +7,13 @@
     "cssOrder": [
       "styles.css",
       "blitz.css",
-      "footer.css",
       "contact.css",
       "refinements.css",
       "mobile.css",
       "stories.css",
       "privacy.css",
-      "consistency.css"
+      "consistency.css",
+      "footer.css"
     ],
     "reference": "design/homepage-baseline.json"
   },
@@ -79,7 +79,7 @@
     "--contact-close-size": "44px",
     "--contact-close-layer": "3",
     "--section-gutter": "12px",
-    "--footer-small-font": "400 12px/1.6 var(--font-copy)",
+    "--footer-small-font": "400 14px/1.6 var(--font-copy)",
     "--footer-navigation-gap": "12px 24px",
     "--about-stat-capability-size": "clamp(20px,1.8vw,28px)",
     "--nav-initial-transition": "none",
@@ -111,7 +111,26 @@
     "--project-page-column-gap": "80px",
     "--project-page-copy-font": "400 16px/26px var(--font-copy)",
     "--project-page-label-font": "550 16px/24px var(--font-copy)",
-    "--project-page-art-radius": "20px"
+    "--project-page-art-radius": "20px",
+    "--footer-scene-height": "clamp(900px,62.5vw,1080px)",
+    "--footer-utility-height": "72px",
+    "--footer-heading-size": "44px",
+    "--footer-heading-line-height": "1.28",
+    "--footer-heading-tracking": "-.025em",
+    "--footer-brand-size": "18px",
+    "--footer-wordmark-size": "clamp(120px,10.7vw,184px)",
+    "--footer-content-gap": "80px",
+    "--footer-links-gap": "32px",
+    "--footer-invitation-gap": "24px",
+    "--footer-copy-size": "18px",
+    "--footer-copy-line-height": "1.5",
+    "--footer-scene-motion": "transform 1.8s cubic-bezier(.2,.65,.3,1)",
+    "--footer-link-color": "#ffffffb8",
+    "--footer-heading-color": "#fff",
+    "--footer-surface": "#000b33",
+    "--footer-cta-padding": "0 24px",
+    "--footer-utility-padding": "24px var(--site-gutter)",
+    "--footer-wordmark-bottom-gap": "32px"
   },
   "typography": {
     "display": {
@@ -179,9 +198,9 @@
       "note": "Keep natural glyph proportions."
     },
     "footerCopy": {
-      "size": "clamp(17px,1.35vw,22px)",
-      "lineHeight": "1.35",
-      "mobile": "18px"
+      "size": "var(--footer-copy-size)",
+      "lineHeight": "var(--footer-copy-line-height)",
+      "mobile": "16px"
     },
     "roles": {
       "storiesCompany": {
@@ -234,7 +253,7 @@
       "footerUtility": {
         "font": "var(--footer-small-font)",
         "tracking": "0",
-        "localTimeSize": "12px"
+        "localTimeSize": "14px"
       },
       "contactTitle": {
         "font": "600 clamp(40px,5vw,62px)/1.02 overusedGrotesk,sans-serif",
@@ -386,29 +405,29 @@
       "source": "dist/consistency.css .stories-arrow"
     },
     "footer": {
-      "source": "dist/consistency.css",
+      "source": "dist/footer.css",
       "width": "calc(100% - 2 * var(--site-gutter))",
       "maxWidth": "var(--site-content-width)",
-      "padding": "112px 0 40px",
-      "paddingMobile": "80px 0 28px",
-      "introColumns": "minmax(240px,350px) minmax(0,1fr)",
-      "introGap": "40px",
+      "padding": "80px 0 32px",
+      "paddingMobile": "56px 0 32px",
+      "introColumns": "minmax(0,470px) minmax(0,1fr)",
+      "introGap": "var(--footer-content-gap)",
       "introStackAtPx": 1100,
-      "introGapStacked": "28px",
-      "officesMarginTop": "48px",
-      "officesPadding": "36px 0",
-      "officesGap": "40px",
+      "introGapStacked": "32px",
+      "officesMarginTop": "32px",
+      "officesPadding": "0",
+      "officesGap": "32px",
       "officesMarginTopMobile": "32px",
-      "officesPaddingMobile": "28px 0",
-      "officesGapMobile": "28px 20px",
+      "officesPaddingMobile": "0",
+      "officesGapMobile": "24px",
       "utilityGap": "24px",
       "motionControl": "none",
-      "navigationColumns": "repeat(4,minmax(0,1fr))",
-      "navigationGap": "var(--footer-navigation-gap)",
+      "navigationColumns": "repeat(3,minmax(0,1fr))",
+      "navigationGap": "var(--footer-links-gap)",
       "navigationMobileColumns": "repeat(2,minmax(0,1fr))",
-      "navigationMobileGap": "4px 24px",
+      "navigationMobileGap": "32px 24px",
       "navigationLinkMinimum": "44px",
-      "typography": "Manrope across navigation, policies, copyright, craft, time, offices and social links; wordmark retains approved display font."
+      "typography": "Manrope 14px/1.6 navigation, locations and utility; Overused500 invitation and natural-proportion Overused700 wordmark. Text remains live."
     },
     "policyLayout": {
       "source": "dist/consistency.css",
@@ -531,7 +550,8 @@
       "observerThresholdMeaning": "Observer notification thresholds; existing callbacks use isIntersecting, not a strict intersectionRatio guard.",
       "achievementHoverLimitation": "Pointer entry clears the timer, but clicking or visibility callbacks may reschedule while hovered; this extraction does not change that behavior.",
       "reducedMotionLimitation": "Client-logo hover scale remains present with globally shortened transitions. Do not claim every hover transform is removed."
-    }
+    },
+    "footerWordThreshold": 0.2
   },
   "artwork": {
     "stories": [
@@ -622,13 +642,31 @@
         "--project-page-section-gap": "32px",
         "--project-page-column-gap": "24px"
       }
+    },
+    {
+      "query": "(max-width:1100px)",
+      "values": {
+        "--footer-scene-height": "1200px",
+        "--footer-content-gap": "32px"
+      }
+    },
+    {
+      "query": "(max-width:743px)",
+      "values": {
+        "--footer-scene-height": "1420px",
+        "--footer-heading-size": "32px",
+        "--footer-wordmark-size": "clamp(48px,16.4vw,64px)",
+        "--footer-copy-size": "16px",
+        "--footer-utility-height": "132px",
+        "--footer-utility-padding": "20px var(--site-gutter) 28px"
+      }
     }
   ],
   "provenance": {
     "palette": "dist/styles.css theme layer; dist/blitz.css font aliases; dist/refinements.css effective font roles",
     "responsiveGeometry": "Source-scoped custom properties in design/homepage-baseline.json; apply media conditions and CSS order before choosing a value",
     "stories": "dist/stories.css and final dist/consistency.css overrides",
-    "footerAndPolicies": "dist/footer.css, dist/privacy.css and final dist/consistency.css",
+    "footerAndPolicies": "dist/footer.css is the final subtree-scoped footer authority after consistency.css; illustrated scene explicitly replaces pixel art. Separate desktop/mobile imagegen masters and Paper compositions, 13 October2026. Policy chrome retains privacy.css + consistency.css.",
     "motion": "dist/app.js, dist/footer.js, dist/case-study-motion.js, dist/site-ui.js and source CSS"
   },
   "surfaces": {
@@ -641,10 +679,10 @@
       "focus": "#597ef8"
     },
     "footer": {
-      "background": "#000",
-      "copy": "#ddd",
-      "links": "#aaa",
-      "hover": "#fff",
+      "background": "var(--footer-surface)",
+      "copy": "var(--footer-link-color)",
+      "links": "var(--footer-link-color)",
+      "hover": "var(--color-text-white)",
       "separator": "#ffffff24"
     },
     "caseStudy": {
@@ -1129,116 +1167,6 @@
         }
       },
       {
-        "id": "footer-padding",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__inner",
-        "conditions": [],
-        "properties": {
-          "padding": {
-            "token": "components.footer.padding"
-          },
-          "width": {
-            "token": "components.footer.width"
-          },
-          "max-width": {
-            "token": "components.footer.maxWidth"
-          }
-        }
-      },
-      {
-        "id": "footer-padding-mobile",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__inner",
-        "conditions": [
-          "@media(max-width:743px)"
-        ],
-        "properties": {
-          "padding": {
-            "token": "components.footer.paddingMobile"
-          }
-        }
-      },
-      {
-        "id": "footer-intro",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__intro",
-        "conditions": [],
-        "properties": {
-          "grid-template-columns": {
-            "token": "components.footer.introColumns"
-          },
-          "gap": {
-            "token": "components.footer.introGap"
-          }
-        }
-      },
-      {
-        "id": "footer-intro-stacked",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__intro",
-        "conditions": [
-          "@media(max-width:1100px)"
-        ],
-        "properties": {
-          "gap": {
-            "token": "components.footer.introGapStacked"
-          }
-        }
-      },
-      {
-        "id": "footer-navigation",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__navigation",
-        "conditions": [],
-        "properties": {
-          "font": {
-            "token": "typography.roles.footerNavigation.font"
-          }
-        }
-      },
-      {
-        "id": "footer-navigation-mobile",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__navigation",
-        "conditions": [],
-        "properties": {
-          "font": {
-            "token": "typography.roles.footerNavigation.mobileFont"
-          }
-        }
-      },
-      {
-        "id": "footer-utility",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__utility",
-        "conditions": [],
-        "properties": {
-          "font": {
-            "token": "typography.roles.footerUtility.font"
-          },
-          "letter-spacing": {
-            "token": "typography.roles.footerUtility.tracking"
-          }
-        }
-      },
-      {
-        "id": "footer-wordmark",
-        "file": "dist/footer.css",
-        "selector": ".pixel-footer__word",
-        "conditions": [],
-        "properties": {
-          "letter-spacing": {
-            "token": "typography.footerWordmark.tracking"
-          },
-          "font-weight": {
-            "token": "typography.footerWordmark.weight"
-          },
-          "line-height": {
-            "token": "typography.footerWordmark.lineHeight"
-          }
-        }
-      },
-      {
         "id": "badge-shadow",
         "file": "dist/styles.css",
         "selector": ".about-aboutBadge",
@@ -1362,19 +1290,6 @@
         }
       },
       {
-        "id": "footer-parallax",
-        "file": "dist/footer.css",
-        "selector": ".pixel-footer__texture",
-        "conditions": [],
-        "properties": {
-          "transition": {
-            "token": "motion.durationMs.footerParallax",
-            "template": "transform {value} {{motion.easing.footer}}",
-            "format": "seconds"
-          }
-        }
-      },
-      {
         "id": "process-caption",
         "file": "dist/styles.css",
         "selector": ".ourprocess-caption",
@@ -1437,32 +1352,6 @@
           "transform": {
             "token": "motion.hoverScale",
             "template": "scale({value})"
-          }
-        }
-      },
-      {
-        "id": "footer-word-reveal",
-        "file": "dist/footer.css",
-        "selector": ".pixel-footer[data-entered] .pixel-footer__identity",
-        "conditions": [],
-        "properties": {
-          "animation": {
-            "token": "motion.durationMs.footerWordReveal",
-            "template": "footer-word-reveal {value} {{motion.easing.linear}} {{motion.footerWordRevealDelayMs|seconds}} both",
-            "format": "seconds"
-          }
-        }
-      },
-      {
-        "id": "footer-light",
-        "file": "dist/footer.css",
-        "selector": ".pixel-footer__light",
-        "conditions": [],
-        "properties": {
-          "animation": {
-            "token": "motion.durationMs.footerLightCycle",
-            "template": "footer-light-pass {value} {{motion.easing.linear}} infinite",
-            "format": "seconds"
           }
         }
       },
@@ -2009,101 +1898,6 @@
         }
       },
       {
-        "id": "footer-surface",
-        "file": "dist/footer.css",
-        "selector": ".pixel-footer",
-        "conditions": [],
-        "properties": {
-          "background": {
-            "token": "surfaces.footer.background"
-          },
-          "color": {
-            "token": "surfaces.footer.hover"
-          }
-        }
-      },
-      {
-        "id": "footer-copy",
-        "file": "dist/footer.css",
-        "selector": ".pixel-footer__copy",
-        "conditions": [],
-        "properties": {
-          "color": {
-            "token": "surfaces.footer.copy"
-          },
-          "font-size": {
-            "token": "typography.footerCopy.size"
-          },
-          "line-height": {
-            "token": "typography.footerCopy.lineHeight"
-          }
-        }
-      },
-      {
-        "id": "footer-link-colour",
-        "file": "dist/footer.css",
-        "selector": ".pixel-footer__navigation>a",
-        "conditions": [],
-        "properties": {
-          "color": {
-            "token": "surfaces.footer.links"
-          }
-        }
-      },
-      {
-        "id": "footer-separator",
-        "file": "dist/consistency.css",
-        "selector": ".footer-offices",
-        "conditions": [],
-        "properties": {
-          "border-top": {
-            "token": "surfaces.footer.separator",
-            "template": "1px solid {value}"
-          },
-          "margin": {
-            "token": "components.footer.officesMarginTop",
-            "template": "{value} 0 0"
-          },
-          "padding": {
-            "token": "components.footer.officesPadding"
-          },
-          "gap": {
-            "token": "components.footer.officesGap"
-          }
-        }
-      },
-      {
-        "id": "footer-offices-mobile",
-        "file": "dist/consistency.css",
-        "selector": ".footer-offices",
-        "conditions": [
-          "@media(max-width:743px)"
-        ],
-        "properties": {
-          "margin": {
-            "token": "components.footer.officesMarginTopMobile",
-            "template": "{value} 0 0"
-          },
-          "padding": {
-            "token": "components.footer.officesPaddingMobile"
-          },
-          "gap": {
-            "token": "components.footer.officesGapMobile"
-          }
-        }
-      },
-      {
-        "id": "footer-utility-gap",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__utility",
-        "conditions": [],
-        "properties": {
-          "gap": {
-            "token": "components.footer.utilityGap"
-          }
-        }
-      },
-      {
         "id": "policy-hero-padding",
         "file": "dist/consistency.css",
         "selector": ".policy-hero-copy",
@@ -2184,36 +1978,6 @@
           },
           "--contact-close-layer": {
             "token": "components.contactClose.layer"
-          }
-        }
-      },
-      {
-        "id": "footer-navigation-layout",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__navigation",
-        "conditions": [],
-        "properties": {
-          "grid-template-columns": {
-            "token": "components.footer.navigationColumns"
-          },
-          "gap": {
-            "token": "components.footer.navigationGap"
-          }
-        }
-      },
-      {
-        "id": "footer-navigation-layout-mobile",
-        "file": "dist/consistency.css",
-        "selector": ".pixel-footer__navigation",
-        "conditions": [
-          "@media(max-width:743px)"
-        ],
-        "properties": {
-          "grid-template-columns": {
-            "token": "components.footer.navigationMobileColumns"
-          },
-          "gap": {
-            "token": "components.footer.navigationMobileGap"
           }
         }
       },
@@ -2734,6 +2498,336 @@
             "token": "responsiveCssVariables.9.values.--project-page-column-gap"
           }
         }
+      },
+      {
+        "id": "footer-padding",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__inner",
+        "conditions": [],
+        "properties": {
+          "padding": {
+            "token": "components.footer.padding"
+          },
+          "width": {
+            "token": "components.footer.width"
+          },
+          "max-width": {
+            "token": "components.footer.maxWidth"
+          }
+        }
+      },
+      {
+        "id": "footer-padding-mobile",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__inner",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "padding": {
+            "token": "components.footer.paddingMobile"
+          }
+        }
+      },
+      {
+        "id": "footer-surface",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer",
+        "conditions": [],
+        "properties": {
+          "background": {
+            "token": "cssVariables.--footer-surface",
+            "template": "var(--footer-surface)"
+          },
+          "color": {
+            "token": "surfaces.footer.hover"
+          }
+        }
+      },
+      {
+        "id": "footer-intro",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__intro",
+        "conditions": [],
+        "properties": {
+          "grid-template-columns": {
+            "token": "components.footer.introColumns"
+          },
+          "gap": {
+            "token": "cssVariables.--footer-content-gap",
+            "template": "var(--footer-content-gap)"
+          }
+        }
+      },
+      {
+        "id": "footer-navigation",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__navigation",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.footerNavigation.font"
+          },
+          "grid-template-columns": {
+            "token": "components.footer.navigationColumns"
+          },
+          "gap": {
+            "token": "cssVariables.--footer-links-gap",
+            "template": "var(--footer-links-gap)"
+          }
+        }
+      },
+      {
+        "id": "footer-navigation-mobile",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__navigation",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "grid-template-columns": {
+            "token": "components.footer.navigationMobileColumns"
+          },
+          "gap": {
+            "token": "components.footer.navigationMobileGap"
+          }
+        }
+      },
+      {
+        "id": "footer-utility",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__utility",
+        "conditions": [],
+        "properties": {
+          "font": {
+            "token": "typography.roles.footerUtility.font"
+          },
+          "letter-spacing": {
+            "token": "typography.roles.footerUtility.tracking"
+          },
+          "padding": {
+            "token": "cssVariables.--footer-utility-padding",
+            "template": "var(--footer-utility-padding)"
+          }
+        }
+      },
+      {
+        "id": "footer-wordmark",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__word",
+        "conditions": [],
+        "properties": {
+          "font-weight": {
+            "token": "typography.footerWordmark.weight"
+          },
+          "line-height": {
+            "token": "typography.footerWordmark.lineHeight"
+          },
+          "letter-spacing": {
+            "token": "typography.footerWordmark.tracking"
+          }
+        }
+      },
+      {
+        "id": "footer-parallax",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__texture",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "cssVariables.--footer-scene-motion",
+            "template": "var(--footer-scene-motion)"
+          }
+        }
+      },
+      {
+        "id": "footer-word-reveal",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer[data-entered] .pixel-footer__identity",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.footerWordReveal",
+            "template": "footer-word-reveal {value} {{motion.easing.linear}} {{motion.footerWordRevealDelayMs|seconds}} both",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "footer-light",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__light",
+        "conditions": [],
+        "properties": {
+          "animation": {
+            "token": "motion.durationMs.footerLightCycle",
+            "template": "footer-light-pass {value} {{motion.easing.linear}} infinite",
+            "format": "seconds"
+          }
+        }
+      },
+      {
+        "id": "footer-heading",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__heading",
+        "conditions": [],
+        "properties": {
+          "font-size": {
+            "token": "cssVariables.--footer-heading-size",
+            "template": "var(--footer-heading-size)"
+          },
+          "line-height": {
+            "token": "cssVariables.--footer-heading-line-height",
+            "template": "var(--footer-heading-line-height)"
+          },
+          "letter-spacing": {
+            "token": "cssVariables.--footer-heading-tracking",
+            "template": "var(--footer-heading-tracking)"
+          }
+        }
+      },
+      {
+        "id": "footer-copy",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__copy",
+        "conditions": [],
+        "properties": {
+          "font-size": {
+            "token": "cssVariables.--footer-copy-size",
+            "template": "var(--footer-copy-size)"
+          },
+          "line-height": {
+            "token": "cssVariables.--footer-copy-line-height",
+            "template": "var(--footer-copy-line-height)"
+          },
+          "color": {
+            "token": "cssVariables.--footer-link-color",
+            "template": "var(--footer-link-color)"
+          }
+        }
+      },
+      {
+        "id": "footer-aliases",
+        "file": "dist/footer.css",
+        "selector": ":root",
+        "conditions": [],
+        "properties": {
+          "--footer-small-font": {
+            "token": "cssVariables.--footer-small-font"
+          },
+          "--footer-scene-height": {
+            "token": "cssVariables.--footer-scene-height"
+          },
+          "--footer-utility-height": {
+            "token": "cssVariables.--footer-utility-height"
+          },
+          "--footer-heading-size": {
+            "token": "cssVariables.--footer-heading-size"
+          },
+          "--footer-heading-line-height": {
+            "token": "cssVariables.--footer-heading-line-height"
+          },
+          "--footer-heading-tracking": {
+            "token": "cssVariables.--footer-heading-tracking"
+          },
+          "--footer-brand-size": {
+            "token": "cssVariables.--footer-brand-size"
+          },
+          "--footer-wordmark-size": {
+            "token": "cssVariables.--footer-wordmark-size"
+          },
+          "--footer-content-gap": {
+            "token": "cssVariables.--footer-content-gap"
+          },
+          "--footer-links-gap": {
+            "token": "cssVariables.--footer-links-gap"
+          },
+          "--footer-invitation-gap": {
+            "token": "cssVariables.--footer-invitation-gap"
+          },
+          "--footer-copy-size": {
+            "token": "cssVariables.--footer-copy-size"
+          },
+          "--footer-copy-line-height": {
+            "token": "cssVariables.--footer-copy-line-height"
+          },
+          "--footer-scene-motion": {
+            "token": "cssVariables.--footer-scene-motion"
+          },
+          "--footer-link-color": {
+            "token": "cssVariables.--footer-link-color"
+          },
+          "--footer-heading-color": {
+            "token": "cssVariables.--footer-heading-color"
+          },
+          "--footer-surface": {
+            "token": "cssVariables.--footer-surface"
+          },
+          "--footer-cta-padding": {
+            "token": "cssVariables.--footer-cta-padding"
+          },
+          "--footer-utility-padding": {
+            "token": "cssVariables.--footer-utility-padding"
+          },
+          "--footer-wordmark-bottom-gap": {
+            "token": "cssVariables.--footer-wordmark-bottom-gap"
+          }
+        }
+      },
+      {
+        "id": "footer-responsive-0",
+        "file": "dist/footer.css",
+        "selector": ":root",
+        "conditions": [
+          "@media(max-width:1100px)"
+        ],
+        "properties": {
+          "--footer-scene-height": {
+            "token": "responsiveCssVariables.10.values.--footer-scene-height"
+          },
+          "--footer-content-gap": {
+            "token": "responsiveCssVariables.10.values.--footer-content-gap"
+          }
+        }
+      },
+      {
+        "id": "footer-responsive-1",
+        "file": "dist/footer.css",
+        "selector": ":root",
+        "conditions": [
+          "@media(max-width:743px)"
+        ],
+        "properties": {
+          "--footer-scene-height": {
+            "token": "responsiveCssVariables.11.values.--footer-scene-height"
+          },
+          "--footer-heading-size": {
+            "token": "responsiveCssVariables.11.values.--footer-heading-size"
+          },
+          "--footer-wordmark-size": {
+            "token": "responsiveCssVariables.11.values.--footer-wordmark-size"
+          },
+          "--footer-copy-size": {
+            "token": "responsiveCssVariables.11.values.--footer-copy-size"
+          },
+          "--footer-utility-height": {
+            "token": "responsiveCssVariables.11.values.--footer-utility-height"
+          },
+          "--footer-utility-padding": {
+            "token": "responsiveCssVariables.11.values.--footer-utility-padding"
+          }
+        }
+      },
+      {
+        "id": "footer-link-touch-target",
+        "file": "dist/footer.css",
+        "selector": ".pixel-footer__navigation a",
+        "conditions": [],
+        "properties": {
+          "min-height": {
+            "token": "components.footer.navigationLinkMinimum"
+          }
+        }
       }
     ],
     "javascript": [
@@ -2841,6 +2935,13 @@
         "format": "decimal",
         "id": "scatter-epsilon",
         "file": "dist/case-study-motion.js"
+      },
+      {
+        "id": "footer-wordmark-visibility",
+        "file": "dist/footer.js",
+        "token": "motion.footerWordThreshold",
+        "template": "{threshold:{value}});wordObserver.observe(word)",
+        "format": "decimal"
       }
     ]
   }

@@ -4,36 +4,37 @@
   "cssOrder": [
     "styles.css",
     "blitz.css",
-    "footer.css",
     "contact.css",
     "refinements.css",
     "mobile.css",
     "stories.css",
     "privacy.css",
-    "consistency.css"
+    "consistency.css",
+    "footer.css"
   ],
   "sourceHashes": {
     "dist/styles.css": "fed8dbcc7bcda9709acc405e75cc91a9a0800a4282a8110dbbec90a94cc2b1b5",
     "dist/blitz.css": "2258d7cde546457f25392fbcf2c5bde5aa3b00718a0415e9b43df83e40679f53",
-    "dist/footer.css": "3462c6d3e8404ac29581bfbc134ba737deb2d18170ca4681b8d5b32b449a1e16",
     "dist/contact.css": "bd1230a6cbca6ba27b6983199083e065da4a7c19d24856a28309278a269fa389",
     "dist/refinements.css": "681023b21075bec87abef003a0c2f10a5a75232f906952f798f00cd97024b126",
     "dist/mobile.css": "c229230456c3a76e4621e2df9d7ee9b2b355d5911352a30b618c5ca5329b4749",
     "dist/stories.css": "a18e89579bad7ba57d877af6ffb977dfdc5554e84e98b6e5b7101f7e3aebde02",
     "dist/privacy.css": "4fbb810468c699f0e24ff854ee39f37ffcfaea02e4a741e0f5bbfda6ae839280",
-    "dist/consistency.css": "50ffa13c7a9974ac84520510e7fd1d8e67a1faa611f2443671658f9f9fc24d63",
+    "dist/consistency.css": "4f7ec6a5c2f115e989e48d757b4252f04933a6c77aa540d01e5e5ba6c398051e",
+    "dist/footer.css": "d11b7f7ea937ba24888121c51d6e101bb18628ae4bd1f6c675172658b7befb92",
     "dist/app.js": "f981666c259109f907ae78e402d1a579cc1c330c6b38ca6325a34bf17eaaab12",
-    "dist/footer.js": "fc2641841e59a7a25946ec65b053813675c0687dce325c9964f5388618613ae6",
+    "dist/footer.js": "919126e135104375cf00b248249888ced69fe2b53bc4dbf8abd29afc47d282b4",
     "dist/case-study-motion.js": "e27691845046f2b4763ad66c82828285b0ec4147cb646773f9dcfccf6da9ec4b",
     "dist/site-ui.js": "eef0a3a25955e87a39b590700a442ec1d1e398b16f64407969cba7238aada0b8",
     "dist/privacy.js": "65f2ebac76fc183baa11607362baab801cfe976703ebb8e5f1d6791bdaad326b",
-    "dist/index.html": "5d8ad4de8ed78813b3834e805acc4e9ed3535a23a3dae0c93832b19a3edc48ef",
-    "scripts/build-policy-pages.mjs": "34386e2581fbc8cf82c964937b48fd5a0b0ce67ef87c6ed0128a291e48cce5b4",
-    "scripts/build.mjs": "c296c862f9a4f364160a7b73d8ab11d8eb3d9cb8129d2ee253119c2de368aa2d",
+    "dist/index.html": "c88599853aec3da103fda6061dd0fb58c70b1042f0d32eb94f98acc81e5677ba",
+    "scripts/build-policy-pages.mjs": "6a042a9b93e78699d4bde3c87049043c632017da41b2b6168ee1110fc17916a8",
+    "scripts/build.mjs": "9938bd638adb90260951f0e2fb378fba1ebba263bf13f7cacdb05a5d2673d743",
     "scripts/build-homepage-content.mjs": "3b97a0b69b5bafa0aaba8c56c394a33016f2e0f641b0d9b218dc22103d6284cc",
     "scripts/build-brand-assets.mjs": "72ef50fdd8ac093af3f425f49cc5aed36ac0d8a4849b3f7d99cbca2b5e49823a",
     "scripts/build-project-pages.mjs": "7094cddba7c4d8859148bc267b307fcaeecb62b97931cbf70cfa6e10d3799ac2",
-    "scripts/build-seo.mjs": "ef916db5fd9961d21e08cac91a84a58cba8559ace034cbafe983f81d74313eb6"
+    "scripts/build-seo.mjs": "ef916db5fd9961d21e08cac91a84a58cba8559ace034cbafe983f81d74313eb6",
+    "scripts/build-footer.mjs": "598cf91f8d07be18c2ef07ad1b47943472a3ec30b5922e8e6218616a1cded682"
   },
   "responsiveCustomProperties": [
     {
@@ -3084,44 +3085,6 @@
       }
     },
     {
-      "file": "dist/footer.css",
-      "selector": ".pixel-footer__identity",
-      "conditions": [],
-      "variables": {
-        "--word-size": "clamp(64px,11.9vw,220px)"
-      }
-    },
-    {
-      "file": "dist/footer.css",
-      "selector": ".pixel-footer__identity",
-      "conditions": [
-        "@media(min-width:1800px)"
-      ],
-      "variables": {
-        "--word-size": "220px"
-      }
-    },
-    {
-      "file": "dist/footer.css",
-      "selector": ".pixel-footer__identity",
-      "conditions": [
-        "@media(max-width:1100px)"
-      ],
-      "variables": {
-        "--word-size": "11.9vw"
-      }
-    },
-    {
-      "file": "dist/footer.css",
-      "selector": ".pixel-footer__identity",
-      "conditions": [
-        "@media(max-width:743px)"
-      ],
-      "variables": {
-        "--word-size": "11.65vw"
-      }
-    },
-    {
       "file": "dist/refinements.css",
       "selector": ":root",
       "conditions": [],
@@ -3245,7 +3208,7 @@
       "selector": ":root",
       "conditions": [],
       "variables": {
-        "--footer-small-font": "400 12px/1.6 var(--font-copy)",
+        "--footer-small-font": "400 14px/1.6 var(--font-copy)",
         "--footer-navigation-gap": "12px 24px",
         "--about-stat-capability-size": "clamp(20px,1.8vw,28px)"
       }
@@ -3344,7 +3307,68 @@
         "--project-page-section-gap": "32px",
         "--project-page-column-gap": "24px"
       }
+    },
+    {
+      "file": "dist/footer.css",
+      "selector": ":root",
+      "conditions": [],
+      "variables": {
+        "--footer-small-font": "400 14px/1.6 var(--font-copy)",
+        "--footer-scene-height": "clamp(900px,62.5vw,1080px)",
+        "--footer-utility-height": "72px",
+        "--footer-heading-size": "44px",
+        "--footer-heading-line-height": "1.28",
+        "--footer-heading-tracking": "-.025em",
+        "--footer-brand-size": "18px",
+        "--footer-wordmark-size": "clamp(120px,10.7vw,184px)",
+        "--footer-content-gap": "80px",
+        "--footer-links-gap": "32px",
+        "--footer-invitation-gap": "24px",
+        "--footer-copy-size": "18px",
+        "--footer-copy-line-height": "1.5",
+        "--footer-scene-motion": "transform 1.8s cubic-bezier(.2,.65,.3,1)",
+        "--footer-link-color": "#ffffffb8",
+        "--footer-heading-color": "#fff",
+        "--footer-surface": "#000b33",
+        "--footer-cta-padding": "0 24px",
+        "--footer-utility-padding": "24px var(--site-gutter)",
+        "--footer-wordmark-bottom-gap": "32px"
+      }
+    },
+    {
+      "file": "dist/footer.css",
+      "selector": ".pixel-footer__identity",
+      "conditions": [],
+      "variables": {
+        "--word-size": "var(--footer-wordmark-size)"
+      }
+    },
+    {
+      "file": "dist/footer.css",
+      "selector": ":root",
+      "conditions": [
+        "@media(max-width:1100px)"
+      ],
+      "variables": {
+        "--footer-scene-height": "1200px",
+        "--footer-content-gap": "32px"
+      }
+    },
+    {
+      "file": "dist/footer.css",
+      "selector": ":root",
+      "conditions": [
+        "@media(max-width:743px)"
+      ],
+      "variables": {
+        "--footer-scene-height": "1420px",
+        "--footer-heading-size": "32px",
+        "--footer-wordmark-size": "clamp(48px,16.4vw,64px)",
+        "--footer-copy-size": "16px",
+        "--footer-utility-height": "132px",
+        "--footer-utility-padding": "20px var(--site-gutter) 28px"
+      }
     }
   ],
-  "reviewRecord": "docs/uat/paper-components-and-project-pages.md"
+  "reviewRecord": "docs/uat/coastal-footer-review.md"
 }

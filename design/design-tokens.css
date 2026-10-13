@@ -62,7 +62,7 @@
   --contact-close-size: 44px;
   --contact-close-layer: 3;
   --section-gutter: 12px;
-  --footer-small-font: 400 12px/1.6 var(--font-copy);
+  --footer-small-font: 400 14px/1.6 var(--font-copy);
   --footer-navigation-gap: 12px 24px;
   --about-stat-capability-size: clamp(20px,1.8vw,28px);
   --nav-initial-transition: none;
@@ -95,6 +95,25 @@
   --project-page-copy-font: 400 16px/26px var(--font-copy);
   --project-page-label-font: 550 16px/24px var(--font-copy);
   --project-page-art-radius: 20px;
+  --footer-scene-height: clamp(900px,62.5vw,1080px);
+  --footer-utility-height: 72px;
+  --footer-heading-size: 44px;
+  --footer-heading-line-height: 1.28;
+  --footer-heading-tracking: -.025em;
+  --footer-brand-size: 18px;
+  --footer-wordmark-size: clamp(120px,10.7vw,184px);
+  --footer-content-gap: 80px;
+  --footer-links-gap: 32px;
+  --footer-invitation-gap: 24px;
+  --footer-copy-size: 18px;
+  --footer-copy-line-height: 1.5;
+  --footer-scene-motion: transform 1.8s cubic-bezier(.2,.65,.3,1);
+  --footer-link-color: #ffffffb8;
+  --footer-heading-color: #fff;
+  --footer-surface: #000b33;
+  --footer-cta-padding: 0 24px;
+  --footer-utility-padding: 24px var(--site-gutter);
+  --footer-wordmark-bottom-gap: 32px;
   --blitz-motion-about-hover: 360ms;
   --blitz-motion-card-hover: 450ms;
   --blitz-motion-image-hover: 650ms;
@@ -163,8 +182,8 @@
   --blitz-carousel-min-width-mobile: 66px;
   --blitz-carousel-font-size: 12px;
   --blitz-carousel-font-size-mobile: 11px;
-  --blitz-footer-padding: 112px 0 40px;
-  --blitz-footer-padding-mobile: 80px 0 28px;
+  --blitz-footer-padding: 80px 0 32px;
+  --blitz-footer-padding-mobile: 56px 0 32px;
   --blitz-policy-entry-distance: 14px;
   --blitz-policy-layout-delay: 120ms;
   --blitz-page-exit-distance: -6px;
@@ -199,7 +218,7 @@
   --blitz-type-footer-navigation-mobile-font: var(--footer-small-font);
   --blitz-type-footer-utility-font: var(--footer-small-font);
   --blitz-type-footer-utility-tracking: 0;
-  --blitz-type-footer-utility-local-time-size: 12px;
+  --blitz-type-footer-utility-local-time-size: 14px;
   --blitz-type-contact-title-font: 600 clamp(40px,5vw,62px)/1.02 overusedGrotesk,sans-serif;
   --blitz-type-contact-title-tracking: -.045em;
   --blitz-type-service-description-weight: 550;
@@ -211,10 +230,10 @@
   --blitz-surface-stories-pagination-inactive: #b8c2d6;
   --blitz-surface-stories-pagination-active: #284cf4;
   --blitz-surface-stories-focus: #597ef8;
-  --blitz-surface-footer-background: #000;
-  --blitz-surface-footer-copy: #ddd;
-  --blitz-surface-footer-links: #aaa;
-  --blitz-surface-footer-hover: #fff;
+  --blitz-surface-footer-background: var(--footer-surface);
+  --blitz-surface-footer-copy: var(--footer-link-color);
+  --blitz-surface-footer-links: var(--footer-link-color);
+  --blitz-surface-footer-hover: var(--color-text-white);
   --blitz-surface-footer-separator: #ffffff24;
   --blitz-surface-case-study-hover-shadow: 0 12px 34px -12px #11243c35;
   --blitz-story-quote: 25px;
@@ -306,5 +325,21 @@
   --project-page-hero-padding: 138px 0 32px;
   --project-page-section-gap: 32px;
   --project-page-column-gap: 24px;
+  }
+}
+@media (max-width:1100px) {
+  :root {
+  --footer-scene-height: 1200px;
+  --footer-content-gap: 32px;
+  }
+}
+@media (max-width:743px) {
+  :root {
+  --footer-scene-height: 1420px;
+  --footer-heading-size: 32px;
+  --footer-wordmark-size: clamp(48px,16.4vw,64px);
+  --footer-copy-size: 16px;
+  --footer-utility-height: 132px;
+  --footer-utility-padding: 20px var(--site-gutter) 28px;
   }
 }

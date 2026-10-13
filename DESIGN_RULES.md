@@ -38,13 +38,13 @@ The exact heading sizes below are separate component roles. Do not create a univ
 
 Body 400 is a default, not a universal weight: services descriptions and process subcopy use 550; skill descriptions and stat labels use 500; button labels use 650. About badge text uses 500; other established section badge text normally uses 550. Preserve each role. `--font-serif` is an inherited compatibility alias for Overused Grotesk, not a serif family.
 
-Navbar font/weight changes at existing responsive conditions are scoped behavior. Footer navigation, policy links, copyright, craft, local time, office details and social links share `--footer-small-font`: Manrope 400 at 12px/1.6, tracking 0 on desktop and mobile. The wordmark retains its approved display font. Contact typography and its utility font remain scoped exceptions.
+Navbar font/weight changes at existing responsive conditions are scoped behavior. Footer navigation, policy links, copyright, craft, local time, office details and social links share `--footer-small-font`: Manrope 400 at 14px/1.6, tracking 0 on desktop and mobile. The wordmark retains its approved display font. Contact typography and its utility font remain scoped exceptions.
 
 ## Color, surfaces and depth
 
 - Use existing `--color-*`, `--gradient-*` and `--shadow-*` values from the token registry. Core navy/blue: #000b33, #012299, #3557ff, #3e62e4, #80bdff; yellow accent: #f5c80a. Neutral surfaces and opacity values are already defined.
 - Yellow remains an accent in established roles. Do not introduce a new accent palette or unrelated dark/glass composition for normal pages.
-- Existing scoped exceptions are intentional: policy buttons #ffdc36; story pagination #284cf4; policy blue hero; pixel footer. Match their current component styles rather than globally normalizing them.
+- Existing scoped exceptions are intentional: policy buttons #ffdc36; story pagination #284cf4; policy blue hero; illustrated coastal footer. Match their current component styles rather than globally normalizing them.
 - Reuse the exact dark-button gradient and shadow stack. Do not invent extra glow, heavy shadows, glass panels or decorative borders.
 - The existing contact dialog is a scoped component, not the design reference for policy pages or other page layouts.
 
@@ -73,7 +73,9 @@ Preserve existing scoped breakpoint exceptions: hero mobile text through 767.984
 - All pages reuse the homepage header and `dist/site-ui.js` for navigation, mobile menu, dialogs and page transitions. Do not create an independent policy navbar or duplicate contact logic.
 - Select a homepage nav item only when its section exists on the homepage. Policy pages must not falsely select Home.
 - Never save runtime indicator widths or transforms into navbar markup. Keep the active tab usable before JavaScript; measure the indicator with transitions disabled on startup, font settlement, pageshow and resize, then enable normal tab movement.
-- Footer inner padding is 112px top / 40px bottom, mobile 80px / 28px. Intro gap is 40px; at 1100px it stacks with 28px gap. Site and policy links share one navigation group: four columns on desktop, two on mobile, 44px minimum link height. The contact action spans the group. Utility text follows the same small-text font; do not reintroduce a separate legal row.
+- The illustrated coastal footer is the final footer design authority, explicitly requested13 October. `dist/footer.css` is last in the live cascade and limits its rules to footer components. It replaces the old pixel background. Inner padding80px top /32px bottom, mobile56px /32px; scene height900–1080px desktop,1200px tablet,1420px mobile. Keep artwork at its natural ratio, aligned to the bottom; use the separate mobile image, not a desktop crop.
+- Intro is470px + fluid navigation with80px gap; through1100px it stacks with32px gap. Navigation has three groups (Explore, Information, Connect), two columns on mobile with Connect across both. Every link has44px minimum height. Office details use the same14px Manrope role and sit below the nav in a480px-wide lane, stacking on mobile. The verified Singapore address is shown; no India address is invented. The white contact pill opens the shared dialog.
+- The final navy utility strip keeps copyright, craft and local time readable. The wordmark uses natural Overused Grotesk700 proportions, without vertical stretching, and its existing2000ms linear reveal mask. The invitation uses Overused50044px desktop /32px mobile,1.28 line-height,−.025em tracking.
 - Policy hero padding is 160px / shared gutter / 72px; mobile 138px / 20px / 48px. Reading layout is 240px + minmax(0,760px), gap 80px (40px at 1100px); mobile stacks with 36px / 20px / 64px padding.
 
 ## Animation
@@ -84,7 +86,7 @@ Preserve existing scoped breakpoint exceptions: hero mobile text through 767.984
 - Process interval 6000ms, observer threshold .2; achievement interval 6500ms, observer threshold .25. Hidden/offscreen/reduced-motion scheduling and achievement focus cancellation must remain intact. Observer thresholds describe notification points; current callbacks use `isIntersecting`, not a minimum-ratio guard. Manual controls remain usable.
 - Process hover pauses scheduling. Achievement pointer entry clears its timer, but clicking or a visibility callback can reschedule while hovered; do not claim a persistent hover guard exists. Fixing that behavior requires a reviewed implementation change.
 - Reduced motion: reveal immediately, remove established case-card/scatter/parallax transforms and dialog animation, stop automatic cycling, hide footer particles, show the wordmark without a reveal mask, and navigate the carousel instantly. Existing client-logo hover scale persists with globally shortened transitions; do not copy it into new reduced-motion interactions.
-- Footer wordmark uses its **2000ms linear internal fade**, 120ms delay; never stretch its glyphs. Footer light cycle is 12000ms linear. Canvas runs only while visible and document active, about 32ms per frame, DPR capped at 1.5. Pointer parallax is mouse-only.
+- Footer wordmark uses its **2000ms linear internal fade**,120ms delay, triggered once when the wordmark enters view (observer threshold.2); never stretch its glyphs. Footer light cycle is 12000ms linear. The water-reflection canvas runs only on desktop while visible and document active, about32ms per frame, DPR capped at1.5. Mobile/reduced-motion canvas allocation is1×1 and no frame loop runs; the artwork stays visible. Pointer parallax is mouse-only.
 - Policy entry: 700ms settling curve, opacity 0→1 and translateY(14px)→0; reading layout delay 120ms. Page exit: 180ms ease, opacity 1→0 and translateY(−6px). Reduced motion bypasses both.
 - Page exits apply only to unmodified same-origin links to a different `.html` pathname. Preserve native hash/external/download/targeted/modified navigation and clear leaving state on `pageshow`.
 - Do not add a footer Pause Motion button. Preserve automatic visibility/document/reduced-motion scheduling.
@@ -133,3 +135,7 @@ The shared desktop/mobile components and project-page templates are built in [Bl
 - Section labels: `--section-label-*` applies to About, Achievement, Services, Skills, Process, Case Studies and Clients. Mobile/base 16px, desktop 1024px 12px, 1440px 16px and 1728px 20px preserve the existing responsive scale. About retains its 500 weight; others 550.
 - Project pages: shared homepage header/footer, white editorial body, native breadcrumb, live Overused Grotesk 500 heading (34px mobile / 44px tablet / 62px from1440), category metadata, full natural-ratio artwork, overview and related work/contact. Image radius20px, gap48px desktop /32px mobile, 240px metadata lane. Long names wrap with visible descenders. Existing verified assets and category are the source; brief/challenge/approach/results sections stay omitted until approved content exists.
 - Paper cannot currently resolve the local display font. Its project titles use exact vector outlines from the existing Overused Grotesk Medium website font as a visual proof. Website headings remain selectable live text in the original local font. Paper copy/controls are editable Manrope. No substitute font is introduced on the website.
+
+## Coastal illustration provenance
+
+Original built-in imagegen assets and prompts are documented in `docs/coastal-footer-artwork.md`. The selected desktop/mobile masters live under `assets/footer-coast/`; optimized WebP variants are under `dist/assets/footer-coast/`. The scene carries visual detail; typography, links, address and controls remain live. Footer nav/office/utility type is one14px Manrope role. Paper artboards05/06 document the reviewed desktop/mobile composition.
