@@ -3,12 +3,12 @@
   "launchOrigin": "https://blitzstudio.xyz",
   "language": "en",
   "locale": "en_US",
-  "lastModified": "2026-10-13",
+  "lastModified": "2026-10-17",
   "siteName": "Blitz Studio",
   "homeTitle": "Blitz Studio | Web Design & Full-Stack Development",
   "homeDescription": "Blitz Studio designs brands, websites and digital products. Webflow, Framer, WordPress, Next.js and full-stack development for ambitious teams.",
   "socialImage": "assets/social/blitz-studio.png",
-  "socialImageAlt": "Blitz Studio \u2014 design, development and digital products",
+  "socialImageAlt": "Blitz Studio — design, development and digital products",
   "organizationProfiles": [
     "https://webflow.com/@blitzstudio"
   ],
@@ -25,12 +25,12 @@
     },
     "cookies.html": {
       "title": "Cookie Policy | Blitz Studio",
-      "description": "Learn how Blitz Studio uses essential services and browser storage, and how to manage or reset your privacy preferences.",
+      "description": "Learn how Blitz Studio uses essential services, Google Analytics and browser storage, and how to manage cookies and notice acknowledgement.",
       "index": true
     },
     "cookie-settings.html": {
       "title": "Cookie Settings | Blitz Studio",
-      "description": "View and manage your browser preferences for Blitz Studio. Essential services only; no optional analytics or advertising trackers.",
+      "description": "See how Blitz Studio uses essential services and Google Analytics, and manage your saved privacy notice acknowledgement.",
       "index": false
     }
   },

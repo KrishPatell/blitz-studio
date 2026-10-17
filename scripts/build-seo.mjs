@@ -37,6 +37,14 @@ for(const page of pages){
  }else if(page.file==='index.html')webpage.mainEntity={'@id':url('#organization')};
  const robots=`${page.index&&allowIndexing?'index':'noindex'},follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1`;
  const metadata=`<!-- seo:start -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E9JLN2HQNT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E9JLN2HQNT');
+</script>
 <meta name="description" content="${esc(page.description)}"><meta name="robots" content="${robots}"><meta name="theme-color" content="#000b33"><link rel="canonical" href="${canonical}">
 <link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="96x96" href="assets/icons/icon-96.png"><link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-touch-icon-152.png"><link rel="apple-touch-icon" sizes="167x167" href="assets/icons/apple-touch-icon-167.png"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest"><meta name="apple-mobile-web-app-title" content="Blitz Studio"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta property="og:type" content="website"><meta property="og:site_name" content="${esc(config.siteName)}"><meta property="og:locale" content="${config.locale}"><meta property="og:title" content="${esc(page.title)}"><meta property="og:description" content="${esc(page.description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${image}"><meta property="og:image:secure_url" content="${image}"><meta property="og:image:type" content="${dimensions.format==='png'?'image/png':'image/webp'}"><meta property="og:image:width" content="${dimensions.width}"><meta property="og:image:height" content="${dimensions.height}"><meta property="og:image:alt" content="${esc(page.imageAlt)}">

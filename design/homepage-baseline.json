@@ -26,14 +26,14 @@
     "dist/footer.js": "919126e135104375cf00b248249888ced69fe2b53bc4dbf8abd29afc47d282b4",
     "dist/case-study-motion.js": "e27691845046f2b4763ad66c82828285b0ec4147cb646773f9dcfccf6da9ec4b",
     "dist/site-ui.js": "eef0a3a25955e87a39b590700a442ec1d1e398b16f64407969cba7238aada0b8",
-    "dist/privacy.js": "116697e2bac8dbccbe80df62573c5f1fb969e09863e38b30c71401afdfb60f05",
-    "dist/index.html": "ce1f652800f1b48032ee4c9cf7e9a4e202dfe0b1addbfba76f03ae0ad4ba9a62",
-    "scripts/build-policy-pages.mjs": "6a042a9b93e78699d4bde3c87049043c632017da41b2b6168ee1110fc17916a8",
+    "dist/privacy.js": "aca2170a9a1a9583d245b3e9757721d53f9878da34b7325bb56daf0f4724ec48",
+    "dist/index.html": "2186c6b5f96d7ee7db0bf8379267a13bd1b02d36aee4898bb98d080744548561",
+    "scripts/build-policy-pages.mjs": "3209549fd00d7e7e96de57151d9f3be2b82e26b569f31c3d2d7d919300656b5e",
     "scripts/build.mjs": "9938bd638adb90260951f0e2fb378fba1ebba263bf13f7cacdb05a5d2673d743",
     "scripts/build-homepage-content.mjs": "3b97a0b69b5bafa0aaba8c56c394a33016f2e0f641b0d9b218dc22103d6284cc",
     "scripts/build-brand-assets.mjs": "67c1da8aac48eb10a9c6b587ebcb4ee0eb5e0e3744d970659a4dc4320db5c7be",
     "scripts/build-project-pages.mjs": "7094cddba7c4d8859148bc267b307fcaeecb62b97931cbf70cfa6e10d3799ac2",
-    "scripts/build-seo.mjs": "71bc37dffaea93ab545e09699e4f951f80952e34789ce5b6a386038e1cedf079",
+    "scripts/build-seo.mjs": "484296fa064c8094b262a24f121be7118fd6a9e3a73ebbfd74df657330baf4e4",
     "scripts/build-footer.mjs": "7d142a38db1c62ecd56767abc8a02e6861bc417ee702fd7f6e88329ac6d102b6"
   },
   "responsiveCustomProperties": [
@@ -3379,5 +3379,5 @@
       }
     }
   ],
-  "reviewRecord": "docs/uat/navy-footer-cookie-review.md"
+  "reviewRecord": "docs/uat/google-analytics-review.md"
 }
