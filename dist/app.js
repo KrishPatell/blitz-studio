@@ -43,15 +43,29 @@ const rank=$('.achievement-rankCard'),flipper=$('.achievement-rankCardFlipper');
 function advanceAchievement(){achievementIndex=(achievementIndex+1)%3;turns++;const faces=$$('.achievement-rankCardText');faces[turns%2].innerHTML=highlights[achievementIndex][0];flipper.style.transform=`rotateY(${turns*180}deg)`;$$('.achievement-captionTitle,.achievement-captionBody').forEach((el,i)=>{const active=i%3===achievementIndex;el.dataset.active=String(active);el.setAttribute('aria-hidden',String(!active))});scheduleAchievement()}
 function scheduleAchievement(){clearTimeout(achTimer);if(achVisible&&!achFocused&&!reduced.matches&&!document.hidden)achTimer=setTimeout(advanceAchievement,6500)}
 rank.addEventListener('focusin',()=>{achFocused=true;clearTimeout(achTimer)});rank.addEventListener('focusout',()=>{achFocused=false;scheduleAchievement()});rank.addEventListener('click',advanceAchievement);rank.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();advanceAchievement()}});rank.addEventListener('pointerenter',()=>{rank.dataset.poke='true';clearTimeout(achTimer)});rank.addEventListener('pointerleave',()=>{rank.dataset.poke='false';scheduleAchievement()});new IntersectionObserver(entries=>{achVisible=entries[0].isIntersecting;scheduleAchievement()},{threshold:.25}).observe($('#achievements'));
-// Start the hero after first paint; never fetch a hidden reel on initial load.
-const reel=$('.video-player'),reelFrame=$('.hero-videoPlayerFrame');
-let reelVisible=false,reelReady=false;configureVideo(reel);
-function updateReel(){if(reelReady&&reelVisible&&!document.hidden){prepareVideo(reel);requestPlayback(reel)}else reel.pause()}
-reel.addEventListener('loadeddata',updateReel);
-new IntersectionObserver(entries=>{reelVisible=entries[0].isIntersecting;updateReel()},{threshold:.15}).observe(reelFrame);
-requestAnimationFrame(()=>requestAnimationFrame(()=>{reelReady=true;updateReel()}));
-// Retry a browser-blocked autoplay on an ordinary page interaction, without a video control.
-for(const event of ['pointerdown','keydown'])document.addEventListener(event,()=>{updateReel();serviceClips.forEach(clip=>clip.update())},{passive:true});
+// Crossfade project images without a hero video download. Decode before swapping.
+const reelFrame=$('[data-hero-slideshow]'),heroImages=$$('.hero-projectImage',reelFrame);
+let heroIndex=0,heroVisible=false,heroTimer,heroGeneration=0;
+const heroInterval=Number.parseInt(getComputedStyle(reelFrame).getPropertyValue('--hero-slide-interval'),10);
+function prepareHeroImage(image){
+ if(image.dataset.src){image.srcset=image.dataset.srcset;image.src=image.dataset.src;delete image.dataset.src;delete image.dataset.srcset}
+ return image.decode().then(()=>image.naturalWidth>0).catch(()=>false);
+}
+function heroCanAnimate(){return heroVisible&&!document.hidden&&!reduced.matches}
+function scheduleHero(){
+ clearTimeout(heroTimer);const generation=++heroGeneration;
+ if(!heroCanAnimate()||heroImages.length<2)return;
+ const next=(heroIndex+1)%heroImages.length;prepareHeroImage(heroImages[next]);
+ heroTimer=setTimeout(async()=>{
+  const ready=await prepareHeroImage(heroImages[next]);
+  if(generation!==heroGeneration||!heroCanAnimate())return;
+  if(ready){heroImages[heroIndex].dataset.active='false';heroImages[heroIndex].setAttribute('aria-hidden','true');heroIndex=next;heroImages[heroIndex].dataset.active='true';heroImages[heroIndex].setAttribute('aria-hidden','false')}
+  scheduleHero();
+ },heroInterval);
+}
+new IntersectionObserver(entries=>{heroVisible=entries[0].isIntersecting;scheduleHero()},{threshold:.15}).observe(reelFrame);
+// Retry browser-blocked service autoplay on ordinary interaction; hero remains images.
+for(const event of ['pointerdown','keydown'])document.addEventListener(event,()=>serviceClips.forEach(clip=>clip.update()),{passive:true});
 // Client stories use native scrolling, swipe, keyboard navigation and real scroll stops.
 const viewport=$('.stories-viewport'),slides=$$('.stories-slide'),arrows=$$('.stories-arrow'),pagination=$('.stories-pagination');
 let storyStops=[],storyButtons=[];
@@ -60,8 +74,8 @@ function goStory(i){viewport.scrollTo({left:storyStops[Math.max(0,Math.min(i,sto
 function syncTestimonials(){const max=Math.max(0,viewport.scrollWidth-viewport.clientWidth);const first=slides[0].offsetLeft;const next=[...new Set(slides.map(s=>Math.round(Math.min(max,s.offsetLeft-first))))];if(JSON.stringify(next)!==JSON.stringify(storyStops)){storyStops=next;pagination.replaceChildren();storyButtons=next.map((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Show testimonial group ${i+1}`);b.addEventListener('click',()=>goStory(i));pagination.append(b);return b})}const current=activeStory();arrows[0].disabled=viewport.scrollLeft<3;arrows[1].disabled=viewport.scrollLeft>=max-3;storyButtons.forEach((b,i)=>b.setAttribute('aria-current',String(i===current)))}
 arrows.forEach((b,i)=>b.addEventListener('click',()=>goStory(activeStory()+(i?1:-1))));viewport.addEventListener('scroll',syncTestimonials,{passive:true});viewport.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();goStory(e.key==='Home'?0:e.key==='End'?storyStops.length-1:activeStory()+(e.key==='ArrowRight'?1:-1))}});syncTestimonials();
 $$('[data-project]').forEach(card=>{function showProject(){const title=$('.casestudy-cardTitle',card).textContent,type=$('.casestudy-cardYear',card).textContent,img=$('img',card);$('#project-page-link').href=card.getAttribute('href');$('#project-title').textContent=title;$('#project-type').textContent=type;$('#project-image').src=card.dataset.detailImage||img.src;$('#project-image').alt=card.dataset.detailCaption||img.alt;$('#project-image').width=Number(img.getAttribute('width'));$('#project-image').height=Number(img.getAttribute('height'));openDialog($('#project-dialog'))}card.addEventListener('click',e=>{if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();showProject()});card.addEventListener('keydown',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;if(e.key==='Enter'||e.key===' '){e.preventDefault();showProject()}})});
-onPreferenceChange(reduced,()=>{scheduleProcess();scheduleAchievement()});
-document.addEventListener('visibilitychange',()=>{scheduleProcess();scheduleAchievement();serviceClips.forEach(clip=>clip.update());updateReel()});
+onPreferenceChange(reduced,()=>{scheduleProcess();scheduleAchievement();scheduleHero()});
+document.addEventListener('visibilitychange',()=>{scheduleProcess();scheduleAchievement();serviceClips.forEach(clip=>clip.update());scheduleHero()});
 function updateTime(){$('#local-time').textContent='Local time: '+new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Kolkata',hour:'numeric',minute:'2-digit'}).format(new Date())}updateTime();setInterval(updateTime,60000);
 
 

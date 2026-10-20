@@ -123,6 +123,9 @@
   --footer-word-fill: linear-gradient(180deg,#fff 30%,#ffffff18 100%);
   --footer-mobile-art-mask: linear-gradient(180deg,transparent 0%,#000 24%,#000 100%);
   --footer-utility-mobile-font: 400 clamp(9px,2.5vw,11px)/1.6 var(--font-copy);
+  --hero-slide-interval: 3500;
+  --hero-slide-transition: opacity 650ms cubic-bezier(.22,1,.36,1);
+  --hero-showcase-ratio: 3/2;
   --blitz-motion-about-hover: 360ms;
   --blitz-motion-card-hover: 450ms;
   --blitz-motion-image-hover: 650ms;

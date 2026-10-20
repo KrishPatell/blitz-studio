@@ -28,15 +28,20 @@ for path in root.glob('*.css'):
  for url in re.findall(r'url\([\'"]?([^\)\'"]+)',path.read_text()):
   if not url.startswith(('data:','http','#')):assert (root/url).is_file(),(path,url)
 for path in root.glob('*.js'):subprocess.run(['node','--check',str(path)],check=True)
-videos=[a for tag,a in p.tags if tag=='video'];assert len(videos)==6
+videos=[a for tag,a in p.tags if tag=='video'];assert len(videos)==5
 previews=[a for a in videos if 'services-hoverVideoClip' in a.get('class','')]
 assert len(previews)==5
 assert all(a.get('preload')=='none' and 'autoplay' not in a for a in previews),'offscreen previews eagerly load'
-mp4=[a['data-src'] for tag,a in p.tags if tag=='source' and a.get('type')=='video/mp4' and 'data-src' in a];assert len(mp4)==12
+mp4=[a['data-src'] for tag,a in p.tags if tag=='source' and a.get('type')=='video/mp4' and 'data-src' in a];assert len(mp4)==10
 assert all('controls' not in a for a in videos),'native video controls present'
 assert not any(any(c in a.get('class','') for c in ['service-playback','hero-videoPlayerPlayButton','hero-videoPlayerHitArea']) for tag,a in p.tags),'video control markup present'
 assert all('src' not in a for tag,a in p.tags if tag=='source'),'video requests before viewport preparation'
-assert (root/'assets/blitz-reel-mobile.mp4').stat().st_size<(root/'assets/blitz-reel.mp4').stat().st_size
+hero_images=[a for tag,a in p.tags if tag=='img' and 'hero-projectImage' in a.get('class','').split()]
+project_count=len(json.loads((root.parent/'content/portfolio.json').read_text())['projects'])
+assert len(hero_images)==project_count,'Hero must show every portfolio project'
+assert sum('src' in a for a in hero_images)==1,'Hero should initially request one image'
+assert sum('data-src' in a for a in hero_images)==project_count-1,'Hero must load later images progressively'
+assert not any('blitz-reel' in a.get('data-src','') for tag,a in p.tags),'Hero video still referenced'
 assert len([a for tag,a in p.tags if 'skillscoverage-skillsCardCell' in a.get('class','')])==6
 assert not [a for tag,a in p.tags if a.get('rel')=='stylesheet'],'blocking CSS round trip'
 assert len([a for tag,a in p.tags if tag=='style' and a.get('id')=='site-styles'])==1

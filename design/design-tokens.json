@@ -139,7 +139,10 @@
     "--footer-mark-size": "44px",
     "--footer-word-fill": "linear-gradient(180deg,#fff 30%,#ffffff18 100%)",
     "--footer-mobile-art-mask": "linear-gradient(180deg,transparent 0%,#000 24%,#000 100%)",
-    "--footer-utility-mobile-font": "400 clamp(9px,2.5vw,11px)/1.6 var(--font-copy)"
+    "--footer-utility-mobile-font": "400 clamp(9px,2.5vw,11px)/1.6 var(--font-copy)",
+    "--hero-slide-interval": "3500",
+    "--hero-slide-transition": "opacity 650ms cubic-bezier(.22,1,.36,1)",
+    "--hero-showcase-ratio": "3/2"
   },
   "typography": {
     "display": {
@@ -2943,6 +2946,47 @@
             "template": "var(--footer-utility-mobile-font)"
           }
         }
+      },
+      {
+        "id": "hero-slideshow-aliases",
+        "file": "dist/refinements.css",
+        "selector": ":root",
+        "conditions": [],
+        "properties": {
+          "--hero-slide-interval": {
+            "token": "cssVariables.--hero-slide-interval"
+          },
+          "--hero-slide-transition": {
+            "token": "cssVariables.--hero-slide-transition"
+          },
+          "--hero-showcase-ratio": {
+            "token": "cssVariables.--hero-showcase-ratio"
+          }
+        }
+      },
+      {
+        "id": "hero-slideshow-fade",
+        "file": "dist/refinements.css",
+        "selector": ".hero-projectImage",
+        "conditions": [],
+        "properties": {
+          "transition": {
+            "token": "cssVariables.--hero-slide-transition",
+            "template": "var(--hero-slide-transition)"
+          }
+        }
+      },
+      {
+        "id": "hero-slideshow-ratio",
+        "file": "dist/refinements.css",
+        "selector": ".hero-slideshow",
+        "conditions": [],
+        "properties": {
+          "aspect-ratio": {
+            "token": "cssVariables.--hero-showcase-ratio",
+            "template": "var(--hero-showcase-ratio)"
+          }
+        }
       }
     ],
     "javascript": [
@@ -3028,7 +3072,7 @@
         "token": "motion.videoThresholds.hero",
         "template": "{threshold:{value}}).observe(reelFrame)",
         "format": "decimal",
-        "id": "hero-video",
+        "id": "hero-slideshow-visibility",
         "file": "dist/app.js"
       },
       {
