@@ -1,0 +1,92 @@
+{
+  "production": "https://blitzstudio.xyz",
+  "deploymentCommit": "c5c09e0",
+  "lighthouseVersion": "13.5.0",
+  "profiles": {
+    "mobile": {
+      "scores": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": {
+          "value": 1592.098,
+          "display": "1.6\u00a0s"
+        },
+        "first-contentful-paint": {
+          "value": 1592.098,
+          "display": "1.6\u00a0s"
+        },
+        "total-blocking-time": {
+          "value": 13.5,
+          "display": "10\u00a0ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.0012571277439322735,
+          "display": "0.001"
+        },
+        "speed-index": {
+          "value": 9338.01313456794,
+          "display": "9.3\u00a0s"
+        }
+      },
+      "fetchTime": "2026-10-21T07:11:37.243Z",
+      "duplicateExternalMapRequests": 0
+    },
+    "desktop": {
+      "scores": {
+        "performance": 67,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": {
+          "value": 3205.818,
+          "display": "3.2\u00a0s"
+        },
+        "first-contentful-paint": {
+          "value": 1817.81,
+          "display": "1.8\u00a0s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "display": "0\u00a0ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 1.200350804621166e-05,
+          "display": "0"
+        },
+        "speed-index": {
+          "value": 3974.676216644325,
+          "display": "4.0\u00a0s"
+        }
+      },
+      "fetchTime": "2026-10-21T07:11:37.243Z",
+      "duplicateExternalMapRequests": 0
+    }
+  },
+  "targetedAccessibility": {
+    "color-contrast": {
+      "score": 1,
+      "issues": 0
+    },
+    "list": {
+      "score": 1,
+      "issues": 0
+    },
+    "label-content-name-mismatch": {
+      "score": 1,
+      "issues": 0
+    }
+  },
+  "interactionChecks": [
+    "Live native skills button opens the shared contact dialog.",
+    "Escape closes the dialog and restores focus to the originating button.",
+    "Enter on the focused button opens the dialog again."
+  ],
+  "searchConsole": "Awaiting owner approval to verify the domain and submit its sitemap.",
+  "performanceNote": "Performance scores vary between lab runs with network timing and the animated project gallery. A previous mobile/desktop pass scored 98/92; this release pass scored 90/67. Both sets are retained. No 100 performance score or field Core Web Vitals result is claimed."
+}
