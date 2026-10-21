@@ -12,7 +12,7 @@ npm run verify
 npm run preview
 ```
 
-Open `http://127.0.0.1:4173`. Deploy the `dist/` directory to static hosting; the existing Sites configuration is in `.openai/hosting.json`.
+Open `http://127.0.0.1:4173`. Production on `https://blitzstudio.xyz` deploys from GitHub `main` through Cloudflare Workers Builds. `wrangler.jsonc` controls its Worker and static assets. `.openai/hosting.json` identifies the separate historical Sites preview. See [SEO and hosting](docs/seo/README.md).
 
 ## Editing
 
@@ -24,11 +24,11 @@ Open `http://127.0.0.1:4173`. Deploy the `dist/` directory to static hosting; th
 - `content/testimonials.json`: the existing client quotes and their source. Add only approved attributed quotes.
 - `docs/uat/mobile-uat.md`: mobile testing scope, fixes, results, and limitations.
 
-All production resources are local. The only external destinations are Webflow, LinkedIn, X, email, and the existing Calendly booking link. There is no form backend, tracking SDK, or runtime JavaScript dependency.
+Website fonts and media are local. External destinations include Webflow, LinkedIn, X, email and Calendly. The requested Google Analytics tag is installed; no form backend or client framework dependency is used.
 
 ## Loading and media
 
-Videos are decorative: muted, inline, looping autoplay with no play/pause buttons, click overlays, or native controls. Each starts when visible and pauses offscreen/background to avoid unnecessary decoding. The hero waits until after first paint before preparing its URLs. Phone visitors receive 640px H.264 variants; desktops receive the optimized 960px hero and existing 1280px service previews. A visible portfolio poster appears while the hero loads. Browser policies can still block autoplay (for example, iOS Low Power Mode); an ordinary page interaction retries playback without adding video controls.
+The hero crossfades through the 17 real project images, loads the next image ahead, and pauses offscreen or when reduced motion is preferred. Service videos are decorative: muted, inline, looping autoplay with no playback controls. They start when visible and pause offscreen/background. Phone visitors receive optimized mobile variants. Browser policies can still block autoplay; ordinary page interaction retries service playback.
 
 Images have responsive WebP derivatives, local posters, explicit dimensions, asynchronous decoding, and lazy loading. Original artwork is retained. The footer samples the selected responsive texture only when visible and draws at about 30 fps with capped pixel density.
 
@@ -43,7 +43,7 @@ npm run build
 npm run verify
 ```
 
-The asset size comparison is retained in `docs/uat/image-optimization.json`. No GitHub Pages or automatic public publication is enabled by this repository. The GitHub repository is private; the website's existing hosting audience is managed independently.
+The asset size comparison is retained in `docs/uat/image-optimization.json`. GitHub `main` is connected to automatic production deployment in Cloudflare Workers Builds. Production SEO, assets and routing are checked before publishing. The Sites preview audience is managed independently.
 
 ## Content and design
 

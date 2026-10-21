@@ -1,11 +1,11 @@
 import {readFile,readdir} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import sharp from 'sharp';
+import {resolveSeoEnvironment} from './seo-config.mjs';
 const json=async file=>JSON.parse(await readFile(file,'utf8'));
 const config=await json('content/seo.json'),studio=await json('content/studio.json'),{projects}=await json('content/portfolio.json');
 assert.equal(config.deploymentOrigin,config.launchOrigin,'The default deploy must target the production domain, never staging.');
-const origin=process.env.SEO_SITE_ORIGIN||config.deploymentOrigin;
-const indexing=origin===config.launchOrigin||config.indexPreview;
+const {origin,indexing}=resolveSeoEnvironment(config,process.env.SEO_SITE_ORIGIN);
 const decode=s=>s.replaceAll('&amp;','&').replaceAll('&quot;','"').replaceAll('&#39;',"'").replaceAll('&lt;','<').replaceAll('&gt;','>');
 const attributes=tag=>Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(m=>[m[1],decode(m[2])]));
 const pages=(await readdir('dist')).filter(file=>file.endsWith('.html'));

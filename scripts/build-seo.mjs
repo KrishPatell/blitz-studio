@@ -1,13 +1,10 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import sharp from 'sharp';
+import {resolveSeoEnvironment} from './seo-config.mjs';
 const config=JSON.parse(await readFile('content/seo.json','utf8'));
 const studio=JSON.parse(await readFile('content/studio.json','utf8'));
 const {projects}=JSON.parse(await readFile('content/portfolio.json','utf8'));
-// Production is the safe default. A preview build must be explicitly requested.
-if(config.deploymentOrigin!==config.launchOrigin)throw Error('Production SEO must use the launch domain. Set SEO_SITE_ORIGIN explicitly for a preview build; never persist a staging deploymentOrigin.');
-const origin=process.env.SEO_SITE_ORIGIN||config.deploymentOrigin;
-if(![config.launchOrigin,config.previewOrigin].includes(origin)||new URL(origin).protocol!=='https:')throw Error('SEO origin must be the approved production or explicit preview origin.');
-const allowIndexing=origin===config.launchOrigin||config.indexPreview;
+const {origin,indexing:allowIndexing}=resolveSeoEnvironment(config,process.env.SEO_SITE_ORIGIN);
 const url=path=>new URL(path,origin+'/').href;
 const esc=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 const services=['UI/UX Design','Web & App Development','Graphic Design','2D Illustration','Logo & Brand Identity','Marketing Design'];
