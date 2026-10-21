@@ -1,0 +1,626 @@
+{
+  "production": "https://blitzstudio.xyz",
+  "deploymentCommit": "388e596bc69fd54ccef6a1eb23f290598b411a86",
+  "lighthouseVersion": "13.5.0",
+  "mobile": {
+    "checkedAt": "2026-10-21T06:41:24.359Z",
+    "results": [
+      {
+        "url": "https://blitzstudio.xyz/",
+        "id": "home",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:39:34.881Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/cookies.html",
+        "id": "cookies",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:39:50.153Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/privacy.html",
+        "id": "privacy",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:39:35.016Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/terms.html",
+        "id": "terms",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:39:35.139Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-brandbooster.html",
+        "id": "work-brandbooster",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:41:13.910Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-carbonx.html",
+        "id": "work-carbonx",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:50.478Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-champion-ceramics.html",
+        "id": "work-champion-ceramics",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:07.546Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-finergic.html",
+        "id": "work-finergic",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:47.545Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-jak-exim.html",
+        "id": "work-jak-exim",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:23.981Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-khetaliya.html",
+        "id": "work-khetaliya",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:04.438Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-mill-gears.html",
+        "id": "work-mill-gears",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:39.483Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-neonsundae.html",
+        "id": "work-neonsundae",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:32.500Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-pick-your-kicks-shop.html",
+        "id": "work-pick-your-kicks-shop",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:37.253Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-pick-your-kicks-web3.html",
+        "id": "work-pick-your-kicks-web3",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:18.587Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-quickads.html",
+        "id": "work-quickads",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:39:51.516Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-remotedesk.html",
+        "id": "work-remotedesk",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:39:50.173Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-risex.html",
+        "id": "work-risex",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:22.691Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-roraj.html",
+        "id": "work-roraj",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:41:01.058Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-tigerloans.html",
+        "id": "work-tigerloans",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:40:07.723Z",
+        "failedAudits": []
+      }
+    ]
+  },
+  "desktop": {
+    "checkedAt": "2026-10-21T06:45:06.450Z",
+    "results": [
+      {
+        "url": "https://blitzstudio.xyz/",
+        "id": "home",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:42:56.279Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/cookies.html",
+        "id": "cookies",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:10.352Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/privacy.html",
+        "id": "privacy",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:42:56.287Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/terms.html",
+        "id": "terms",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:42:56.149Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-brandbooster.html",
+        "id": "work-brandbooster",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:44:25.516Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-carbonx.html",
+        "id": "work-carbonx",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:44:19.887Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-champion-ceramics.html",
+        "id": "work-champion-ceramics",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:26.798Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-finergic.html",
+        "id": "work-finergic",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:44:11.177Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-jak-exim.html",
+        "id": "work-jak-exim",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:49.108Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-khetaliya.html",
+        "id": "work-khetaliya",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:26.789Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-mill-gears.html",
+        "id": "work-mill-gears",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:44:07.182Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-neonsundae.html",
+        "id": "work-neonsundae",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:56.580Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-pick-your-kicks-shop.html",
+        "id": "work-pick-your-kicks-shop",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:58.932Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-pick-your-kicks-web3.html",
+        "id": "work-pick-your-kicks-web3",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:42.845Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-quickads.html",
+        "id": "work-quickads",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:15.205Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-remotedesk.html",
+        "id": "work-remotedesk",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:12.895Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-risex.html",
+        "id": "work-risex",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:45.295Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-roraj.html",
+        "id": "work-roraj",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:44:55.226Z",
+        "failedAudits": []
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-tigerloans.html",
+        "id": "work-tigerloans",
+        "status": "COMPLETE",
+        "seo": 100,
+        "bestPractices": 100,
+        "lighthouseVersion": "13.5.0",
+        "fetchTime": "2026-10-21T06:43:32.257Z",
+        "failedAudits": []
+      }
+    ]
+  },
+  "liveCrawl": {
+    "status": "PASS",
+    "checkedAt": "2026-10-21T06:36:50.758Z",
+    "origin": "https://blitzstudio.xyz",
+    "pages": 22,
+    "indexablePages": 19,
+    "uniqueTitles": 22,
+    "uniqueDescriptions": 22,
+    "checkedSocialImages": 18,
+    "real404": true,
+    "redirects": [
+      {
+        "from": "http://blitzstudio.xyz/",
+        "to": "https://blitzstudio.xyz/",
+        "status": 308
+      },
+      {
+        "from": "https://www.blitzstudio.xyz/",
+        "to": "https://blitzstudio.xyz/",
+        "status": 308
+      },
+      {
+        "from": "https://blitzstudio.xyz/index.html",
+        "to": "https://blitzstudio.xyz/",
+        "status": 308
+      },
+      {
+        "from": "https://blitzstudio.xyz/contact",
+        "to": "https://blitzstudio.xyz/#contact",
+        "status": 308
+      },
+      {
+        "from": "https://blitzstudio.xyz/privacy",
+        "to": "https://blitzstudio.xyz/privacy.html",
+        "status": 308
+      },
+      {
+        "from": "https://blitzstudio.xyz/work-champion-ceramics",
+        "to": "https://blitzstudio.xyz/work-champion-ceramics.html",
+        "status": 308
+      }
+    ],
+    "checks": [
+      {
+        "url": "https://blitzstudio.xyz/",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Blitz Studio | Web Design & Full-Stack Development",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/terms.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/terms.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Terms & Conditions | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/privacy.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/privacy.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Privacy Policy | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/cookies.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/cookies.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Cookie Policy | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/cookie-settings.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/cookie-settings.html",
+        "robots": "noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Cookie Settings | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-remotedesk.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-remotedesk.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "RemoteDesk | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-creator-management.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-creator-management.html",
+        "robots": "noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Creator management | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-quickads.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-quickads.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Quickads | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-khetaliya.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-khetaliya.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Khetaliya Group | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-champion-ceramics.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-champion-ceramics.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Champion Ceramics | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-tigerloans.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-tigerloans.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Tiger Loans | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-pick-your-kicks-web3.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-pick-your-kicks-web3.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Pick Your Kicks | Blockchain SaaS | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-finance-nda.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-finance-nda.html",
+        "robots": "noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Confidential finance project | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-risex.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-risex.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "RiseX | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-jak-exim.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-jak-exim.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "JAK Exim | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-neonsundae.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-neonsundae.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Neon Sundae | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-pick-your-kicks-shop.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-pick-your-kicks-shop.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Pick Your Kicks | E-commerce | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-mill-gears.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-mill-gears.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Mill Gears | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-finergic.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-finergic.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Finergic | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-carbonx.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-carbonx.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "CarbonX | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-brandbooster.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-brandbooster.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "BrandBooster | Design Portfolio | Blitz Studio",
+        "schema": true
+      },
+      {
+        "url": "https://blitzstudio.xyz/work-roraj.html",
+        "status": 200,
+        "canonical": "https://blitzstudio.xyz/work-roraj.html",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "title": "Roraj Industries | Design Portfolio | Blitz Studio",
+        "schema": true
+      }
+    ]
+  },
+  "regressionTests": {
+    "passed": 7,
+    "failed": 0
+  },
+  "searchConsole": "Domain ownership verification prepared; awaiting owner approval before adding a verification record. Sitemap is already discoverable through robots.txt.",
+  "limitations": [
+    "Lighthouse SEO and Best Practices are automated technical audits, not ranking or field Core Web Vitals guarantees.",
+    "Cookie Settings, Creator management preview and Confidential finance preview intentionally remain noindex.",
+    "The existing design fingerprint gate still detects previously unreviewed homepage changes; its baseline was not overwritten to silence it."
+  ]
+}
