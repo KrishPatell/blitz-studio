@@ -11,6 +11,9 @@ class Page(HTMLParser):
   if a.get('id'):self.ids.append(a['id'])
 p=Page();html=(root/'index.html').read_text();p.feed(html)
 assert len(p.ids)==len(set(p.ids)), 'Duplicate IDs'
+inline_map=re.search(r"background-image:url\('data:image/svg\+xml,([^']+)'\)",html)
+assert inline_map and unquote(inline_map[1])==(root/'assets/reference/hero-map-dotted.svg').read_text(),'Critical hero artwork must match the approved SVG'
+
 for tag,a in p.tags:
  for key in ['src','href','poster','data-src','data-poster','data-project-src']:
   val=a.get(key,'');url=urlsplit(val)

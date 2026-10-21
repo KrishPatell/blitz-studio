@@ -8,7 +8,10 @@ const css=(await Promise.all(cssFiles.map(file=>readFile('dist/'+file,'utf8'))))
 await writeFile('dist/site.css',css);
 let html=await readFile('dist/index.html','utf8');
 // This single-page site inlines its compact, gzipped CSS to avoid a second blocking host round trip.
-const styleTag=`<style id="site-styles">${css}</style>`;
+const heroMap=await readFile('dist/assets/reference/hero-map-dotted.svg','utf8');
+const heroMapURI='data:image/svg+xml,'+encodeURIComponent(heroMap).replaceAll("'",'%27');
+// Keep the critical vector in the head: a large body attribute could delay layout.
+const styleTag=`<style id="site-styles">${css}\n.hero-backgroundWorldText{background-image:url('${heroMapURI}')}</style>`;
 html=html.replace(/<style id="site-styles">[\s\S]*?<\/style>/g,'');
 html=html.replace(/<link\b[^>]*rel="stylesheet"[^>]*\/?>/g,'');
 html=html.replace('</head>',styleTag+'</head>');
