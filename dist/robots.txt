@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# Public preview: pages use noindex until the launch domain serves this build.
+Sitemap: https://blitzstudio.xyz/sitemap.xml

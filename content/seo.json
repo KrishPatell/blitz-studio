@@ -1,14 +1,14 @@
 {
-  "deploymentOrigin": "https://blitz-studio-redesign.k-1365.chatgpt.site",
+  "deploymentOrigin": "https://blitzstudio.xyz",
   "launchOrigin": "https://blitzstudio.xyz",
   "language": "en",
   "locale": "en_US",
-  "lastModified": "2026-10-20",
+  "lastModified": "2026-10-21",
   "siteName": "Blitz Studio",
   "homeTitle": "Blitz Studio | Web Design & Full-Stack Development",
   "homeDescription": "Blitz Studio designs brands, websites and digital products. Webflow, Framer, WordPress, Next.js and full-stack development for ambitious teams.",
   "socialImage": "assets/social/blitz-studio.png",
-  "socialImageAlt": "Blitz Studio \u2014 design, development and digital products",
+  "socialImageAlt": "Blitz Studio — design, development and digital products",
   "organizationProfiles": [
     "https://www.linkedin.com/company/blitz-studio/",
     "https://webflow.com/@blitzstudio"
