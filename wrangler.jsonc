@@ -1,0 +1,15 @@
+{
+  "name": "blitz-studio",
+  "main": "worker/production.mjs",
+  "compatibility_date": "2026-10-21",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none",
+    "run_worker_first": true
+  },
+  "build": {
+    "command": "npm run build && npm run verify && npm run verify:seo && npm run test:seo"
+  }
+}

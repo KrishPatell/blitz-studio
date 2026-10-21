@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import sharp from 'sharp';
 const json=async file=>JSON.parse(await readFile(file,'utf8'));
 const config=await json('content/seo.json'),studio=await json('content/studio.json'),{projects}=await json('content/portfolio.json');
+assert.equal(config.deploymentOrigin,config.launchOrigin,'The default deploy must target the production domain, never staging.');
 const origin=process.env.SEO_SITE_ORIGIN||config.deploymentOrigin;
 const indexing=origin===config.launchOrigin||config.indexPreview;
 const decode=s=>s.replaceAll('&amp;','&').replaceAll('&quot;','"').replaceAll('&#39;',"'").replaceAll('&lt;','<').replaceAll('&gt;','>');
@@ -17,6 +18,7 @@ for(const file of pages){
  const meta=(name,property=false)=>{const matches=metadata.filter(item=>item[property?'property':'name']===name);assert.equal(matches.length,1,`${file}: ${name} must occur once`);return matches[0].content};
  const canonical=links.filter(item=>item.rel==='canonical');assert.equal(canonical.length,1,file);
  const expected=origin+(file==='index.html'?'/':'/'+file);assert.equal(canonical[0].href,expected);
+ if(origin===config.launchOrigin)assert(!head.includes(config.previewOrigin),'Production metadata must not contain the staging origin: '+file);
  const title=decode(head.match(/<title>([\s\S]*?)<\/title>/)[1]);assert(!titles.has(title),`${file}: duplicate title`);titles.add(title);
  const description=meta('description');assert(!descriptions.has(description),`${file}: duplicate description`);descriptions.add(description);assert(description.length>=70&&description.length<230,file);
  assert.equal([...html.matchAll(/<h1\b/g)].length,1,`${file}: one primary heading`);
