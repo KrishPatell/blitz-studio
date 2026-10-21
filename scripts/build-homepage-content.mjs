@@ -5,8 +5,11 @@ const {clients}=JSON.parse(await readFile('content/clients.json','utf8'));
 const {verified:stories}=JSON.parse(await readFile('content/testimonials.json','utf8'));
 const escape=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 let home=await readFile('dist/index.html','utf8');
-// Discover the existing LCP background artwork before CSS parsing finishes.
-if(!home.includes('rel="preload" as="image" href="assets/reference/hero-map-dotted.svg"'))home=home.replace('</head>','<link rel="preload" as="image" href="assets/reference/hero-map-dotted.svg" fetchpriority="high"></head>');
+// Inline the small compressed LCP vector into the homepage to remove a critical round trip.
+const heroMap=await readFile('dist/assets/reference/hero-map-dotted.svg','utf8');
+const heroMapURI='data:image/svg+xml,'+encodeURIComponent(heroMap).replaceAll("'",'%27');
+home=home.replace(/<div aria-hidden="true" class="hero-backgroundWorldText"[^>]*><\/div>/,`<div aria-hidden="true" class="hero-backgroundWorldText" style="background-image:url('${heroMapURI}')"></div>`);
+home=home.replace(/<link rel="preload" as="image" href="assets\/reference\/hero-map-dotted.svg"[^>]*>/g,'');
 // Runtime-measured pill geometry must never be saved into first-paint markup.
 home=home.replace(/<div\b[^>]*class="topbar-activeIndicator(?: topbar-activeIndicatorVisible)?"[^>]*>/g,'<div aria-hidden="true" class="topbar-activeIndicator">');
 const replace=(pattern,value,label)=>{if(!pattern.test(home))throw Error(`Missing homepage ${label}`);home=home.replace(pattern,value)};

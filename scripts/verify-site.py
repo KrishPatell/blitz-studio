@@ -23,7 +23,9 @@ for tag,a in p.tags:
    if item.strip():assert (root/item.strip().split()[0]).is_file(),item
  for key in ['style']:
   for val in re.findall(r'url\([\'"]?([^\)\'"]+)',a.get(key,'')):
-   assert (root/val).is_file(),val
+   if val.startswith('data:image/svg+xml,'):
+    assert unquote(val.split(',',1)[1])==(root/'assets/reference/hero-map-dotted.svg').read_text(),'Inline hero vector differs from the approved artwork'
+   else:assert (root/val).is_file(),val
 for path in root.glob('*.css'):
  for url in re.findall(r'url\([\'"]?([^\)\'"]+)',path.read_text()):
   if not url.startswith(('data:','http','#')):assert (root/url).is_file(),(path,url)
