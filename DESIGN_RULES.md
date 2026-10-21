@@ -139,3 +139,7 @@ The shared desktop/mobile components and project-page templates are built in [Bl
 ## Coastal illustration provenance
 
 Original built-in imagegen assets and prompts are documented in `docs/coastal-footer-artwork.md`. The selected desktop/mobile masters live under `assets/footer-coast/`; optimized WebP variants are under `dist/assets/footer-coast/`. The scene carries visual detail; typography, links, address and controls remain live. Footer nav/office/utility type is one14px Manrope role. Paper artboards05/06 document the reviewed desktop/mobile composition.
+
+## Page-experience accessibility corrections
+
+Project metadata uses `--cs-readable-meta-color`, an alias of the existing `--color-text-soft`, to meet normal-text contrast on white. The disabled-text token is reserved for disabled controls. Project links take their accessible names from their visible header. Skills retain native list items; a full-card native button opens contact and receives keyboard focus. Existing skill artwork hover effects use `:focus-within` so keyboard interaction preserves the same effect. The existing hero dotted-map image is preloaded to avoid its late CSS discovery.

@@ -28,7 +28,7 @@ $$('.services-serviceCard').forEach(card=>{
  video.addEventListener('loadeddata',clip.update);
  new IntersectionObserver(entries=>{clip.visible=entries[0].isIntersecting;clip.update()},{threshold:.1}).observe(video);
 });
-$$('.skillscoverage-skillsCardCell').forEach(cell=>{cell.tabIndex=0;cell.setAttribute('role','button');cell.setAttribute('aria-label','Discuss '+($('.skillscoverage-skillsCardTitle',cell)?.textContent||'this service'));cell.addEventListener('click',()=>openDialog($('#contact-dialog')));cell.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openDialog($('#contact-dialog'))}})});
+$$('.skillscoverage-skillsCardCell').forEach(cell=>{const action=document.createElement('button');action.type='button';action.className='skillscoverage-skillAction';action.setAttribute('aria-label','Discuss '+($('.skillscoverage-skillsCardTitle',cell)?.textContent||'this service'));action.setAttribute('aria-haspopup','dialog');action.addEventListener('click',()=>openDialog($('#contact-dialog')));cell.append(action)});
 // Process: one six-second cycle per step, with explicit manual selection.
 let processIndex=0,processVisible=false,processPaused=false,processTimer;
 const stepButtons=$$('.ourprocess-stepTab'),ring=$('.ourprocess-stepTabRing').cloneNode(true);

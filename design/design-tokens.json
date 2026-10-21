@@ -142,7 +142,8 @@
     "--footer-utility-mobile-font": "400 clamp(9px,2.5vw,11px)/1.6 var(--font-copy)",
     "--hero-slide-interval": "3500",
     "--hero-slide-transition": "opacity 650ms cubic-bezier(.22,1,.36,1)",
-    "--hero-showcase-ratio": "3/2"
+    "--hero-showcase-ratio": "3/2",
+    "--cs-readable-meta-color": "var(--color-text-soft)"
   },
   "typography": {
     "display": {
@@ -2985,6 +2986,41 @@
           "aspect-ratio": {
             "token": "cssVariables.--hero-showcase-ratio",
             "template": "var(--hero-showcase-ratio)"
+          }
+        }
+      },
+      {
+        "id": "case-study-readable-meta-alias",
+        "file": "dist/refinements.css",
+        "selector": ":root",
+        "conditions": [],
+        "properties": {
+          "--cs-readable-meta-color": {
+            "token": "cssVariables.--cs-readable-meta-color"
+          }
+        }
+      },
+      {
+        "id": "case-study-readable-meta-label",
+        "file": "dist/refinements.css",
+        "selector": ".casestudy-cardLabel",
+        "conditions": [],
+        "properties": {
+          "color": {
+            "token": "cssVariables.--cs-readable-meta-color",
+            "template": "var(--cs-readable-meta-color)"
+          }
+        }
+      },
+      {
+        "id": "case-study-readable-meta-category",
+        "file": "dist/refinements.css",
+        "selector": ".casestudy-cardYear",
+        "conditions": [],
+        "properties": {
+          "color": {
+            "token": "cssVariables.--cs-readable-meta-color",
+            "template": "var(--cs-readable-meta-color)"
           }
         }
       }

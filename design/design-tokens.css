@@ -126,6 +126,7 @@
   --hero-slide-interval: 3500;
   --hero-slide-transition: opacity 650ms cubic-bezier(.22,1,.36,1);
   --hero-showcase-ratio: 3/2;
+  --cs-readable-meta-color: var(--color-text-soft);
   --blitz-motion-about-hover: 360ms;
   --blitz-motion-card-hover: 450ms;
   --blitz-motion-image-hover: 650ms;
