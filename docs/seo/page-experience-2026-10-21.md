@@ -16,4 +16,4 @@ Full machine-readable follow-up: [page-experience-2026-10-21.json](page-experien
 
 The token generator validates 154 token/source contracts. The earlier homepage fingerprint mismatch is documented and its baseline has not been overwritten to bypass review.
 
-Search Console domain verification/submission is still awaiting the owner's approval. No DNS proof or external account permission was added.
+Search Console confirms domain ownership, and the production sitemap was submitted successfully. Google's live sitemap fetch succeeded. The initial Sitemaps report has not confirmed processing success; see [the Search Console record](search-console-2026-10-21.md). The account was already verified when this session resumed, so no duplicate DNS record or additional account permission was added.

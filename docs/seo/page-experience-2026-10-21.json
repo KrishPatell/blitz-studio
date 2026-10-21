@@ -87,6 +87,6 @@
     "Escape closes the dialog and restores focus to the originating button.",
     "Enter on the focused button opens the dialog again."
   ],
-  "searchConsole": "Awaiting owner approval to verify the domain and submit its sitemap.",
+  "searchConsole": "Domain ownership is verified through the domain name provider. The production sitemap was submitted successfully on 2026-10-21. Google's live inspection confirmed crawl allowed, successful page fetch and indexing allowed for the sitemap. The Sitemaps report initially shows “Couldn’t fetch” / Unknown with 0 discovered pages; processing success and indexing are not claimed.",
   "performanceNote": "Performance scores vary between lab runs with network timing and the animated project gallery. A previous mobile/desktop pass scored 98/92; this release pass scored 90/67. Both sets are retained. No 100 performance score or field Core Web Vitals result is claimed."
 }

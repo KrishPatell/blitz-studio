@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-21",
+  "property": "sc-domain:blitzstudio.xyz",
+  "ownership": {
+    "status": "Verified owner",
+    "method": "Domain name provider",
+    "action": "Observed existing verified ownership in the authorized account; no duplicate DNS proof added."
+  },
+  "sitemap": {
+    "url": "https://blitzstudio.xyz/sitemap.xml",
+    "submission": "Sitemap submitted successfully",
+    "initialReport": {
+      "status": "Couldn’t fetch",
+      "type": "Unknown",
+      "discoveredPages": 0
+    },
+    "liveInspection": {
+      "testedAt": "2026-10-21T22:01:45+05:30",
+      "crawler": "Google Inspection Tool smartphone",
+      "availability": "URL is available to Google",
+      "crawlAllowed": "Yes",
+      "pageFetch": "Successful",
+      "indexingAllowed": "Yes"
+    },
+    "publicResponse": {
+      "status": 200,
+      "contentType": "application/xml",
+      "urls": 19,
+      "robotsAllowsCrawl": true
+    }
+  },
+  "limitations": [
+    "Submission does not establish sitemap processing success or URL indexing.",
+    "Search Console reporting is asynchronous; no field Core Web Vitals or ranking result is claimed."
+  ],
+  "localEvidence": [
+    "output/seo-audit/search-console/ownership.png",
+    "output/seo-audit/search-console/submitted.png",
+    "output/seo-audit/search-console/sitemap-live-test.txt",
+    "output/seo-audit/search-console/sitemap-live-test.png"
+  ],
+  "guidance": "https://support.google.com/webmasters/answer/7451001?hl=en"
+}

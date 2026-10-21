@@ -39,7 +39,7 @@ Lighthouse reports are retained under `output/seo-audit/`. The dated release rec
 
 ## Search engine follow-up
 
-The sitemap is publicly discoverable through robots.txt. Search Console verification/submission requires the actual owner's authorized account and ownership proof. Do not invent verification tokens, claim a sitemap was submitted without evidence, or grant DNS/account permissions silently. Following verification, submit the production sitemap and inspect/request recrawling of the homepage and representative project pages. Keep genuine client briefs and case study results as the basis for future organic content.
+The sitemap is publicly discoverable through robots.txt. On October 21, 2026, Search Console confirmed verified domain ownership and accepted the production sitemap submission. Google's live sitemap inspection reported a successful fetch and crawl permission. The initial Sitemaps report still awaits successful processing; [the Search Console record](search-console-2026-10-21.md) preserves the exact status. Do not confuse submission with processing or indexing, invent verification tokens, or grant DNS/account permissions silently. Keep genuine client briefs and case study results as the basis for future organic content.
 
 ## References
 

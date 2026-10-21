@@ -617,7 +617,7 @@
     "passed": 7,
     "failed": 0
   },
-  "searchConsole": "Domain ownership verification prepared; awaiting owner approval before adding a verification record. Sitemap is already discoverable through robots.txt.",
+  "searchConsole": "Domain ownership is verified through the domain name provider. The production sitemap was submitted successfully on 2026-10-21. Google's live inspection confirmed crawl allowed, successful page fetch and indexing allowed for the sitemap. The Sitemaps report initially shows “Couldn’t fetch” / Unknown with 0 discovered pages; processing success and indexing are not claimed.",
   "limitations": [
     "Lighthouse SEO and Best Practices are automated technical audits, not ranking or field Core Web Vitals guarantees.",
     "Cookie Settings, Creator management preview and Confidential finance preview intentionally remain noindex.",
